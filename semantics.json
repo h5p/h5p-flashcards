@@ -1,0 +1,79 @@
+[
+  {
+    "name": "title",
+    "type": "text",
+    "label": "Tittel",
+    "description": "Tittel"
+  },
+  {
+    "name": "description",
+    "type": "text",
+    "label": "Oppgavetekst",
+    "description": "Tekst til oppgaven"
+  },
+  {
+    "name": "questions",
+    "type": "list",
+    "label": "Categories",
+    "description": "Answers available for the user.",
+    "entity": "question",
+    "max": 5,
+    "field": {
+      "name": "question",
+      "type": "group",
+      "label": "Question",
+      "fields": [
+        {
+          "name": "text",
+          "type": "text",
+          "label": "Tekst",
+          "optional": true,
+          "description": "Tekst"
+        },
+        {
+          "name": "answer",
+          "type": "text",
+          "label": "Svar",
+          "optional": true,
+          "description": "Svar"
+        },
+        {
+          "name": "image",
+          "type": "image",
+          "label": "Bilde",
+          "optional": true,
+          "description": "Bilde"
+        }
+      ]
+    }
+  },
+  {
+    "label": "Progress text",
+    "name": "progressText",
+    "type": "text",
+    "hint": "Task @task of @total",
+    "description": "Progress text, variables available: @task and @total. Example: 'Task @task of @total'",
+    "common": true
+  },
+  {
+    "label": "Text for the next button",
+    "name": "next",
+    "type": "text",
+    "hint": "Next",
+    "common": true
+  },
+  {
+    "label": "Text for the previous button",
+    "name": "previous",
+    "type": "text",
+    "hint": "Previous",
+    "common": true
+  },
+  {
+    "label": "Text for the check answers button",
+    "name": "checkAnswerText",
+    "type": "text",
+    "hint": "Check answers",
+    "common": true
+  }
+]
