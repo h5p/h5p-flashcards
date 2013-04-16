@@ -96,44 +96,48 @@ H5P.Flashcards = function (options, contentId) {
     $target = $(el);
     $target.addClass('flashcard');
     $panel = addElement($target, 'panel-'+$target.attr('data-content-id'), 'panel', { });
-    addElement($panel, null, 'flashcard-title', { text: options.title });
+    $panel.append('<H2 class="flashcard-title">' + options.title + '</h2>');
     addElement($panel, null, 'flashcard-description', { text: options.description });
 
     // Panel setup
     var questions = addElement($panel, null, 'flashcard-inner-panel', { });
-    var flashcards = addElement(questions, 'flashcards', 'flashcards', { });
+    var $flashcards = addElement(questions, 'flashcards', 'flashcards', { });
     var navigation = addElement(questions, 'navigation', 'navigation', { });
 
-    var prev = addElement(navigation, 'previous-flashcard', 'flashcard-navigation-button', {
+    var $prev = addElement(navigation, 'previous-flashcard', 'flashcard-navigation-button', {
       text: options.previous,
       click: function() {
-        flashcards.animate({
-          left: '+='+flashcards.css('width'),
-          complete: function(){
-          }
-        }, 'fast', 'swing', function() {
-          if(flashcards.css('left') == '0px'){
-            prev.css({display: 'none'});
-          }
-          focusElement(flashcards);
-        });
-        $('#next-flashcard').css({display: 'block'});
+        $flashcards.stop(true, true);
+        if ($prev.is(':visible')) {
+          $flashcards.animate({
+            left: '+='+$flashcards.css('width')
+          }, 'fast', 'swing', function() {
+            if (parseInt($flashcards.css('left')) >= 0) {
+              $prev.hide();
+            }
+            focusElement($flashcards);
+          });
+          $('#next-flashcard').show();
+        }
       }
     });
 
-    var next = addElement(navigation, 'next-flashcard', 'flashcard-navigation-button', {
+    var $next = addElement(navigation, 'next-flashcard', 'flashcard-navigation-button', {
       text: options.next,
       click: function() {
-        flashcards.animate({
-          left: '-='+flashcards.css('width')
-        }, 'fast', 'swing', function() {
-          var length = options.questions.length * parseInt(flashcards.css('width')) - parseInt(flashcards.css('width'));
-          if(-parseInt(flashcards.css('left')) == length) {
-            next.css({display: 'none'});
-          }
-          focusElement(flashcards);
-        });
-        $('#previous-flashcard').css({display: 'block'});
+        $flashcards.stop(true, true);
+        if ($next.is(':visible')) {
+          $flashcards.animate({
+            left: '-='+$flashcards.css('width')
+          }, 'fast', 'swing', function() {
+            var length = options.questions.length * parseInt($flashcards.css('width')) - parseInt($flashcards.css('width'));
+            if (-parseInt($flashcards.css('left')) >= length) {
+              $next.hide();
+            }
+            focusElement($flashcards);
+          });
+          $('#previous-flashcard').show();
+        }
       }
     });
 
@@ -141,7 +145,7 @@ H5P.Flashcards = function (options, contentId) {
     var max_height = 0;
     var image = Array();
     for(var i=0; i < options.questions.length; i++) {
-      var question = addElement(flashcards, $panel.attr('id')+'-question-'+i, 'flashcard-question', { left: i * parseInt(questions.css('width'))});
+      var question = addElement($flashcards, $panel.attr('id')+'-question-'+i, 'flashcard-question', { left: i * parseInt(questions.css('width'))});
       if(options.questions[i].image) {
         var width = "";
 
