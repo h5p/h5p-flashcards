@@ -143,7 +143,7 @@ H5P.Flashcards = function (options, contentId) {
 
     // Add questions
     var max_height = 0;
-    var image = Array();
+    var images = Array();
     for(var i=0; i < options.questions.length; i++) {
       var question = addElement($flashcards, $panel.attr('id')+'-question-'+i, 'flashcard-question', { left: i * parseInt(questions.css('width'))});
       if(options.questions[i].image) {
@@ -155,12 +155,12 @@ H5P.Flashcards = function (options, contentId) {
            options.questions[i].image.height = question.innerWidth() / (options.questions[i].image.width / options.questions[i].image.height);
         }
 
-        image[i] = addElement(question, null, 'flashcard-image', { text: '<img '+width+'src="'+cp+options.questions[i].image.path+'"/>' });
+        images[i] = addElement(question, null, 'flashcard-image', { text: '<img '+width+'src="'+cp+options.questions[i].image.path+'"/>' });
         if(options.questions[i].image.height > max_height) {
           max_height = options.questions[i].image.height;
         }
 		  if(options.questions[i].text) {
-          addElement(image[i], $panel.attr('id')+'-question-'+i, 'flashcard-image-text', { text: options.questions[i].text });
+          addElement(images[i], $panel.attr('id')+'-question-'+i, 'flashcard-image-text', { text: options.questions[i].text });
         }
       }
 		else if(options.questions[i].text) {
@@ -177,11 +177,11 @@ H5P.Flashcards = function (options, contentId) {
     }
 
     for(var i=0; i < options.questions.length; i++) {
-      if(image[i]) {
-        image[i].css('height', max_height);
+      if(images[i]) {
+        images[i].css('height', max_height);
         var imageh = max_height - options.questions[i].image.height;
         if(imageh) {
-           image[i].find('img').css('padding-top', Math.round(imageh / 2));
+           images[i].find('img').css('padding-top', Math.round(imageh / 2));
         }
       }
     }
