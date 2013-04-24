@@ -2,47 +2,44 @@
   {
     "name": "title",
     "type": "text",
-    "label": "Tittel",
-    "description": "Tittel"
+    "label": "Title"
   },
   {
     "name": "description",
     "type": "text",
-    "label": "Oppgavetekst",
-    "description": "Tekst til oppgaven"
+    "label": "Task description"
   },
   {
-    "name": "questions",
+    "name": "cards",
     "type": "list",
-    "label": "Categories",
-    "description": "Answers available for the user.",
-    "entity": "question",
-    "max": 5,
+    "label": "Cards",
+    "entity": "card",
+    "max": 50,
     "field": {
-      "name": "question",
+      "name": "card",
       "type": "group",
-      "label": "Question",
+      "label": "Card",
       "fields": [
         {
           "name": "text",
           "type": "text",
-          "label": "Tekst",
+          "label": "Text",
           "optional": true,
-          "description": "Tekst"
+          "description": "Optional text for the card. (The card may use just an image, just a text or both)"
         },
         {
           "name": "answer",
           "type": "text",
-          "label": "Svar",
+          "label": "Solution",
           "optional": true,
-          "description": "Svar"
+          "description": "Optional solution for the card."
         },
         {
           "name": "image",
           "type": "image",
-          "label": "Bilde",
+          "label": "Image",
           "optional": true,
-          "description": "Bilde"
+          "description": "Optional text for the card. (The card may use just an image, just a text or both)"
         }
       ]
     }
@@ -51,29 +48,29 @@
     "label": "Progress text",
     "name": "progressText",
     "type": "text",
-    "hint": "Task @task of @total",
-    "description": "Progress text, variables available: @task and @total. Example: 'Task @task of @total'",
+    "default": "Card @card of @total",
+    "description": "Progress text, variables available: @card and @total. Example: 'Card @card of @total'",
     "common": true
   },
   {
     "label": "Text for the next button",
     "name": "next",
     "type": "text",
-    "hint": "Next",
+    "default": "Next",
     "common": true
   },
   {
     "label": "Text for the previous button",
     "name": "previous",
     "type": "text",
-    "hint": "Previous",
+    "default": "Previous",
     "common": true
   },
   {
     "label": "Text for the check answers button",
     "name": "checkAnswerText",
     "type": "text",
-    "hint": "Check answers",
+    "default": "Check answer",
     "common": true
   }
 ]
