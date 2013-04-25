@@ -23,16 +23,16 @@
         {
           "name": "text",
           "type": "text",
-          "label": "Text",
+          "label": "Question",
           "optional": true,
-          "description": "Optional text for the card. (The card may use just an image, just a text or both)"
+          "description": "Optional textual question for the card. (The card may use just an image, just a text or both)"
         },
         {
           "name": "answer",
           "type": "text",
-          "label": "Solution",
+          "label": "Answer",
           "optional": true,
-          "description": "Optional solution for the card."
+          "description": "Optional answer(solution) for the card."
         },
         {
           "name": "image",
