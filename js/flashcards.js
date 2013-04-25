@@ -168,11 +168,17 @@ H5P.Flashcards = function (options, contentId) {
           max_height = that.options.cards[i].image.height;
         }
 		  if(that.options.cards[i].text) {
-          addElement(images[i], $panel.attr('id')+'-question-'+i, 'flashcard-image-text', { text: that.options.cards[i].text });
+          var textHeight = addElement(images[i], $panel.attr('id')+'-question-'+i, 'flashcard-image-text', { text: that.options.cards[i].text }).innerHeight();
+          if (max_height < textHeight) {
+            max_height = textHeight;
+          }
         }
       }
 		else if(that.options.cards[i].text) {
-        addElement(question, $panel.attr('id')+'-question-'+i, 'flashcard-text', { text: that.options.cards[i].text });
+        var textHeight = addElement(question, $panel.attr('id')+'-question-'+i, 'flashcard-text', { text: that.options.cards[i].text }).innerHeight();
+        if (max_height < textHeight) {
+            max_height = textHeight;
+          }
       }
       var input_container = addElement(question, null, 'input-container', { });
       addElement(input_container, $panel.attr('id')+'-fasit-'+i, 'fasit-container', { text: '<span class="fasit">'+that.options.cards[i].answer+'</span>' });
@@ -183,9 +189,9 @@ H5P.Flashcards = function (options, contentId) {
         addElement(input_container, null, 'flashcard-input', { text: '<input id="'+$panel.attr('id')+'-input-'+i+'" class="h5p-input" type="text"/>' });
       }
     }
-
+    
     for(var i=0; i < that.options.cards.length; i++) {
-      if(images[i]) {
+      if(images[i]) {  
         images[i].css('height', max_height);
         var imageh = max_height - that.options.cards[i].image.height;
         if(imageh) {
