@@ -39,7 +39,7 @@
           "type": "image",
           "label": "Image",
           "optional": true,
-          "description": "Optional text for the card. (The card may use just an image, just a text or both)"
+          "description": "Optional image for the card. (The card may use just an image, just a text or both)"
         }
       ]
     }
