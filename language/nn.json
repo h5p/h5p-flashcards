@@ -4,7 +4,7 @@
       "label": "Tittel"
     },
     {
-      "label": "Oppgavetekst"
+      "label": "Oppgåvetekst"
     },
     {
       "label": "Kort",
@@ -14,23 +14,23 @@
         "fields": [
           {
             "label": "Spørsmål",
-            "description": "Valgfritt tekstlig spørsmål. (Kortet kan inneholde bilde, tekst eller begge deler)"
+            "description": "Valfritt tekstleg spørsmål. (Kortet kan innehalde bilde, tekst, eller begge deler)"
           },
           {
             "label": "Svar",
-            "description": "Valgfritt svar(fasit) for kortet."
+            "description": "Valfritt svar(fasit) for kortet."
           },
           {
             "label": "Bilde",
-            "description": "Valgfritt bilde. (Kortet kan inneholde bilde, tekst eller begge deler)"
+            "description": "Valfritt tekstleg spørsmål. (Kortet kan innehalde bilde, tekst, eller begge deler)"
           }
         ]
       }
     },
     {
-      "label": "Tekst for fremdrift",
+      "label": "Tekst for framdrift",
       "default": "Kort @card av @total",
-      "description": "Tekst som angir hvilket kort en er på. Variabler tilgjengelig: @card og @total. Eksempel: 'Kort @card av @total'"
+      "description": "Tekst som viser kva for kort ein er på. Variablar tilgjengelig: @card og @total. Eksempel: 'Kort @card av @total'"
     },
     {
       "label": "Tekst for \"Neste\" knappen",
