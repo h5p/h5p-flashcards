@@ -110,7 +110,7 @@ H5P.Flashcards = function (options, contentId) {
     // Panel setup
     var $cards = addElement($panel, null, 'flashcard-inner-panel', { });
     var $flashcards = addElement($cards, 'flashcards', 'flashcards', { });
-    var $navigation = addElement($cards, 'navigation', 'navigation', { });
+    var $navigation = addElement($cards, null, 'h5p-flashcards-nav', { });
 
     var $prev = addElement($navigation, 'previous-flashcard', 'flashcard-navigation-button', {
       text: that.options.previous,
