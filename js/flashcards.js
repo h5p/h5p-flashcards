@@ -18,8 +18,6 @@ H5P.Flashcards = function (options, contentId) {
     return new H5P.Flashcards(options, contentId);
   }
 
-  var cp = H5P.getContentPath(contentId);
-
   var getScore = function(){
     var score = 0;
     $panel.find('.h5p-input').each(function (idx, el) {
@@ -167,7 +165,7 @@ H5P.Flashcards = function (options, contentId) {
            that.options.cards[i].image.height = question.innerWidth() / (that.options.cards[i].image.width / that.options.cards[i].image.height);
         }
 
-        images[i] = addElement(question, null, 'flashcard-image', { text: '<img '+width+'src="'+cp+that.options.cards[i].image.path+'"/>' });
+        images[i] = addElement(question, null, 'flashcard-image', { text: '<img '+width+'src="'+H5P.getPath(contentId, that.options.cards[i].image.path)+'"/>' });
         if(that.options.cards[i].image.height > max_height) {
           max_height = that.options.cards[i].image.height;
         }
@@ -193,9 +191,9 @@ H5P.Flashcards = function (options, contentId) {
         addElement(input_container, null, 'flashcard-input', { text: '<input id="'+$panel.attr('id')+'-input-'+i+'" class="h5p-input" type="text"/>' });
       }
     }
-    
+
     for(var i=0; i < that.options.cards.length; i++) {
-      if(images[i]) {  
+      if(images[i]) {
         images[i].css('height', max_height);
         var imageh = max_height - that.options.cards[i].image.height;
         if(imageh) {
