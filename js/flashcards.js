@@ -165,7 +165,7 @@ H5P.Flashcards = function (options, contentId) {
            that.options.cards[i].image.height = question.innerWidth() / (that.options.cards[i].image.width / that.options.cards[i].image.height);
         }
 
-        images[i] = addElement(question, null, 'flashcard-image', { text: '<img '+width+'src="'+H5P.getPath(contentId, that.options.cards[i].image.path)+'"/>' });
+        images[i] = addElement(question, null, 'flashcard-image', { text: '<img '+width+'src="'+H5P.getPath(that.options.cards[i].image.path, contentId)+'"/>' });
         if(that.options.cards[i].image.height > max_height) {
           max_height = that.options.cards[i].image.height;
         }
