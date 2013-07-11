@@ -22,5 +22,12 @@
     }
   ],
   "w": 635,
-  "h": 500
+  "h": 500,
+  "editorDependencies": [
+    {
+      "machineName": "H5PEditor.VerticalTabs",
+      "majorVersion": 1,
+      "minorVersion": 0
+    }
+  ]
 }
