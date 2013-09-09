@@ -58,6 +58,10 @@
   -ms-transition: -ms-transform 0.25s;
   transition: transform 0.25s;
 }
+.h5p-flashcards .h5p-card > img {
+  display: block;
+  margin: 0 auto;
+}
 .h5p-flashcards .h5p-foot {
   position: absolute;
   bottom: 0;
