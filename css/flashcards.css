@@ -1,187 +1,172 @@
-.flashcard {
+.h5p-flashcards {
   position: relative;
-  padding: 20px 0;
   background-color: #F5F5F5;
-  padding-bottom: 20px;
-}
-.flashcard .fasit-container {
-  display: none;
-  position: absolute;
-  top: -55px;
-  text-align: center;
-  width: inherit;
-  height: 30px;
-}
-.flashcard .fasit {
-  font-size: 14px;
-  padding: 5px 20px 5px 20px;
-  background-color: white;
-  border: 2px solid #333333;
-  border-radius: 6px;
-  width: 200px;
-}
-.flashcard .flashcard-inner-panel {
-  position: relative;
-  margin-top: 20px;
-  width: 400px;
-  margin-left:auto;
-  margin-right:auto;
   overflow: hidden;
+  padding: 1em 0;
 }
-.flashcard-image {
-  position: relative;
-  background-color: black;
-}
-.flashcard-image-text {
-  color: black;
-  width: 100%;
-  position: absolute;
-  bottom: 0px;
+.h5p-flashcards .h5p-loading {
+  padding: 1em;
   text-align: center;
-  opacity: 0.9;
-  background-color: #ffffff;
 }
-.flashcard-image img {
-  border: 0px;
-  padding: 0;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-  align: center;
-}
-.flashcard-label {
-  padding-left: 10px;
-  float: left;
-}
-.flashcard-input {
-  padding-left: 20px;
-  padding-right: 5px;
-  float: right;
-}
-.flashcard-input input {
-  width: 100px;
-}
-.flashcard .flashcards,.flashcard-question {
-  font-size: 14px;
-  width: 400px;
-  position: absolute;
-}
-.flashcard-inner-panel .h5p-flashcards-nav {
-  position: absolute;
-  bottom: 0px;
-  height: 30px;
-  width: 400px;
-  z-index: 1;
-}
-.flashcard-text {
-  font-size: 18px;
+.h5p-flashcards .h5p-title {
   text-align: center;
-  padding-top: 80px;
-  padding-bottom: 80px;
-  border: 2px solid #CCCCCC;
+  font-size: 1.5em;
+  margin: 0;
 }
-#previous-flashcard {
-  display: none;
-  left: 0px;
-}
-#next-flashcard {
-  right: 0px;
-}
-.flashcard-navigation-button {
-  position: absolute;
+.h5p-flashcards .h5p-description {
   text-align: center;
-  cursor: pointer;
-  font-size: 12px;
-  border: 1px solid #808080;
-  border-radius: 4px;
-  padding-right: 10px;
-  padding-left: 10px;
-  background: #ffffff; /* Old browsers */
-  background: -moz-linear-gradient(top,  #ffffff 0%, #e0e0e0 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#e0e0e0)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top,  #ffffff 0%,#e0e0e0 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top,  #ffffff 0%,#e0e0e0 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top,  #ffffff 0%,#e0e0e0 100%); /* IE10+ */
-  background: linear-gradient(to bottom,  #ffffff 0%,#e0e0e0 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e0e0e0',GradientType=0 ); /* IE6-9 */
-}
-.flashcard-navigation-button:hover {
-  background: #dddddd; /* Old browsers */
-  background: -moz-linear-gradient(top,  #ffffff 0%, #e3f5ab 47%, #c2ef6e 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(47%,#e3f5ab), color-stop(100%,#c2ef6e)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top,  #ffffff 0%,#e3f5ab 47%,#c2ef6e 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top,  #ffffff 0%,#e3f5ab 47%,#c2ef6e 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top,  #ffffff 0%,#e3f5ab 47%,#c2ef6e 100%); /* IE10+ */
-  background: linear-gradient(to bottom,  #ffffff 0%,#e3f5ab 47%,#c2ef6e 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#c2ef6e',GradientType=0 ); /* IE6-9 */
-}
-.flashcard-show-answer {
-  margin-right: 10px;
-  position: inherit;
-  float: right;
-}
-.flashcard-question .input-container {
-  position: relative;
-  padding-top: 10px;
-  height: 30px;
-  text-align: center;
-  width: inherit;
-  background-color: #CCCCCC;
-}
-.flashcard-question span {
-  padding-left: 30px;
-  padding-right: 30px;
-}
-.flashcard .correct-answer {
-  background: url(img/tick.png) no-repeat center left;
-}
-.flashcard .wrong-answer {
-  background: url(img/cross.png) no-repeat center left;
-}
-.flashcard .panel {
-  position: relative;
-}
-.flashcard .flashcard-title {
-  text-align: center;
-  font-size: 24px;
-}
-.flashcard .flashcard-description {
-  text-align: center;
-  font-size: 14px;
-}
-.flashcard .question, .answer-question {
-  padding-top: 20px;
-  font-size: 14px;
-}
-.flashcard .button {
-  position: absolute;
-  cursor: pointer;
-  color: #2d2c28;
-  font-size: 16px;
-  padding: 11px 16px;
-  text-align: center;
-  border: 1px solid #808080;
-  border-radius: 4px;
-  background: #ffffff; /* Old browsers */
-  background: -moz-linear-gradient(top,  #ffffff 0%, #e0e0e0 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#e0e0e0)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top,  #ffffff 0%,#e0e0e0 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top,  #ffffff 0%,#e0e0e0 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top,  #ffffff 0%,#e0e0e0 100%); /* IE10+ */
-  background: linear-gradient(to bottom,  #ffffff 0%,#e0e0e0 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e0e0e0',GradientType=0 ); /* IE6-9 */
-}
-.h5p-content .button:hover {
-  background: #dddddd; /* Old browsers */
-  background: -moz-linear-gradient(top,  #ffffff 0%, #e3f5ab 47%, #c2ef6e 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(47%,#e3f5ab), color-stop(100%,#c2ef6e)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top,  #ffffff 0%,#e3f5ab 47%,#c2ef6e 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top,  #ffffff 0%,#e3f5ab 47%,#c2ef6e 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top,  #ffffff 0%,#e3f5ab 47%,#c2ef6e 100%); /* IE10+ */
-  background: linear-gradient(to bottom,  #ffffff 0%,#e3f5ab 47%,#c2ef6e 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#c2ef6e',GradientType=0 ); /* IE6-9 */
+  font-size: 1em;
 }
 
-.flashcard .correct-answer .h5p-input, .flashcard .wrong-answer .h5p-input {
-  background-color: #ebebeb;
+.h5p-flashcards .h5p-inner {
+  position: relative;
+  width: 400px;
+  height: 300px;
+  overflow: hidden;
+  margin: 1em auto 0.5em;
+  box-shadow: 0 0 1em #909090;
+}
+.h5p-flashcards .h5p-card {
+  display: none;
+  position: absolute;
+  background: #fff;
+  width: 400px;
+  top: 0;
+  left: 0;
+  -webkit-transform: translate3d(100%,0,0);
+  -moz-transform: translate3d(100%,0,0);
+  -ms-transform: translate3d(100%,0,0);
+  transform: translate3d(100%,0,0);
+}
+.h5p-flashcards .h5p-card.h5p-current {
+  display: block;
+  -webkit-transform: translate3d(0,0,0);
+  -moz-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+.h5p-flashcards .h5p-card.h5p-previous {
+  -webkit-transform: translate3d(-100%,0,0);
+  -moz-transform: translate3d(-100%,0,0);
+  -ms-transform: translate3d(-100%,0,0);
+  transform: translate3d(-100%,0,0);
+}
+.h5p-flashcards .h5p-card.h5p-animate {
+  display: block;
+  -webkit-transition: -webkit-transform 0.25s;
+  -moz-transition: -moz-transform 0.25s;
+  -ms-transition: -ms-transform 0.25s;
+  transition: transform 0.25s;
+}
+.h5p-flashcards .h5p-foot {
+  position: absolute;
+  bottom: 0;
+  width: 400px;
+}
+.h5p-flashcards .h5p-imagetext {
+  background: rgba(224,224,224,0.85);
+  text-align: center;
+  padding: 0.25em;
+}
+.h5p-flashcards .h5p-answer {
+  padding: 0.25em;
+  background: #d0d0d0;
+  overflow: hidden;
+  font-size: 0.875em;
+}
+.h5p-flashcards .h5p-input {
+  float: right;
+  padding: 0 0 0 16px;
+}
+.h5p-flashcards .h5p-input.h5p-correct {
+  background: url(img/tick.png) no-repeat center left;
+}
+.h5p-flashcards .h5p-input.h5p-wrong {
+  background: url(img/cross.png) no-repeat center left;
+}
+.h5p-flashcards .h5p-textinput {
+  margin: 3px 0.25em 2px;
+  font-size: 1em;
+  border-radius: 0.25em;
+  border: 0.0625em solid #a0a0a0;
+  padding: 0.25em 0.5em;
+  width: 8em;
+  vertical-align: bottom;
+}
+.h5p-flashcards .h5p-textinput:focus {
+  outline: none;
+  box-shadow: 0 0 0.5em 0 #7fb8ff;
+  border-color: #7fb8ff;
+}
+.h5p-flashcards .h5p-button {
+  cursor: pointer;
+  margin: 3px 0.25em 2px;
+  border-radius: 0.25em;
+  padding: 0.35em 0.5em;
+  font-size: 0.875em;
+  background: #ccc;
+  border: 1px solid #808080;
+  vertical-align: bottom;
+  background: #bfbfbf;
+  background: -webkit-linear-gradient(top, #ffffff 0%, #e0e0e0 100%);
+  background: -moz-linear-gradient(top, #ffffff 0%, #e0e0e0 100%);
+  background: -ms-linear-gradient(top, #ffffff 0%, #e0e0e0 100%);
+  background: linear-gradient(to bottom, #ffffff 0%, #e0e0e0 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e0e0e0', GradientType=0);
+}
+.h5p-flashcards input[type="button"]::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+.h5p-flashcards .h5p-button:hover {
+  background: #cfcfcf;
+  background: -webkit-linear-gradient(top, #ffffff 0%, #e3f5ab 45%,#c2ef6e 100%);
+  background: -moz-linear-gradient(top, #ffffff 0%, #e3f5ab 45%, #c2ef6e 100%);
+  background: -ms-linear-gradient(top, #ffffff 0%, #e3f5ab 45%, #c2ef6e 100%);
+  background: linear-gradient(to bottom, #ffffff 0%, #e3f5ab 45%, #c2ef6e 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#c2ef6e', GradientType=0);
+}
+.h5p-flashcards .h5p-progress {
+  float: left;
+  margin: 4px 0.25em 0;
+  font-size: 0.875em;
+}
+.h5p-flashcards .h5p-navigation {
+  width: 400px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.h5p-flashcards .h5p-next {
+  float: right;
+}
+.h5p-flashcards .h5p-hidden {
+  display: none;
+}
+.h5p-flashcards .h5p-solution {
+  text-align: center;
+  width: 400px;
+  position: absolute;
+  top: 50%;
+  font-weight: bold;
+}
+.h5p-flashcards .h5p-solution > span {
+  display: inline-block;
+  padding: 0.25em 0.5em;
+  border-radius: 0.25em;
+  border: 2px solid #393939;
+  background: #e0ffe0;
+
+  -webkit-transition: -webkit-transform 0.2s;
+  -moz-transition: -moz-transform 0.2s;
+  -ms-transition: -ms-transform 0.2s;
+  transition: transform 0.2s;
+}
+.h5p-flashcards .h5p-solution.h5p-hidden {
+  display: block;
+}
+.h5p-flashcards .h5p-solution.h5p-hidden > span {
+  -webkit-transform: rotate(90deg) scale(0,0);
+  -moz-transform: rotate(90deg) scale(0,0);
+  -ms-transform: rotate(90deg) scale(0,0);
+  transform: rotate(90deg) scale(0,0);
 }

@@ -19,222 +19,194 @@ if (H5P.getPath === undefined) {
   };
 }
 
-H5P.Flashcards = function (options, contentId) {
-  var $panel;
-  var $target;
-  var that = this;
-  var $ = H5P.jQuery;
-  this.options = $.extend({}, {
-    title: "Flashcards",
-    description: "What does the card mean?",
-    progressText: "Card @card of @total",
-    next: "Next",
-    previous: "Previous",
-    checkAnswerText: "Check answer"
-  }, options);
+/**
+ * Flashcards module.
+ *
+ * @param {jQuery} $
+ */
+H5P.Flashcards = (function ($) {
 
-  if ( !(this instanceof H5P.Flashcards) ){
-    return new H5P.Flashcards(options, contentId);
-  }
+  /**
+   * Initialize module.
+   *
+   * @param {Object} options Run parameters
+   * @param {Number} id Content identification
+   */
+  function C(options, id) {
+    this.id = id;
+    this.options = $.extend({}, {
+      title: "Flashcards",
+      description: "What does the card mean?",
+      progressText: "Card @card of @total",
+      next: "Next",
+      previous: "Previous",
+      checkAnswerText: "Check answer"
+    }, options);
 
-  var getScore = function(){
-    var score = 0;
-    $panel.find('.h5p-input').each(function (idx, el) {
-      var i = parseInt(el.id.replace(/^.*-/,''));
-      var correct_answer = that.options.cards[i].answer.toLowerCase();
-      var answer_given = $(el).val().trim().toLowerCase();
-      score += correct_answer == answer_given ? 1 : 0;
-    });
-    return score;
-  }
-
-  var getAnswerGiven = function(){
-    var answers = 0;
-    $panel.find('.h5p-input').each(function (idx, el) {
-      var answer_given = $(el).val().trim().toLowerCase();
-      if(answer_given != ''){
-        answers++;
-      }
-    });
-    return totalScore() == answers;
+    this.$images = [];
   };
 
-  var focusElement = function(el){
-    var i = Math.round(-parseInt(el.css('left')) / parseInt(el.css('width')));
-    $('#'+$panel.attr('id')+'-input-'+i).focus();
-  }
+  /**
+   * Append field to wrapper.
+   *
+   * @param {jQuery} $container
+   */
+  C.prototype.attach = function ($container) {
+    var that = this;
 
-  var totalScore = function(){
-    var score = 0;
-    $panel.find('.h5p-input').each(function (idx, el) {
-      score++;
-    });
-    return score;
+    this.$container = $container.addClass('h5p-flashcards').html('<div class="h5p-loading">Loading, please wait...</div>');
+
+    // Load card images. (we need their size before we can create the task)
+    var loaded = 0;
+    for (var i = 0; i < this.options.cards.length; i++) {
+      var load = function () {
+        loaded++;
+        if (loaded === that.options.cards.length) {
+          that.cardsLoaded();
+        }
+      };
+      var $image = $('<img src="' + H5P.getPath(this.options.cards[i].image.path, this.id) + '"/>').load(load);
+      this.$images.push($image);
+      if ($image.get().complete) {
+        // Image cached
+        loaded();
+      }
+    }
   };
 
-  var showScore = function(){
-    var left = -parseInt($('#flashcards').css('left'));
-    if (isNaN(left)) {
-      left = 0;
-    }
-    var i = Math.round(left / parseInt($('#flashcards').css('width')));
-    $('#'+$panel.attr('id')+'-fasit-'+i).fadeIn('slow');
-
-    var $answer = $('#'+$panel.attr('id')+'-input-'+i).attr('disabled', 'disabled');
-    var answer_given = $answer.val().trim().toLowerCase();
-    if(that.options.cards[i].answer.toLowerCase() == answer_given) {
-      $answer.parent().removeClass('wrong-answer').addClass('correct-answer');
-    }
-    else {
-      $answer.parent().removeClass('correct-answer').addClass('wrong-answer');
-    }
-  }
-
-  function addElement(container, id, className, el) {
-    var text = el.text ? el.text : '';
-    var $el = $('<div class="'+className+'">'+text+'</div>');
-    container.append($el);
-    if(el.top) {
-      $el.css({ top: el.top});
-    }
-    if(el.left) {
-      $el.css({ left: el.left});
-    }
-    if(el.right) {
-      $el.css({ right: el.right});
-    }
-    if(el.bottom) {
-      $el.css({ bottom: el.bottom});
-    }
-    if(id) {
-      $el.attr('id', id);
-    }
-    if(el.height) {
-      $el.css({ height: el.height });
-    }
-    if(el.width) {
-      $el.css({ width: el.width });
-    }
-    if(el.click) {
-      $el.click(el.click);
-    }
-    return $el;
-  }
-
-  var attach = function (el) {
-    $target = $(el);
-    $target.addClass('flashcard');
-    $panel = addElement($target, 'panel-'+$target.attr('data-content-id'), 'panel', { });
-    $panel.append('<H2 class="flashcard-title">' + that.options.title + '</h2>');
-    addElement($panel, null, 'flashcard-description', { text: that.options.description });
-
-    // Panel setup
-    var $cards = addElement($panel, null, 'flashcard-inner-panel', { });
-    var $flashcards = addElement($cards, 'flashcards', 'flashcards', { });
-    var $navigation = addElement($cards, null, 'h5p-flashcards-nav', { });
-
-    var $prev = addElement($navigation, 'previous-flashcard', 'flashcard-navigation-button', {
-      text: that.options.previous,
-      click: function() {
-        $flashcards.stop(true, true);
-        if ($prev.is(':visible')) {
-          $flashcards.animate({
-            left: '+='+$flashcards.css('width')
-          }, 'fast', 'swing', function() {
-            if (parseInt($flashcards.css('left')) >= 0) {
-              $prev.hide();
-            }
-            focusElement($flashcards);
-          });
-          $('#next-flashcard').show();
-        }
-      }
-    });
-
-    var $next = addElement($navigation, 'next-flashcard', 'flashcard-navigation-button', {
-      text: that.options.next,
-      click: function() {
-        $flashcards.stop(true, true);
-        if ($next.is(':visible')) {
-          $flashcards.animate({
-            left: '-='+$flashcards.css('width')
-          }, 'fast', 'swing', function() {
-            var length = that.options.cards.length * parseInt($flashcards.css('width')) - parseInt($flashcards.css('width'));
-            if (-parseInt($flashcards.css('left')) >= length) {
-              $next.hide();
-            }
-            focusElement($flashcards);
-          });
-          $('#previous-flashcard').show();
-        }
-      }
-    });
+  /**
+   * Called when all cards has been loaded.
+   */
+  C.prototype.cardsLoaded = function () {
+    var that = this;
+    var $inner = this.$container.html('<h2 class="h5p-title">' + this.options.title + '</h2><div class="h5p-description">' + this.options.description + '</div><div class="h5p-inner"></div><div class="h5p-navigation"><input type="button" class="h5p-button h5p-next" value="' + this.options.next + '"/><input type="button" class="h5p-button h5p-previous h5p-hidden" value="' + this.options.previous + '"/></div>').children('.h5p-inner');
 
     // Add cards
-    var max_height = 0;
-    var images = Array();
-    for(var i=0; i < that.options.cards.length; i++) {
-      var question = addElement($flashcards, $panel.attr('id')+'-question-'+i, 'flashcard-question', { left: i * parseInt($cards.css('width'))});
-      if(that.options.cards[i].image) {
-        var width = "";
+    for (var i = 0; i < this.options.cards.length; i++) {
+      this.addCard(i, $inner);
+    }
 
-        // Scale image if image to wide for question
-        if(that.options.cards[i].image.width > question.innerWidth()) {
-           width = " width=\""+question.innerWidth()+'px"';
-           that.options.cards[i].image.height = question.innerWidth() / (that.options.cards[i].image.width / that.options.cards[i].image.height);
-        }
+    // Find highest image and set task height.
+    var height = 0;
+    for (var i = 0; i < this.$images.length; i++) {
+      var $image = this.$images[i];
+      if ($image.width() > 400) {
+        $image.attr('width', 400);
+      }
 
-        images[i] = addElement(question, null, 'flashcard-image', { text: '<img '+width+'src="'+H5P.getPath(that.options.cards[i].image.path, contentId)+'"/>' });
-        if(that.options.cards[i].image.height > max_height) {
-          max_height = that.options.cards[i].image.height;
-        }
-		  if(that.options.cards[i].text) {
-          var textHeight = addElement(images[i], $panel.attr('id')+'-question-'+i, 'flashcard-image-text', { text: that.options.cards[i].text }).innerHeight();
-          if (max_height < textHeight) {
-            max_height = textHeight;
-          }
-        }
-      }
-		else if(that.options.cards[i].text) {
-        var textHeight = addElement(question, $panel.attr('id')+'-question-'+i, 'flashcard-text', { text: that.options.cards[i].text }).innerHeight();
-        if (max_height < textHeight) {
-            max_height = textHeight;
-          }
-      }
-      var input_container = addElement(question, null, 'input-container', { });
-      addElement(input_container, $panel.attr('id')+'-fasit-'+i, 'fasit-container', { text: '<span class="fasit">'+that.options.cards[i].answer+'</span>' });
-      addElement(input_container, null, 'flashcard-label', { text: that.options.progressText.replace('@card', i + 1).replace('@total', that.options.cards.length)});
-      if(that.options.cards[i].answer) {
-        // input_container.html('<span><input id="'+$panel.attr('id')+'-input-'+i+'" class="input" type="text"/></span>');
-        addElement(input_container, null, 'flashcard-navigation-button flashcard-show-answer', { click: showScore, text: that.options.checkAnswerText });
-        addElement(input_container, null, 'flashcard-input', { text: '<input id="'+$panel.attr('id')+'-input-'+i+'" class="h5p-input" type="text"/>' });
+      var imageHeight = $image.height();
+      if (imageHeight > height) {
+        height = imageHeight;
       }
     }
 
-    for(var i=0; i < that.options.cards.length; i++) {
-      if(images[i]) {
-        images[i].css('height', max_height);
-        var imageh = max_height - that.options.cards[i].image.height;
-        if(imageh) {
-           images[i].find('img').css('padding-top', Math.round(imageh / 2));
-        }
-      }
+    // Center images
+    for (var i = 0; i < this.$images.length; i++) {
+      var $image = this.$images[i];
+      var imageHeight = $image.height();
+      $image.css('marginTop', (height - imageHeight) / 2);
     }
 
-    $cards.css('height', max_height + input_container.outerHeight() + $navigation.outerHeight() + 5);
+    // Set height
+    $inner.add($inner.children().removeClass('h5p-animate')).css('height', height + 36);
 
-    $('#'+$panel.attr('id')+'-input-0').focus();
-
-    return this;
+    // Active buttons
+    var $buttonWrapper = $inner.next();
+    this.$nextButton = $buttonWrapper.children('.h5p-next').click(function () {
+      that.next();
+    });
+    this.$prevButton = $buttonWrapper.children('.h5p-previous').click(function () {
+      that.previous();
+    });
   };
 
-  var returnObject = {
-    attach: attach,
-    machineName: 'H5P.Flashcards',
-    getScore: getScore,
-    getAnswerGiven: getAnswerGiven,
-    totalScore: totalScore
+  C.prototype.addCard = function (index, $inner) {
+    var that = this;
+
+    var card = this.options.cards[index];
+    var imageText = (card.text !== undefined ? '<div class="h5p-imagetext">' + card.text + '</div>' : '');
+    var progress = this.options.progressText.replace('@card', index + 1).replace('@total', this.options.cards.length);
+    var $card = $('<div class="h5p-card h5p-animate' + (index === 0 ? ' h5p-current' : '') + '"><div class="h5p-foot">' + imageText + '<div class="h5p-answer"><div class="h5p-progress">' + progress + '</div><div class="h5p-input"><input type="text" class="h5p-textinput"/><input type="button" class="h5p-button" value="' + this.options.checkAnswerText + '"/></div></div></div></div>').appendTo($inner);
+    $card.prepend(this.$images[index]);
+
+    var $button = $card.find('.h5p-button').click(function () {
+      var $input = $card.find('.h5p-textinput');
+      $input.add(this).attr('disabled', true);
+      var correct = that.options.cards[index].answer;
+      if ($input.val() === correct.toLowerCase()) {
+        $input.parent().addClass('h5p-correct');
+      }
+      else {
+        $input.parent().addClass('h5p-wrong');
+      }
+      var $solution = $('<div class="h5p-solution h5p-hidden"><span>' + correct + '</span></div>').appendTo($card);
+      setTimeout(function () {
+        $solution.removeClass('h5p-hidden');
+      }, 1);
+    });
+    $card.find('.h5p-textinput').keypress(function (event) {
+      if (event.keyCode === 13) {
+        $button.click();
+        return false;
+      }
+    });
+
+    if (index === 0) {
+      this.$current = $card;
+    }
   };
 
-  return returnObject;
-};
+  /**
+   * Display next card.
+   */
+  C.prototype.next = function () {
+    var that = this;
+    var $next = this.$current.next();
+    if (!$next.length) {
+      return;
+    }
+
+    var $cards = this.$current.add($next).addClass('h5p-animate');
+    setTimeout(function () {
+      that.$current.removeClass('h5p-current').addClass('h5p-previous');
+      that.$current = $next.addClass('h5p-current');
+
+      if (!that.$current.next().length) {
+        that.$nextButton.addClass('h5p-hidden');
+      }
+      that.$prevButton.removeClass('h5p-hidden');
+    }, 1);
+
+    setTimeout(function () {
+      $cards.removeClass('h5p-animate');
+    }, 250);
+  };
+
+  /**
+   * Display previous card.
+   */
+  C.prototype.previous = function () {
+    var that = this;
+    var $prev = this.$current.prev();
+    if (!$prev.length) {
+      return;
+    }
+
+    var $cards = this.$current.add($prev).addClass('h5p-animate');
+    setTimeout(function () {
+      that.$current.removeClass('h5p-current');
+      that.$current = $prev.addClass('h5p-current').removeClass('h5p-previous');
+
+      if (!that.$current.prev().length) {
+        that.$prevButton.addClass('h5p-hidden');
+      }
+      that.$nextButton.removeClass('h5p-hidden');
+    }, 1);
+
+    setTimeout(function () {
+      $cards.removeClass('h5p-animate');
+    }, 250);
+  };
+
+  return C;
+})(H5P.jQuery);
