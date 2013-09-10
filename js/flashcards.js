@@ -90,7 +90,7 @@ H5P.Flashcards = (function ($) {
     }
 
     // Find highest image and set task height.
-    var height = 0;
+    var height = 180;
     for (var i = 0; i < this.$images.length; i++) {
       var $image = this.$images[i];
       if ($image === undefined) {
@@ -129,6 +129,10 @@ H5P.Flashcards = (function ($) {
     this.$prevButton = $buttonWrapper.children('.h5p-previous').click(function () {
       that.previous();
     });
+
+    if (this.options.cards.length < 2) {
+      this.$nextButton.hide();
+    }
   };
 
   C.prototype.addCard = function (index, $inner) {
