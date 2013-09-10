@@ -59,17 +59,20 @@ H5P.Flashcards = (function ($) {
     // Load card images. (we need their size before we can create the task)
     var loaded = 0;
     for (var i = 0; i < this.options.cards.length; i++) {
+      var card = this.options.cards[i];
       var load = function () {
         loaded++;
         if (loaded === that.options.cards.length) {
           that.cardsLoaded();
         }
       };
-      var $image = $('<img src="' + H5P.getPath(this.options.cards[i].image.path, this.id) + '"/>').load(load);
-      this.$images.push($image);
-      if ($image.get().complete) {
+      if (card.image !== undefined) {
+        var $image = $('<img src="' + H5P.getPath(card.image.path, this.id) + '"/>').load(load);
+        this.$images[i] = $image;
+      }
+      if (card.image === undefined || $image.get().complete) {
         // Image cached
-        loaded();
+        load();
       }
     }
   };
@@ -90,6 +93,10 @@ H5P.Flashcards = (function ($) {
     var height = 0;
     for (var i = 0; i < this.$images.length; i++) {
       var $image = this.$images[i];
+      if ($image === undefined) {
+        continue;
+      }
+
       if ($image.width() > 400) {
         $image.attr('width', 400);
       }
@@ -103,6 +110,10 @@ H5P.Flashcards = (function ($) {
     // Center images
     for (var i = 0; i < this.$images.length; i++) {
       var $image = this.$images[i];
+      if ($image === undefined) {
+        continue;
+      }
+
       var imageHeight = $image.height();
       $image.css('marginTop', (height - imageHeight) / 2);
     }
