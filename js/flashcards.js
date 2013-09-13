@@ -147,14 +147,25 @@ H5P.Flashcards = (function ($) {
     var $button = $card.find('.h5p-button').click(function () {
       var $input = $card.find('.h5p-textinput');
       $input.add(this).attr('disabled', true);
-      var correct = that.options.cards[index].answer;
-      if ($input.val() === correct.toLowerCase()) {
+
+      var correct = that.options.cards[index].answer.toLowerCase().split('/');
+      var userAnswer = H5P.trim($input.val()).toLowerCase();
+      var userCorrect = false;
+      for (var i = 0; i < correct.length; i++) {
+        if (H5P.trim(correct[i]) === userAnswer) {
+          userCorrect = true;
+          break;
+        }
+      }
+
+      if (userCorrect) {
         $input.parent().addClass('h5p-correct');
       }
       else {
         $input.parent().addClass('h5p-wrong');
       }
-      var $solution = $('<div class="h5p-solution h5p-hidden"><span>' + correct + '</span></div>').appendTo($card);
+
+      var $solution = $('<div class="h5p-solution h5p-hidden"><span>' + that.options.cards[index].answer + '</span></div>').appendTo($card);
       setTimeout(function () {
         $solution.removeClass('h5p-hidden');
       }, 1);
