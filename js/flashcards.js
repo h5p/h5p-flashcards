@@ -40,7 +40,8 @@ H5P.Flashcards = (function ($) {
       progressText: "Card @card of @total",
       next: "Next",
       previous: "Previous",
-      checkAnswerText: "Check answer"
+      checkAnswerText: "Check answer",
+      postUserStatistics: (H5P.postUserStatistics === true)
     }, options);
 
     this.$images = [];
@@ -199,6 +200,9 @@ H5P.Flashcards = (function ($) {
 
       if (!that.$current.next().length) {
         that.$nextButton.addClass('h5p-hidden');
+        if (that.options.postUserStatistics === true) {
+          H5P.setFinished(that.id, 0, 0);
+        }
       }
       that.$prevButton.removeClass('h5p-hidden');
     }, 1);
