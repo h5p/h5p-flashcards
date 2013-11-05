@@ -40,8 +40,7 @@ H5P.Flashcards = (function ($) {
       progressText: "Card @card of @total",
       next: "Next",
       previous: "Previous",
-      checkAnswerText: "Check answer",
-      postUserStatistics: (H5P.postUserStatistics === true)
+      checkAnswerText: "Check answer"
     }, options);
 
     this.$images = [];
@@ -83,8 +82,9 @@ H5P.Flashcards = (function ($) {
    */
   C.prototype.cardsLoaded = function () {
     var that = this;
-    var $inner = this.$container.html('<h2 class="h5p-title">' + this.options.title + '</h2><div class="h5p-description">' + this.options.description + '</div><div class="h5p-inner"></div><div class="h5p-navigation"><input type="button" class="h5p-button h5p-next" value="' + this.options.next + '"/><input type="button" class="h5p-button h5p-previous h5p-hidden" value="' + this.options.previous + '"/></div>').children('.h5p-inner');
-
+    var $inner = this.$container.html(/*'<h2 class="h5p-title">' + this.options.title + '</h2>*/'<div class="h5p-description">' + this.options.description + '</div><div class="h5p-inner"></div><div class="h5p-navigation"><button class="h5p-button h5p-previous h5p-hidden">' + this.options.previous + '</button><button class="h5p-button h5p-next">' + this.options.next + '</button><div class="h5p-progress"></div>').children('.h5p-inner');
+    this.$progress = this.$container.find('.h5p-progress');
+    
     // Add cards
     for (var i = 0; i < this.options.cards.length; i++) {
       this.addCard(i, $inner);
@@ -98,8 +98,8 @@ H5P.Flashcards = (function ($) {
         continue;
       }
 
-      if ($image.width() > 400) {
-        $image.attr('width', 400);
+      if ($image.width() > 300) {
+        $image.attr('width', 300);
       }
 
       var imageHeight = $image.height();
@@ -116,11 +116,12 @@ H5P.Flashcards = (function ($) {
       }
 
       var imageHeight = $image.height();
-      $image.css('marginTop', (height - imageHeight) / 2);
+      $image.css('marginTop', Math.floor((height - imageHeight) / 2));
     }
 
     // Set height
-    $inner.add($inner.children().removeClass('h5p-animate')).css('height', height + 36);
+    $inner.css('height', height + 286);
+    $inner.children().removeClass('h5p-animate').css('height', height + 264);
 
     // Active buttons
     var $buttonWrapper = $inner.next();
@@ -134,6 +135,8 @@ H5P.Flashcards = (function ($) {
     if (this.options.cards.length < 2) {
       this.$nextButton.hide();
     }
+    
+    this.setProgress();
   };
 
   C.prototype.addCard = function (index, $inner) {
@@ -141,8 +144,7 @@ H5P.Flashcards = (function ($) {
 
     var card = this.options.cards[index];
     var imageText = (card.text !== undefined ? '<div class="h5p-imagetext">' + card.text + '</div>' : '');
-    var progress = this.options.progressText.replace('@card', index + 1).replace('@total', this.options.cards.length);
-    var $card = $('<div class="h5p-card h5p-animate' + (index === 0 ? ' h5p-current' : '') + '"><div class="h5p-foot">' + imageText + '<div class="h5p-answer"><div class="h5p-progress">' + progress + '</div><div class="h5p-input"><input type="text" class="h5p-textinput"/><input type="button" class="h5p-button" value="' + this.options.checkAnswerText + '"/></div></div></div></div>').appendTo($inner);
+    var $card = $('<div class="h5p-card h5p-animate' + (index === 0 ? ' h5p-current' : '') + '"><div class="h5p-foot">' + imageText + '<div class="h5p-answer"><div class="h5p-input"><input type="text" class="h5p-textinput"/><button class="h5p-button">' + this.options.checkAnswerText + '</button></div></div></div></div>').appendTo($inner);
     $card.prepend(this.$images[index]);
 
     var $button = $card.find('.h5p-button').click(function () {
@@ -165,11 +167,16 @@ H5P.Flashcards = (function ($) {
       else {
         $input.parent().addClass('h5p-wrong');
       }
+      
+      that.$images[index].addClass('h5p-collapse');
+      setTimeout(function () {
+        that.$images[index].removeClass('h5p-collapse');
+      }, 150);
 
-      var $solution = $('<div class="h5p-solution h5p-hidden"><span>' + that.options.cards[index].answer + '</span></div>').appendTo($card);
+      var $solution = $('<div class="h5p-solution h5p-hidden" style="top:' + (Math.floor(that.$images[index].height() / 2) + 14) + 'px"><span>' + that.options.cards[index].answer + '</span></div>').appendTo($card);
       setTimeout(function () {
         $solution.removeClass('h5p-hidden');
-      }, 1);
+      }, 150);
     });
     $card.find('.h5p-textinput').keypress(function (event) {
       if (event.keyCode === 13) {
@@ -181,6 +188,11 @@ H5P.Flashcards = (function ($) {
     if (index === 0) {
       this.$current = $card;
     }
+  };
+  
+  C.prototype.setProgress = function () {
+    var index = this.$current.index();
+    this.$progress.text(this.options.progressText.replace('@card', index + 1).replace('@total', this.options.cards.length));
   };
 
   /**
@@ -200,16 +212,14 @@ H5P.Flashcards = (function ($) {
 
       if (!that.$current.next().length) {
         that.$nextButton.addClass('h5p-hidden');
-        if (that.options.postUserStatistics === true) {
-          H5P.setFinished(that.id, 0, 0);
-        }
       }
       that.$prevButton.removeClass('h5p-hidden');
-    }, 1);
-
-    setTimeout(function () {
-      $cards.removeClass('h5p-animate');
-    }, 250);
+      that.setProgress();
+      
+      setTimeout(function () {
+        $cards.removeClass('h5p-animate');
+      }, 250);
+    }, 10);
   };
 
   /**
@@ -231,11 +241,12 @@ H5P.Flashcards = (function ($) {
         that.$prevButton.addClass('h5p-hidden');
       }
       that.$nextButton.removeClass('h5p-hidden');
-    }, 1);
-
-    setTimeout(function () {
-      $cards.removeClass('h5p-animate');
-    }, 250);
+      that.setProgress();
+      
+      setTimeout(function () {
+        $cards.removeClass('h5p-animate');
+      }, 250);
+    }, 10);
   };
 
   return C;
