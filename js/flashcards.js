@@ -35,7 +35,6 @@ H5P.Flashcards = (function ($) {
   function C(options, id) {
     this.id = id;
     this.options = $.extend({}, {
-      title: "Flashcards",
       description: "What does the card mean?",
       progressText: "Card @card of @total",
       next: "Next",
@@ -82,7 +81,7 @@ H5P.Flashcards = (function ($) {
    */
   C.prototype.cardsLoaded = function () {
     var that = this;
-    var $inner = this.$container.html(/*'<h2 class="h5p-title">' + this.options.title + '</h2>*/'<div class="h5p-description">' + this.options.description + '</div><div class="h5p-inner"></div><div class="h5p-navigation"><button class="h5p-button h5p-previous h5p-hidden">' + this.options.previous + '</button><button class="h5p-button h5p-next">' + this.options.next + '</button><div class="h5p-progress"></div>').children('.h5p-inner');
+    var $inner = this.$container.html('<div class="h5p-description">' + this.options.description + '</div><div class="h5p-inner"></div><div class="h5p-navigation"><button class="h5p-button h5p-previous h5p-hidden">' + this.options.previous + '</button><button class="h5p-button h5p-next">' + this.options.next + '</button><div class="h5p-progress"></div>').children('.h5p-inner');
     this.$progress = this.$container.find('.h5p-progress');
     
     // Add cards
