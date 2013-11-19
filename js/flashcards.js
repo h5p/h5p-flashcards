@@ -84,9 +84,9 @@ H5P.Flashcards = (function ($) {
    */
   C.prototype.cardsLoaded = function () {
     var that = this;
-    var $inner = this.$container.html('<div class="h5p-description">' + this.options.description + '</div><div class="h5p-inner"></div><div class="h5p-navigation"><button class="h5p-button h5p-previous h5p-hidden" tabindex="3">' + this.options.previous + '</button><button class="h5p-button h5p-next" tabindex="4">' + this.options.next + '</button><div class="h5p-progress"></div>').children('.h5p-inner');
+    var $inner = this.$container.html('<div class="h5p-description">' + this.options.description + '</div><div class="h5p-inner"></div><div class="h5p-navigation"><button type="button" class="h5p-button h5p-previous h5p-hidden" tabindex="3">' + this.options.previous + '</button><button type="button" class="h5p-button h5p-next" tabindex="4">' + this.options.next + '</button><div class="h5p-progress"></div>').children('.h5p-inner');
     this.$progress = this.$container.find('.h5p-progress');
-    
+
     // Add cards
     for (var i = 0; i < this.options.cards.length; i++) {
       this.addCard(i, $inner);
@@ -130,7 +130,7 @@ H5P.Flashcards = (function ($) {
     if (this.options.cards.length < 2) {
       this.$nextButton.hide();
     }
-    
+
     this.setProgress();
   };
 
@@ -139,7 +139,7 @@ H5P.Flashcards = (function ($) {
 
     var card = this.options.cards[index];
     var imageText = (card.text !== undefined ? '<div class="h5p-imagetext">' + card.text + '</div>' : '');
-    var $card = $('<div class="h5p-card h5p-animate' + (index === 0 ? ' h5p-current' : '') + '"><div class="h5p-foot">' + imageText + '<div class="h5p-answer"><div class="h5p-input"><input type="text" class="h5p-textinput" tabindex="-1"/><button class="h5p-button" tabindex="-1">' + this.options.checkAnswerText + '</button></div></div></div></div>').appendTo($inner);
+    var $card = $('<div class="h5p-card h5p-animate' + (index === 0 ? ' h5p-current' : '') + '"><div class="h5p-foot">' + imageText + '<div class="h5p-answer"><div class="h5p-input"><input type="text" class="h5p-textinput" tabindex="-1"/><button type="button" class="h5p-button" tabindex="-1">' + this.options.checkAnswerText + '</button></div></div></div></div>').appendTo($inner);
     $card.prepend(this.$images[index]);
 
     var $button = $card.find('.h5p-button').click(function () {
@@ -162,7 +162,7 @@ H5P.Flashcards = (function ($) {
       else {
         $input.parent().addClass('h5p-wrong');
       }
-      
+
       that.$images[index].addClass('h5p-collapse');
       setTimeout(function () {
         that.$images[index].removeClass('h5p-collapse');
@@ -184,7 +184,7 @@ H5P.Flashcards = (function ($) {
       this.setCurrent($card);
     }
   };
-  
+
   C.prototype.setProgress = function () {
     var index = this.$current.index();
     this.$progress.text(this.options.progressText.replace('@card', index + 1).replace('@total', this.options.cards.length));
