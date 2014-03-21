@@ -242,6 +242,27 @@ H5P.Flashcards = (function ($) {
       that.setProgress();
     }, 10);
   };
+  
+  /**
+   * Gather copyright information from cards.
+   *
+   * @returns {H5P.ContentCopyrights}
+   */
+  C.prototype.getCopyrights = function () {
+    var info = new H5P.ContentCopyrights();
+    
+    // Go through cards
+    for (var i = 0; i < this.options.cards.length; i++) {
+      var image = this.options.cards[i].image;
+      if (image.copyright !== undefined) {
+        var rights = new H5P.MediaCopyright(image.copyright);
+        rights.setThumbnail(new H5P.Thumbnail(H5P.getPath(image.path, this.id), image.width, image.height));
+        info.addMedia(rights);
+      }
+    }
+  
+    return info;
+  };
 
   return C;
 })(H5P.jQuery);
