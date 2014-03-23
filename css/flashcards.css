@@ -260,20 +260,20 @@
   overflow: hidden;
   position: relative;
   height: 46px;
-  padding-top: 2px;
+  padding-top: 6px;
   display:table;
   vertical-align:middle;
 }
 
 .h5p-flashcards .h5p-next {
   position: absolute;
-  right: 0;
+  right: 0.375em;
   padding-right: 0.375em;
 }
 
 .h5p-flashcards .h5p-previous {
   position: absolute;
-  left: 0;
+  left: 0.375em;
   padding-left: 0.375em;
 }
 
