@@ -39,7 +39,8 @@ H5P.Flashcards = (function ($) {
       progressText: "Card @card of @total",
       next: "Next",
       previous: "Previous",
-      checkAnswerText: "Check answer"
+      checkAnswerText: "Check answer",
+      showSolutionsRequiresInput: true
     }, options);
 
     this.$images = [];
@@ -144,9 +145,11 @@ H5P.Flashcards = (function ($) {
 
     var $button = $card.find('.h5p-button').click(function () {
       var $input = $card.find('.h5p-textinput');
-      $input.add(this).attr('disabled', true);
-
-      var correct = that.options.cards[index].answer.toLowerCase().split('/');
+      var correctAnswer = that.options.cards[index].answer;
+      if (correctAnswer === undefined) {
+        correctAnswer = '';
+      }
+      var correct = correctAnswer.toLowerCase().split('/');
       var userAnswer = H5P.trim($input.val()).toLowerCase();
       var userCorrect = false;
       for (var i = 0; i < correct.length; i++) {
@@ -155,23 +158,27 @@ H5P.Flashcards = (function ($) {
           break;
         }
       }
+      
+      if (!that.options.showSolutionsRequiresInput || userAnswer !== '' || userCorrect) {
+        $input.add(this).attr('disabled', true);
 
-      if (userCorrect) {
-        $input.parent().addClass('h5p-correct');
+        if (userCorrect) {
+          $input.parent().addClass('h5p-correct');
+        }
+        else {
+          $input.parent().addClass('h5p-wrong');
+        }
+
+        that.$images[index].addClass('h5p-collapse');
+        setTimeout(function () {
+          that.$images[index].removeClass('h5p-collapse');
+        }, 150);
+
+        var $solution = $('<div class="h5p-solution h5p-hidden" style="top:' + (Math.floor(that.$images[index].outerHeight() / 2) + 4) + 'px"><span>' + correctAnswer + '</span></div>').appendTo($card);
+        setTimeout(function () {
+          $solution.removeClass('h5p-hidden');
+        }, 150);
       }
-      else {
-        $input.parent().addClass('h5p-wrong');
-      }
-
-      that.$images[index].addClass('h5p-collapse');
-      setTimeout(function () {
-        that.$images[index].removeClass('h5p-collapse');
-      }, 150);
-
-      var $solution = $('<div class="h5p-solution h5p-hidden" style="top:' + (Math.floor(that.$images[index].outerHeight() / 2) + 4) + 'px"><span>' + that.options.cards[index].answer + '</span></div>').appendTo($card);
-      setTimeout(function () {
-        $solution.removeClass('h5p-hidden');
-      }, 150);
     });
     $card.find('.h5p-textinput').keypress(function (event) {
       if (event.keyCode === 13) {
