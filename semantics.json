@@ -67,5 +67,12 @@
     "type": "text",
     "default": "Check answer",
     "common": true
+  },
+  {
+    "label": "Require user input before the solution can be viewed",
+    "name": "showSolutionsRequiresInput",
+    "type": "boolean",
+    "default": true,
+    "optional": true
   }
 ]

@@ -40,6 +40,9 @@
     {
       "label": "Tekst for \"Sjekk svar\" knappen",
       "default": "Sjekk svar"
+    },
+    {
+      "label": "Krev inndata fra brukeren før fasit gis."
     }
   ]
 }
