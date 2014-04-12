@@ -21,7 +21,7 @@
 
 .h5p-flashcards .h5p-description {
   text-align: left;
-  margin: 0;
+  margin: 0 0.5em;
   border-bottom: 0.1em solid #ddd;
   padding: 0.375em 0 0.375em;
 }
@@ -171,6 +171,11 @@
   top: 2em;
   font-size: 1em;
 }
+
+/* If tip is present, correct/wrong marker has to be moved to the left */
+.h5p-flashcards .h5p-inner .h5p-answer .h5p-input.has-tip:after {
+  left: 20.5em;
+} 
 
 .h5p-flashcards .h5p-textinput {
   font-size: 1em;
@@ -334,4 +339,10 @@
 button::-moz-focus-inner {
   padding: 0;
   border: 0;
+}
+
+.h5p-flashcards .joubel-tip-container {
+  position: absolute;
+  right: 1.5em;
+  top: 1.5em;
 }

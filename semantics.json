@@ -35,6 +35,21 @@
           "label": "Image",
           "optional": true,
           "description": "Optional image for the card. (The card may use just an image, just a text or both)"
+        },
+        {
+          "name": "tip",
+          "type": "group",
+          "label": "Tip",
+          "optional": true,
+          "fields": [
+            {
+              "name": "tip",
+              "label": "Tip",
+              "type": "text",
+              "optional": true,
+              "description": "An icon is placed on the card. When icon is clicked the tip is displayed"
+            }
+          ]
         }
       ]
     }
