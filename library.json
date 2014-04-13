@@ -20,16 +20,6 @@
   ],
   "preloadedDependencies": [
     {
-      "machineName": "FontAwesome",
-      "majorVersion": 3,
-      "minorVersion": 1
-    },
-    {
-      "machineName": "H5P.API",
-      "majorVersion": 1,
-      "minorVersion": 0
-    },
-    {
       "machineName": "H5P.JoubelUI",
       "majorVersion": 1,
       "minorVersion": 0
