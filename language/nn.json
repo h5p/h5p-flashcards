@@ -20,6 +20,15 @@
           {
             "label": "Bilde",
             "description": "Valfritt tekstleg spørsmål. (Kortet kan innehalde bilde, tekst, eller begge deler)"
+          },
+          {
+            "label": "Tips",
+            "fields": [
+              {
+                "label": "Tips",
+                "description": "Et tipsikon blir plassert på kortet. Når man trykker på ikonet, vises tipset"
+              }
+            ]
           }
         ]
       }

@@ -124,6 +124,11 @@ H5P.Flashcards = (function ($) {
     var $card = $('<div class="h5p-card h5p-animate' + (index === 0 ? ' h5p-current' : '') + '"><div class="h5p-foot">' + imageText + '<div class="h5p-answer"><div class="h5p-input"><input type="text" class="h5p-textinput" tabindex="-1"/><button type="button" class="h5p-button" tabindex="-1">' + this.options.checkAnswerText + '</button></div></div></div></div>').appendTo($inner);
     $card.prepend(this.$images[index]);
 
+    // Add tip if tip exists
+    if (card.tip !== undefined && card.tip.trim().length > 0) {
+      $('.h5p-input', $card).append(H5P.JoubelUI.createTip(card.tip)).addClass('has-tip');
+    }
+    
     var $button = $card.find('.h5p-button').click(function () {
       var $input = $card.find('.h5p-textinput');
       var correctAnswer = that.options.cards[index].answer;
@@ -258,7 +263,7 @@ H5P.Flashcards = (function ($) {
     // Go through cards
     for (var i = 0; i < this.options.cards.length; i++) {
       var image = this.options.cards[i].image;
-      if (image.copyright !== undefined) {
+      if (image !== undefined && image.copyright !== undefined) {
         var rights = new H5P.MediaCopyright(image.copyright);
         rights.setThumbnail(new H5P.Thumbnail(H5P.getPath(image.path, this.id), image.width, image.height));
         info.addMedia(rights);
