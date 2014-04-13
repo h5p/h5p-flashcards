@@ -25,8 +25,7 @@
             "label": "Tips",
             "fields": [
               {
-                "label": "Tips",
-                "description": "Et tipsikon blir plassert på kortet. Når man trykker på ikonet, vises tipset"
+                "label": "Tipstekst"
               }
             ]
           }
