@@ -25,8 +25,7 @@
             "label": "Tips",
             "fields": [
               {
-                "label": "Tips",
-                "description": "Et tipsikon blir plassert på kortet. Når man trykker på ikonet, vises tipset"
+                "label": "Tipstekst"
               }
             ]
           }
@@ -48,7 +47,7 @@
     },
     {
       "label": "Tekst for \"Sjekk svar\" knappen",
-      "default": "Sjekk svar"
+      "default": "Sjekk"
     },
     {
       "label": "Krev inndata fra brukeren før fasit gis."
