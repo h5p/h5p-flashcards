@@ -47,7 +47,7 @@
     },
     {
       "label": "Tekst for \"Sjekk svar\" knappen",
-      "default": "Sjekk svar"
+      "default": "Sjekk"
     },
     {
       "label": "Krev inndata fra brukeren før fasit gis."
