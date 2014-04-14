@@ -3,7 +3,7 @@
   "description": "void",
   "majorVersion": 1,
   "minorVersion": 0,
-  "patchVersion": 32,
+  "patchVersion": 33,
   "runnable": 1,
   "author": "Amendor AS",
   "coreApi": {
@@ -13,10 +13,14 @@
   "license": "cc-by-sa",
   "machineName": "H5P.Flashcards",
   "preloadedCss": [
-    {"path": "css/flashcards.css"}
+    {
+      "path": "css/flashcards.css"
+    }
   ],
   "preloadedJs": [
-    {"path": "js/flashcards.js"}
+    {
+      "path": "js/flashcards.js"
+    }
   ],
   "preloadedDependencies": [
     {

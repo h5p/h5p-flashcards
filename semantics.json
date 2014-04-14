@@ -44,10 +44,9 @@
           "fields": [
             {
               "name": "tip",
-              "label": "Tip",
+              "label": "Tip text",
               "type": "text",
-              "optional": true,
-              "description": "An icon is placed on the card. When icon is clicked the tip is displayed"
+              "optional": true
             }
           ]
         }
@@ -80,7 +79,7 @@
     "label": "Text for the check answers button",
     "name": "checkAnswerText",
     "type": "text",
-    "default": "Check answer",
+    "default": "Check",
     "common": true
   },
   {
