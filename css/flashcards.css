@@ -115,7 +115,7 @@
 
 .h5p-flashcards .h5p-card div.h5p-clue:after {
   content: "\f059";
-  font-family: H5PFontAwesome;
+  font-family: 'H5PFontAwesome4';
   font-size: 5em;
   line-height: 100px;
   color: #cccccc;
@@ -154,7 +154,7 @@
 
 .h5p-flashcards .h5p-inner .h5p-answer .h5p-input.h5p-correct:after {
   content: "\f00c";
-  font-family: H5PFontAwesome;
+  font-family: 'H5PFontAwesome4';
   color: #39692e;
   position: absolute;
   left: 22.25em;
@@ -164,7 +164,7 @@
 
 .h5p-flashcards .h5p-inner .h5p-answer .h5p-input.h5p-wrong:after {
   content: "\f00d";
-  font-family: H5PFontAwesome;
+  font-family: 'H5PFontAwesome4';
   color: #c33f62;
   position: absolute;
   left: 22.25em;
@@ -250,7 +250,7 @@
 
 .h5p-flashcards .h5p-input .h5p-button:before {
   content: "\f06e";
-  font-family: H5PFontAwesome;
+  font-family: 'H5PFontAwesome4';
   margin-right: 0.1875em;
   }
 
@@ -283,13 +283,13 @@
 }
 
 .h5p-flashcards .h5p-button.h5p-next:after {
-  font-family: H5PFontAwesome;
+  font-family: 'H5PFontAwesome4';
   content: "\f054";
   margin-left: 0.1875em;
 }
 
 .h5p-flashcards .h5p-button.h5p-previous:before {
-  font-family: H5PFontAwesome;
+  font-family: 'H5PFontAwesome4';
   content: "\f053";
   margin-right: 0.1875em;
 }
