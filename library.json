@@ -3,12 +3,12 @@
   "description": "void",
   "majorVersion": 1,
   "minorVersion": 0,
-  "patchVersion": 33,
+  "patchVersion": 36,
   "runnable": 1,
   "author": "Amendor AS",
   "coreApi": {
     "majorVersion": 1,
-    "minorVersion": 1
+    "minorVersion": 2
   },
   "license": "cc-by-sa",
   "machineName": "H5P.Flashcards",
@@ -23,6 +23,11 @@
     }
   ],
   "preloadedDependencies": [
+    {
+      "machineName": "FontAwesome",
+      "majorVersion": 4,
+      "minorVersion": 1
+    },
     {
       "machineName": "H5P.JoubelUI",
       "majorVersion": 1,
