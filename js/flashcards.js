@@ -67,7 +67,7 @@ H5P.Flashcards = (function ($) {
    */
   C.prototype.cardsLoaded = function () {
     var that = this;
-    var $inner = this.$container.html('<div class="h5p-description">' + this.options.description + '</div><div class="h5p-inner"></div><div class="h5p-navigation"><button type="button" class="h5p-button h5p-previous h5p-hidden" tabindex="3">' + this.options.previous + '</button><button type="button" class="h5p-button h5p-next" tabindex="4">' + this.options.next + '</button><div class="h5p-progress"></div>').children('.h5p-inner');
+    var $inner = this.$container.html('<div class="h5p-description">' + this.options.description + '</div><div class="h5p-inner"></div><div class="h5p-navigation"><button type="button" class="h5p-button h5p-previous h5p-hidden" tabindex="3" title="' + this.options.previous + '"></button><button type="button" class="h5p-button h5p-next" tabindex="4" title="' + this.options.next + '"></button><div class="h5p-progress"></div>').children('.h5p-inner');
     this.$progress = this.$container.find('.h5p-progress');
 
     // Add cards
