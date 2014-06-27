@@ -273,13 +273,11 @@
 .h5p-flashcards .h5p-next {
   position: absolute;
   right: 0.375em;
-  padding-right: 0.375em;
 }
 
 .h5p-flashcards .h5p-previous {
   position: absolute;
   left: 0.375em;
-  padding-left: 0.375em;
 }
 
 .h5p-flashcards .h5p-button.h5p-next:after {
