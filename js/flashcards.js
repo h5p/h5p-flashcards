@@ -116,7 +116,7 @@ H5P.Flashcards = (function ($) {
 
     this.setProgress();
     
-    this.$.trigger('resize');
+    this.triggerH5PEvent('resize');
   };
 
   C.prototype.addCard = function (index, $inner) {
