@@ -2,8 +2,10 @@
   position: relative;
   overflow: hidden;
   padding: 1em 0;
-  line-height: 1.25em;
-  
+  line-height: 1.25em;  
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+
   background: rgba(255, 255, 255, 0.9);
   filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#e6FFFFFF,endColorstr=#e6FFFFFF);
 }
@@ -43,7 +45,7 @@
   width: 432px;
   top: 0;
   left: 0;
-  
+
   -webkit-transform: translateX(105%) translateZ(0);
   -moz-transform: translateX(105%) translateZ(0);
   -ms-transform: translateX(105%); /* translateZ(0) fails IE9 */
@@ -60,7 +62,7 @@
   -webkit-box-shadow: 0px 0px 5px rgba(50, 50, 50, 0.5);
   -moz-box-shadow: 0px 0px 5px rgba(50, 50, 50, 0.5);
   box-shadow: 0px 0px 5px rgba(50, 50, 50, 0.5);
-  
+
   -webkit-border-radius: 1em;
   -moz-border-radius: 1em;
   border-radius: 1em;
@@ -74,7 +76,7 @@
 
 .h5p-flashcards .h5p-card.h5p-current {
   visibility: visible;
-  
+
   -webkit-transform: translateX(0);
   -moz-transform: translateX(0);
   -ms-transform: translateX(0);
@@ -101,7 +103,7 @@
   -webkit-box-shadow: 0px 0px 5px rgba(50, 50, 50, 0.5);
   -moz-box-shadow: 0px 0px 5px rgba(50, 50, 50, 0.5);
   box-shadow: 0px 0px 5px rgba(50, 50, 50, 0.5);
-  
+
   -moz-border-radius: 1em;
   -webkit-border-radius: 1em;
   border-radius: 1em;
@@ -177,8 +179,8 @@
   left: 20.5em;
 } 
 
-.h5p-flashcards .h5p-textinput {
-  font-size: 1em;
+.h5p-flashcards .h5p-textinput {  
+  font-size: 16px;
   line-height: 1.25em;
   height: 1.5em;
   border-radius: 0.25em;
@@ -186,27 +188,31 @@
   padding: 0.25em 0.5em;
   width: 21em;
   margin: 1.5625em auto;
-  position: relative;
+  position: relative;  
+  word-wrap: break-word;
+  font-weight: normal;
+  color: rgb(51, 51, 51);
+  box-sizing: content-box;
 }
- 
+
 .h5p-flashcards .h5p-textinput:focus {
   outline: none;
   box-shadow: 0 0 0.5em 0 #7fb8ff;
   border-color: #7fb8ff;
 }
 
- .h5p-flashcards .h5p-input.h5p-correct .h5p-textinput[disabled] {
-   background-color: #d1e2ce;
-   border: 0.0625em solid #afcdaa;
-   color: #39692e;
-   font-weight: bold;
- }
+.h5p-flashcards .h5p-input.h5p-correct .h5p-textinput[disabled] {
+  background-color: #d1e2ce;
+  border: 0.0625em solid #afcdaa;
+  color: #39692e;
+  font-weight: bold;
+}
 
 .h5p-flashcards .h5p-input.h5p-wrong .h5p-textinput[disabled] {
   background-color: #e6ced1;
   border: 0.0625em solid #ce9b9b;
   color: #c33f62;
-  font-weight: bold;
+  font-weight: bold;  
 }
 
 .h5p-flashcards .h5p-button {
@@ -252,7 +258,7 @@
   content: "\f06e";
   font-family: 'H5PFontAwesome4';
   margin-right: 0.1875em;
-  }
+}
 
 .h5p-flashcards .h5p-progress {
   margin-top: 0.375em;
