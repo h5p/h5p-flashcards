@@ -14,6 +14,7 @@ H5P.Flashcards = (function ($) {
    * @param {Number} id Content identification
    */
   function C(options, id) {
+    this.$ = $(this);
     this.id = id;
     this.options = $.extend({}, {
       description: "What does the card mean?",
@@ -114,6 +115,8 @@ H5P.Flashcards = (function ($) {
     }
 
     this.setProgress();
+    
+    this.$.trigger('resize');
   };
 
   C.prototype.addCard = function (index, $inner) {
