@@ -10,6 +10,8 @@
     "widget": "verticalTabs",
     "label": "Cards",
     "entity": "card",
+    "min": 1,
+    "defaultNum": 1,
     "field": {
       "name": "card",
       "type": "group",
