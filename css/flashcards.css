@@ -1,9 +1,9 @@
 .h5p-flashcards {
   position: relative;
   overflow: hidden;
-  padding: 1em 0;
+  padding: 0.5em 0 0em;
   line-height: 1.25em;  
-  font-size: 16px;
+  font-size: 1em;
 
   background: rgba(255, 255, 255, 0.9);
   filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#e6FFFFFF,endColorstr=#e6FFFFFF);
@@ -29,26 +29,35 @@
 
 .h5p-flashcards .h5p-inner {
   position: relative;
-  width: 464px;
-  height: 500px;
-  margin: 0.375em auto 0.5em;
-  overflow: hidden;
+  height: 32em;
+  margin: 1em 0.375em 0.375em;
 }
 
 .h5p-flashcards .h5p-card {
   visibility: hidden;
-  margin: 0.875em;
+  width: 100%;
+  height: inherit;
   padding: 0;
   position: absolute;
   background: #fff;
-  width: 432px;
   top: 0;
   left: 0;
 
-  -webkit-transform: translateX(105%) translateZ(0);
-  -moz-transform: translateX(105%) translateZ(0);
-  -ms-transform: translateX(105%); /* translateZ(0) fails IE9 */
-  transform: translateX(105%) translateZ(0);
+  -webkit-transform: translateX(105%);
+  -moz-transform: translateX(105%);
+  -ms-transform: translateX(105%);
+  transform: translateX(105%);
+
+  -webkit-transition: -webkit-transform 0.25s, visibility 0.25s;
+  -moz-transition: -moz-transform 0.25s, visibility 0.25s;
+  -ms-transition: -ms-transform 0.25s, visibility 0.25s;
+  transition: transform 0.25s, visibility 0.25s;
+}
+
+.h5p-flashcards .h5p-cardholder {
+  margin: auto;
+  height: 100%;
+  max-width: 32em;
 
   background: #f4f4f4; /* Old browsers */
   background: -moz-linear-gradient(top, #f4f4f4 0%, #e0e0e0 100%); /* FF3.6+ */
@@ -58,19 +67,21 @@
   background: -ms-linear-gradient(top, #f4f4f4 0%,#e0e0e0 100%); /* IE10+ */
   background: linear-gradient(to bottom, #f4f4f4 0%,#e0e0e0 100%); /* W3C */
 
-  -webkit-box-shadow: 0px 0px 5px rgba(50, 50, 50, 0.5);
-  -moz-box-shadow: 0px 0px 5px rgba(50, 50, 50, 0.5);
-  box-shadow: 0px 0px 5px rgba(50, 50, 50, 0.5);
+  -webkit-box-shadow: 0em 0em 0.4em rgba(50, 50, 50, 0.5);
+  -moz-box-shadow: 0em 0em 0.4em rgba(50, 50, 50, 0.5);
+  box-shadow: 0em 0em 0.4em rgba(50, 50, 50, 0.5);
 
   -webkit-border-radius: 1em;
   -moz-border-radius: 1em;
   border-radius: 1em;
   border: 0.1em solid #b6b6b6;
+}
 
-  -webkit-transition: -webkit-transform 0.25s, visibility 0.25s;
-  -moz-transition: -moz-transform 0.25s, visibility 0.25s;
-  -ms-transition: -ms-transform 0.25s, visibility 0.25s;
-  transition: transform 0.25s, visibility 0.25s;
+.h5p-flashcards .h5p-imageholder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0em 1em 1em;
 }
 
 .h5p-flashcards .h5p-card.h5p-current {
@@ -93,15 +104,14 @@
   display: block;
   margin: 1em auto 0;
   padding: 1em;
-  width: 200px;
-  min-height: 100px;
+  min-height: 5em;
   background: white;
 
   text-align: center;
 
-  -webkit-box-shadow: 0px 0px 5px rgba(50, 50, 50, 0.5);
-  -moz-box-shadow: 0px 0px 5px rgba(50, 50, 50, 0.5);
-  box-shadow: 0px 0px 5px rgba(50, 50, 50, 0.5);
+  -webkit-box-shadow: 0em 0em 0.4em rgba(50, 50, 50, 0.5);
+  -moz-box-shadow: 0em 0em 0.4em rgba(50, 50, 50, 0.5);
+  box-shadow: 0em 0em 0.4em rgba(50, 50, 50, 0.5);
 
   -moz-border-radius: 1em;
   -webkit-border-radius: 1em;
@@ -123,33 +133,38 @@
 }
 
 .h5p-flashcards .h5p-card img.h5p-clue {
-  width: auto;
-  max-width: 300px;
-  max-height: 300px;
   display: block;
 }
 
 .h5p-flashcards .h5p-foot {
-  margin: 0 auto;
-  width: 400px;
+  display: inline-block;
+  bottom: 0em;
+  margin: 0em auto;
+  width: 100%;
+  position: absolute;
+  left: 0;
 }
 
 .h5p-flashcards .h5p-imagetext {
   background: none;
   text-align: center;
-  margin: 1em 1em 0em;
-  max-height: 3.75em;
   overflow: hidden;
+  max-width: 32em;
+  padding: 1em 1em 0em;
+  margin: auto;
 }
 
 .h5p-flashcards .h5p-answer {
   background: none;
   overflow: hidden;
   position: relative;
+  max-width: 32em;
+  margin: auto;
 }
 
 .h5p-flashcards .h5p-input {
   text-align: center;
+  padding: 0em 1em;
   margin-bottom: 1em;
 }
 
@@ -158,7 +173,7 @@
   font-family: 'H5PFontAwesome4';
   color: #39692e;
   position: absolute;
-  left: 22.25em;
+  right: 2.5em;
   top: 2em;
   font-size: 1em;
 }
@@ -168,28 +183,30 @@
   font-family: 'H5PFontAwesome4';
   color: #c33f62;
   position: absolute;
-  left: 22.25em;
+  right: 2.5em;
   top: 2em;
   font-size: 1em;
 }
 
 /* If tip is present, correct/wrong marker has to be moved to the left */
 .h5p-flashcards .h5p-inner .h5p-answer .h5p-input.has-tip:after {
-  left: 20.5em;
+  right: 4.5em;
 } 
 
-.h5p-flashcards .h5p-textinput {  
-  font-size: 16px;
-  line-height: 1.25em;
+.h5p-flashcards .h5p-textinput {
+  position: relative;
   height: 1.5em;
+  width: 90%;
+  padding: 0.25em 0.5em;
+  margin: 1.5625em auto;
+
+  font-size: 1em;
+  font-weight: normal;
+  line-height: 1.25em;
+  word-wrap: break-word;
+
   border-radius: 0.25em;
   border: 0.0625em solid #a0a0a0;
-  padding: 0.25em 0.5em;
-  width: 21em;
-  margin: 1.5625em auto;
-  position: relative;  
-  word-wrap: break-word;
-  font-weight: normal;
   color: rgb(51, 51, 51);
   box-sizing: content-box;
 }
@@ -215,8 +232,9 @@
 }
 
 .h5p-flashcards .h5p-button {
-  font-size: 16px;
-  display: inline-block;
+  font-size: 1em;
+  display: block;
+  margin: auto;
   padding: 0.3125em 0.6875em;
   border: 0.1875em solid #fff;
   border-radius: 0.3125em;
@@ -263,15 +281,15 @@
   margin-top: 0.375em;
   color: #999;
   text-align: center;
+  padding: 0em 3em;
 }
 .h5p-flashcards .h5p-navigation {
-  width: 400px;
   margin: 0 auto;
   overflow: hidden;
   position: relative;
-  height: 46px;
-  padding-top: 6px;
-  display:table;
+  height: 2.5em;
+  padding-top: 0.5em;
+  max-width: 32em;
   vertical-align:middle;
 }
 
@@ -346,6 +364,6 @@ button::-moz-focus-inner {
 
 .h5p-flashcards .joubel-tip-container {
   position: absolute;
-  right: 1.5em;
+  right: 2em;
   top: 1.5em;
 }
