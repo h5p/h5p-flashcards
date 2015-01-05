@@ -171,7 +171,7 @@ H5P.Flashcards = (function ($) {
           that.$images[index].removeClass('h5p-collapse');
         }, 150);
 
-        var $solution = $('<div class="h5p-solution h5p-hidden" style="top:' + (Math.floor(that.$images[index].outerHeight() / 2) + 4) + 'px"><span>' + correctAnswer + '</span></div>').appendTo($card);
+        var $solution = $('<div class="h5p-solution h5p-hidden"><span>' + correctAnswer + '</span></div>').appendTo($card.find('.h5p-imageholder'));
         setTimeout(function () {
           $solution.removeClass('h5p-hidden');
         }, 150);

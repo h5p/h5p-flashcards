@@ -321,16 +321,21 @@
 .h5p-flashcards .h5p-solution {
   text-align: center;
   width: 100%;
+  height: inherit;
+  top: 0;
+  left: 0;
   position: absolute;
-  top: 25%;
   font-weight: bold;
 }
 .h5p-flashcards .h5p-solution > span {
   display: inline-block;
+  position: relative;
+  top: 50%;
+
   padding: 0.25em 0.5em;
   border-radius: 0.5em;
-  color: #fff;
 
+  color: #fff;
   background: #000;
   background: rgba(0, 0, 0, 0.7);  
 
