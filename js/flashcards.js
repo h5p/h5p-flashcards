@@ -114,6 +114,8 @@ H5P.Flashcards = (function ($) {
       this.$nextButton.hide();
     }
 
+    this.$inner = $inner;
+
     this.setProgress();
     
     this.triggerH5PEvent('resize');
@@ -124,8 +126,14 @@ H5P.Flashcards = (function ($) {
 
     var card = this.options.cards[index];
     var imageText = (card.text !== undefined ? '<div class="h5p-imagetext">' + card.text + '</div>' : '');
-    var $card = $('<div class="h5p-card h5p-animate' + (index === 0 ? ' h5p-current' : '') + '"><div class="h5p-foot">' + imageText + '<div class="h5p-answer"><div class="h5p-input"><input type="text" class="h5p-textinput" tabindex="-1"/><button type="button" class="h5p-button" tabindex="-1">' + this.options.checkAnswerText + '</button></div></div></div></div>').appendTo($inner);
-    $card.prepend(this.$images[index]);
+    var $card = $('<div class="h5p-card h5p-animate' + (index === 0 ? ' h5p-current' : '') + '"> ' +
+      '<div class="h5p-cardholder">' +
+      '<div class="h5p-imageholder"></div>' +
+      '<div class="h5p-foot">' + imageText + '<div class="h5p-answer">' +
+      '<div class="h5p-input"><input type="text" class="h5p-textinput" tabindex="-1"/>' +
+      '<button type="button" class="h5p-button" tabindex="-1">' + this.options.checkAnswerText + '</button></div></div></div></div></div>')
+      .appendTo($inner);
+    $card.find('.h5p-imageholder').prepend(this.$images[index]);
 
     // Add tip if tip exists
     if (card.tip !== undefined && card.tip.trim().length > 0) {
@@ -163,7 +171,7 @@ H5P.Flashcards = (function ($) {
           that.$images[index].removeClass('h5p-collapse');
         }, 150);
 
-        var $solution = $('<div class="h5p-solution h5p-hidden" style="top:' + (Math.floor(that.$images[index].outerHeight() / 2) + 4) + 'px"><span>' + correctAnswer + '</span></div>').appendTo($card);
+        var $solution = $('<div class="h5p-solution h5p-hidden"><span>' + correctAnswer + '</span></div>').appendTo($card.find('.h5p-imageholder'));
         setTimeout(function () {
           $solution.removeClass('h5p-hidden');
         }, 150);
@@ -274,6 +282,60 @@ H5P.Flashcards = (function ($) {
     }
   
     return info;
+  };
+
+  /**
+   * Update the dimensions and imagesizes of the task.
+   */
+  C.prototype.resize = function () {
+    var self = this;
+    var maxHeight = 0;
+    var maxHeightImage = 0;
+    var imageHolderWidth = self.$inner.find('.h5p-imageholder').width();
+
+    //Resize all images and find max height.
+    self.$images.forEach(function (image) {
+      var $image = image;
+      var imageHeight = 0;
+
+      //Resize image if it is too big.
+      if ($image[0].naturalWidth > imageHolderWidth ||
+        $image[0].naturalHeight > imageHolderWidth) {
+        var ratio = $image[0].naturalHeight / $image[0].naturalWidth;
+
+        //Landscape image
+        if( $image[0].naturalWidth >= $image[0].naturalHeight) {
+          $image.innerWidth(imageHolderWidth);
+          $image.innerHeight(imageHolderWidth*ratio);
+          imageHeight = imageHolderWidth*ratio;
+        }
+        //Portrait image
+        else {
+          $image.innerHeight(imageHolderWidth);
+          $image.innerWidth(imageHolderWidth / ratio);
+          imageHeight = imageHolderWidth;
+        }
+      }
+      //Else use source dimensions
+      else {
+        $image.innerWidth($image[0].naturalWidth);
+        $image.innerHeight($image[0].naturalHeight);
+        imageHeight = $image.outerHeight();
+      }
+      //Keep max height
+      maxHeightImage = imageHeight > maxHeightImage ? imageHeight : maxHeightImage;
+    });
+
+    //Find container dimensions needed to encapsule image and text.
+    self.$inner.children().each( function (cardWrapper) {
+      var cardholderHeight = maxHeightImage + $(this).find('.h5p-foot').outerHeight();
+      maxHeight = cardholderHeight > maxHeight ? cardholderHeight : maxHeight;
+    });
+
+    //Resize containers to fit image and text.
+    self.$inner.find('.h5p-imageholder').css('height', maxHeightImage+'px');
+    self.$inner.css('height', maxHeight+'px');
+
   };
 
   return C;
