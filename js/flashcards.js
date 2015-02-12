@@ -104,7 +104,7 @@ H5P.Flashcards = (function ($) {
     }
 
     // Set height
-    $inner.css('height', height + 286); // TODO: Avoid magic numbers
+    $inner.css('height', height + 286); // TODO: Avoid magic numbers - 122?
 
     // Active buttons
     var $buttonWrapper = $inner.next();
@@ -144,7 +144,7 @@ H5P.Flashcards = (function ($) {
     if (card.tip !== undefined && card.tip.trim().length > 0) {
       $('.h5p-input', $card).append(H5P.JoubelUI.createTip(card.tip)).addClass('has-tip');
     }
-    
+
     var $button = $card.find('.h5p-button').click(function () {
       var $input = $card.find('.h5p-textinput');
       var correctAnswer = that.options.cards[index].answer;
@@ -161,6 +161,7 @@ H5P.Flashcards = (function ($) {
           break;
         }
       }
+
       that.numAnswered++;
       if (that.numAnswered >= that.options.cards.length) {
         that.triggerXAPICompleted(that.score, that.numAnswered);
@@ -272,7 +273,7 @@ H5P.Flashcards = (function ($) {
       that.setProgress();
     }, 10);
   };
-  
+
   /**
    * Gather copyright information from cards.
    *
@@ -280,7 +281,7 @@ H5P.Flashcards = (function ($) {
    */
   C.prototype.getCopyrights = function () {
     var info = new H5P.ContentCopyrights();
-    
+
     // Go through cards
     for (var i = 0; i < this.options.cards.length; i++) {
       var image = this.options.cards[i].image;
@@ -290,7 +291,7 @@ H5P.Flashcards = (function ($) {
         info.addMedia(rights);
       }
     }
-  
+
     return info;
   };
 
