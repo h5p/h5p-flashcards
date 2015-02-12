@@ -14,8 +14,10 @@ H5P.Flashcards = (function ($) {
    * @param {Number} id Content identification
    */
   function C(options, id) {
-    this.$ = $(this);
-    this.id = id;
+    H5P.EventDispatcher.call(this);
+    this.score = 0;
+    this.numAnswered = 0;
+    this.contentId = this.id = id;
     this.options = $.extend({}, {
       description: "What does the card mean?",
       progressText: "Card @card of @total",
@@ -24,9 +26,12 @@ H5P.Flashcards = (function ($) {
       checkAnswerText: "Check answer",
       showSolutionsRequiresInput: true
     }, options);
-
     this.$images = [];
+    this.on('resize', this.resize, this);
   };
+  
+  C.prototype = Object.create(H5P.EventDispatcher.prototype);
+  C.prototype.constructor = C;
 
   /**
    * Append field to wrapper.
@@ -118,7 +123,7 @@ H5P.Flashcards = (function ($) {
 
     this.setProgress();
     
-    this.triggerH5PEvent('resize');
+    this.trigger('resize');
   };
 
   C.prototype.addCard = function (index, $inner) {
@@ -151,9 +156,14 @@ H5P.Flashcards = (function ($) {
       var userCorrect = false;
       for (var i = 0; i < correct.length; i++) {
         if (H5P.trim(correct[i]) === userAnswer) {
+          that.score++;
           userCorrect = true;
           break;
         }
+      }
+      that.numAnswered++;
+      if (that.numAnswered >= that.options.cards.length) {
+        that.triggerXAPICompleted(that.score, that.numAnswered);
       }
       
       if (!that.options.showSolutionsRequiresInput || userAnswer !== '' || userCorrect) {
@@ -219,7 +229,7 @@ H5P.Flashcards = (function ($) {
     $card.find('.h5p-textinput').attr('tabindex', '1');
     $card.find('.h5p-button').attr('tabindex', '2');
     $card.removeClass('h5p-previous');
-  }
+  };
 
   /**
    * Display next card.
@@ -289,6 +299,9 @@ H5P.Flashcards = (function ($) {
    */
   C.prototype.resize = function () {
     var self = this;
+    if (self.$inner === undefined) {
+      return;
+    }
     var maxHeight = 0;
     var maxHeightImage = 0;
     var imageHolderWidth = self.$inner.find('.h5p-imageholder').width();

@@ -7,7 +7,12 @@
   {
     "name": "cards",
     "type": "list",
-    "widget": "verticalTabs",
+    "widgets": [
+      {
+        "name": "VerticalTabs",
+        "label": "Default"
+      }
+    ],
     "label": "Cards",
     "entity": "card",
     "min": 1,
