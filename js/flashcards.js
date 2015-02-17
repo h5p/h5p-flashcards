@@ -29,7 +29,7 @@ H5P.Flashcards = (function ($) {
     this.$images = [];
     this.on('resize', this.resize, this);
   };
-  
+
   C.prototype = Object.create(H5P.EventDispatcher.prototype);
   C.prototype.constructor = C;
 
@@ -122,7 +122,7 @@ H5P.Flashcards = (function ($) {
     this.$inner = $inner;
 
     this.setProgress();
-    
+
     this.trigger('resize');
   };
 
@@ -166,7 +166,7 @@ H5P.Flashcards = (function ($) {
       if (that.numAnswered >= that.options.cards.length) {
         that.triggerXAPICompleted(that.score, that.numAnswered);
       }
-      
+
       if (!that.options.showSolutionsRequiresInput || userAnswer !== '' || userCorrect) {
         $input.add(this).attr('disabled', true);
 
@@ -311,29 +311,40 @@ H5P.Flashcards = (function ($) {
     self.$images.forEach(function (image) {
       var $image = image;
       var imageHeight = 0;
+      $image.css({
+        'height': 'initial',
+        'width': 'initial'
+      });
+      var minPadding = parseFloat($image.parent().css('font-size'));
 
       //Resize image if it is too big.
-      if ($image[0].naturalWidth > imageHolderWidth ||
-        $image[0].naturalHeight > imageHolderWidth) {
+      if (($image[0].naturalWidth + (minPadding * 2)) > imageHolderWidth ||
+        ($image[0].naturalWidth + (minPadding * 2)) > imageHolderWidth) {
         var ratio = $image[0].naturalHeight / $image[0].naturalWidth;
 
         //Landscape image
         if( $image[0].naturalWidth >= $image[0].naturalHeight) {
-          $image.innerWidth(imageHolderWidth);
-          $image.innerHeight(imageHolderWidth*ratio);
-          imageHeight = imageHolderWidth*ratio;
+          $image.css({
+            'width': imageHolderWidth - (minPadding * 2),
+            'height': 'auto'
+          });
+          imageHeight = (imageHolderWidth - (minPadding * 2)) * ratio;
         }
         //Portrait image
         else {
-          $image.innerHeight(imageHolderWidth);
-          $image.innerWidth(imageHolderWidth / ratio);
-          imageHeight = imageHolderWidth;
+          $image.css({
+            'height': imageHolderWidth - minPadding * 2,
+            'width': 'auto'
+          });
+          imageHeight = imageHolderWidth - minPadding * 2;
         }
       }
       //Else use source dimensions
       else {
-        $image.innerWidth($image[0].naturalWidth);
-        $image.innerHeight($image[0].naturalHeight);
+        $image.css({
+          'height': 'initial',
+          'width': 'initial'
+        });
         imageHeight = $image.outerHeight();
       }
       //Keep max height

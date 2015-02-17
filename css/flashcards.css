@@ -2,7 +2,7 @@
   position: relative;
   overflow: hidden;
   padding: 0.5em 0 0em;
-  line-height: 1.25em;  
+  line-height: 1.25em;
   font-size: 1em;
 
   background: rgba(255, 255, 255, 0.9);
@@ -104,7 +104,6 @@
   display: block;
   margin: 1em auto 0;
   padding: 1em;
-  min-height: 5em;
   background: white;
 
   text-align: center;
@@ -191,7 +190,7 @@
 /* If tip is present, correct/wrong marker has to be moved to the left */
 .h5p-flashcards .h5p-inner .h5p-answer .h5p-input.has-tip:after {
   right: 4.5em;
-} 
+}
 
 .h5p-flashcards .h5p-textinput {
   position: relative;
@@ -228,7 +227,7 @@
   background-color: #e6ced1;
   border: 0.0625em solid #ce9b9b;
   color: #c33f62;
-  font-weight: bold;  
+  font-weight: bold;
 }
 
 .h5p-flashcards .h5p-button {
@@ -337,7 +336,7 @@
 
   color: #fff;
   background: #000;
-  background: rgba(0, 0, 0, 0.7);  
+  background: rgba(0, 0, 0, 0.7);
 
   -webkit-transition: -webkit-transform 0.2s;
   -moz-transition: -moz-transform 0.2s;
