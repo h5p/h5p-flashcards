@@ -2,13 +2,13 @@
   "title": "Flashcards",
   "description": "void",
   "majorVersion": 1,
-  "minorVersion": 0,
-  "patchVersion": 40,
+  "minorVersion": 1,
+  "patchVersion": 0,
   "runnable": 1,
-  "author": "Amendor AS",
+  "author": "Joubel AS",
   "coreApi": {
     "majorVersion": 1,
-    "minorVersion": 2
+    "minorVersion": 4
   },
   "license": "cc-by-sa",
   "machineName": "H5P.Flashcards",
@@ -31,7 +31,7 @@
     {
       "machineName": "H5P.JoubelUI",
       "majorVersion": 1,
-      "minorVersion": 0
+      "minorVersion": 1
     }
   ],
   "w": 635,
@@ -40,7 +40,7 @@
     {
       "machineName": "H5PEditor.VerticalTabs",
       "majorVersion": 1,
-      "minorVersion": 0
+      "minorVersion": 1
     }
   ]
 }
