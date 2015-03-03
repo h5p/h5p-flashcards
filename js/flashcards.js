@@ -306,6 +306,7 @@ H5P.Flashcards = (function ($) {
     var maxHeight = 0;
     var maxHeightImage = 0;
     var imageHolderWidth = self.$inner.find('.h5p-imageholder').width();
+    var minPadding = parseFloat(self.$inner.css('font-size'));
 
     //Resize all images and find max height.
     self.$images.forEach(function (image) {
@@ -315,7 +316,6 @@ H5P.Flashcards = (function ($) {
         'height': 'initial',
         'width': 'initial'
       });
-      var minPadding = parseFloat($image.parent().css('font-size'));
 
       //Resize image if it is too big.
       if (($image[0].naturalWidth + (minPadding * 2)) > imageHolderWidth ||
@@ -348,7 +348,7 @@ H5P.Flashcards = (function ($) {
         imageHeight = $image.outerHeight();
       }
       //Keep max height
-      maxHeightImage = imageHeight > maxHeightImage ? imageHeight : maxHeightImage;
+      maxHeightImage = imageHeight + minPadding * 2 > maxHeightImage ? imageHeight + minPadding * 2 : maxHeightImage;
     });
 
     //Find container dimensions needed to encapsule image and text.
@@ -359,7 +359,7 @@ H5P.Flashcards = (function ($) {
 
     //Resize containers to fit image and text.
     self.$inner.find('.h5p-imageholder').css('height', maxHeightImage+'px');
-    self.$inner.css('height', maxHeight+'px');
+    self.$inner.css('height', maxHeight + minPadding * 2 +'px');
 
   };
 
