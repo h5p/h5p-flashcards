@@ -37,11 +37,7 @@
   visibility: hidden;
   width: 100%;
   height: inherit;
-  padding: 0;
-  position: absolute;
   background: #fff;
-  top: 0;
-  left: 0;
 
   -webkit-transform: translateX(105%);
   -moz-transform: translateX(105%);
@@ -151,11 +147,8 @@
 
 .h5p-flashcards .h5p-foot {
   display: inline-block;
-  bottom: 0em;
   margin: 0em auto;
   width: 100%;
-  position: absolute;
-  left: 0;
 }
 
 .h5p-flashcards .h5p-imagetext {
@@ -272,10 +265,6 @@
   background: -webkit-linear-gradient(top,  rgba(4,104,206,1) 0%,rgba(100,152,254,1) 100%); /* Chrome10+,Safari5.1+ */
   background: -o-linear-gradient(top,  rgba(4,104,206,1) 0%,rgba(100,152,254,1) 100%); /* Opera 11.10+ */
   background: -ms-linear-gradient(top,  rgba(4,104,206,1) 0%,rgba(100,152,254,1) 100%); /* IE10+ */
-}
-
-.h5p-flashcards .h5p-answer .h5p-button {
-  margin-bottom: 0;
 }
 
 .h5p-flashcards .h5p-button[disabled],
