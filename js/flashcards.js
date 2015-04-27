@@ -319,7 +319,7 @@ H5P.Flashcards = (function ($) {
 
       //Resize image if it is too big.
       if (($image[0].naturalWidth + (minPadding * 2)) > imageHolderWidth ||
-        ($image[0].naturalWidth + (minPadding * 2)) > imageHolderWidth) {
+        ($image[0].naturalHeight + (minPadding * 2)) > imageHolderWidth) {
         var ratio = $image[0].naturalHeight / $image[0].naturalWidth;
 
         //Landscape image
