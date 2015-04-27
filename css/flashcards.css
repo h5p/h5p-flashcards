@@ -34,6 +34,7 @@
 }
 
 .h5p-flashcards .h5p-card {
+  display: inline-block;
   visibility: hidden;
   width: 100%;
   height: inherit;

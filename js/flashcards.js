@@ -28,7 +28,7 @@ H5P.Flashcards = (function ($) {
     }, options);
     this.$images = [];
     this.on('resize', this.resize, this);
-  };
+  }
 
   C.prototype = Object.create(H5P.EventDispatcher.prototype);
   C.prototype.constructor = C;
@@ -358,9 +358,8 @@ H5P.Flashcards = (function ($) {
     });
 
     //Resize containers to fit image and text.
-    self.$inner.find('.h5p-imageholder').css('height', maxHeightImage+'px');
+    self.$inner.find('.h5p-imageholder').css('height', maxHeightImage + 'px');
     self.$inner.css('height', maxHeight + minPadding * 2 +'px');
-
   };
 
   return C;
