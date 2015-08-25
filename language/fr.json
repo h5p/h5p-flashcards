@@ -10,7 +10,7 @@
         }
       ],
       "label": "Cartes",
-      "entity": "card",
+      "entity": "carte",
       "field": {
         "label": "Carte",
         "fields": [
@@ -39,20 +39,16 @@
     },
     {
       "label": "Texte de progression",
-      "default": "Carte @card sur @total",
       "description": "Texte de progression, variables possibles: @card and @total. Exemple: 'Carte @card sur @total'"
     },
     {
-      "label": "Texte pour le bouton suivant",
-      "default": "Suivant"
+      "label": "Texte pour le bouton suivant"
     },
     {
-      "label": "Texte pour le bouton précédent",
-      "default": "Précédent"
+      "label": "Texte pour le bouton précédent"
     },
     {
-      "label": "Texte pour le bouton vérifier les réponses",
-      "default": "Vérifier"
+      "label": "Texte pour le bouton vérifier les réponses"
     },
     {
       "label": "La solution ne sera affichée que si l'utilisateur entre une réponse"
