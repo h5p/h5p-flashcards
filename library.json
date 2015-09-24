@@ -2,8 +2,8 @@
   "title": "Flashcards",
   "description": "Create cards where the user has to guess the answer.",
   "majorVersion": 1,
-  "minorVersion": 1,
-  "patchVersion": 4,
+  "minorVersion": 2,
+  "patchVersion": 0,
   "runnable": 1,
   "author": "Joubel AS",
   "coreApi": {
