@@ -1,7 +1,7 @@
 H5P Flashcards
 ==========
 
-Test your users with flashcard tasks.
+Create cards where the user has to guess the answer.
 
 ## License
 
