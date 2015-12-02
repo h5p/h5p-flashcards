@@ -16,7 +16,7 @@
         "fields": [
           {
             "label": "Domanda",
-            "description": "Domanda testuale facoltativa per la scheda. (La scheda pu� utilizzare solo un'immagine, solo un testo o entrambi)"
+            "description": "Domanda testuale facoltativa per la scheda. (La scheda può utilizzare solo un'immagine, solo un testo o entrambi)"
           },
           {
             "label": "Risposta",
@@ -24,7 +24,7 @@
           },
           {
             "label": "Immagine",
-            "description": "Immagine facoltativa per la scheda. (La scheda pu� utilizzare solo un'immagine, solo un testo o entrambi)"
+            "description": "Immagine facoltativa per la scheda. (La scheda può utilizzare solo un'immagine, solo un testo o entrambi)"
           },
           {
             "label": "Suggerimento",
