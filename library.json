@@ -3,7 +3,7 @@
   "description": "Create cards where the user has to guess the answer.",
   "majorVersion": 1,
   "minorVersion": 2,
-  "patchVersion": 1,
+  "patchVersion": 3,
   "runnable": 1,
   "author": "Joubel AS",
   "coreApi": {
@@ -26,7 +26,7 @@
     {
       "machineName": "FontAwesome",
       "majorVersion": 4,
-      "minorVersion": 3
+      "minorVersion": 5
     },
     {
       "machineName": "H5P.JoubelUI",
