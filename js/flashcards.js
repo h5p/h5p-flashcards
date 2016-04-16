@@ -153,6 +153,7 @@ H5P.Flashcards = (function ($) {
       }
       var correct = correctAnswer.toLowerCase().split('/');
       var userAnswer = H5P.trim($input.val()).toLowerCase();
+      userAnswer = escapeHtml(userAnswer);
       var userCorrect = false;
       for (var i = 0; i < correct.length; i++) {
         if (H5P.trim(correct[i]) === userAnswer) {
@@ -198,6 +199,16 @@ H5P.Flashcards = (function ($) {
     if (index === 0) {
       this.setCurrent($card);
     }
+
+	// Escape special html characters 
+	function escapeHtml(unsafe) {
+    	return unsafe
+         .replace(/&/g, "&amp;")
+         .replace(/</g, "&lt;")
+         .replace(/>/g, "&gt;")
+         .replace(/"/g, "&quot;")
+         .replace(/'/g, "&#039;");
+ 	}
   };
 
   C.prototype.setProgress = function () {
