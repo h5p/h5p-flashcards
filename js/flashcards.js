@@ -153,6 +153,14 @@ H5P.Flashcards = (function ($) {
       }
       var correct = correctAnswer.toLowerCase().split('/');
       var userAnswer = H5P.trim($input.val()).toLowerCase();
+      
+      // Escape html characters
+      userAnswer = userAnswer.replace(/&/g, "&amp;")
+                             .replace(/</g, "&lt;")
+                             .replace(/>/g, "&gt;")
+                             .replace(/"/g, "&quot;")
+                             .replace(/'/g, "&#039;");
+      
       var userCorrect = false;
       for (var i = 0; i < correct.length; i++) {
         if (H5P.trim(correct[i]) === userAnswer) {
@@ -198,6 +206,7 @@ H5P.Flashcards = (function ($) {
     if (index === 0) {
       this.setCurrent($card);
     }
+
   };
 
   C.prototype.setProgress = function () {
