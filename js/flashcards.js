@@ -148,6 +148,12 @@ H5P.Flashcards = (function ($) {
     var $button = $card.find('.h5p-button').click(function () {
       var $input = $card.find('.h5p-textinput');
       var correctAnswer = that.options.cards[index].answer;
+
+      //decoded html entities
+      var elem = document.createElement('textarea');
+      elem.innerHTML = correctAnswer;
+      correctAnswer = elem.value;
+      
       if (correctAnswer === undefined) {
         correctAnswer = '';
       }
