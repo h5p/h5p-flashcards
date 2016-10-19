@@ -73,14 +73,26 @@ H5P.Flashcards = (function ($) {
    * @param str The user input
    * @returns {string}
    */
-  function cleanUserInput(str){
-    return H5P.trim(str || '')
+  function cleanUserInput (str){
+    str = str || '';
+
+    return str.trim()
       .toLowerCase()
       .replace(/&/g, "&amp;")
       .replace(/</g, "&lt;")
       .replace(/>/g, "&gt;")
       .replace(/"/g, "&quot;")
       .replace(/'/g, "&#039;");
+  }
+
+  /**
+   * Trims a String
+   *
+   * @param {string} str A string to trim
+   * @returns {string} The trimmed string
+   */
+  function trimString (str){
+    return str.trim();
   }
 
   /**
@@ -91,16 +103,17 @@ H5P.Flashcards = (function ($) {
    * @param userAnswer The user input
    * @return {Boolean} If the answer is found on the card
    */
-  function isCorrectAnswer(card, userAnswer){
+  function isCorrectAnswer (card, userAnswer){
     var answerStr = card.answer || '';
-    var answers = answerStr.toLowerCase().split('/').map(H5P.trim);
+    var answers = answerStr.toLowerCase().split('/').map(trimString);
+    var cleanedUserAnswer = cleanUserInput(userAnswer);
 
-    return answers.some(function(answer){
-      return answer === cleanUserInput(userAnswer);
+    return answers.some(function (answer){
+      return answer === cleanedUserAnswer;
     })
   }
 
-  C.prototype.getScore = function(){
+  C.prototype.getScore = function (){
     var that = this;
 
     return that.options.cards.reduce(function (sum, card, i) {
@@ -108,7 +121,7 @@ H5P.Flashcards = (function ($) {
     }, 0);
   };
 
-  C.prototype.getMaxScore = function(){
+  C.prototype.getMaxScore = function (){
     return this.options.cards.length;
   };
 
@@ -192,7 +205,7 @@ H5P.Flashcards = (function ($) {
 
     var $input = $card.find('.h5p-textinput');
 
-    $input.change(function(){
+    $input.change(function (){
       that.answers[index] = cleanUserInput($input.val());
       that.triggerXAPI('interacted');
     });
