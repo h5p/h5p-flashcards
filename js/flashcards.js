@@ -150,9 +150,9 @@ H5P.Flashcards = (function ($) {
       var correctAnswer = that.options.cards[index].answer;
 
       //decoded html entities
-      var elem = document.createElement('textarea');
+      /*var elem = document.createElement('textarea');
       elem.innerHTML = correctAnswer;
-      correctAnswer = elem.value;
+      correctAnswer = elem.value;*/
       
       if (correctAnswer === undefined) {
         correctAnswer = '';
