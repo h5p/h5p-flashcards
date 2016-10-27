@@ -15,7 +15,7 @@ H5P.Flashcards = (function ($) {
    */
   function C(options, id) {
     H5P.EventDispatcher.call(this);
-    this.score = 0;
+    this.answers = [];
     this.numAnswered = 0;
     this.contentId = this.id = id;
     this.options = $.extend({}, {
@@ -65,6 +65,64 @@ H5P.Flashcards = (function ($) {
         load();
       }
     }
+  };
+
+  /**
+   * Cleans the user input string
+   *
+   * @param str The user input
+   * @returns {string}
+   */
+  function cleanUserInput (str){
+    str = str || '';
+
+    return str.trim()
+      .toLowerCase()
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+  }
+
+  /**
+   * Trims a String
+   *
+   * @param {string} str A string to trim
+   * @returns {string} The trimmed string
+   */
+  function trimString (str){
+    return str.trim();
+  }
+
+  /**
+   * Checks if the user anwer matches an answer on the card
+   * @private
+   *
+   * @param card The card
+   * @param userAnswer The user input
+   * @return {Boolean} If the answer is found on the card
+   */
+  function isCorrectAnswer (card, userAnswer){
+    var answerStr = card.answer || '';
+    var answers = answerStr.toLowerCase().split('/').map(trimString);
+    var cleanedUserAnswer = cleanUserInput(userAnswer);
+
+    return answers.some(function (answer){
+      return answer === cleanedUserAnswer;
+    })
+  }
+
+  C.prototype.getScore = function (){
+    var that = this;
+
+    return that.options.cards.reduce(function (sum, card, i) {
+      return sum + (isCorrectAnswer(card, that.answers[i]) ? 1 : 0)
+    }, 0);
+  };
+
+  C.prototype.getMaxScore = function (){
+    return this.options.cards.length;
   };
 
   /**
@@ -145,40 +203,21 @@ H5P.Flashcards = (function ($) {
       $('.h5p-input', $card).append(H5P.JoubelUI.createTip(card.tip)).addClass('has-tip');
     }
 
-    var $button = $card.find('.h5p-button').click(function () {
-      var $input = $card.find('.h5p-textinput');
-      var correctAnswer = that.options.cards[index].answer;
+    var $input = $card.find('.h5p-textinput');
 
-      //decoded html entities
-      /*var elem = document.createElement('textarea');
-      elem.innerHTML = correctAnswer;
-      correctAnswer = elem.value;*/
-      
-      if (correctAnswer === undefined) {
-        correctAnswer = '';
-      }
-      var correct = correctAnswer.toLowerCase().split('/');
-      var userAnswer = H5P.trim($input.val()).toLowerCase();
-      
-      // Escape html characters
-      userAnswer = userAnswer.replace(/&/g, "&amp;")
-                             .replace(/</g, "&lt;")
-                             .replace(/>/g, "&gt;")
-                             .replace(/"/g, "&quot;")
-                             .replace(/'/g, "&#039;");
-      
-      var userCorrect = false;
-      for (var i = 0; i < correct.length; i++) {
-        if (H5P.trim(correct[i]) === userAnswer) {
-          that.score++;
-          userCorrect = true;
-          break;
-        }
-      }
+    $input.change(function (){
+      that.answers[index] = cleanUserInput($input.val());
+      that.triggerXAPI('interacted');
+    });
+
+    var $button = $card.find('.h5p-button').click(function () {
+      var card = that.options.cards[index];
+      var userAnswer = cleanUserInput($input.val());
+      var userCorrect = isCorrectAnswer(card, userAnswer);
 
       that.numAnswered++;
       if (that.numAnswered >= that.options.cards.length) {
-        that.triggerXAPICompleted(that.score, that.numAnswered);
+        that.triggerXAPICompleted(that.getScore(), that.getMaxScore());
       }
 
       if (!that.options.showSolutionsRequiresInput || userAnswer !== '' || userCorrect) {
@@ -196,12 +235,13 @@ H5P.Flashcards = (function ($) {
           that.$images[index].removeClass('h5p-collapse');
         }, 150);
 
-        var $solution = $('<div class="h5p-solution h5p-hidden"><span>' + correctAnswer + '</span></div>').appendTo($card.find('.h5p-imageholder'));
+        var $solution = $('<div class="h5p-solution h5p-hidden"><span>' + (that.options.cards[index].answer || '') + '</span></div>').appendTo($card.find('.h5p-imageholder'));
         setTimeout(function () {
           $solution.removeClass('h5p-hidden');
         }, 150);
       }
     });
+
     $card.find('.h5p-textinput').keypress(function (event) {
       if (event.keyCode === 13) {
         $button.click();
@@ -212,7 +252,6 @@ H5P.Flashcards = (function ($) {
     if (index === 0) {
       this.setCurrent($card);
     }
-
   };
 
   C.prototype.setProgress = function () {
