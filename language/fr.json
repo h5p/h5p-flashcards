@@ -10,27 +10,27 @@
         }
       ],
       "label": "Cartes",
-      "entity": "card",
+      "entity": "carte",
       "field": {
         "label": "Carte",
         "fields": [
           {
             "label": "Question",
-            "description": "Question optionnelle pour la carte. (Peut être une image, un texte, ou les deux)"
+            "description": "Question facultative pour la carte. (La carte peut contenir une image seule, un texte seul ou les deux combinés)"
           },
           {
             "label": "Réponse",
-            "description": "Réponse optionnelle (solution) pour la carte."
+            "description": "Réponse facultative (correction) pour la carte."
           },
           {
             "label": "Image",
-            "description": "Image optionnelle pour la carte. (Peut être une image, un texte, ou les deux)"
+            "description": "Image facultative pour la carte. (La carte peut contenir une image seule, un texte seul ou les deux combinés)"
           },
           {
-            "label": "Aide",
+            "label": "Indice",
             "fields": [
               {
-                "label": "Texte d'aide"
+                "label": "Texte de l'indice"
               }
             ]
           }
@@ -40,22 +40,22 @@
     {
       "label": "Texte de progression",
       "default": "Carte @card sur @total",
-      "description": "Texte de progression, variables possibles: @card and @total. Exemple: 'Carte @card sur @total'"
+      "description": "Texte de progression, variables possibles : @card et @total. (Exemple: 'Carte @card sur @total')"
     },
     {
-      "label": "Texte pour le bouton suivant",
+      "label": "Texte pour le bouton \"Suivant\"",
       "default": "Suivant"
     },
     {
-      "label": "Texte pour le bouton précédent",
+      "label": "Texte pour le bouton \"Précédent\"",
       "default": "Précédent"
     },
     {
-      "label": "Texte pour le bouton vérifier les réponses",
+      "label": "Texte pour le bouton \"Vérifier\"",
       "default": "Vérifier"
     },
     {
-      "label": "La solution ne sera affichée que si l'utilisateur entre une réponse"
+      "label": "Obliger l'utilisateur à entrer une réponse avant de pouvoir afficher la correction"
     }
   ]
 }
