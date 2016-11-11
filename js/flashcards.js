@@ -24,7 +24,8 @@ H5P.Flashcards = (function ($) {
       next: "Next",
       previous: "Previous",
       checkAnswerText: "Check answer",
-      showSolutionsRequiresInput: true
+      showSolutionsRequiresInput: true,
+      caseSensitive: false
     }, options);
     this.$images = [];
     this.on('resize', this.resize, this);
@@ -73,16 +74,16 @@ H5P.Flashcards = (function ($) {
    * @param str The user input
    * @returns {string}
    */
-  function cleanUserInput (str){
+  function cleanUserInput (str, caseSensitive){
     str = str || '';
 
-    return str.trim()
-      .toLowerCase()
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;")
-      .replace(/'/g, "&#039;");
+    if(!caseSensitive) {
+      str = str.toLowerCase();
+    }
+
+    var elem = document.createElement('textarea');
+    elem.innerHTML = str;
+    return elem.value;
   }
 
   /**
@@ -103,12 +104,14 @@ H5P.Flashcards = (function ($) {
    * @param userAnswer The user input
    * @return {Boolean} If the answer is found on the card
    */
-  function isCorrectAnswer (card, userAnswer){
+  function isCorrectAnswer (card, userAnswer, caseSensitive) {
     var answerStr = card.answer || '';
-    var answers = answerStr.toLowerCase().split('/').map(trimString);
-    var cleanedUserAnswer = cleanUserInput(userAnswer);
+    answerStr = cleanUserInput(answerStr, caseSensitive);
 
-    return answers.some(function (answer){
+    var answers = answerStr.split('/').map(trimString);
+    var cleanedUserAnswer = cleanUserInput(userAnswer, caseSensitive);
+
+    return answers.some(function (answer) {
       return answer === cleanedUserAnswer;
     })
   }
@@ -117,7 +120,7 @@ H5P.Flashcards = (function ($) {
     var that = this;
 
     return that.options.cards.reduce(function (sum, card, i) {
-      return sum + (isCorrectAnswer(card, that.answers[i]) ? 1 : 0)
+      return sum + (isCorrectAnswer(card, that.answers[i], that.options.caseSensitive) ? 1 : 0)
     }, 0);
   };
 
@@ -190,12 +193,12 @@ H5P.Flashcards = (function ($) {
     var card = this.options.cards[index];
     var imageText = (card.text !== undefined ? '<div class="h5p-imagetext">' + card.text + '</div>' : '');
     var $card = $('<div class="h5p-card h5p-animate' + (index === 0 ? ' h5p-current' : '') + '"> ' +
-      '<div class="h5p-cardholder">' +
-      '<div class="h5p-imageholder"></div>' +
-      '<div class="h5p-foot">' + imageText + '<div class="h5p-answer">' +
-      '<div class="h5p-input"><input type="text" class="h5p-textinput" tabindex="-1"/>' +
-      '<button type="button" class="h5p-button" tabindex="-1">' + this.options.checkAnswerText + '</button></div></div></div></div></div>')
-      .appendTo($inner);
+        '<div class="h5p-cardholder">' +
+        '<div class="h5p-imageholder"></div>' +
+        '<div class="h5p-foot">' + imageText + '<div class="h5p-answer">' +
+        '<div class="h5p-input"><input type="text" class="h5p-textinput" tabindex="-1"/>' +
+        '<button type="button" class="h5p-button" tabindex="-1">' + this.options.checkAnswerText + '</button></div></div></div></div></div>')
+        .appendTo($inner);
     $card.find('.h5p-imageholder').prepend(this.$images[index]);
 
     // Add tip if tip exists
@@ -206,14 +209,14 @@ H5P.Flashcards = (function ($) {
     var $input = $card.find('.h5p-textinput');
 
     $input.change(function (){
-      that.answers[index] = cleanUserInput($input.val());
+      that.answers[index] = cleanUserInput($input.val(), that.options.caseSensitive);
       that.triggerXAPI('interacted');
     });
 
     var $button = $card.find('.h5p-button').click(function () {
       var card = that.options.cards[index];
-      var userAnswer = cleanUserInput($input.val());
-      var userCorrect = isCorrectAnswer(card, userAnswer);
+      var userAnswer = cleanUserInput($input.val(), that.options.caseSensitive);
+      var userCorrect = isCorrectAnswer(card, userAnswer, that.options.caseSensitive);
 
       that.numAnswered++;
       if (that.numAnswered >= that.options.cards.length) {
@@ -373,7 +376,7 @@ H5P.Flashcards = (function ($) {
 
       //Resize image if it is too big.
       if (($image[0].naturalWidth + (minPadding * 2)) > imageHolderWidth ||
-        ($image[0].naturalHeight + (minPadding * 2)) > imageHolderWidth) {
+          ($image[0].naturalHeight + (minPadding * 2)) > imageHolderWidth) {
         var ratio = $image[0].naturalHeight / $image[0].naturalWidth;
 
         //Landscape image
