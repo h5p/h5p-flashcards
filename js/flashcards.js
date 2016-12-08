@@ -105,11 +105,8 @@ H5P.Flashcards = (function ($) {
    */
   function isCorrectAnswer (card, userAnswer){
     var answerStr = card.answer || '';
-    var answers = answerStr.toLowerCase().split('/').map(trimString);
-
-    return answers.some(function (answer){
-      return answer === userAnswer;
-    });
+    var answer = answerStr.toLowerCase();
+    return answer === userAnswer;
   }
 
   C.prototype.getScore = function (){
