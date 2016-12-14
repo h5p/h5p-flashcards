@@ -23,6 +23,7 @@
       "name": "card",
       "type": "group",
       "label": "Card",
+      "importance": "high",
       "fields": [
         {
           "name": "text",
