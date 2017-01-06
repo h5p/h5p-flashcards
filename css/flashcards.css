@@ -368,11 +368,12 @@ button::-moz-focus-inner {
 
 .h5p-flashcards .joubel-tip-container {
   position: absolute;
-  right: 2.3em;
+  right: 2em;
   top: 1.5em;
 }
 
 .h5p-flashcards .joubel-icon-tip-normal {
   font-size: 1.3em;
   line-height: 1.8em;
+  padding-right: 2px;
 }
