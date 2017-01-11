@@ -105,19 +105,15 @@ H5P.Flashcards = (function ($) {
    */
   function isCorrectAnswer (card, userAnswer){
     var answerStr = card.answer || '';
-    var answers = answerStr.toLowerCase().split('/').map(trimString);
-    var cleanedUserAnswer = cleanUserInput(userAnswer);
-
-    return answers.some(function (answer){
-      return answer === cleanedUserAnswer;
-    })
+    var answer = answerStr.toLowerCase();
+    return answer === userAnswer;
   }
 
   C.prototype.getScore = function (){
     var that = this;
 
     return that.options.cards.reduce(function (sum, card, i) {
-      return sum + (isCorrectAnswer(card, that.answers[i]) ? 1 : 0)
+      return sum + (isCorrectAnswer(card, that.answers[i]) ? 1 : 0);
     }, 0);
   };
 
