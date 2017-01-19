@@ -2,7 +2,8 @@
   {
     "name": "description",
     "type": "text",
-    "label": "Task description"
+    "label": "Task description",
+    "importance": "high"
   },
   {
     "name": "cards",
@@ -15,17 +16,20 @@
     ],
     "label": "Cards",
     "entity": "card",
+    "importance": "high",
     "min": 1,
     "defaultNum": 1,
     "field": {
       "name": "card",
       "type": "group",
       "label": "Card",
+      "importance": "high",
       "fields": [
         {
           "name": "text",
           "type": "text",
           "label": "Question",
+          "importance": "high",
           "optional": true,
           "description": "Optional textual question for the card. (The card may use just an image, just a text or both)"
         },
@@ -33,6 +37,7 @@
           "name": "answer",
           "type": "text",
           "label": "Answer",
+          "importance": "high",
           "optional": true,
           "description": "Optional answer(solution) for the card."
         },
@@ -40,6 +45,7 @@
           "name": "image",
           "type": "image",
           "label": "Image",
+          "importance": "high",
           "optional": true,
           "description": "Optional image for the card. (The card may use just an image, just a text or both)"
         },
@@ -47,14 +53,21 @@
           "name": "tip",
           "type": "group",
           "label": "Tip",
+          "importance": "low",
           "optional": true,
           "fields": [
             {
               "name": "tip",
               "label": "Tip text",
+              "importance": "low",
               "type": "text",
               "widget": "html",
-              "tags": ["p", "br", "strong", "em"],
+              "tags": [
+                "p",
+                "br",
+                "strong",
+                "em"
+              ],
               "optional": true
             }
           ]
@@ -67,6 +80,7 @@
     "name": "progressText",
     "type": "text",
     "default": "Card @card of @total",
+    "importance": "low",
     "description": "Progress text, variables available: @card and @total. Example: 'Card @card of @total'",
     "common": true
   },
@@ -75,6 +89,7 @@
     "name": "next",
     "type": "text",
     "default": "Next",
+    "importance": "low",
     "common": true
   },
   {
@@ -82,6 +97,7 @@
     "name": "previous",
     "type": "text",
     "default": "Previous",
+    "importance": "low",
     "common": true
   },
   {
@@ -89,6 +105,7 @@
     "name": "checkAnswerText",
     "type": "text",
     "default": "Check",
+    "importance": "low",
     "common": true
   },
   {
@@ -96,6 +113,7 @@
     "name": "showSolutionsRequiresInput",
     "type": "boolean",
     "default": true,
+    "importance": "low",
     "optional": true
   }
 ]
