@@ -3,10 +3,14 @@
   overflow: hidden;
   padding: 0.5em 0 0em;
   line-height: 1.25em;
+  font-family: 'Open Sans', sans-serif;
   font-size: 1em;
-
   background: rgba(255, 255, 255, 0.9);
   filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#e6FFFFFF,endColorstr=#e6FFFFFF);
+}
+
+.h5p-flashcards.h5p-standalone {
+  background-color: #27344e;
 }
 
 .h5p-flashcards .h5p-loading {
@@ -25,6 +29,7 @@
   margin: 0 0.5em;
   border-bottom: 0.1em solid #ddd;
   padding: 0.375em 0 0.375em;
+  color: #fff;
 }
 
 .h5p-flashcards .h5p-inner {
@@ -39,7 +44,6 @@
   visibility: hidden;
   width: 100%;
   height: inherit;
-  background: #fff;
 
   -webkit-transform: translateX(105%);
   -moz-transform: translateX(105%);
@@ -57,13 +61,7 @@
   height: 100%;
   max-width: 32em;
 
-  background: #f4f4f4; /* Old browsers */
-  background: -moz-linear-gradient(top, #f4f4f4 0%, #e0e0e0 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f4f4f4), color-stop(100%,#e0e0e0)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, #f4f4f4 0%,#e0e0e0 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, #f4f4f4 0%,#e0e0e0 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, #f4f4f4 0%,#e0e0e0 100%); /* IE10+ */
-  background: linear-gradient(to bottom, #f4f4f4 0%,#e0e0e0 100%); /* W3C */
+  background-color: white;
 
   -webkit-box-shadow: 0em 0em 0.4em rgba(50, 50, 50, 0.5);
   -moz-box-shadow: 0em 0em 0.4em rgba(50, 50, 50, 0.5);
@@ -76,7 +74,6 @@
 }
 
 .h5p-flashcards .h5p-imageholder {
-
   display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
   display: -ms-flexbox;      /* TWEENER - IE 10 */
   display: -webkit-flex;     /* NEW - Chrome */
@@ -88,7 +85,10 @@
   -webkit-justify-content: space-around;
   justify-content: space-around;
 
-  padding: 0em 1em 1em;
+  margin: 1em 1em 0 1em;
+  padding: 0 1em 1em 1em;
+  background-color: #c8e0e3;
+  border-radius: 1em 1em 0 0;
 }
 
 .h5p-flashcards .h5p-card.h5p-current {
@@ -110,7 +110,7 @@
 .h5p-flashcards .h5p-card .h5p-clue {
   display: block;
   margin: 1em auto 0 !important;
-  padding: 1em;
+  padding: 0.5em;
   background: white;
 
   text-align: center;
@@ -148,47 +148,95 @@
   width: 100%;
 }
 
-.h5p-flashcards .h5p-imagetext {
-  background: none;
-  text-align: center;
-  overflow: hidden;
-  max-width: 32em;
-  padding: 1em 1em 0em;
-  margin: auto;
-}
-
 .h5p-flashcards .h5p-answer {
   background: none;
   overflow: hidden;
   position: relative;
   max-width: 32em;
+  margin: 0 2em;
+}
+
+.h5p-flashcards .h5p-answer .h5p-button {
+  display: inline-block;
+  border: none;
+  border-radius: 0 2em 2em 0;
+  background: #35adcb;
+  padding: 0.75em 1.5em;
+  box-shadow: none;
+  top: 0;
+  right: 0;
+  height: 3em;
+  position: absolute;
+}
+
+.h5p-flashcards .h5p-answer .h5p-wrong .h5p-button,
+.h5p-flashcards .h5p-answer .h5p-correct .h5p-button {
+  visibility: hidden;
+}
+
+.h5p-flashcards .h5p-answer .h5p-textinput {
+  width: 100%;
+  height: 3em;
+  padding: 0 1em;
+  border-radius: 2em;
+  box-sizing: border-box;
+}
+
+.h5p-flashcards .h5p-answer .h5p-input {
+  position: relative;
+  margin-bottom: 2em;
+}
+
+.h5p-flashcards .h5p-imagetext {
+  background: none;
+  text-align: center;
+  overflow: hidden;
+  max-width: 32em;
+  padding: 0.75em;
   margin: auto;
+  color: #27344e;
+  font-size: 1.6em;
+  line-height: 1em;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.h5p-flashcards .h5p-imagetext:first-letter {
+    text-transform: uppercase;
 }
 
 .h5p-flashcards .h5p-input {
   text-align: center;
-  padding: 0em 1em;
   margin-bottom: 1em;
 }
 
-.h5p-flashcards .h5p-inner .h5p-answer .h5p-input.h5p-correct:after {
-  content: "\f00c";
-  font-family: 'H5PFontAwesome4';
-  color: #39692e;
+.h5p-flashcards .h5p-answer .h5p-wrong .h5p-feedback-label {
   position: absolute;
-  right: 2.5em;
-  top: 2em;
-  font-size: 1em;
+  right: 1em;
+  top: 1em;
+  line-height: 1em;
+  color: #c33f62;
 }
 
-.h5p-flashcards .h5p-inner .h5p-answer .h5p-input.h5p-wrong:after {
+.h5p-flashcards .h5p-answer .h5p-wrong .h5p-feedback-label:before {
   content: "\f00d";
   font-family: 'H5PFontAwesome4';
-  color: #c33f62;
+  padding-right: 2px;
+}
+
+.h5p-flashcards .h5p-answer .h5p-correct .h5p-feedback-label {
   position: absolute;
-  right: 2.5em;
-  top: 2em;
-  font-size: 1em;
+  right: 1em;
+  top: 1em;
+  line-height: 1em;
+  color: #39692e;
+}
+
+.h5p-flashcards .h5p-answer .h5p-correct .h5p-feedback-label:before {
+  content: "\f00c";
+  font-family: 'H5PFontAwesome4';
+  padding-right: 2px;
 }
 
 /* If tip is present, correct/wrong marker has to be moved to the left */
@@ -199,17 +247,17 @@
 .h5p-flashcards .h5p-textinput {
   position: relative;
   height: 1.5em;
-  width: 90%;
   padding: 0.25em 0.5em;
-  margin: 1.5625em auto;
+  margin: 0 auto;
+  display: inline-block;
 
   font-size: 1em;
   font-weight: normal;
   line-height: 1.25em;
   word-wrap: break-word;
 
-  border-radius: 0.25em;
-  border: 0.0625em solid #a0a0a0;
+  border-radius: 1em 0 0 1em;
+  border: 0.0625em solid #c7c7c7;
   color: rgb(51, 51, 51);
   box-sizing: content-box;
 }
@@ -221,17 +269,11 @@
 }
 
 .h5p-flashcards .h5p-input.h5p-correct .h5p-textinput[disabled] {
-  background-color: #d1e2ce;
-  border: 0.0625em solid #afcdaa;
-  color: #39692e;
-  font-weight: bold;
+  background-color: #f0f0f0;
 }
 
 .h5p-flashcards .h5p-input.h5p-wrong .h5p-textinput[disabled] {
-  background-color: #e6ced1;
-  border: 0.0625em solid #ce9b9b;
-  color: #c33f62;
-  font-weight: bold;
+  background-color: #f0f0f0;
 }
 
 .h5p-flashcards .h5p-button {
@@ -270,15 +312,9 @@
   cursor: default;
 }
 
-.h5p-flashcards .h5p-input .h5p-button:before {
-  content: "\f06e";
-  font-family: 'H5PFontAwesome4';
-  margin-right: 0.1875em;
-}
-
 .h5p-flashcards .h5p-progress {
   margin-top: 0.375em;
-  color: #999;
+  color: #fff;
   text-align: center;
   padding: 0em 3em;
 }
@@ -288,7 +324,7 @@
   position: relative;
   height: 2.5em;
   padding-top: 0.5em;
-  max-width: 32em;
+  max-width: 30em;
   vertical-align:middle;
 }
 

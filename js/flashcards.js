@@ -126,7 +126,11 @@ H5P.Flashcards = (function ($) {
    */
   C.prototype.cardsLoaded = function () {
     var that = this;
-    var $inner = this.$container.html('<div class="h5p-description">' + this.options.description + '</div><div class="h5p-inner"></div><div class="h5p-navigation"><button type="button" class="h5p-button h5p-previous h5p-hidden" tabindex="3" title="' + this.options.previous + '"></button><button type="button" class="h5p-button h5p-next" tabindex="4" title="' + this.options.next + '"></button><div class="h5p-progress"></div>').children('.h5p-inner');
+    var $inner = this.$container.html('<div class="h5p-description">' + this.options.description + '</div>' +
+    '<div class="h5p-progress"></div>' +
+    '<div class="h5p-inner"></div>' +
+    '<div class="h5p-navigation"><button type="button" class="h5p-button h5p-previous h5p-hidden" tabindex="3" title="' + this.options.previous + '"></button><button type="button" class="h5p-button h5p-next" tabindex="4" title="' + this.options.next + '"></button>')
+      .children('.h5p-inner');
     this.$progress = this.$container.find('.h5p-progress');
 
     // Add cards
@@ -220,10 +224,14 @@ H5P.Flashcards = (function ($) {
         $input.add(this).attr('disabled', true);
 
         if (userCorrect) {
-          $input.parent().addClass('h5p-correct');
+          $input.parent()
+            .addClass('h5p-correct')
+            .append('<span class="h5p-feedback-label">Correct!</span>');
         }
         else {
-          $input.parent().addClass('h5p-wrong');
+          $input.parent()
+            .addClass('h5p-wrong')
+            .append('<span class="h5p-feedback-label">Incorrect!</span>');
         }
 
         that.$images[index].addClass('h5p-collapse');
@@ -252,7 +260,7 @@ H5P.Flashcards = (function ($) {
 
   C.prototype.setProgress = function () {
     var index = this.$current.index();
-    this.$progress.text(this.options.progressText.replace('@card', index + 1).replace('@total', this.options.cards.length));
+    this.$progress.text((index + 1) + ' / ' + this.options.cards.length);
   };
 
   /**
