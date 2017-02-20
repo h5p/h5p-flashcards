@@ -51,6 +51,18 @@
     },
     {
       "label": "Krev inndata fra brukeren før fasit gis."
+    },
+    {
+      "label": "Tekst for \"svar\" feltet",
+      "default": "Ditt svar"
+    },
+    {
+      "label": "Tekst for riktig svar",
+      "default": "Riktig"
+    },
+    {
+      "label": "Tekst for feil svar",
+      "default": "Feil"
     }
   ]
 }

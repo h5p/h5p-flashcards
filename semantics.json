@@ -115,5 +115,29 @@
     "default": true,
     "importance": "low",
     "optional": true
+  },
+  {
+    "label": "Text for the answer input field",
+    "name": "defaultAnswerText",
+    "type": "text",
+    "default": "Your answer",
+    "importance": "low",
+    "common": true
+  },
+  {
+    "label": "Text for correct answer",
+    "name": "correctAnswerText",
+    "type": "text",
+    "default": "Correct",
+    "importance": "low",
+    "common": true
+  },
+  {
+    "label": "Text for incorrect answer",
+    "name": "incorrectAnswerText",
+    "type": "text",
+    "default": "Incorrect",
+    "importance": "low",
+    "common": true
   }
 ]

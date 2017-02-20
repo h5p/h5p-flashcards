@@ -35,37 +35,36 @@
 .h5p-flashcards .h5p-inner {
   position: relative;
   height: 32em;
-  margin: 1em 0.375em 0.375em;
 }
 
 .h5p-flashcards .h5p-card {
-  position: absolute;
-  display: inline-block;
-  visibility: hidden;
-  width: 100%;
+  position: relative;
+  float: left;
+  width: 28em;
+  margin: 1em;
   height: inherit;
+  overflow: hidden;
+}
 
-  -webkit-transform: translateX(105%);
-  -moz-transform: translateX(105%);
-  -ms-transform: translateX(105%);
-  transform: translateX(105%);
+.h5p-flashcards .h5p-card .h5p-flashcard-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: #27344e;
+  cursor: pointer;
+  opacity: 0.75;
+}
 
-  -webkit-transition: -webkit-transform 0.25s, visibility 0.25s;
-  -moz-transition: -moz-transform 0.25s, visibility 0.25s;
-  -ms-transition: -ms-transform 0.25s, visibility 0.25s;
-  transition: transform 0.25s, visibility 0.25s;
+.h5p-flashcards .h5p-card.h5p-current .h5p-flashcard-overlay {
+  display: none;
 }
 
 .h5p-flashcards .h5p-cardholder {
   margin: auto;
   height: 100%;
-  max-width: 32em;
 
   background-color: white;
-
-  -webkit-box-shadow: 0em 0em 0.4em rgba(50, 50, 50, 0.5);
-  -moz-box-shadow: 0em 0em 0.4em rgba(50, 50, 50, 0.5);
-  box-shadow: 0em 0em 0.4em rgba(50, 50, 50, 0.5);
 
   -webkit-border-radius: 1em;
   -moz-border-radius: 1em;
@@ -89,22 +88,6 @@
   padding: 0 1em 1em 1em;
   background-color: #c8e0e3;
   border-radius: 1em 1em 0 0;
-}
-
-.h5p-flashcards .h5p-card.h5p-current {
-  visibility: visible;
-
-  -webkit-transform: translateX(0);
-  -moz-transform: translateX(0);
-  -ms-transform: translateX(0);
-  transform: translateX(0);
-}
-
-.h5p-flashcards .h5p-card.h5p-previous {
-  -webkit-transform: translateX(-105%);
-  -moz-transform: translateX(-105%);
-  -ms-transform: translateX(-105%);
-  transform: translateX(-105%);
 }
 
 .h5p-flashcards .h5p-card .h5p-clue {
@@ -143,14 +126,13 @@
 }
 
 .h5p-flashcards .h5p-foot {
-  display: inline-block;
-  margin: 0em auto;
   width: 100%;
+  position: absolute;
+  bottom: 0;
 }
 
 .h5p-flashcards .h5p-answer {
   background: none;
-  overflow: hidden;
   position: relative;
   max-width: 32em;
   margin: 0 2em;
@@ -171,7 +153,7 @@
 
 .h5p-flashcards .h5p-answer .h5p-wrong .h5p-button,
 .h5p-flashcards .h5p-answer .h5p-correct .h5p-button {
-  visibility: hidden;
+  display: none;
 }
 
 .h5p-flashcards .h5p-answer .h5p-textinput {
@@ -231,6 +213,8 @@
   top: 1em;
   line-height: 1em;
   color: #39692e;
+  transition: opacity 2s;
+  opacity: 1;
 }
 
 .h5p-flashcards .h5p-answer .h5p-correct .h5p-feedback-label:before {
@@ -308,7 +292,6 @@
 
 .h5p-flashcards .h5p-button[disabled],
 .h5p-flashcards .h5p-button[disabled]:hover {
-  background: #ccc;
   cursor: default;
 }
 
@@ -326,14 +309,15 @@
   padding-top: 0.5em;
   max-width: 30em;
   vertical-align:middle;
+  clear: both;
 }
 
-.h5p-flashcards .h5p-next {
+.h5p-flashcards .h5p-button.h5p-next {
   position: absolute;
   right: 0.375em;
 }
 
-.h5p-flashcards .h5p-previous {
+.h5p-flashcards .h5p-button.h5p-previous {
   position: absolute;
   left: 0.375em;
 }
