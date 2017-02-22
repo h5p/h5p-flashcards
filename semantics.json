@@ -139,5 +139,13 @@
     "default": "Incorrect",
     "importance": "low",
     "common": true
+  },
+  {
+    "label": "Show solution text",
+    "name": "showSolutionText",
+    "type": "text",
+    "default": "Correct answer",
+    "importance": "low",
+    "common": true
   }
 ]

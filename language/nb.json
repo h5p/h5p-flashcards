@@ -63,6 +63,10 @@
     {
       "label": "Tekst for feil svar",
       "default": "Feil"
+    },
+    {
+      "label": "Tekst for vis svar.",
+      "default": "Riktig svar"
     }
   ]
 }
