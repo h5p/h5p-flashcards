@@ -134,7 +134,7 @@ H5P.Flashcards = (function ($) {
     '<div class="h5p-progress"></div>' +
     '<div class="h5p-inner"></div>')
       .children('.h5p-inner')
-      .width(this.options.cards.length * 30 + 'em');
+      .width(this.options.cards.length * 28 + 'em');
 
     this.$visualProgress = $('<div class="h5p-visual-progress"><div></div></div>')
       .appendTo(this.$container);
@@ -235,9 +235,12 @@ H5P.Flashcards = (function ($) {
         that.triggerXAPICompleted(that.getScore(), that.getMaxScore());
       }
 
+      if (userAnswer == '') {
+        $input.focus();
+      }
+
       if (!that.options.showSolutionsRequiresInput || userAnswer !== '' || userCorrect) {
         $input.add(this).attr('disabled', true);
-
         if (userCorrect) {
           $input.parent()
             .addClass('h5p-correct')
@@ -324,6 +327,8 @@ H5P.Flashcards = (function ($) {
       return;
     }
 
+    $next.find('.h5p-textinput').focus();
+
     this.$inner.animate ({
       left: "-=" + this.$current.outerWidth(true)
     });
@@ -350,6 +355,8 @@ H5P.Flashcards = (function ($) {
     if (!$prev.length) {
       return;
     }
+
+    $prev.find('.h5p-textinput').focus();
 
     this.$inner.animate ({
       left: "+=" + this.$current.outerWidth(true)
