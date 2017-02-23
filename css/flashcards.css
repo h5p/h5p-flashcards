@@ -45,7 +45,8 @@
   position: relative;
   display: inline-block;
   vertical-align: middle;
-  width: 28em;
+  width: 26.8em;
+  margin: 0 0.6em;
 }
 
 .h5p-flashcards .h5p-card > .h5p-flashcard-overlay {
@@ -172,17 +173,23 @@
   transition: transform 0.15s;
 }
 
+.h5p-flashcards .h5p-card div.h5p-clue {
+  box-shadow: none;
+  background: none;
+  border: none;
+}
+
 .h5p-flashcards .h5p-card.h5p-current .h5p-imageholder {
   -webkit-filter: none;
   filter: none;
 }
 
 .h5p-flashcards .h5p-card div.h5p-clue:after {
-  content: "\f059";
+  content: "\f03e";
   font-family: 'H5PFontAwesome4';
-  font-size: 5em;
+  font-size: 7em;
   line-height: 100px;
-  color: #cccccc;
+  color: #a3b7be;
 }
 
 .h5p-flashcards .h5p-card img.h5p-clue {
