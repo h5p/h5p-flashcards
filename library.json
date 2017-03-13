@@ -3,9 +3,9 @@
   "description": "Create cards where the user has to guess the answer.",
   "majorVersion": 1,
   "minorVersion": 4,
-  "patchVersion": 0,
+  "patchVersion": 1,
   "runnable": 1,
-  "author": "Joubel AS",
+  "author": "Joubel",
   "coreApi": {
     "majorVersion": 1,
     "minorVersion": 4
