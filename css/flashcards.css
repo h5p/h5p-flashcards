@@ -49,10 +49,16 @@
   margin: 0 0.6em;
 }
 
-.h5p-flashcards .h5p-card > .h5p-flashcard-overlay {
+.h5p-flashcards .h5p-card .h5p-flashcard-overlay {
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
+  border-radius: inherit;
+}
+
+.h5p-flashcards .h5p-card > .h5p-flashcard-overlay {
   z-index: 1;
   background-color: #27344e;
   cursor: pointer;
@@ -69,23 +75,11 @@
 .h5p-flashcards .h5p-card.h5p-wrong .h5p-imageholder > .h5p-flashcard-overlay {
   background-color: #f30e0e;
   opacity: 0.68;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  border-radius: inherit;
-  left: 0;
-  top: 0;
 }
 
 .h5p-flashcards .h5p-card.h5p-correct .h5p-imageholder > .h5p-flashcard-overlay {
   background-color: #6cda4a;
   opacity: 0.75;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  border-radius: inherit;
-  left: 0;
-  top: 0;
 }
 
 .h5p-flashcards .h5p-card.h5p-correct .h5p-imageholder .h5p-clue,
