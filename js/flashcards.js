@@ -329,7 +329,7 @@ H5P.Flashcards = (function ($) {
 
     $next.find('.h5p-textinput').focus();
 
-    this.$inner.animate ({
+    this.$inner.animate({
       left: "-=" + this.$current.outerWidth(true)
     });
 
