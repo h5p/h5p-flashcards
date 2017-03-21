@@ -230,17 +230,14 @@ H5P.Flashcards = (function ($) {
       var userAnswer = cleanUserInput($input.val());
       var userCorrect = isCorrectAnswer(card, userAnswer);
 
-      that.numAnswered++;
-      if (that.numAnswered >= that.options.cards.length) {
-        that.triggerXAPICompleted(that.getScore(), that.getMaxScore());
-      }
-
       if (userAnswer == '') {
         $input.focus();
       }
 
       if (!that.options.showSolutionsRequiresInput || userAnswer !== '' || userCorrect) {
+        that.numAnswered++;
         $input.add(this).attr('disabled', true);
+
         if (userCorrect) {
           $input.parent()
             .addClass('h5p-correct')
@@ -266,6 +263,10 @@ H5P.Flashcards = (function ($) {
         that.nextTimer = setTimeout(function () {
           that.next();
         }, 2000);
+      }
+
+      if (that.numAnswered >= that.options.cards.length) {
+        that.triggerXAPICompleted(that.getScore(), that.getMaxScore());
       }
     });
 
