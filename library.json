@@ -19,6 +19,9 @@
   ],
   "preloadedJs": [
     {
+      "path": "js/controls.js"
+    },
+    {
       "path": "js/flashcards.js"
     }
   ],
