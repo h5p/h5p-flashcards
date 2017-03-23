@@ -5,7 +5,7 @@ var H5P = H5P || {};
  *
  * @param {jQuery} $
  */
-H5P.Flashcards = (function ($) {
+H5P.Flashcards = (function ($, Controls) {
 
   /**
    * Initialize module.
@@ -31,6 +31,13 @@ H5P.Flashcards = (function ($) {
       showSolutionText: "Correct answer"
     }, options);
     this.$images = [];
+
+    // add keyboard controls
+    this.controls = new Controls([new Controls.UIKeyboard()]);
+
+    // if of the description field
+    this.descriptionId = 'h5p-flashcards-' + this.contentId + '-description'
+
     this.on('resize', this.resize, this);
   }
 
@@ -45,7 +52,11 @@ H5P.Flashcards = (function ($) {
   C.prototype.attach = function ($container) {
     var that = this;
 
-    this.$container = $container.addClass('h5p-flashcards').html('<div class="h5p-loading">Loading, please wait...</div>');
+    this.$container = $container
+      .addClass('h5p-flashcards')
+      .attr('tabindex', 0)
+      .attr('aria-labelledby', this.descriptionId)
+      .html('<div class="h5p-loading">Loading, please wait...</div>');
 
     // Load card images. (we need their size before we can create the task)
     var loaded = 0;
@@ -144,7 +155,7 @@ console.log(this);
    */
   C.prototype.cardsLoaded = function () {
     var that = this;
-    var $inner = this.$container.html('<div class="h5p-description">' + this.options.description + '</div>' +
+    var $inner = this.$container.html('<div id="' + this.descriptionId + '" class="h5p-description">' + this.options.description + '</div>' +
     '<div class="h5p-progress"></div>' +
     '<div class="h5p-inner" role="list"></div>')
       .children('.h5p-inner')
@@ -204,7 +215,7 @@ console.log(this);
   };
 
   C.prototype.addCard = function (index, $inner) {
-    var cardId = 'h5p-card-' + this.contentId + '-' + index;
+    var cardId = 'h5p-flashcards-' + this.contentId + '-card-' + index;
     var that = this;
     var card = this.options.cards[index];
     var imageText = '<div id="' + cardId + '-title" class="h5p-imagetext">' + (card.text !== undefined ? card.text : '') + '</div>';
@@ -225,6 +236,9 @@ console.log(this);
         that.next();
       }
     }));
+
+    // add to controls
+    this.controls.addElement($card.get(0));
 
     $card.parent().css('left', (this.$container.width() / 2) - $card.outerWidth(true) / 2);
 
@@ -478,4 +492,4 @@ console.log(this);
   };
 
   return C;
-})(H5P.jQuery);
+})(H5P.jQuery, H5P.Controls);
