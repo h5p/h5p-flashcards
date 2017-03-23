@@ -132,7 +132,7 @@ H5P.Flashcards = (function ($) {
     var that = this;
     var $inner = this.$container.html('<div class="h5p-description">' + this.options.description + '</div>' +
     '<div class="h5p-progress"></div>' +
-    '<div class="h5p-inner"></div>')
+    '<div class="h5p-inner" role="list"></div>')
       .children('.h5p-inner')
       .width(this.options.cards.length * 28 + 'em');
 
@@ -190,11 +190,12 @@ H5P.Flashcards = (function ($) {
   };
 
   C.prototype.addCard = function (index, $inner) {
+    var cardId = 'h5p-card-' + this.contentId + '-' + index;
     var that = this;
     var card = this.options.cards[index];
-    var imageText = '<div class="h5p-imagetext">' + (card.text !== undefined ? card.text : '') + '</div>';
+    var imageText = '<div id="' + cardId + '-title" class="h5p-imagetext">' + (card.text !== undefined ? card.text : '') + '</div>';
 
-    var $card = $('<div class="h5p-card h5p-animate' + (index === 0 ? ' h5p-current' : '') + '"> ' +
+    var $card = $('<div role="listitem" class="h5p-card h5p-animate' + (index === 0 ? ' h5p-current' : '') + '" tabindex="0" aria-labelledby="' + cardId + '-title"> ' +
       '<div class="h5p-cardholder">' +
       '<div class="h5p-imageholder"><div class="h5p-flashcard-overlay"></div></div>' +
       '<div class="h5p-foot">' + imageText + '<div class="h5p-answer">' +
@@ -310,8 +311,8 @@ H5P.Flashcards = (function ($) {
 
     this.$current = $card;
     $card.addClass('h5p-current');
-    $card.find('.h5p-textinput').attr('tabindex', '1');
-    $card.find('.h5p-button').attr('tabindex', '2');
+    $card.find('.h5p-textinput').attr('tabindex', '0');
+    $card.find('.h5p-button').attr('tabindex', '0');
     $card.removeClass('h5p-previous');
   };
 
