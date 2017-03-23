@@ -5,7 +5,7 @@ var H5P = H5P || {};
  *
  * @param {jQuery} $
  */
-H5P.Flashcards = (function ($, Controls) {
+H5P.Flashcards = (function ($) {
 
   /**
    * Initialize module.
@@ -31,9 +31,6 @@ H5P.Flashcards = (function ($, Controls) {
       showSolutionText: "Correct answer"
     }, options);
     this.$images = [];
-
-    // add keyboard controls
-    this.controls = new Controls([new Controls.UIKeyboard()]);
 
     // if of the description field
     this.descriptionId = 'h5p-flashcards-' + this.contentId + '-description'
@@ -81,16 +78,14 @@ H5P.Flashcards = (function ($, Controls) {
       }
     }
 
-console.log(this);
-
     this.$container.bind("keydown", function (event) {
       // Left
-      if (event.keyCode === 37 && that.previousSlide()) {
+      if (event.keyCode === 37 && that.previous()) {
         console.log('left');
       }
 
       // Right
-      else if (event.keyCode === 39 && that.nextSlide()) {
+      else if (event.keyCode === 39 && that.next()) {
         console.log('right');
       }
     });
@@ -236,9 +231,6 @@ console.log(this);
         that.next();
       }
     }));
-
-    // add to controls
-    this.controls.addElement($card.get(0));
 
     $card.parent().css('left', (this.$container.width() / 2) - $card.outerWidth(true) / 2);
 
@@ -492,4 +484,4 @@ console.log(this);
   };
 
   return C;
-})(H5P.jQuery, H5P.Controls);
+})(H5P.jQuery);
