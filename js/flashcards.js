@@ -69,6 +69,20 @@ H5P.Flashcards = (function ($) {
         load();
       }
     }
+
+console.log(this);
+
+    this.$container.bind("keydown", function (event) {
+      // Left
+      if (event.keyCode === 37 && that.previousSlide()) {
+        console.log('left');
+      }
+
+      // Right
+      else if (event.keyCode === 39 && that.nextSlide()) {
+        console.log('right');
+      }
+    });
   };
 
   /**
@@ -216,7 +230,7 @@ H5P.Flashcards = (function ($) {
 
     // Add tip if tip exists
     if (card.tip !== undefined && card.tip.trim().length > 0) {
-      $('.h5p-input', $card).append(H5P.JoubelUI.createTip(card.tip)).addClass('has-tip');
+      $('.h5p-input', $card).append(H5P.JoubelUI.createTip(card.tip).attr('tabindex', '-1')).addClass('has-tip');
     }
 
     var $input = $card.find('.h5p-textinput');
@@ -303,7 +317,10 @@ H5P.Flashcards = (function ($) {
     // Remove from existing card.
     if (this.$current) {
       this.$current.removeClass('h5p-current');
-      this.$current.find('input, button').attr('tabindex', '-1');
+      this.$current.find('.h5p-textinput').attr('tabindex', '-1');
+      this.$current.find('.joubel-tip-container').attr('tabindex', '-1');
+      this.$current.find('.h5p-button').attr('tabindex', '-1');
+
       if (newClassForOldCurrentCard) {
         this.$current.addClass(newClassForOldCurrentCard);
       }
@@ -313,6 +330,7 @@ H5P.Flashcards = (function ($) {
     $card.addClass('h5p-current');
     $card.find('.h5p-textinput').attr('tabindex', '0');
     $card.find('.h5p-button').attr('tabindex', '0');
+    $card.find('.joubel-tip-container').attr('tabindex', '0');
     $card.removeClass('h5p-previous');
   };
 
