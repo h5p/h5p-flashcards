@@ -156,7 +156,14 @@ H5P.Flashcards = (function ($) {
       .children('.h5p-inner')
       .width(this.options.cards.length * 28 + 'em');
 
-    this.$visualProgress = $('<div class="h5p-visual-progress"><div></div></div>')
+    // Create visual progress and add accessibility attributes
+    this.$visualProgress = $('<div/>', {
+      'class': 'h5p-visual-progress',
+      'role': 'progressbar',
+      'aria-valuemax': '100',
+      'aria-valuemin': (100 / this.options.cards.length).toFixed(2)
+    })
+      .append($('<div/>'))
       .appendTo(this.$container);
 
     this.$progress = this.$container.find('.h5p-progress');
@@ -306,7 +313,9 @@ H5P.Flashcards = (function ($) {
   C.prototype.setProgress = function () {
     var index = this.$current.index();
     this.$progress.text((index + 1) + ' / ' + this.options.cards.length);
-    this.$visualProgress.find('div').width((index + 1) / this.options.cards.length * 100 + '%');
+    this.$visualProgress
+      .attr('aria-valuenow', ((index + 1) / this.options.cards.length * 100).toFixed(2))
+      .find('div').width((index + 1) / this.options.cards.length * 100 + '%');
   };
 
   /**
