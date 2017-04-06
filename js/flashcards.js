@@ -32,9 +32,6 @@ H5P.Flashcards = (function ($) {
     }, options);
     this.$images = [];
 
-    // if of the description field
-    this.descriptionId = 'h5p-flashcards-' + this.contentId + '-description'
-
     this.on('resize', this.resize, this);
   }
 
@@ -51,8 +48,7 @@ H5P.Flashcards = (function ($) {
 
     this.$container = $container
       .addClass('h5p-flashcards')
-      .attr('tabindex', 0)
-      .attr('aria-labelledby', this.descriptionId)
+      .attr('title', this.options.description)
       .html('<div class="h5p-loading">Loading, please wait...</div>');
 
     // Load card images. (we need their size before we can create the task)
@@ -147,7 +143,7 @@ H5P.Flashcards = (function ($) {
    */
   C.prototype.cardsLoaded = function () {
     var that = this;
-    var $inner = this.$container.html('<div id="' + this.descriptionId + '" class="h5p-description">' + this.options.description + '</div>' +
+    var $inner = this.$container.html('<div class="h5p-description">' + this.options.description + '</div>' +
     '<div class="h5p-progress"></div>' +
     '<div class="h5p-inner" role="list"></div>')
       .children('.h5p-inner')
@@ -216,12 +212,11 @@ H5P.Flashcards = (function ($) {
   };
 
   C.prototype.addCard = function (index, $inner) {
-    var cardId = 'h5p-flashcards-' + this.contentId + '-card-' + index;
     var that = this;
     var card = this.options.cards[index];
-    var imageText = '<div id="' + cardId + '-title" class="h5p-imagetext">' + (card.text !== undefined ? card.text : '') + '</div>';
+    var imageText = '<div class="h5p-imagetext">' + (card.text !== undefined ? card.text : '') + '</div>';
 
-    var $card = $('<div role="listitem" class="h5p-card h5p-animate' + (index === 0 ? ' h5p-current' : '') + '" tabindex="0" aria-labelledby="' + cardId + '-title"> ' +
+    var $card = $('<div role="listitem" class="h5p-card h5p-animate' + (index === 0 ? ' h5p-current' : '') + '" tabindex="0"> ' +
       '<div class="h5p-cardholder">' +
       '<div class="h5p-imageholder"><div class="h5p-flashcard-overlay"></div></div>' +
       '<div class="h5p-foot">' + imageText + '<div class="h5p-answer">' +
