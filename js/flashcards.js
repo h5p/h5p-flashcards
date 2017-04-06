@@ -79,14 +79,11 @@ H5P.Flashcards = (function ($) {
     }
 
     this.$container.bind("keydown", function (event) {
-      // Left
-      if (event.keyCode === 37 && that.previous()) {
-        console.log('left');
+      if (event.keyCode === 37) {
+        that.previous();
       }
-
-      // Right
-      else if (event.keyCode === 39 && that.next()) {
-        console.log('right');
+      else if (event.keyCode === 39) {
+        that.next();
       }
     });
   };
@@ -163,7 +160,9 @@ H5P.Flashcards = (function ($) {
       'aria-valuemax': '100',
       'aria-valuemin': (100 / this.options.cards.length).toFixed(2)
     })
-      .append($('<div/>'))
+      .append($('<div/>', {
+        'class': 'h5p-visual-progress-inner'
+      }))
       .appendTo(this.$container);
 
     this.$progress = this.$container.find('.h5p-progress');
@@ -315,7 +314,7 @@ H5P.Flashcards = (function ($) {
     this.$progress.text((index + 1) + ' / ' + this.options.cards.length);
     this.$visualProgress
       .attr('aria-valuenow', ((index + 1) / this.options.cards.length * 100).toFixed(2))
-      .find('div').width((index + 1) / this.options.cards.length * 100 + '%');
+      .find('.h5p-visual-progress-inner').width((index + 1) / this.options.cards.length * 100 + '%');
   };
 
   /**
