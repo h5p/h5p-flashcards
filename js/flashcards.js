@@ -74,7 +74,7 @@ H5P.Flashcards = (function ($) {
       }
     }
 
-    this.$container.bind("keydown", function (event) {
+    that.$container.bind("keydown", function (event) {
       if (event.keyCode === 37) {
         that.previous();
       }
@@ -143,11 +143,11 @@ H5P.Flashcards = (function ($) {
    */
   C.prototype.cardsLoaded = function () {
     var that = this;
-    var $inner = this.$container.html('<div class="h5p-description">' + this.options.description + '</div>' +
-    '<div class="h5p-progress"></div>' +
-    '<div class="h5p-inner" role="list"></div>')
-      .children('.h5p-inner')
-      .width(this.options.cards.length * 28 + 'em');
+    var $inner = this.$container.html(
+      '<div class="h5p-description">' + this.options.description + '</div>' +
+      '<div class="h5p-progress"></div>' +
+      '<div class="h5p-inner" role="list"></div>')
+        .children('.h5p-inner');
 
     // Create visual progress and add accessibility attributes
     this.$visualProgress = $('<div/>', {
@@ -204,10 +204,12 @@ H5P.Flashcards = (function ($) {
       this.$nextButton.hide();
     }
 
+    this.$current.next().addClass('h5p-next');
+
+    $inner.initialImageContainerWidth = $inner.find('.h5p-imageholder').outerWidth();
+
     this.$inner = $inner;
-
     this.setProgress();
-
     this.trigger('resize');
   };
 
@@ -216,7 +218,7 @@ H5P.Flashcards = (function ($) {
     var card = this.options.cards[index];
     var imageText = '<div class="h5p-imagetext">' + (card.text !== undefined ? card.text : '') + '</div>';
 
-    var $card = $('<div role="listitem" class="h5p-card h5p-animate' + (index === 0 ? ' h5p-current' : '') + '" tabindex="0"> ' +
+    var $card = $('<div role="listitem" class="h5p-card h5p-animate' + (index === 0 ? ' h5p-current' : '') + '"> ' +
       '<div class="h5p-cardholder">' +
       '<div class="h5p-imageholder"><div class="h5p-flashcard-overlay"></div></div>' +
       '<div class="h5p-foot">' + imageText + '<div class="h5p-answer">' +
@@ -232,8 +234,6 @@ H5P.Flashcards = (function ($) {
         that.next();
       }
     }));
-
-    $card.parent().css('left', (this.$container.width() / 2) - $card.outerWidth(true) / 2);
 
     // Add tip if tip exists
     if (card.tip !== undefined && card.tip.trim().length > 0) {
@@ -325,22 +325,27 @@ H5P.Flashcards = (function ($) {
   C.prototype.setCurrent = function ($card, newClassForOldCurrentCard) {
     // Remove from existing card.
     if (this.$current) {
-      this.$current.removeClass('h5p-current');
       this.$current.find('.h5p-textinput').attr('tabindex', '-1');
       this.$current.find('.joubel-tip-container').attr('tabindex', '-1');
       this.$current.find('.h5p-button').attr('tabindex', '-1');
-
-      if (newClassForOldCurrentCard) {
-        this.$current.addClass(newClassForOldCurrentCard);
-      }
     }
 
+    // Set new card
     this.$current = $card;
+
+    // Update card classes
+    $card.removeClass('h5p-previous h5p-next');
     $card.addClass('h5p-current');
+
+    $card.siblings().removeClass('h5p-current h5p-previous h5p-next');
+
+    $card.prev().addClass('h5p-previous');
+    $card.next().addClass('h5p-next');
+
+    // Update tab indexes
     $card.find('.h5p-textinput').attr('tabindex', '0');
     $card.find('.h5p-button').attr('tabindex', '0');
     $card.find('.joubel-tip-container').attr('tabindex', '0');
-    $card.removeClass('h5p-previous');
   };
 
   /**
@@ -358,12 +363,8 @@ H5P.Flashcards = (function ($) {
 
     $next.find('.h5p-textinput').focus();
 
-    this.$inner.animate({
-      left: "-=" + this.$current.outerWidth(true)
-    });
-
     setTimeout(function () {
-      that.setCurrent($next, 'h5p-previous');
+      that.setCurrent($next);
       if (!that.$current.next().length) {
         that.$nextButton.addClass('h5p-hidden');
       }
@@ -386,10 +387,6 @@ H5P.Flashcards = (function ($) {
     }
 
     $prev.find('.h5p-textinput').focus();
-
-    this.$inner.animate ({
-      left: "+=" + this.$current.outerWidth(true)
-    });
 
     setTimeout(function () {
       that.setCurrent($prev);
@@ -484,6 +481,16 @@ H5P.Flashcards = (function ($) {
       var cardholderHeight = maxHeightImage + $(this).find('.h5p-foot').outerHeight();
       maxHeight = cardholderHeight > maxHeight ? cardholderHeight : maxHeight;
     });
+
+    //Resize cards holder
+    var innerHeight = 0;
+    this.$inner.children().each(function() {
+      if ($(this).height() > innerHeight) {
+        innerHeight = $(this).height();
+      }
+    });
+
+    this.$inner.height(innerHeight);
   };
 
   return C;
