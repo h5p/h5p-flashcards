@@ -28,7 +28,8 @@ H5P.Flashcards = (function ($) {
       defaultAnswerText: "Your answer",
       correctAnswerText: "Correct",
       incorrectAnswerText: "Incorrect",
-      showSolutionText: "Correct answer"
+      showSolutionText: "Correct answer",
+      informationText: "Information"
     }, options);
     this.$images = [];
 
@@ -73,15 +74,6 @@ H5P.Flashcards = (function ($) {
         load();
       }
     }
-
-    that.$container.bind("keydown", function (event) {
-      if (event.keyCode === 37) {
-        that.previous();
-      }
-      else if (event.keyCode === 39) {
-        that.next();
-      }
-    });
   };
 
   /**
@@ -146,8 +138,12 @@ H5P.Flashcards = (function ($) {
     var $inner = this.$container.html(
       '<div class="h5p-description">' + this.options.description + '</div>' +
       '<div class="h5p-progress"></div>' +
-      '<div class="h5p-inner" role="list"></div>')
-        .children('.h5p-inner');
+      '<div class="h5p-inner" role="list"></div>' +
+      '<div class="h5p-navigation">' +
+        '<button type="button" class="h5p-button h5p-previous h5p-hidden" tabindex="0" title="' + this.options.previous + '"></button>' +
+        '<button type="button" class="h5p-button h5p-next" tabindex="0" title="' + this.options.next + '"></button>'
+    )
+      .children('.h5p-inner');
 
     // Create visual progress and add accessibility attributes
     this.$visualProgress = $('<div/>', {
@@ -237,7 +233,7 @@ H5P.Flashcards = (function ($) {
 
     // Add tip if tip exists
     if (card.tip !== undefined && card.tip.trim().length > 0) {
-      $('.h5p-input', $card).append(H5P.JoubelUI.createTip(card.tip).attr('tabindex', '-1')).addClass('has-tip');
+      $('.h5p-input', $card).append(H5P.JoubelUI.createTip(card.tip).attr({'tabindex': '-1', 'title': this.options.informationText})).addClass('has-tip');
     }
 
     var $input = $card.find('.h5p-textinput');
@@ -263,7 +259,7 @@ H5P.Flashcards = (function ($) {
         if (userCorrect) {
           $input.parent()
             .addClass('h5p-correct')
-            .append('<span class="h5p-feedback-label">' + that.options.correctAnswerText + '!</span>');
+            .append('<div class="h5p-feedback-label" tabindex="0" aria-label="' + that.options.correctAnswerText + '">' + that.options.correctAnswerText + '!</div>');
           $card.addClass('h5p-correct');
 
           var $solution = $('<div class="h5p-solution">' +
@@ -273,7 +269,7 @@ H5P.Flashcards = (function ($) {
         else {
           $input.parent()
             .addClass('h5p-wrong')
-            .append('<span class="h5p-feedback-label">' + that.options.incorrectAnswerText + '!</span>');
+            .append('<span class="h5p-feedback-label" tabindex="0" aria-label="' + that.options.incorrectAnswerText + '">' + that.options.incorrectAnswerText + '!</span>');
           $card.addClass('h5p-wrong');
 
           var $solution = $('<div class="h5p-solution">' +
@@ -281,6 +277,8 @@ H5P.Flashcards = (function ($) {
             '<span class="solution-text">' + (that.options.cards[index].answer ? that.options.showSolutionText + ': <span>' + that.options.cards[index].answer + '</span>' : '') + '</span>' +
           '</div>').appendTo($card.find('.h5p-imageholder'));
         }
+
+        $input.siblings('.h5p-feedback-label').focus();
 
         that.nextTimer = setTimeout(function () {
           that.next();
@@ -361,8 +359,6 @@ H5P.Flashcards = (function ($) {
       return;
     }
 
-    $next.find('.h5p-textinput').focus();
-
     setTimeout(function () {
       that.setCurrent($next);
       if (!that.$current.next().length) {
@@ -371,6 +367,11 @@ H5P.Flashcards = (function ($) {
       that.$prevButton.removeClass('h5p-hidden');
       that.setProgress();
     }, 10);
+
+    setTimeout(function () {
+      $next.find('.h5p-textinput').focus();
+    }, 500);
+
   };
 
   /**
@@ -432,6 +433,13 @@ H5P.Flashcards = (function ($) {
     var maxHeightImage = 0;
     var imageHolderWidth = self.$inner.find('.h5p-imageholder').width();
     var minPadding = parseFloat(self.$inner.css('font-size'));
+
+    if (this.$inner.width() / parseFloat($("body").css("font-size")) <= 31) {
+      self.$inner.addClass('h5p-mobile');
+    }
+    else {
+      self.$inner.removeClass('h5p-mobile');
+    }
 
     //Resize all images and find max height.
     self.$images.forEach(function (image) {

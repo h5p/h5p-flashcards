@@ -39,6 +39,7 @@
 .h5p-flashcards .h5p-inner {
   position: relative;
   margin: 1em 0;
+  overflow: hidden;
 }
 
 .h5p-flashcards .h5p-card {
@@ -47,11 +48,16 @@
   vertical-align: middle;
   width: 26em;
   min-width: 14em;
+  max-width: 90%;
   margin: 0 0.6em;
   margin: 0 auto;
   left: 0;
   right: 0;
   transition: transform 0.5s;
+}
+
+.h5p-flashcards .h5p-inner.h5p-mobile .h5p-card {
+  width: 100%;
 }
 
 .h5p-flashcards .h5p-card.h5p-current {
@@ -392,36 +398,52 @@
   text-align: center;
 }
 .h5p-flashcards .h5p-navigation {
-  margin: 0 auto;
+  margin: 0.75em auto;
   overflow: hidden;
-  position: relative;
-  height: 2.5em;
-  padding-top: 0.5em;
-  max-width: 30em;
-  vertical-align:middle;
+  position: absolute;
+  height: 5.5em;
+  padding: 1em 0;
+  vertical-align: middle;
   clear: both;
+  width: 77em;
+  max-width: 100%;
+  left: 0;
+  right: 0;
+}
+
+.h5p-flashcards .h5p-navigation .h5p-button {
+  color: #9ea7b7;
+  background: none;
+  border: 1px solid #9ea7b7;
+  box-shadow: none;
+  border-radius: 1em;
+  font-size: 1.75em;
+  top: 0.75em;
 }
 
 .h5p-flashcards .h5p-button.h5p-next {
   position: absolute;
-  right: 0.375em;
+  right: 0.75em;
 }
 
 .h5p-flashcards .h5p-button.h5p-previous {
   position: absolute;
-  left: 0.375em;
+  left: 0.75em;
 }
 
 .h5p-flashcards .h5p-button.h5p-next:after {
-  font-family: 'H5PFontAwesome4';
-  content: "\f054";
-  margin-left: 0.1875em;
+  font-family: 'h5pFontIcons';
+  content: "\e910";
 }
 
 .h5p-flashcards .h5p-button.h5p-previous:before {
-  font-family: 'H5PFontAwesome4';
-  content: "\f053";
-  margin-right: 0.1875em;
+  font-family: 'h5pFontIcons';
+  content: "\e910";
+  -webkit-backface-visibility: hidden;
+  -ms-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+  display: block;
 }
 
 .h5p-flashcards .h5p-hidden {
@@ -513,6 +535,7 @@ button::-moz-focus-inner {
   border-radius: 8px;
   padding: 3px;
   width: 18em;
+  max-width: 45%;
   margin: 4em auto 3em auto;
 }
 
