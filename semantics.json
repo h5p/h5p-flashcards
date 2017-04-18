@@ -115,5 +115,12 @@
     "default": true,
     "importance": "low",
     "optional": true
+  },
+  {
+    "label": "Case sensitive",
+    "name": "caseSensitive",
+    "type": "boolean",
+    "default": false,
+    "description": "Makes sure the user input has to be exactly the same as the answer."
   }
 ]

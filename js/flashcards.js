@@ -24,7 +24,8 @@ H5P.Flashcards = (function ($) {
       next: "Next",
       previous: "Previous",
       checkAnswerText: "Check answer",
-      showSolutionsRequiresInput: true
+      showSolutionsRequiresInput: true,
+      caseSensitive: false
     }, options);
     this.$images = [];
     this.on('resize', this.resize, this);
@@ -68,34 +69,6 @@ H5P.Flashcards = (function ($) {
   };
 
   /**
-   * Cleans the user input string
-   *
-   * @param str The user input
-   * @returns {string}
-   */
-  function cleanUserInput (str){
-    str = str || '';
-
-    return str.trim()
-      .toLowerCase()
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;")
-      .replace(/'/g, "&#039;");
-  }
-
-  /**
-   * Trims a String
-   *
-   * @param {string} str A string to trim
-   * @returns {string} The trimmed string
-   */
-  function trimString (str){
-    return str.trim();
-  }
-
-  /**
    * Checks if the user anwer matches an answer on the card
    * @private
    *
@@ -103,20 +76,33 @@ H5P.Flashcards = (function ($) {
    * @param userAnswer The user input
    * @return {Boolean} If the answer is found on the card
    */
-  function isCorrectAnswer (card, userAnswer){
-    var answerStr = card.answer || '';
-    var answer = answerStr.toLowerCase();
+  function isCorrectAnswer(card, userAnswer, caseSensitive) {
+    var answer = C.$converter.html(card.answer || '').text();
+
+    if (!caseSensitive) {
+      answer = answer.toLowerCase();
+      userAnswer = userAnswer.toLowerCase();
+    }
+
     return answer === userAnswer;
   }
 
+  /**
+   * Get Score
+   * @return {number}
+   */
   C.prototype.getScore = function (){
     var that = this;
 
     return that.options.cards.reduce(function (sum, card, i) {
-      return sum + (isCorrectAnswer(card, that.answers[i]) ? 1 : 0);
+      return sum + (isCorrectAnswer(card, that.answers[i], that.options.caseSensitive) ? 1 : 0);
     }, 0);
   };
 
+  /**
+   * Get Score
+   * @return {number}
+   */
   C.prototype.getMaxScore = function (){
     return this.options.cards.length;
   };
@@ -180,18 +166,23 @@ H5P.Flashcards = (function ($) {
     this.trigger('resize');
   };
 
+  /**
+   * Add card
+   * @param {number} index
+   * @param {H5P.jQuery} $inner
+   */
   C.prototype.addCard = function (index, $inner) {
     var that = this;
 
     var card = this.options.cards[index];
     var imageText = (card.text !== undefined ? '<div class="h5p-imagetext">' + card.text + '</div>' : '');
     var $card = $('<div class="h5p-card h5p-animate' + (index === 0 ? ' h5p-current' : '') + '"> ' +
-      '<div class="h5p-cardholder">' +
-      '<div class="h5p-imageholder"></div>' +
-      '<div class="h5p-foot">' + imageText + '<div class="h5p-answer">' +
-      '<div class="h5p-input"><input type="text" class="h5p-textinput" tabindex="-1"/>' +
-      '<button type="button" class="h5p-button" tabindex="-1">' + this.options.checkAnswerText + '</button></div></div></div></div></div>')
-      .appendTo($inner);
+        '<div class="h5p-cardholder">' +
+        '<div class="h5p-imageholder"></div>' +
+        '<div class="h5p-foot">' + imageText + '<div class="h5p-answer">' +
+        '<div class="h5p-input"><input type="text" class="h5p-textinput" tabindex="-1"/>' +
+        '<button type="button" class="h5p-button" tabindex="-1">' + this.options.checkAnswerText + '</button></div></div></div></div></div>')
+        .appendTo($inner);
     $card.find('.h5p-imageholder').prepend(this.$images[index]);
 
     // Add tip if tip exists
@@ -202,14 +193,14 @@ H5P.Flashcards = (function ($) {
     var $input = $card.find('.h5p-textinput');
 
     $input.change(function (){
-      that.answers[index] = cleanUserInput($input.val());
+      that.answers[index] = $input.val().trim();
       that.triggerXAPI('interacted');
     });
 
     var $button = $card.find('.h5p-button').click(function () {
       var card = that.options.cards[index];
-      var userAnswer = cleanUserInput($input.val());
-      var userCorrect = isCorrectAnswer(card, userAnswer);
+      var userAnswer = $input.val().trim();
+      var userCorrect = isCorrectAnswer(card, userAnswer, that.options.caseSensitive);
 
       that.numAnswered++;
       if (that.numAnswered >= that.options.cards.length) {
@@ -250,6 +241,9 @@ H5P.Flashcards = (function ($) {
     }
   };
 
+  /**
+   * Set Progress
+   */
   C.prototype.setProgress = function () {
     var index = this.$current.index();
     this.$progress.text(this.options.progressText.replace('@card', index + 1).replace('@total', this.options.cards.length));
@@ -369,7 +363,7 @@ H5P.Flashcards = (function ($) {
 
       //Resize image if it is too big.
       if (($image[0].naturalWidth + (minPadding * 2)) > imageHolderWidth ||
-        ($image[0].naturalHeight + (minPadding * 2)) > imageHolderWidth) {
+          ($image[0].naturalHeight + (minPadding * 2)) > imageHolderWidth) {
         var ratio = $image[0].naturalHeight / $image[0].naturalWidth;
 
         //Landscape image
@@ -411,6 +405,12 @@ H5P.Flashcards = (function ($) {
     self.$inner.find('.h5p-imageholder').css('height', maxHeightImage + 'px');
     self.$inner.css('height', maxHeight + minPadding * 2 +'px');
   };
+
+  /**
+   * Helps convert html to text
+   * @type {H5P.jQuery}
+   */
+  C.$converter = $('<div/>');
 
   return C;
 })(H5P.jQuery);
