@@ -412,13 +412,17 @@
 }
 
 .h5p-flashcards .h5p-navigation .h5p-button {
-  color: #9ea7b7;
+  color: #a3adc4;
   background: none;
-  border: 1px solid #9ea7b7;
+  border: 1px solid #414d66;
   box-shadow: none;
   border-radius: 1em;
   font-size: 1.75em;
   top: 0.75em;
+}
+
+.h5p-flashcards .h5p-navigation .h5p-button:hover {
+  background-color: #414d66;
 }
 
 .h5p-flashcards .h5p-button.h5p-next {

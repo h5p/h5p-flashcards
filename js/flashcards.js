@@ -335,7 +335,9 @@ H5P.Flashcards = (function ($) {
     $card.removeClass('h5p-previous h5p-next');
     $card.addClass('h5p-current');
 
-    $card.siblings().removeClass('h5p-current h5p-previous h5p-next');
+    $card.siblings()
+      .removeClass('h5p-current h5p-previous h5p-next')
+      .find('.h5p-rotate-in').removeClass('h5p-rotate-in');
 
     $card.prev().addClass('h5p-previous');
     $card.next().addClass('h5p-next');
