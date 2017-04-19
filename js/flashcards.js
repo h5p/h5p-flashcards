@@ -259,7 +259,7 @@ H5P.Flashcards = (function ($) {
         if (userCorrect) {
           $input.parent()
             .addClass('h5p-correct')
-            .append('<div class="h5p-feedback-label" tabindex="0" aria-label="' + that.options.correctAnswerText + '">' + that.options.correctAnswerText + '!</div>');
+            .append('<div class="h5p-feedback-label" tabindex="-1" aria-label="' + that.options.correctAnswerText + '">' + that.options.correctAnswerText + '!</div>');
           $card.addClass('h5p-correct');
 
           var $solution = $('<div class="h5p-solution">' +
@@ -269,7 +269,7 @@ H5P.Flashcards = (function ($) {
         else {
           $input.parent()
             .addClass('h5p-wrong')
-            .append('<span class="h5p-feedback-label" tabindex="0" aria-label="' + that.options.incorrectAnswerText + '">' + that.options.incorrectAnswerText + '!</span>');
+            .append('<span class="h5p-feedback-label" tabindex="-1" aria-label="' + that.options.incorrectAnswerText + '">' + that.options.incorrectAnswerText + '!</span>');
           $card.addClass('h5p-wrong');
 
           var $solution = $('<div class="h5p-solution">' +
@@ -458,7 +458,7 @@ H5P.Flashcards = (function ($) {
         var ratio = $image[0].naturalHeight / $image[0].naturalWidth;
 
         //Landscape image
-        if( $image[0].naturalWidth >= $image[0].naturalHeight) {
+        if ($image[0].naturalWidth >= $image[0].naturalHeight) {
           $image.css({
             'width': imageHolderWidth - (minPadding * 2),
             'height': 'auto'
