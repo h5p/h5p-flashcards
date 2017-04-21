@@ -589,4 +589,12 @@ button::-moz-focus-inner {
 .h5p-rotate-in {
   -webkit-animation-name: rotateIn;
   animation-name: rotateIn;
+  right: 1.75em;
+  top: 0.9em;
+  font-size: 1.3em;
+}
+
+.h5p-flashcards .joubel-icon-tip-normal {
+  font-size: 1.3em;
+  line-height: 1.8em;
 }
