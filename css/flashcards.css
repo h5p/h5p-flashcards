@@ -298,6 +298,7 @@
   top: 1em;
   line-height: 1em;
   color: #db2222;
+  outline: none;
 }
 
 .h5p-flashcards .h5p-answer .h5p-wrong .h5p-feedback-label:before {

@@ -205,7 +205,7 @@ H5P.Flashcards = (function ($) {
     var card = this.options.cards[index];
     var imageText = '<div class="h5p-imagetext">' + (card.text !== undefined ? card.text : '') + '</div>';
 
-    var $card = $('<div role="listitem" class="h5p-card h5p-animate' + (index === 0 ? ' h5p-current' : '') + '"> ' +
+    var $card = $('<div role="listitem" class="h5p-card h5p-animate' + (index === 0 ? ' h5p-current' : '') + '" aria-hidden="' + (index === 0 ? 'false' : 'true') + '"> ' +
       '<div class="h5p-cardholder">' +
       '<div class="h5p-imageholder"><div class="h5p-flashcard-overlay"></div></div>' +
       '<div class="h5p-foot">' + imageText + '<div class="h5p-answer">' +
@@ -328,9 +328,11 @@ H5P.Flashcards = (function ($) {
     // Update card classes
     $card.removeClass('h5p-previous h5p-next');
     $card.addClass('h5p-current');
+    $card.attr('aria-hidden', 'false');
 
     $card.siblings()
       .removeClass('h5p-current h5p-previous h5p-next')
+      .attr('aria-hidden', 'true')
       .find('.h5p-rotate-in').removeClass('h5p-rotate-in');
 
     $card.prev().addClass('h5p-previous');
