@@ -315,6 +315,7 @@
   color: #5dae45;
   transition: opacity 2s;
   opacity: 1;
+  outline: none;
 }
 
 .h5p-flashcards .h5p-answer .h5p-correct .h5p-feedback-label:before {
