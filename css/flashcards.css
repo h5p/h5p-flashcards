@@ -437,12 +437,12 @@
 }
 
 .h5p-flashcards .h5p-button.h5p-next:after {
-  font-family: 'h5pFontIcons';
+  font-family: 'H5PFontIcons';
   content: "\e910";
 }
 
 .h5p-flashcards .h5p-button.h5p-previous:before {
-  font-family: 'h5pFontIcons';
+  font-family: 'H5PFontIcons';
   content: "\e910";
   -webkit-backface-visibility: hidden;
   -ms-transform: rotate(180deg);
