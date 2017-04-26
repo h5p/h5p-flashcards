@@ -351,7 +351,7 @@ H5P.Flashcards = (function ($) {
     this.$inner.siblings().addClass('h5p-invisible');
     this.$resultScreen.appendTo(this.$container).show();
 
-    this.$resultScreen.find('.h5p-results-score').text(this.getScore() + ' of ' + this.getMaxScore());
+    this.$resultScreen.find('.h5p-results-score').html(this.getScore() + ' <span>of</span> ' + this.getMaxScore());
 
     // Create a list representing the cards and populate them
     for (var i = 0; i < this.options.cards.length; i++) {
