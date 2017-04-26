@@ -367,7 +367,12 @@ H5P.Flashcards = (function ($) {
         'class': 'h5p-results-image-holder',
       }).appendTo($listItem);
 
-      $imageHolder.css('background-image', 'url("' + H5P.getPath($card.image.path, this.id) + '")');
+      if ($card.image != undefined) {
+        $imageHolder.css('background-image', 'url("' + H5P.getPath($card.image.path, this.id) + '")');
+      }
+      else {
+        $imageHolder.addClass('no-image');
+      }
 
       var $resultsQuestion = $('<div/>', {
         'class': 'h5p-results-question',

@@ -594,6 +594,14 @@ button::-moz-focus-inner {
   background-position: center center;
 }
 
+.h5p-flashcards .h5p-results-image-holder.no-image:after {
+  font-family: 'H5PFontAwesome4';
+  content: "\f03e";
+  font-size: 4.5em;
+  line-height: 1em;
+  color: #a3b7be;
+}
+
 .h5p-flashcards .h5p-results-question {
   line-height: 2em;
   margin-right: 3.5em;
