@@ -67,6 +67,22 @@
     {
       "label": "Tekst for vis svar.",
       "default": "Riktig svar"
+    },
+    {
+      "label": "Tekst for tittel på Resultatskjerm",
+      "default": "Resultat"
+    },
+    {
+      "label": "Tekst for \"av\" i total poengsum",
+      "default": "av"
+    },
+    {
+      "label": "Tekst for \"korrekt\" i total poengsum",
+      "default": "korrekt"
+    },
+    {
+      "label": "Tekst for \"vis resultatar\"",
+      "default": "Vis resultatar"
     }
   ]
 }

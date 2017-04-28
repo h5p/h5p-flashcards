@@ -31,7 +31,10 @@ H5P.Flashcards = (function ($) {
       showSolutionText: "Correct answer",
       informationText: "Information",
       caseSensitive: false,
-      results: "Results"
+      results: "Results",
+      of: "of",
+      correct: "correct",
+      showResults: "Show results"
     }, options);
     this.$images = [];
 
@@ -209,7 +212,8 @@ H5P.Flashcards = (function ($) {
     var $showResults = $(
       '<div class="h5p-show-results">' +
         '<span></span>' +
-        '<span>Show Results</span>' +
+        '<span class="h5p-show-results-label">' + that.options.showResults + '</span>' +
+        '<span class="h5p-show-results-label-mobile">' + that.options.results + '</span>' +
       '</div>'
     );
 
@@ -263,6 +267,7 @@ H5P.Flashcards = (function ($) {
       var card = that.options.cards[index];
       var userAnswer = $input.val().trim();
       var userCorrect = isCorrectAnswer(card, userAnswer, that.options.caseSensitive);
+      var done = false;
 
       if (userAnswer == '') {
         $input.focus();
@@ -296,14 +301,21 @@ H5P.Flashcards = (function ($) {
 
         $input.siblings('.h5p-feedback-label').focus();
 
+        done = (that.numAnswered >= that.options.cards.length);
+
         that.nextTimer = setTimeout(function () {
-          that.next();
-        }, 2000);
+          if (!done) {
+            that.next();
+          }
+          else {
+            that.last();
+          }
+        }, 1500);
       }
 
-      if (that.numAnswered >= that.options.cards.length) {
+      if (done) {
         that.triggerXAPICompleted(that.getScore(), that.getMaxScore());
-        that.$container.find('.h5p-show-results').show();
+        that.trigger('resize');
       }
     });
 
@@ -346,29 +358,35 @@ H5P.Flashcards = (function ($) {
    * Enable result screen
    */
   C.prototype.enableResultScreen = function () {
-    //this.$inner.html(this.$resultScreen);
     this.$inner.addClass('h5p-invisible');
     this.$inner.siblings().addClass('h5p-invisible');
     this.$resultScreen.appendTo(this.$container).show();
 
-    this.$resultScreen.find('.h5p-results-score').html(this.getScore() + ' <span>of</span> ' + this.getMaxScore());
+    this.$resultScreen.find('.h5p-results-score').html(
+      this.getScore() +
+      '<span>' + this.options.of + '</span>' +
+      this.getMaxScore() +
+      '<span>' + this.options.correct + '</span>'
+    );
 
     // Create a list representing the cards and populate them
     for (var i = 0; i < this.options.cards.length; i++) {
-      var $card = this.options.cards[i];
+      var card = this.options.cards[i];
       var $resultsContainer = this.$resultScreen.find('.h5p-results-list');
-      var correct = (this.answers[i] == $card.answer);
+
+      var userAnswer = this.answers[i];
+      var userCorrect = isCorrectAnswer(card, userAnswer, this.options.caseSensitive);
 
       var $listItem = $('<li/>', {
-        'class': 'h5p-results-list-item' + (!correct ? ' h5p-incorrect' : '')
+        'class': 'h5p-results-list-item' + (!userCorrect ? ' h5p-incorrect' : '')
       }).appendTo($resultsContainer);
 
       var $imageHolder = $('<div/>', {
         'class': 'h5p-results-image-holder',
       }).appendTo($listItem);
 
-      if ($card.image != undefined) {
-        $imageHolder.css('background-image', 'url("' + H5P.getPath($card.image.path, this.id) + '")');
+      if (card.image != undefined) {
+        $imageHolder.css('background-image', 'url("' + H5P.getPath(card.image.path, this.id) + '")');
       }
       else {
         $imageHolder.addClass('no-image');
@@ -376,7 +394,7 @@ H5P.Flashcards = (function ($) {
 
       var $resultsQuestion = $('<div/>', {
         'class': 'h5p-results-question',
-        'text': $card.text
+        'text': card.text
       }).appendTo($listItem);
 
       var $resultsAnswer = $('<div/>', {
@@ -386,9 +404,9 @@ H5P.Flashcards = (function ($) {
 
       $resultsAnswer.prepend('<span>A: </span>');
 
-      if (!correct) {
-        $resultsAnswer.append('<span> Correct answer: </span>');
-        $resultsAnswer.append('<span class="h5p-correct">' + $card.answer + '</span>');
+      if (!userCorrect) {
+        $resultsAnswer.append('<span> ' + this.options.showSolutionText + ': </span>');
+        $resultsAnswer.append('<span class="h5p-correct">' + card.answer + '</span>');
       }
 
       var $resultsBox = $('<div/>', {
@@ -470,10 +488,26 @@ H5P.Flashcards = (function ($) {
       that.setProgress();
     }, 10);
 
+    if ($next.is(':last-child') && that.numAnswered == that.options.cards.length) {
+      that.$container.find('.h5p-show-results').show();
+    }
+
     setTimeout(function () {
       $next.find('.h5p-textinput').focus();
     }, 500);
 
+  };
+
+  /**
+   * Display last card.
+   */
+  C.prototype.last = function () {
+    var $last = this.$inner.children().last();
+    this.setCurrent($last);
+    this.$nextButton.addClass('h5p-hidden');
+    this.$prevButton.removeClass('h5p-hidden');
+    this.setProgress();
+    this.$container.find('.h5p-show-results').show();
   };
 
   /**
@@ -489,6 +523,7 @@ H5P.Flashcards = (function ($) {
       return;
     }
 
+    this.$container.find('.h5p-show-results').hide();
     $prev.find('.h5p-textinput').focus();
 
     setTimeout(function () {

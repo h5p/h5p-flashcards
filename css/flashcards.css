@@ -536,31 +536,31 @@ button::-moz-focus-inner {
 
 .h5p-flashcards .h5p-flashcards-results {
   display: none;
-  margin: 0 5em;
+  margin: 5em;
   position: absolute;
   left: 0;
   right: 0;
-  top: 8.2em;
+  top: 0;
   bottom: 0;
 }
 
 .h5p-flashcards .h5p-results-title {
+  position: absolute;
   float: left;
   font-size: 2em;
-  line-height: 2em;
   color: white;
 }
 
 .h5p-flashcards .h5p-results-score {
   position: absolute;
   font-size: 1.4em;
-  line-height: 3em;
   color: white;
   right: 1.5em;
 }
 
 .h5p-flashcards .h5p-results-score span{
   color: #adb6c7;
+  padding: 0 0.4em;
 }
 
 .h5p-flashcards .h5p-results-list {
@@ -568,9 +568,9 @@ button::-moz-focus-inner {
   list-style-type: none;
   overflow: hidden;
   overflow-y: scroll;
-  max-height: 24.6em;
+  max-height: 34.4em;
   padding-right: 1em;
-  margin: 6em 0 0 0;
+  margin: 5em 0 5em 0;
 }
 
 .h5p-flashcards .h5p-results-list-item {
@@ -751,7 +751,7 @@ button::-moz-focus-inner {
   top: -0.1em;
 }
 
-.h5p-show-results span:last-child {
+.h5p-show-results span:not(:first-child) {
   position: absolute;
   color: #7cf0bd;
   left: 0;
@@ -760,12 +760,16 @@ button::-moz-focus-inner {
   font-size: 0.9em;
 }
 
-.h5p-show-results span:last-child:after {
+.h5p-show-results span:not(:first-child):after {
   font-family: 'h5pFontAwesome4';
   content: "\f0a9";
   font-size: 1.1em;
   vertical-align: middle;
   margin-left: 0.5em;
+}
+
+.h5p-flashcards .h5p-show-results-label-mobile {
+  display: none;
 }
 
 /* Mobile */
@@ -774,7 +778,29 @@ button::-moz-focus-inner {
 }
 
 .h5p-flashcards.h5p-mobile .h5p-flashcards-results {
-  margin: 0 0.5em;
+  margin: 5em 0.5em;
+}
+
+.h5p-flashcards.h5p-mobile .h5p-results-score {
+  right: 0;
+}
+
+.h5p-flashcards.h5p-mobile .h5p-show-results {
+  top: initial;
+  bottom: 9.5em;
+  right: 2.2em;
+  width: 12em !important;
+  font-size: 0.45em;
+}
+
+.h5p-flashcards.h5p-mobile .h5p-show-results-label {
+  display: none;
+}
+
+.h5p-flashcards.h5p-mobile .h5p-show-results-label-mobile {
+  display: block;
+  font-size: 1.5em;
+  top: 2em;
 }
 
 /* Custom scrollbar */
@@ -794,14 +820,10 @@ button::-moz-focus-inner {
   background-size: 20px 20px;
   background-position-x: -4px;
   background-position-y: -3px;
-  background-color: red;
   background-repeat: no-repeat;
 }
 
-.h5p-flashcards .h5p-results-list::-webkit-scrollbar-button:vertical:decrement  {
-  background-color: yellow;
-}
-
-.h5p-flashcards .h5p-results-list::-webkit-scrollbar-button:vertical:increment{
-  background-color: yellow;
+.h5p-flashcards .h5p-results-list::-webkit-scrollbar-button:vertical:decrement,
+.h5p-flashcards .h5p-results-list::-webkit-scrollbar-button:vertical:increment {
+  display: none;
 }
