@@ -785,7 +785,8 @@ button::-moz-focus-inner {
   right: 0;
 }
 
-.h5p-flashcards.h5p-mobile .h5p-show-results {
+.h5p-flashcards.h5p-mobile .h5p-show-results,
+.h5p-flashcards .h5p-show-results.h5p-mobile {
   top: initial;
   bottom: 9.5em;
   right: 2.2em;
@@ -793,11 +794,13 @@ button::-moz-focus-inner {
   font-size: 0.45em;
 }
 
-.h5p-flashcards.h5p-mobile .h5p-show-results-label {
+.h5p-flashcards.h5p-mobile .h5p-show-results-label,
+.h5p-flashcards .h5p-show-results.h5p-mobile .h5p-show-results-label {
   display: none;
 }
 
-.h5p-flashcards.h5p-mobile .h5p-show-results-label-mobile {
+.h5p-flashcards.h5p-mobile .h5p-show-results-label-mobile,
+.h5p-flashcards .h5p-show-results.h5p-mobile .h5p-show-results-label-mobile {
   display: block;
   font-size: 1.5em;
   top: 2em;

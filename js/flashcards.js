@@ -599,8 +599,13 @@ H5P.Flashcards = (function ($) {
 
     var freeSpaceRight = this.$inner.children('.h5p-card').last().css("marginRight");
 
-    if (freeSpaceRight != 'auto') {
-      this.$container.find('.h5p-show-results').width(freeSpaceRight);
+    if (parseInt(freeSpaceRight) < 160) {
+      this.$container.find('.h5p-show-results').addClass('h5p-mobile');
+    }
+    else if (freeSpaceRight != 'auto') {
+      this.$container.find('.h5p-show-results')
+        .removeClass('h5p-mobile')
+        .width(freeSpaceRight);
     }
   };
 
