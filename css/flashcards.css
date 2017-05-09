@@ -553,14 +553,14 @@ button::-moz-focus-inner {
 
 .h5p-flashcards .h5p-results-score {
   position: absolute;
+  color: #adb6c7;
   font-size: 1.4em;
-  color: white;
   right: 1.5em;
 }
 
 .h5p-flashcards .h5p-results-score span{
-  color: #adb6c7;
-  padding: 0 0.4em;
+  color: white;
+  padding: 0 0.2em;
 }
 
 .h5p-flashcards .h5p-results-list {

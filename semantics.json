@@ -157,19 +157,12 @@
     "common": true
   },
   {
-    "label": "Text for \"of\" in total score",
-    "name": "of",
+    "label": "Text for number of correct",
+    "name": "ofCorrect",
     "type": "text",
-    "default": "of",
+    "default": "@score of @total correct",
     "importance": "low",
-    "common": true
-  },
-  {
-    "label": "Text for \"correct\" in total score",
-    "name": "correct",
-    "type": "text",
-    "default": "correct",
-    "importance": "low",
+    "description": "Result text, variables available: @score and @total. Example: '@score of @total correct'",
     "common": true
   },
   {

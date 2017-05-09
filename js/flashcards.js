@@ -33,8 +33,7 @@ H5P.Flashcards = (function ($) {
       informationText: "Information",
       caseSensitive: false,
       results: "Results",
-      of: "of",
-      correct: "correct",
+      ofCorrect: "@score of @total correct",
       showResults: "Show results"
     }, options);
     this.$images = [];
@@ -355,12 +354,11 @@ H5P.Flashcards = (function ($) {
     this.$inner.siblings().addClass('h5p-invisible');
     this.$resultScreen.appendTo(this.$container).show();
 
-    this.$resultScreen.find('.h5p-results-score').html(
-      this.getScore() +
-      '<span>' + this.options.of + '</span>' +
-      this.getMaxScore() +
-      '<span>' + this.options.correct + '</span>'
-    );
+    var ofCorrectText = this.options.ofCorrect
+      .replace(/@score/g, '<span>' + this.getScore() + '</span>')
+      .replace(/@total/g, '<span>' + this.getMaxScore() + '</span>');
+
+    this.$resultScreen.find('.h5p-results-score').html(ofCorrectText);
 
     // Create a list representing the cards and populate them
     for (var i = 0; i < this.options.cards.length; i++) {
