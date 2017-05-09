@@ -83,6 +83,10 @@
     {
       "label": "Tekst for \"vis resultater\"",
       "default": "Vis resultater"
+    },
+    {
+      "label": "Tekst for kort svartekst",
+      "default": "S:"
     }
   ]
 }

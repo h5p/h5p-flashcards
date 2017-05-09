@@ -181,6 +181,14 @@
     "common": true
   },
   {
+    "label": "Text for short answer label",
+    "name": "answerShortText",
+    "type": "text",
+    "default": "A:",
+    "importance": "low",
+    "common": true
+  },
+  {
     "label": "Case sensitive",
     "name": "caseSensitive",
     "type": "boolean",

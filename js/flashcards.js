@@ -29,6 +29,7 @@ H5P.Flashcards = (function ($) {
       correctAnswerText: "Correct",
       incorrectAnswerText: "Incorrect",
       showSolutionText: "Correct answer",
+      answerShortText: "A:",
       informationText: "Information",
       caseSensitive: false,
       results: "Results",
@@ -169,14 +170,6 @@ H5P.Flashcards = (function ($) {
       }
     }
 
-    // Center images
-    for (var i = 0; i < this.$images.length; i++) {
-      var $image = this.$images[i];
-      if ($image === undefined) {
-        continue;
-      }
-    }
-
     // Active buttons
     var $buttonWrapper = $inner.next();
     this.$nextButton = $buttonWrapper.children('.h5p-next').click(function () {
@@ -211,7 +204,7 @@ H5P.Flashcards = (function ($) {
 
     var $showResults = $(
       '<div class="h5p-show-results">' +
-        '<span></span>' +
+        '<span class="h5p-show-results-icon"></span>' +
         '<span class="h5p-show-results-label">' + that.options.showResults + '</span>' +
         '<span class="h5p-show-results-label-mobile">' + that.options.results + '</span>' +
       '</div>'
@@ -402,7 +395,7 @@ H5P.Flashcards = (function ($) {
         'text': this.answers[i]
       }).appendTo($listItem);
 
-      $resultsAnswer.prepend('<span>A: </span>');
+      $resultsAnswer.prepend('<span>' + this.options.answerShortText + ' </span>');
 
       if (!userCorrect) {
         $resultsAnswer.append('<span> ' + this.options.showSolutionText + ': </span>');

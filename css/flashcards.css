@@ -739,7 +739,7 @@ button::-moz-focus-inner {
   cursor: pointer;
 }
 
-.h5p-show-results span:first-child:before {
+.h5p-show-results .h5p-show-results-icon:before {
   font-family: "h5pFontIcons";
   content: "\e91b";
   font-size: 12em;
