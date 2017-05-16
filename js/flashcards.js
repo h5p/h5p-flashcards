@@ -34,7 +34,8 @@ H5P.Flashcards = (function ($) {
       caseSensitive: false,
       results: "Results",
       ofCorrect: "@score of @total correct",
-      showResults: "Show results"
+      showResults: "Show results",
+      retry : "Retry"
     }, options);
     this.$images = [];
 
@@ -327,6 +328,8 @@ H5P.Flashcards = (function ($) {
    * Create result screen
    */
   C.prototype.createResultScreen = function () {
+    var that = this;
+
     // Create the containers needed for the result screen
     this.$resultScreen = $('<div/>', {
       'class': 'h5p-flashcards-results',
@@ -343,6 +346,13 @@ H5P.Flashcards = (function ($) {
 
     var $resultsContainer = $('<ul/>', {
       'class': 'h5p-results-list'
+    }).appendTo(this.$resultScreen);
+
+    var $retryButton = $('<button/>', {
+      'class': 'h5p-results-retry-button h5p-joubelui-button h5p-invisible',
+      'text': this.options.retry
+    }).on('click', function() {
+      that.retry();
     }).appendTo(this.$resultScreen);
   };
 
@@ -403,6 +413,9 @@ H5P.Flashcards = (function ($) {
       var $resultsBox = $('<div/>', {
         'class': 'h5p-results-box'
       }).appendTo($listItem);
+    }
+    if (this.getScore() < this.getMaxScore()) {
+      this.$resultScreen.find('.h5p-results-retry-button').removeClass('h5p-invisible');
     }
   };
 
@@ -527,6 +540,15 @@ H5P.Flashcards = (function ($) {
       that.$nextButton.removeClass('h5p-hidden');
       that.setProgress();
     }, 10);
+  };
+
+  /**
+   * Retry the task, resetting all relevant functionality
+   */
+  C.prototype.retry = function () {
+    this.numAnswered = 0;
+    this.cardsLoaded();
+    this.trigger('resize');
   };
 
   /**

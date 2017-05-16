@@ -551,6 +551,24 @@ button::-moz-focus-inner {
   color: white;
 }
 
+.h5p-flashcards .h5p-results-retry-button {
+  display: block;
+  margin: 0 auto;
+  width: 9em;
+  color: #adb6c7;
+  background: none;
+  border: 1px solid #414d66;
+}
+
+.h5p-flashcards .h5p-results-retry-button:hover {
+  background-color: #414d66;
+}
+
+.h5p-flashcards .h5p-results-retry-button:before {
+  font-family: "H5PFontAwesome4";
+  content: "\f01e";
+}
+
 .h5p-flashcards .h5p-results-score {
   position: absolute;
   color: #adb6c7;
@@ -568,9 +586,9 @@ button::-moz-focus-inner {
   list-style-type: none;
   overflow: hidden;
   overflow-y: scroll;
-  max-height: 34.4em;
+  max-height: 28.7em;
   padding-right: 1em;
-  margin: 5em 0 5em 0;
+  margin: 5em 0 2em 0;
 }
 
 .h5p-flashcards .h5p-results-list-item {
@@ -641,7 +659,7 @@ button::-moz-focus-inner {
   content: "\e601";
   font-size: 3em;
   vertical-align: middle;
-  line-height: 1.3em;
+  line-height: 1.5em;
 }
 
 .h5p-flashcards .h5p-results-list-item.h5p-incorrect .h5p-results-answer {
@@ -656,7 +674,7 @@ button::-moz-focus-inner {
   content: "\e600";
   font-size: 3em;
   vertical-align: middle;
-  line-height: 1.3em;
+  line-height: 1.5em;
 }
 
 .h5p-flashcards .h5p-visual-progress {

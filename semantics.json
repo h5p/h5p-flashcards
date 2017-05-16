@@ -182,6 +182,14 @@
     "common": true
   },
   {
+    "label": "Text for \"retry\" button",
+    "name": "retry",
+    "type": "text",
+    "default": "Retry",
+    "importance": "low",
+    "common": true
+  },
+  {
     "label": "Case sensitive",
     "name": "caseSensitive",
     "type": "boolean",
