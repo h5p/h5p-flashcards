@@ -79,6 +79,18 @@ H5P.Flashcards = (function ($) {
         load();
       }
     }
+
+    this.$container.bind("keydown", function (event) {
+      // Left
+      if (event.keyCode === 37) {
+        that.previous()
+      }
+
+      // Right
+      else if (event.keyCode === 39) {
+        that.next();
+      }
+    });
   };
 
   /**
