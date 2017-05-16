@@ -555,6 +555,7 @@ button::-moz-focus-inner {
   display: block;
   margin: 0 auto;
   width: 9em;
+  padding: 0.87em;
   color: #adb6c7;
   background: none;
   border: 1px solid #414d66;
