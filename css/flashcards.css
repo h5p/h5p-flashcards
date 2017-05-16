@@ -409,6 +409,7 @@
 }
 
 .h5p-flashcards .h5p-navigation .h5p-button {
+  font-family: 'H5PFontIcons';
   color: #a3adc4;
   background: none;
   border: 1px solid #414d66;
@@ -432,13 +433,12 @@
   left: 0.75em;
 }
 
-.h5p-flashcards .h5p-button.h5p-next:after {
-  font-family: 'H5PFontIcons';
+.h5p-flashcards .h5p-button.h5p-next:before {
   content: "\e910";
+  display: block;
 }
 
 .h5p-flashcards .h5p-button.h5p-previous:before {
-  font-family: 'H5PFontIcons';
   content: "\e910";
   -webkit-backface-visibility: hidden;
   -ms-transform: rotate(180deg);
