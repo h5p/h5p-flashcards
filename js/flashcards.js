@@ -55,7 +55,6 @@ H5P.Flashcards = (function ($) {
 
     this.$container = $container
       .addClass('h5p-flashcards')
-      .attr('title', this.options.description)
       .html('<div class="h5p-loading">Loading, please wait...</div>');
 
     // Load card images. (we need their size before we can create the task)
@@ -127,7 +126,7 @@ H5P.Flashcards = (function ($) {
   C.prototype.cardsLoaded = function () {
     var that = this;
     var $inner = this.$container.html(
-      '<div class="h5p-description">' + this.options.description + '</div>' +
+      '<div class="h5p-description" title="' + this.options.description + '">' + this.options.description + '</div>' +
       '<div class="h5p-progress"></div>' +
       '<div class="h5p-inner" role="list"></div>' +
       '<div class="h5p-navigation">' +
