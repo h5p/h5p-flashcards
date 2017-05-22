@@ -80,7 +80,7 @@ H5P.Flashcards = (function ($) {
       }
     }
 
-    this.$container.bind("keydown", function (event) {
+    this.$container.bind("keyup", function (event) {
       // Left
       if (event.keyCode === 37) {
         that.previous()
@@ -497,21 +497,7 @@ H5P.Flashcards = (function ($) {
 
     setTimeout(function () {
       $next.find('.h5p-textinput').focus();
-    }, 500);
-
-  };
-
-  /**
-   * Display last card.
-   */
-  C.prototype.last = function () {
-    var $last = this.$inner.children().last();
-    this.setCurrent($last);
-    this.$nextButton.addClass('h5p-hidden');
-    this.$prevButton.removeClass('h5p-hidden');
-    this.setProgress();
-    this.$container.find('.h5p-show-results').show();
-    this.trigger('resize');
+    }, 200);
   };
 
   /**
@@ -528,17 +514,32 @@ H5P.Flashcards = (function ($) {
     }
 
     this.$container.find('.h5p-show-results').hide();
-    $prev.find('.h5p-textinput').focus();
 
     setTimeout(function () {
       that.setCurrent($prev);
-
       if (!that.$current.prev().length) {
         that.$prevButton.addClass('h5p-hidden');
       }
       that.$nextButton.removeClass('h5p-hidden');
       that.setProgress();
     }, 10);
+
+    setTimeout(function () {
+      $prev.find('.h5p-textinput').focus();
+    }, 200);
+  };
+
+  /**
+   * Display last card.
+   */
+  C.prototype.last = function () {
+    var $last = this.$inner.children().last();
+    this.setCurrent($last);
+    this.$nextButton.addClass('h5p-hidden');
+    this.$prevButton.removeClass('h5p-hidden');
+    this.setProgress();
+    this.$container.find('.h5p-show-results').show();
+    this.trigger('resize');
   };
 
   /**
