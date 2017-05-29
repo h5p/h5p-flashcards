@@ -79,6 +79,17 @@ H5P.Flashcards = (function ($) {
         load();
       }
     }
+
+    this.$container.keydown(function(e) {
+      if (e.keyCode === 37) {
+        that.previous();
+      }
+
+      // Right
+      else if (e.keyCode === 39) {
+        that.next();
+      }
+    });
   };
 
   /**
@@ -93,8 +104,8 @@ H5P.Flashcards = (function ($) {
     var answer = C.$converter.html(card.answer || '').text();
 
     if (!caseSensitive) {
-      answer = answer.toLowerCase();
-      userAnswer = userAnswer.toLowerCase();
+      answer = (answer ? answer.toLowerCase() : answer);
+      userAnswer = (userAnswer ? userAnswer.toLowerCase() : userAnswer);
     }
 
     return answer === userAnswer;
@@ -192,6 +203,7 @@ H5P.Flashcards = (function ($) {
     this.$inner = $inner;
     this.setProgress();
     this.trigger('resize');
+    this.$current.find('.h5p-textinput').focus();
   };
 
   /**
@@ -204,8 +216,8 @@ H5P.Flashcards = (function ($) {
     var $showResults = $(
       '<div class="h5p-show-results">' +
         '<span class="h5p-show-results-icon"></span>' +
-        '<span class="h5p-show-results-label">' + that.options.showResults + '</span>' +
-        '<span class="h5p-show-results-label-mobile">' + that.options.results + '</span>' +
+        '<button class="h5p-show-results-label">' + that.options.showResults + '</button>' +
+        '<button class="h5p-show-results-label-mobile">' + that.options.results + '</button>' +
       '</div>'
     );
 
@@ -347,11 +359,11 @@ H5P.Flashcards = (function ($) {
       'class': 'h5p-results-list'
     }).appendTo(this.$resultScreen);
 
-    var $retryButton = $('<button/>', {
+    this.$retryButton = $('<button/>', {
       'class': 'h5p-results-retry-button h5p-joubelui-button h5p-invisible',
       'text': this.options.retry
     }).on('click', function() {
-      that.retry();
+      that.resetTask();
     }).appendTo(this.$resultScreen);
   };
 
@@ -414,7 +426,7 @@ H5P.Flashcards = (function ($) {
       }).appendTo($listItem);
     }
     if (this.getScore() < this.getMaxScore()) {
-      this.$resultScreen.find('.h5p-results-retry-button').removeClass('h5p-invisible');
+      this.$retryButton.removeClass('h5p-invisible');
     }
   };
 
@@ -476,6 +488,7 @@ H5P.Flashcards = (function ($) {
     var that = this;
     var $next = this.$current.next();
 
+    clearTimeout(this.prevTimer);
     clearTimeout(this.nextTimer);
 
     if (!$next.length) {
@@ -489,16 +502,54 @@ H5P.Flashcards = (function ($) {
       }
       that.$prevButton.removeClass('h5p-hidden');
       that.setProgress();
-    }, 10);
+    }, 100);
 
     if ($next.is(':last-child') && that.numAnswered == that.options.cards.length) {
       that.$container.find('.h5p-show-results').show();
     }
 
     setTimeout(function () {
-      $next.find('.h5p-textinput').focus();
-    }, 500);
+      if ($next.find('.h5p-textinput')[0].disabled) {
+        $next.find('.h5p-feedback-label').focus();
+      }
+      else {
+        $next.find('.h5p-textinput').focus();
+      }
+    }, 300);
+  };
 
+  /**
+   * Display previous card.
+   */
+  C.prototype.previous = function () {
+    var that = this;
+    var $prev = this.$current.prev();
+
+    clearTimeout(this.prevTimer);
+    clearTimeout(this.nextTimer);
+
+    if (!$prev.length) {
+      return;
+    }
+
+    setTimeout(function () {
+      that.setCurrent($prev);
+      if (!that.$current.prev().length) {
+        that.$prevButton.addClass('h5p-hidden');
+      }
+      that.$nextButton.removeClass('h5p-hidden');
+      that.setProgress();
+      that.$container.find('.h5p-show-results').hide();
+    }, 100);
+
+    setTimeout(function () {
+      if ($prev.find('.h5p-textinput')[0].disabled) {
+        $prev.find('.h5p-feedback-label').focus();
+      }
+      else {
+        $prev.find('.h5p-textinput').focus();
+      }
+    }, 300);
   };
 
   /**
@@ -515,36 +566,11 @@ H5P.Flashcards = (function ($) {
   };
 
   /**
-   * Display previous card.
+   * Resets the whole task.
+   * Used in contracts with integrated content.
+   * @private
    */
-  C.prototype.previous = function () {
-    var that = this;
-    var $prev = this.$current.prev();
-
-    clearTimeout(this.nextTimer);
-
-    if (!$prev.length) {
-      return;
-    }
-
-    this.$container.find('.h5p-show-results').hide();
-    $prev.find('.h5p-textinput').focus();
-
-    setTimeout(function () {
-      that.setCurrent($prev);
-
-      if (!that.$current.prev().length) {
-        that.$prevButton.addClass('h5p-hidden');
-      }
-      that.$nextButton.removeClass('h5p-hidden');
-      that.setProgress();
-    }, 10);
-  };
-
-  /**
-   * Retry the task, resetting all relevant functionality
-   */
-  C.prototype.retry = function () {
+  C.prototype.resetTask = function () {
     this.numAnswered = 0;
     this.cardsLoaded();
     this.trigger('resize');
