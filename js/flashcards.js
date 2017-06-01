@@ -80,7 +80,7 @@ H5P.Flashcards = (function ($) {
       }
     }
 
-    this.$container.bind("keyup", function (event) {
+    this.$container.bind("keydown", function (event) {
       // Left
       if (event.keyCode === 37) {
         that.previous()
@@ -204,6 +204,7 @@ H5P.Flashcards = (function ($) {
     this.$inner = $inner;
     this.setProgress();
     this.trigger('resize');
+    this.$current.find('.h5p-textinput').focus();
   };
 
   /**
@@ -476,6 +477,7 @@ H5P.Flashcards = (function ($) {
     var that = this;
     var $next = this.$current.next();
 
+    clearTimeout(this.prevTimer);
     clearTimeout(this.nextTimer);
 
     if (!$next.length) {
@@ -489,15 +491,20 @@ H5P.Flashcards = (function ($) {
       }
       that.$prevButton.removeClass('h5p-hidden');
       that.setProgress();
-    }, 10);
+    }, 100);
 
     if ($next.is(':last-child') && that.numAnswered == that.options.cards.length) {
       that.$container.find('.h5p-show-results').show();
     }
 
     setTimeout(function () {
-      $next.find('.h5p-textinput').focus();
-    }, 200);
+      if ($next.find('.h5p-textinput')[0].disabled) {
+        $next.find('.h5p-feedback-label').focus();
+      }
+      else {
+        $next.find('.h5p-textinput').focus();
+      }
+    }, 300);
   };
 
   /**
@@ -507,13 +514,12 @@ H5P.Flashcards = (function ($) {
     var that = this;
     var $prev = this.$current.prev();
 
+    clearTimeout(this.prevTimer);
     clearTimeout(this.nextTimer);
 
     if (!$prev.length) {
       return;
     }
-
-    this.$container.find('.h5p-show-results').hide();
 
     setTimeout(function () {
       that.setCurrent($prev);
@@ -522,11 +528,17 @@ H5P.Flashcards = (function ($) {
       }
       that.$nextButton.removeClass('h5p-hidden');
       that.setProgress();
-    }, 10);
+      this.$container.find('.h5p-show-results').hide();
+    }, 100);
 
     setTimeout(function () {
-      $prev.find('.h5p-textinput').focus();
-    }, 200);
+      if ($prev.find('.h5p-textinput')[0].disabled) {
+          $prev.find('.h5p-feedback-label').focus();
+        }
+        else {
+          $prev.find('.h5p-textinput').focus();
+        }
+    }, 300);
   };
 
   /**
