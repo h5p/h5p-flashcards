@@ -1,0 +1,61 @@
+{
+  "semantics": [
+    {
+      "label": "Opis zadatka"
+    },
+    {
+      "widgets": [
+        {
+          "label": "Standard"
+        }
+      ],
+      "label": "Karte",
+      "entity": "kart",
+      "field": {
+        "label": "Karte",
+        "fields": [
+          {
+            "label": "Pitanje",
+            "description": "Opcionalni tekst za pitanje. (Pitanje može biti tekst, slika ili oboje)"
+          },
+          {
+            "label": "Odgovor",
+            "description": "Opcionalni odgovor (Rješenje) za kartu."
+          },
+          {
+            "label": "Slika",
+            "description": "Opcionalna slika za kartu. (Pitanje može biti tekst, slika ili oboje)"
+          },
+          {
+            "label": "Savjet",
+            "fields": [
+              {
+                "label": "Savjet"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "label": "Početni tekst",
+      "default": "Karte @card od @total",
+      "description": "Početni tekst, dostupne varijable: @card i @total. Primjer: 'Karte @card od @total'"
+    },
+    {
+      "label": "Tekst za dugme Naprijed",
+      "default": "Naprijed"
+    },
+    {
+      "label": "Tekst za dugme Nazad",
+      "default": "Nazad"
+    },
+    {
+      "label": "Tekst za dugme Potvrdi",
+      "default": "Potvrdi"
+    },
+    {
+      "label": "Obavezno je učešće korisnika, prije nego rješenje bude prikazano"
+    }
+  ]
+}
