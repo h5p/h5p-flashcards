@@ -80,13 +80,14 @@ H5P.Flashcards = (function ($) {
       }
     }
 
-    this.$container.keydown(function(e) {
-      if (e.keyCode === 37) {
-        that.previous();
+    this.$container.bind("keydown", function (event) {
+      // Left
+      if (event.keyCode === 37) {
+        that.previous()
       }
 
       // Right
-      else if (e.keyCode === 39) {
+      else if (event.keyCode === 39) {
         that.next();
       }
     });
@@ -539,7 +540,7 @@ H5P.Flashcards = (function ($) {
       }
       that.$nextButton.removeClass('h5p-hidden');
       that.setProgress();
-      that.$container.find('.h5p-show-results').hide();
+      this.$container.find('.h5p-show-results').hide();
     }, 100);
 
     setTimeout(function () {
