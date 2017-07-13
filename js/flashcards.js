@@ -540,7 +540,7 @@ H5P.Flashcards = (function ($) {
       }
       that.$nextButton.removeClass('h5p-hidden');
       that.setProgress();
-      this.$container.find('.h5p-show-results').hide();
+      that.$container.find('.h5p-show-results').hide();
     }, 100);
 
     setTimeout(function () {
