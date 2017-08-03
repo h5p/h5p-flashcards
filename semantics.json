@@ -115,5 +115,85 @@
     "default": true,
     "importance": "low",
     "optional": true
+  },
+  {
+    "label": "Text for the answer input field",
+    "name": "defaultAnswerText",
+    "type": "text",
+    "default": "Your answer",
+    "importance": "low",
+    "common": true
+  },
+  {
+    "label": "Text for correct answer",
+    "name": "correctAnswerText",
+    "type": "text",
+    "default": "Correct",
+    "importance": "low",
+    "common": true
+  },
+  {
+    "label": "Text for incorrect answer",
+    "name": "incorrectAnswerText",
+    "type": "text",
+    "default": "Incorrect",
+    "importance": "low",
+    "common": true
+  },
+  {
+    "label": "Show solution text",
+    "name": "showSolutionText",
+    "type": "text",
+    "default": "Correct answer",
+    "importance": "low",
+    "common": true
+  },
+  {
+    "label": "Text for results title",
+    "name": "results",
+    "type": "text",
+    "default": "Results",
+    "importance": "low",
+    "common": true
+  },
+  {
+    "label": "Text for number of correct",
+    "name": "ofCorrect",
+    "type": "text",
+    "default": "@score of @total correct",
+    "importance": "low",
+    "description": "Result text, variables available: @score and @total. Example: '@score of @total correct'",
+    "common": true
+  },
+  {
+    "label": "Text for show results",
+    "name": "showResults",
+    "type": "text",
+    "default": "Show results",
+    "importance": "low",
+    "common": true
+  },
+  {
+    "label": "Text for short answer label",
+    "name": "answerShortText",
+    "type": "text",
+    "default": "A:",
+    "importance": "low",
+    "common": true
+  },
+  {
+    "label": "Text for \"retry\" button",
+    "name": "retry",
+    "type": "text",
+    "default": "Retry",
+    "importance": "low",
+    "common": true
+  },
+  {
+    "label": "Case sensitive",
+    "name": "caseSensitive",
+    "type": "boolean",
+    "default": false,
+    "description": "Makes sure the user input has to be exactly the same as the answer."
   }
 ]

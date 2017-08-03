@@ -51,6 +51,47 @@
     },
     {
       "label": "Krev inndata fra brukeren før fasit gis."
+    },
+    {
+      "label": "Tekst for \"svar\" feltet",
+      "default": "Ditt svar"
+    },
+    {
+      "label": "Tekst for riktig svar",
+      "default": "Riktig"
+    },
+    {
+      "label": "Tekst for feil svar",
+      "default": "Feil"
+    },
+    {
+      "label": "Tekst for vis svar.",
+      "default": "Riktig svar"
+    },
+    {
+      "label": "Tekst for tittel på Resultatskjerm",
+      "default": "Resultat"
+    },
+    {
+      "label": "Tekst for antall korrekt",
+      "default": "@score av @total korrekt",
+      "description": "Resultattekst. Variablar tilgjengelig: @score og @total. Eksempel: '@score av @total korrekt'"
+    },
+    {
+      "label": "Tekst for \"vis resultatar\"",
+      "default": "Vis resultatar"
+    },
+    {
+      "label": "Tekst for kort svartekst",
+      "default": "S:"
+    },
+    {
+      "label": "Tekst for \"prøv igjen\"-knapp",
+      "default": "Prøv igjen"
+    },
+    {
+      "label": "Versalfølsam",
+      "description": "Syter for at brukarens inndata må vere skrive heilt likt svaret."
     }
   ]
 }

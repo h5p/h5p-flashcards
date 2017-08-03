@@ -5,6 +5,9 @@
   "minorVersion": 4,
   "patchVersion": 1,
   "runnable": 1,
+  "embedTypes": [
+    "iframe"
+  ],
   "author": "Joubel",
   "coreApi": {
     "majorVersion": 1,
@@ -32,10 +35,18 @@
       "machineName": "H5P.JoubelUI",
       "majorVersion": 1,
       "minorVersion": 2
+    },
+    {
+      "machineName": "H5P.FontIcons",
+      "majorVersion": 1,
+      "minorVersion": 0
+    },
+    {
+      "machineName": "H5P.Transition",
+      "majorVersion": 1,
+      "minorVersion": 0
     }
   ],
-  "w": 635,
-  "h": 500,
   "editorDependencies": [
     {
       "machineName": "H5PEditor.VerticalTabs",

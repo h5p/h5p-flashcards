@@ -24,14 +24,27 @@ H5P.Flashcards = (function ($) {
       next: "Next",
       previous: "Previous",
       checkAnswerText: "Check answer",
-      showSolutionsRequiresInput: true
+      showSolutionsRequiresInput: true,
+      defaultAnswerText: "Your answer",
+      correctAnswerText: "Correct",
+      incorrectAnswerText: "Incorrect",
+      showSolutionText: "Correct answer",
+      answerShortText: "A:",
+      informationText: "Information",
+      caseSensitive: false,
+      results: "Results",
+      ofCorrect: "@score of @total correct",
+      showResults: "Show results",
+      retry : "Retry"
     }, options);
     this.$images = [];
+
     this.on('resize', this.resize, this);
   }
 
   C.prototype = Object.create(H5P.EventDispatcher.prototype);
   C.prototype.constructor = C;
+
 
   /**
    * Append field to wrapper.
@@ -41,59 +54,51 @@ H5P.Flashcards = (function ($) {
   C.prototype.attach = function ($container) {
     var that = this;
 
-    this.$container = $container.addClass('h5p-flashcards').html('<div class="h5p-loading">Loading, please wait...</div>');
+    this.$container = $container
+      .addClass('h5p-flashcards')
+      .html('<div class="h5p-loading">Loading, please wait...</div>');
 
     // Load card images. (we need their size before we can create the task)
     var loaded = 0;
+    var load = function () {
+      loaded++;
+      if (loaded === that.options.cards.length) {
+        that.cardsLoaded();
+      }
+    };
+
     for (var i = 0; i < this.options.cards.length; i++) {
       var card = this.options.cards[i];
-      var load = function () {
-        loaded++;
-        if (loaded === that.options.cards.length) {
-          that.cardsLoaded();
-        }
-      };
+
       if (card.image !== undefined) {
-        var $image = $('<img class="h5p-clue" src="' + H5P.getPath(card.image.path, this.id) + '"/>').load(load);
+        var $image = $('<img class="h5p-clue" src="' + H5P.getPath(card.image.path, this.id) + '"/>');
+        if ($image.get().complete) {
+          load();
+        }
+        else {
+          $image.load(load);
+        }
+
         this.$images[i] = $image;
       }
       else {
         this.$images[i] = $('<div class="h5p-clue"></div>');
-      }
-      if (card.image === undefined || $image.get().complete) {
-        // Image cached
         load();
       }
     }
+
+    this.$container.bind("keydown", function (event) {
+      // Left
+      if (event.keyCode === 37) {
+        that.previous();
+      }
+
+      // Right
+      else if (event.keyCode === 39) {
+        that.next();
+      }
+    });
   };
-
-  /**
-   * Cleans the user input string
-   *
-   * @param str The user input
-   * @returns {string}
-   */
-  function cleanUserInput (str){
-    str = str || '';
-
-    return str.trim()
-      .toLowerCase()
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;")
-      .replace(/'/g, "&#039;");
-  }
-
-  /**
-   * Trims a String
-   *
-   * @param {string} str A string to trim
-   * @returns {string} The trimmed string
-   */
-  function trimString (str){
-    return str.trim();
-  }
 
   /**
    * Checks if the user anwer matches an answer on the card
@@ -103,20 +108,33 @@ H5P.Flashcards = (function ($) {
    * @param userAnswer The user input
    * @return {Boolean} If the answer is found on the card
    */
-  function isCorrectAnswer (card, userAnswer){
-    var answerStr = card.answer || '';
-    var answer = answerStr.toLowerCase();
+  function isCorrectAnswer(card, userAnswer, caseSensitive) {
+    var answer = C.$converter.html(card.answer || '').text();
+
+    if (!caseSensitive) {
+      answer = (answer ? answer.toLowerCase() : answer);
+      userAnswer = (userAnswer ? userAnswer.toLowerCase() : userAnswer);
+    }
+
     return answer === userAnswer;
   }
 
+  /**
+   * Get Score
+   * @return {number}
+   */
   C.prototype.getScore = function (){
     var that = this;
 
     return that.options.cards.reduce(function (sum, card, i) {
-      return sum + (isCorrectAnswer(card, that.answers[i]) ? 1 : 0);
+      return sum + (isCorrectAnswer(card, that.answers[i], that.options.caseSensitive) ? 1 : 0);
     }, 0);
   };
 
+  /**
+   * Get Score
+   * @return {number}
+   */
   C.prototype.getMaxScore = function (){
     return this.options.cards.length;
   };
@@ -126,7 +144,28 @@ H5P.Flashcards = (function ($) {
    */
   C.prototype.cardsLoaded = function () {
     var that = this;
-    var $inner = this.$container.html('<div class="h5p-description">' + this.options.description + '</div><div class="h5p-inner"></div><div class="h5p-navigation"><button type="button" class="h5p-button h5p-previous h5p-hidden" tabindex="3" title="' + this.options.previous + '"></button><button type="button" class="h5p-button h5p-next" tabindex="4" title="' + this.options.next + '"></button><div class="h5p-progress"></div>').children('.h5p-inner');
+    var $inner = this.$container.html(
+      '<div class="h5p-description" title="' + this.options.description + '">' + this.options.description + '</div>' +
+      '<div class="h5p-progress"></div>' +
+      '<div class="h5p-inner" role="list"></div>' +
+      '<div class="h5p-navigation">' +
+        '<button type="button" class="h5p-button h5p-previous h5p-hidden" tabindex="0" title="' + this.options.previous + '"></button>' +
+        '<button type="button" class="h5p-button h5p-next" tabindex="0" title="' + this.options.next + '"></button>'
+    )
+      .children('.h5p-inner');
+
+    // Create visual progress and add accessibility attributes
+    this.$visualProgress = $('<div/>', {
+      'class': 'h5p-visual-progress',
+      'role': 'progressbar',
+      'aria-valuemax': '100',
+      'aria-valuemin': (100 / this.options.cards.length).toFixed(2)
+    })
+      .append($('<div/>', {
+        'class': 'h5p-visual-progress-inner'
+      }))
+      .appendTo(this.$container);
+
     this.$progress = this.$container.find('.h5p-progress');
 
     // Add cards
@@ -134,9 +173,12 @@ H5P.Flashcards = (function ($) {
       this.addCard(i, $inner);
     }
 
+    // Set current:
+    this.setCurrent($inner.find('>:first-child'));
+
     // Find highest image and set task height.
-    var height = 180;
-    for (var i = 0; i < this.$images.length; i++) {
+    var height = 0;
+    for (i = 0; i < this.$images.length; i++) {
       var $image = this.$images[i];
 
       if ($image === undefined) {
@@ -148,17 +190,6 @@ H5P.Flashcards = (function ($) {
         height = imageHeight;
       }
     }
-
-    // Center images
-    for (var i = 0; i < this.$images.length; i++) {
-      var $image = this.$images[i];
-      if ($image === undefined) {
-        continue;
-      }
-    }
-
-    // Set height
-    $inner.css('height', height + 286); // TODO: Avoid magic numbers - 122?
 
     // Active buttons
     var $buttonWrapper = $inner.next();
@@ -173,86 +204,246 @@ H5P.Flashcards = (function ($) {
       this.$nextButton.hide();
     }
 
+    this.$current.next().addClass('h5p-next');
+
+    $inner.initialImageContainerWidth = $inner.find('.h5p-imageholder').outerWidth();
+
+    this.addShowResults($inner);
+    this.createResultScreen();
+
     this.$inner = $inner;
-
     this.setProgress();
-
     this.trigger('resize');
+    this.$current.find('.h5p-textinput').focus();
   };
 
-  C.prototype.addCard = function (index, $inner) {
+  /**
+   * Add show results
+   * @param {H5P.jQuery} $inner
+   */
+  C.prototype.addShowResults = function ($inner) {
     var that = this;
 
+    var $showResults = $(
+      '<div class="h5p-show-results">' +
+        '<span class="h5p-show-results-icon"></span>' +
+        '<button type="button" class="h5p-show-results-label">' + that.options.showResults + '</button>' +
+        '<button type="button" class="h5p-show-results-label-mobile">' + that.options.results + '</button>' +
+      '</div>'
+    );
+
+    $showResults
+      .on('click', function() {
+        that.enableResultScreen();
+      })
+      .appendTo($inner.parent());
+  };
+
+  /**
+   * Add card
+   * @param {number} index
+   * @param {H5P.jQuery} $inner
+   */
+  C.prototype.addCard = function (index, $inner) {
+    var that = this;
     var card = this.options.cards[index];
-    var imageText = (card.text !== undefined ? '<div class="h5p-imagetext">' + card.text + '</div>' : '');
-    var $card = $('<div class="h5p-card h5p-animate' + (index === 0 ? ' h5p-current' : '') + '"> ' +
+    var imageText = '<div class="h5p-imagetext">' + (card.text !== undefined ? card.text : '') + '</div>';
+
+    var $card = $('<div role="listitem" class="h5p-card h5p-animate' + (index === 0 ? ' h5p-current' : '') + '" aria-hidden="' + (index === 0 ? 'false' : 'true') + '"> ' +
       '<div class="h5p-cardholder">' +
-      '<div class="h5p-imageholder"></div>' +
+      '<div class="h5p-imageholder"><div class="h5p-flashcard-overlay"></div></div>' +
       '<div class="h5p-foot">' + imageText + '<div class="h5p-answer">' +
-      '<div class="h5p-input"><input type="text" class="h5p-textinput" tabindex="-1"/>' +
+      '<div class="h5p-input"><input type="text" class="h5p-textinput" tabindex="-1" placeholder="' + this.options.defaultAnswerText + '"/>' +
       '<button type="button" class="h5p-button" tabindex="-1">' + this.options.checkAnswerText + '</button></div></div></div></div></div>')
       .appendTo($inner);
     $card.find('.h5p-imageholder').prepend(this.$images[index]);
 
+    $card.prepend($('<div class="h5p-flashcard-overlay"></div>').on('click', function () {
+      if ($(this).parent().hasClass('h5p-previous')) {
+        that.previous();
+      } else {
+        that.next();
+      }
+    }));
+
     // Add tip if tip exists
     if (card.tip !== undefined && card.tip.trim().length > 0) {
-      $('.h5p-input', $card).append(H5P.JoubelUI.createTip(card.tip)).addClass('has-tip');
+      $('.h5p-input', $card).append(H5P.JoubelUI.createTip(card.tip).attr({'tabindex': '-1', 'title': this.options.informationText})).addClass('has-tip');
     }
 
     var $input = $card.find('.h5p-textinput');
 
-    $input.change(function (){
-      that.answers[index] = cleanUserInput($input.val());
-      that.triggerXAPI('interacted');
-    });
-
     var $button = $card.find('.h5p-button').click(function () {
       var card = that.options.cards[index];
-      var userAnswer = cleanUserInput($input.val());
-      var userCorrect = isCorrectAnswer(card, userAnswer);
+      var userAnswer = $input.val().trim();
+      var userCorrect = isCorrectAnswer(card, userAnswer, that.options.caseSensitive);
+      var done = false;
 
-      that.numAnswered++;
-      if (that.numAnswered >= that.options.cards.length) {
-        that.triggerXAPICompleted(that.getScore(), that.getMaxScore());
+      if (userAnswer == '') {
+        $input.focus();
       }
 
       if (!that.options.showSolutionsRequiresInput || userAnswer !== '' || userCorrect) {
+        that.numAnswered++;
         $input.add(this).attr('disabled', true);
 
+        that.answers[index] = userAnswer;
+        that.triggerXAPI('interacted');
+
         if (userCorrect) {
-          $input.parent().addClass('h5p-correct');
+          $input.parent()
+            .addClass('h5p-correct')
+            .append('<div class="h5p-feedback-label" tabindex="-1" aria-label="' + that.options.correctAnswerText + '">' + that.options.correctAnswerText + '!</div>');
+          $card.addClass('h5p-correct');
+
+          $('<div class="h5p-solution">' +
+            '<span class="solution-icon h5p-rotate-in"></span>' +
+          '</div>').appendTo($card.find('.h5p-imageholder'));
         }
         else {
-          $input.parent().addClass('h5p-wrong');
+          $input.parent()
+            .addClass('h5p-wrong')
+            .append('<span class="h5p-feedback-label" tabindex="-1" aria-label="' + that.options.incorrectAnswerText + '">' + that.options.incorrectAnswerText + '!</span>');
+          $card.addClass('h5p-wrong');
+
+          $('<div class="h5p-solution">' +
+            '<span class="solution-icon h5p-rotate-in"></span>' +
+            '<span class="solution-text">' + (that.options.cards[index].answer ? that.options.showSolutionText + ': <span>' + that.options.cards[index].answer + '</span>' : '') + '</span>' +
+          '</div>').appendTo($card.find('.h5p-imageholder'));
         }
 
-        that.$images[index].addClass('h5p-collapse');
-        setTimeout(function () {
-          that.$images[index].removeClass('h5p-collapse');
-        }, 150);
+        $input.siblings('.h5p-feedback-label').focus();
 
-        var $solution = $('<div class="h5p-solution h5p-hidden"><span>' + (that.options.cards[index].answer || '') + '</span></div>').appendTo($card.find('.h5p-imageholder'));
-        setTimeout(function () {
-          $solution.removeClass('h5p-hidden');
-        }, 150);
+        done = (that.numAnswered >= that.options.cards.length);
+
+        if (!done) {
+          that.nextTimer = setTimeout(that.next.bind(that), 1500);
+        }
+        else {
+          that.last();
+        }
+      }
+
+      if (done) {
+        that.triggerXAPICompleted(that.getScore(), that.getMaxScore());
+        that.trigger('resize');
       }
     });
 
-    $card.find('.h5p-textinput').keypress(function (event) {
+    $input.keypress(function (event) {
       if (event.keyCode === 13) {
         $button.click();
         return false;
       }
     });
 
-    if (index === 0) {
-      this.setCurrent($card);
+    return $card;
+  };
+
+  /**
+   * Create result screen
+   */
+  C.prototype.createResultScreen = function () {
+    var that = this;
+
+    // Create the containers needed for the result screen
+    this.$resultScreen = $('<div/>', {
+      'class': 'h5p-flashcards-results',
+    });
+
+    var $resultsTitle = $('<div/>', {
+      'class': 'h5p-results-title',
+      'text': this.options.results
+    }).appendTo(this.$resultScreen);
+
+    var $resultsScore = $('<div/>', {
+      'class': 'h5p-results-score'
+    }).appendTo(this.$resultScreen);
+
+    var $resultsContainer = $('<ul/>', {
+      'class': 'h5p-results-list'
+    }).appendTo(this.$resultScreen);
+
+    this.$retryButton = $('<button/>', {
+      'class': 'h5p-results-retry-button h5p-invisible h5p-button',
+      'text': this.options.retry
+    }).on('click', function() {
+      that.resetTask();
+    }).appendTo(this.$resultScreen);
+  };
+
+  /**
+   * Enable result screen
+   */
+  C.prototype.enableResultScreen = function () {
+    this.$inner.addClass('h5p-invisible');
+    this.$inner.siblings().addClass('h5p-invisible');
+    this.$resultScreen.appendTo(this.$container).show();
+
+    var ofCorrectText = this.options.ofCorrect
+      .replace(/@score/g, '<span>' + this.getScore() + '</span>')
+      .replace(/@total/g, '<span>' + this.getMaxScore() + '</span>');
+
+    this.$resultScreen.find('.h5p-results-score').html(ofCorrectText);
+
+    // Create a list representing the cards and populate them
+    for (var i = 0; i < this.options.cards.length; i++) {
+      var card = this.options.cards[i];
+      var $resultsContainer = this.$resultScreen.find('.h5p-results-list');
+
+      var userAnswer = this.answers[i];
+      var userCorrect = isCorrectAnswer(card, userAnswer, this.options.caseSensitive);
+
+      var $listItem = $('<li/>', {
+        'class': 'h5p-results-list-item' + (!userCorrect ? ' h5p-incorrect' : '')
+      }).appendTo($resultsContainer);
+
+      var $imageHolder = $('<div/>', {
+        'class': 'h5p-results-image-holder',
+      }).appendTo($listItem);
+
+      if (card.image != undefined) {
+        $imageHolder.css('background-image', 'url("' + H5P.getPath(card.image.path, this.id) + '")');
+      }
+      else {
+        $imageHolder.addClass('no-image');
+      }
+
+      var $resultsQuestion = $('<div/>', {
+        'class': 'h5p-results-question',
+        'text': card.text
+      }).appendTo($listItem);
+
+      var $resultsAnswer = $('<div/>', {
+        'class': 'h5p-results-answer',
+        'text': this.answers[i]
+      }).appendTo($listItem);
+
+      $resultsAnswer.prepend('<span>' + this.options.answerShortText + ' </span>');
+
+      if (!userCorrect) {
+        $resultsAnswer.append('<span> ' + this.options.showSolutionText + ': </span>');
+        $resultsAnswer.append('<span class="h5p-correct">' + card.answer + '</span>');
+      }
+
+      var $resultsBox = $('<div/>', {
+        'class': 'h5p-results-box'
+      }).appendTo($listItem);
+    }
+    if (this.getScore() < this.getMaxScore()) {
+      this.$retryButton.removeClass('h5p-invisible');
     }
   };
 
+  /**
+   * Set Progress
+   */
   C.prototype.setProgress = function () {
     var index = this.$current.index();
-    this.$progress.text(this.options.progressText.replace('@card', index + 1).replace('@total', this.options.cards.length));
+    this.$progress.text((index + 1) + ' / ' + this.options.cards.length);
+    this.$visualProgress
+      .attr('aria-valuenow', ((index + 1) / this.options.cards.length * 100).toFixed(2))
+      .find('.h5p-visual-progress-inner').width((index + 1) / this.options.cards.length * 100 + '%');
   };
 
   /**
@@ -268,18 +459,47 @@ H5P.Flashcards = (function ($) {
   C.prototype.setCurrent = function ($card, newClassForOldCurrentCard) {
     // Remove from existing card.
     if (this.$current) {
-      this.$current.removeClass('h5p-current');
-      this.$current.find('input, button').attr('tabindex', '-1');
-      if (newClassForOldCurrentCard) {
-        this.$current.addClass(newClassForOldCurrentCard);
-      }
+      this.$current.find('.h5p-textinput').attr('tabindex', '-1');
+      this.$current.find('.joubel-tip-container').attr('tabindex', '-1');
+      this.$current.find('.h5p-button').attr('tabindex', '-1');
     }
 
+    // Set new card
     this.$current = $card;
+
+    // Update card classes
+    $card.removeClass('h5p-previous h5p-next');
     $card.addClass('h5p-current');
-    $card.find('.h5p-textinput').attr('tabindex', '1');
-    $card.find('.h5p-button').attr('tabindex', '2');
-    $card.removeClass('h5p-previous');
+    $card.attr('aria-hidden', 'false');
+
+    $card.siblings()
+      .removeClass('h5p-current h5p-previous h5p-next left right')
+      .attr('aria-hidden', 'true')
+      .find('.h5p-rotate-in').removeClass('h5p-rotate-in');
+
+    /* We can't set focus on anything until the transition is finished.
+       If we do, iPad will try to center the focused element while the transition
+       is running, and the card will be misplaced */
+    H5P.Transition.onTransitionEnd($card, function () {
+      if ($card.find('.h5p-textinput')[0].disabled) {
+        $card.find('.h5p-feedback-label').focus();
+      }
+      else {
+        $card.find('.h5p-textinput').focus();
+      }
+    }, 1000);
+
+
+    $card.prev().addClass('h5p-previous');
+    $card.next('.h5p-card').addClass('h5p-next');
+
+    $card.prev().prevAll().addClass('left');
+    $card.next().nextAll().addClass('right');
+
+    // Update tab indexes
+    $card.find('.h5p-textinput').attr('tabindex', '0');
+    $card.find('.h5p-button').attr('tabindex', '0');
+    $card.find('.joubel-tip-container').attr('tabindex', '0');
   };
 
   /**
@@ -288,19 +508,24 @@ H5P.Flashcards = (function ($) {
   C.prototype.next = function () {
     var that = this;
     var $next = this.$current.next();
+
+    clearTimeout(this.prevTimer);
+    clearTimeout(this.nextTimer);
+
     if (!$next.length) {
       return;
     }
 
-    setTimeout(function () {
-      that.setCurrent($next, 'h5p-previous');
+    that.setCurrent($next);
+    if (!that.$current.next('.h5p-card').length) {
+      that.$nextButton.addClass('h5p-hidden');
+    }
+    that.$prevButton.removeClass('h5p-hidden');
+    that.setProgress();
 
-      if (!that.$current.next().length) {
-        that.$nextButton.addClass('h5p-hidden');
-      }
-      that.$prevButton.removeClass('h5p-hidden');
-      that.setProgress();
-    }, 10);
+    if ($next.is(':last-child') && that.numAnswered == that.options.cards.length) {
+      that.$container.find('.h5p-show-results').show();
+    }
   };
 
   /**
@@ -309,19 +534,47 @@ H5P.Flashcards = (function ($) {
   C.prototype.previous = function () {
     var that = this;
     var $prev = this.$current.prev();
+
+    clearTimeout(this.prevTimer);
+    clearTimeout(this.nextTimer);
+
     if (!$prev.length) {
       return;
     }
 
-    setTimeout(function () {
-      that.setCurrent($prev);
+    that.setCurrent($prev);
+    if (!that.$current.prev().length) {
+      that.$prevButton.addClass('h5p-hidden');
+    }
+    that.$nextButton.removeClass('h5p-hidden');
+    that.setProgress();
+    that.$container.find('.h5p-show-results').hide();
+  };
 
-      if (!that.$current.prev().length) {
-        that.$prevButton.addClass('h5p-hidden');
-      }
-      that.$nextButton.removeClass('h5p-hidden');
-      that.setProgress();
-    }, 10);
+  /**
+   * Display last card.
+   */
+  C.prototype.last = function () {
+    var $last = this.$inner.children().last();
+    this.setCurrent($last);
+    this.$nextButton.addClass('h5p-hidden');
+    if (this.options.cards.length > 1) {
+      this.$prevButton.removeClass('h5p-hidden');
+    }
+    this.setProgress();
+    this.$container.find('.h5p-show-results').show();
+    this.trigger('resize');
+  };
+
+  /**
+   * Resets the whole task.
+   * Used in contracts with integrated content.
+   * @private
+   */
+  C.prototype.resetTask = function () {
+    this.numAnswered = 0;
+    this.cardsLoaded();
+    this.trigger('resize');
   };
 
   /**
@@ -358,59 +611,50 @@ H5P.Flashcards = (function ($) {
     var imageHolderWidth = self.$inner.find('.h5p-imageholder').width();
     var minPadding = parseFloat(self.$inner.css('font-size'));
 
-    //Resize all images and find max height.
-    self.$images.forEach(function (image) {
-      var $image = image;
-      var imageHeight = 0;
-      $image.css({
-        'height': 'initial',
-        'width': 'initial'
-      });
-
-      //Resize image if it is too big.
-      if (($image[0].naturalWidth + (minPadding * 2)) > imageHolderWidth ||
-        ($image[0].naturalHeight + (minPadding * 2)) > imageHolderWidth) {
-        var ratio = $image[0].naturalHeight / $image[0].naturalWidth;
-
-        //Landscape image
-        if( $image[0].naturalWidth >= $image[0].naturalHeight) {
-          $image.css({
-            'width': imageHolderWidth - (minPadding * 2),
-            'height': 'auto'
-          });
-          imageHeight = (imageHolderWidth - (minPadding * 2)) * ratio;
-        }
-        //Portrait image
-        else {
-          $image.css({
-            'height': imageHolderWidth - minPadding * 2,
-            'width': 'auto'
-          });
-          imageHeight = imageHolderWidth - minPadding * 2;
-        }
-      }
-      //Else use source dimensions
-      else {
-        $image.css({
-          'height': 'initial',
-          'width': 'initial'
-        });
-        imageHeight = $image.outerHeight();
-      }
-      //Keep max height
-      maxHeightImage = imageHeight + minPadding * 2 > maxHeightImage ? imageHeight + minPadding * 2 : maxHeightImage;
-    });
+    if (this.$inner.width() / parseFloat($("body").css("font-size")) <= 31) {
+      self.$container.addClass('h5p-mobile');
+    }
+    else {
+      self.$container.removeClass('h5p-mobile');
+    }
 
     //Find container dimensions needed to encapsule image and text.
-    self.$inner.children().each( function (cardWrapper) {
+    self.$inner.children('.h5p-card').each( function (cardWrapper) {
       var cardholderHeight = maxHeightImage + $(this).find('.h5p-foot').outerHeight();
       maxHeight = cardholderHeight > maxHeight ? cardholderHeight : maxHeight;
     });
 
-    //Resize containers to fit image and text.
-    self.$inner.find('.h5p-imageholder').css('height', maxHeightImage + 'px');
-    self.$inner.css('height', maxHeight + minPadding * 2 +'px');
+    if (this.numAnswered < this.options.cards.length) {
+      //Resize cards holder
+      var innerHeight = 0;
+      this.$inner.children('.h5p-card').each(function() {
+        if ($(this).height() > innerHeight) {
+          innerHeight = $(this).height();
+        }
+      });
+
+      this.$inner.height(innerHeight);
+    }
+
+    var freeSpaceRight = this.$inner.children('.h5p-card').last().css("marginRight");
+
+    if (parseInt(freeSpaceRight) < 160) {
+      this.$container.find('.h5p-show-results')
+        .addClass('h5p-mobile')
+        .css('width', '');
+    }
+    else if (freeSpaceRight != 'auto') {
+      this.$container.find('.h5p-show-results')
+        .removeClass('h5p-mobile')
+        .width(freeSpaceRight);
+    }
   };
+
+  /**
+   * Helps convert html to text
+   * @type {H5P.jQuery}
+   */
+  C.$converter = $('<div/>');
 
   return C;
 })(H5P.jQuery);
