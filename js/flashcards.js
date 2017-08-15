@@ -378,7 +378,7 @@ H5P.Flashcards = (function ($) {
   C.prototype.enableResultScreen = function () {
     this.$inner.addClass('h5p-invisible');
     this.$inner.siblings().addClass('h5p-invisible');
-    this.$resultScreen.appendTo(this.$container).show();
+    this.$resultScreen.appendTo(this.$container).css({display: 'flex'});
 
     var ofCorrectText = this.options.ofCorrect
       .replace(/@score/g, '<span>' + this.getScore() + '</span>')

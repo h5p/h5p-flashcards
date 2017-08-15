@@ -529,7 +529,8 @@ button::-moz-focus-inner {
 
 .h5p-flashcards .h5p-flashcards-results {
   display: none;
-  margin: 5em;
+  flex-direction: column;
+  margin: 4em;
   position: absolute;
   left: 0;
   right: 0;
@@ -578,10 +579,10 @@ button::-moz-focus-inner {
 
 .h5p-flashcards .h5p-results-list {
   clear: both;
+  flex: 1;
   list-style-type: none;
   overflow: hidden;
   overflow-y: auto;
-  max-height: 28.7em;
   padding: 0 1em 0 0;
   margin: 5em 0 2em 0;
 }
