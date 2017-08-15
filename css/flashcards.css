@@ -809,7 +809,7 @@ button::-moz-focus-inner {
 
 .h5p-flashcards.h5p-mobile .h5p-show-results,
 .h5p-flashcards .h5p-show-results.h5p-mobile {
-  top: initial;
+  top: auto;
   bottom: 6.5em;
   right: 2.2em;
   width: 12em;
