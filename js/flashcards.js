@@ -467,6 +467,20 @@ H5P.Flashcards = (function ($) {
     // Set new card
     this.$current = $card;
 
+    /* We can't set focus on anything until the transition is finished.
+       If we do, iPad will try to center the focused element while the transition
+       is running, and the card will be misplaced */
+    $card.one('transitionend', function () {
+      if ($card.hasClass('h5p-current')) {
+        if ($card.find('.h5p-textinput')[0].disabled) {
+          $card.find('.h5p-feedback-label').focus();
+        }
+        else {
+          $card.find('.h5p-textinput').focus();
+        }
+      }
+    });
+
     // Update card classes
     $card.removeClass('h5p-previous h5p-next');
     $card.addClass('h5p-current');
@@ -477,17 +491,7 @@ H5P.Flashcards = (function ($) {
       .attr('aria-hidden', 'true')
       .find('.h5p-rotate-in').removeClass('h5p-rotate-in');
 
-    /* We can't set focus on anything until the transition is finished.
-       If we do, iPad will try to center the focused element while the transition
-       is running, and the card will be misplaced */
-    H5P.Transition.onTransitionEnd($card, function () {
-      if ($card.find('.h5p-textinput')[0].disabled) {
-        $card.find('.h5p-feedback-label').focus();
-      }
-      else {
-        $card.find('.h5p-textinput').focus();
-      }
-    }, 1000);
+
 
 
     $card.prev().addClass('h5p-previous');
