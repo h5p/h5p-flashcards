@@ -87,7 +87,12 @@ H5P.Flashcards = (function ($) {
       }
     }
 
-    this.$container.bind("keydown", function (event) {
+    $('body').on('keydown', function (event) {
+      // The user should be able to use the arrow keys when writing his answer
+      if(event.target.tagName === 'INPUT') {
+        return;
+      }
+
       // Left
       if (event.keyCode === 37) {
         that.previous();
