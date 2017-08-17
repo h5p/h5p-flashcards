@@ -253,6 +253,10 @@
   background: #72c1e6;
 }
 
+.h5p-flashcards .h5p-answer .h5p-button:focus {
+  box-shadow: 0 0 0.5em 0 #1d273c;
+}
+
 .h5p-flashcards .h5p-answer .h5p-wrong .h5p-button,
 .h5p-flashcards .h5p-answer .h5p-correct .h5p-button {
   display: none;
@@ -794,6 +798,11 @@ button::-moz-focus-inner {
   font-size: 1.1em;
   vertical-align: bottom;
   margin-left: 0.5em;
+}
+
+.h5p-show-results button:focus {
+  outline: 1px solid #fff;
+  outline-offset: 4px;
 }
 
 .h5p-flashcards .h5p-show-results-label-mobile {
