@@ -471,13 +471,8 @@ H5P.Flashcards = (function ($) {
        If we do, iPad will try to center the focused element while the transition
        is running, and the card will be misplaced */
     $card.one('transitionend', function () {
-      if ($card.hasClass('h5p-current')) {
-        if ($card.find('.h5p-textinput')[0].disabled) {
-          $card.find('.h5p-feedback-label').focus();
-        }
-        else {
-          $card.find('.h5p-textinput').focus();
-        }
+      if ($card.hasClass('h5p-current') && !$card.find('.h5p-textinput')[0].disabled) {
+        $card.find('.h5p-textinput').focus();
       }
     });
 
