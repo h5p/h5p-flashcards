@@ -253,6 +253,10 @@
   background: #72c1e6;
 }
 
+.h5p-flashcards .h5p-answer .h5p-button:focus {
+  box-shadow: 0 0 0.5em 0 #1d273c;
+}
+
 .h5p-flashcards .h5p-answer .h5p-wrong .h5p-button,
 .h5p-flashcards .h5p-answer .h5p-correct .h5p-button {
   display: none;
@@ -376,11 +380,17 @@
   margin-bottom: 1em;
   cursor: pointer;
   color: #fff;
+  outline: none;
+}
+
+.h5p-flashcards .h5p-button:focus {
+  box-shadow: 0 0 0.5em 0 #7fb8ff;
 }
 
 .h5p-flashcards .h5p-button[disabled],
 .h5p-flashcards .h5p-button[disabled]:hover {
   cursor: default;
+  box-shadow: none;
 }
 
 .h5p-flashcards .h5p-progress {
@@ -407,7 +417,6 @@
   color: #a3adc4;
   background: none;
   border: 1px solid #414d66;
-  box-shadow: none;
   font-size: 1.75em;
   top: 0.75em;
 }
@@ -529,7 +538,8 @@ button::-moz-focus-inner {
 
 .h5p-flashcards .h5p-flashcards-results {
   display: none;
-  margin: 5em;
+  flex-direction: column;
+  margin: 4em;
   position: absolute;
   left: 0;
   right: 0;
@@ -578,10 +588,10 @@ button::-moz-focus-inner {
 
 .h5p-flashcards .h5p-results-list {
   clear: both;
+  flex: 1;
   list-style-type: none;
   overflow: hidden;
   overflow-y: auto;
-  max-height: 28.7em;
   padding: 0 1em 0 0;
   margin: 5em 0 2em 0;
 }
@@ -790,6 +800,11 @@ button::-moz-focus-inner {
   margin-left: 0.5em;
 }
 
+.h5p-show-results button:focus {
+  outline: 1px solid #fff;
+  outline-offset: 4px;
+}
+
 .h5p-flashcards .h5p-show-results-label-mobile {
   display: none;
 }
@@ -809,7 +824,7 @@ button::-moz-focus-inner {
 
 .h5p-flashcards.h5p-mobile .h5p-show-results,
 .h5p-flashcards .h5p-show-results.h5p-mobile {
-  top: initial;
+  top: auto;
   bottom: 6.5em;
   right: 2.2em;
   width: 12em;
