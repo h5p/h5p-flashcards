@@ -1,36 +1,36 @@
 {
-  "semantics": [
+  "semantics":[
     {
-      "label": "Consigne"
+      "label":"Consigne"
     },
     {
-      "widgets": [
+      "widgets":[
         {
-          "label": "Par défaut"
+          "label":"Par défaut"
         }
       ],
-      "label": "Cartes",
-      "entity": "carte",
-      "field": {
-        "label": "Carte",
-        "fields": [
+      "label":"Cartes",
+      "entity":"carte",
+      "field":{
+        "label":"Carte",
+        "fields":[
           {
-            "label": "Question",
-            "description": "Question facultative pour la carte. (La carte peut contenir une image seule, un texte seul ou les deux combinés)"
+            "label":"Question",
+            "description":"Question facultative pour la carte. (La carte peut contenir une image seule, un texte seul ou les deux combinés)"
           },
           {
-            "label": "Réponse",
-            "description": "Réponse facultative (correction) pour la carte."
+            "label":"Réponse",
+            "description":"Réponse facultative (correction) pour la carte."
           },
           {
-            "label": "Image",
-            "description": "Image facultative pour la carte. (La carte peut contenir une image seule, un texte seul ou les deux combinés)"
+            "label":"Image",
+            "description":"Image facultative pour la carte. (La carte peut contenir une image seule, un texte seul ou les deux combinés)"
           },
           {
-            "label": "Indice",
-            "fields": [
+            "label":"Indice",
+            "fields":[
               {
-                "label": "Texte de l'indice"
+                "label":"Texte de l'indice"
               }
             ]
           }
@@ -38,24 +38,61 @@
       }
     },
     {
-      "label": "Texte de progression",
-      "default": "Carte @card sur @total",
-      "description": "Texte de progression, variables possibles : @card et @total. (Exemple: 'Carte @card sur @total')"
+      "label":"Texte de progression",
+      "default":"Carte @card sur @total",
+      "description":"Texte de progression, variables possibles : @card et @total. (Exemple: 'Carte @card sur @total')"
     },
     {
-      "label": "Texte pour le bouton \"Suivant\"",
-      "default": "Suivant"
+      "label":"Texte pour le bouton \"Suivant\"",
+      "default":"Suivant"
     },
     {
-      "label": "Texte pour le bouton \"Précédent\"",
-      "default": "Précédent"
+      "label":"Texte pour le bouton \"Précédent\"",
+      "default":"Précédent"
     },
     {
-      "label": "Texte pour le bouton \"Vérifier\"",
-      "default": "Vérifier"
+      "label":"Texte pour le bouton \"Vérifier\"",
+      "default":"Vérifier"
     },
     {
-      "label": "Obliger l'utilisateur à entrer une réponse avant de pouvoir afficher la correction"
+      "label":"Obliger l'utilisateur à entrer une réponse avant de pouvoir afficher la correction"
+    },
+    {
+      "label":"Text for the answer input field",
+      "default":"Your answer"
+    },
+    {
+      "label":"Text for correct answer",
+      "default":"Correct"
+    },
+    {
+      "label":"Text for incorrect answer",
+      "default":"Incorrect"
+    },
+    {
+      "label":"Show solution text",
+      "default":"Correct answer"
+    },
+    {
+      "label":"Text for results title",
+      "default":"Results"
+    },
+    {
+      "label":"Text for number of correct",
+      "default":"@score of @total correct",
+      "description":"Result text, variables available: @score and @total. Example: '@score of @total correct'"
+    },
+    {
+      "label":"Text for show results",
+      "default":"Show results"
+    },
+    {
+      "label":"Text for short answer label",
+      "default":"A:"
+    },
+    {
+      "label":"Case sensitive",
+      "description":"Makes sure the user input has to be exactly the same as the answer."
     }
   ]
 }
