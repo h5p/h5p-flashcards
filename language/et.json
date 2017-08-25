@@ -1,36 +1,36 @@
 {
   "semantics":[
     {
-      "label":"Descrizione attività"
+      "label":"Task description"
     },
     {
       "widgets":[
         {
-          "label":"Predefinito"
+          "label":"Default"
         }
       ],
-      "label":"Schede",
-      "entity":"scheda",
+      "label":"Cards",
+      "entity":"card",
       "field":{
-        "label":"Scheda",
+        "label":"Card",
         "fields":[
           {
-            "label":"Domanda",
-            "description":"Domanda testuale facoltativa per la scheda. (La scheda può utilizzare solo un'immagine, solo un testo o entrambi)"
+            "label":"Question",
+            "description":"Optional textual question for the card. (The card may use just an image, just a text or both)"
           },
           {
-            "label":"Risposta",
-            "description":"Risposta facoltativa (soluzione) per la scheda."
+            "label":"Answer",
+            "description":"Optional answer(solution) for the card."
           },
           {
-            "label":"Immagine",
-            "description":"Immagine facoltativa per la scheda. (La scheda può utilizzare solo un'immagine, solo un testo o entrambi)"
+            "label":"Image",
+            "description":"Optional image for the card. (The card may use just an image, just a text or both)"
           },
           {
-            "label":"Suggerimento",
+            "label":"Tip",
             "fields":[
               {
-                "label":"testo del suggerimento"
+                "label":"Tip text"
               }
             ]
           }
@@ -38,24 +38,24 @@
       }
     },
     {
-      "label":"Testo di avanzamento",
+      "label":"Progress text",
       "default":"Card @card of @total",
-      "description":"Testo di avanzamento, variabili disponibili: @card e @total. Esempio: 'Scheda @card di @total'"
+      "description":"Progress text, variables available: @card and @total. Example: 'Card @card of @total'"
     },
     {
-      "label":"Testo per il pulsante Prossimo",
+      "label":"Text for the next button",
       "default":"Next"
     },
     {
-      "label":"Testo per il pulsante Precedente",
+      "label":"Text for the previous button",
       "default":"Previous"
     },
     {
-      "label":"Testo per il pulsante Inserisci risposte",
+      "label":"Text for the check answers button",
       "default":"Check"
     },
     {
-      "label":"Richiedere l'immissione dei dati all'utente prima che la soluzione sia visulizzata"
+      "label":"Require user input before the solution can be viewed"
     },
     {
       "label":"Text for the answer input field",
