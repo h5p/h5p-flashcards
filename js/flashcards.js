@@ -259,7 +259,7 @@ H5P.Flashcards = (function ($) {
       '<div class="h5p-imageholder"><div class="h5p-flashcard-overlay"></div></div>' +
       '<div class="h5p-foot">' + imageText + '<div class="h5p-answer">' +
       '<div class="h5p-input"><input type="text" class="h5p-textinput" tabindex="-1" placeholder="' + this.options.defaultAnswerText + '"/>' +
-      '<button type="button" class="h5p-button" tabindex="-1">' + this.options.checkAnswerText + '</button></div></div></div></div></div>')
+      '<button type="button" class="h5p-button" tabindex="-1" title="' + this.options.checkAnswerText + '">' + this.options.checkAnswerText + '</button></div></div></div></div></div>')
       .appendTo($inner);
     $card.find('.h5p-imageholder').prepend(this.$images[index]);
 
