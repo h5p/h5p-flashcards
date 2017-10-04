@@ -3,7 +3,7 @@ var H5P = H5P || {};
 /**
  * Flashcards module.
  *
- * @param {jQuery} $
+ * @param {H5P.jQuery} $
  */
 H5P.Flashcards = (function ($) {
 
@@ -49,7 +49,7 @@ H5P.Flashcards = (function ($) {
   /**
    * Append field to wrapper.
    *
-   * @param {jQuery} $container
+   * @param {H5P.jQuery} $container
    */
   C.prototype.attach = function ($container) {
     var that = this;
@@ -355,16 +355,16 @@ H5P.Flashcards = (function ($) {
       'class': 'h5p-flashcards-results',
     });
 
-    var $resultsTitle = $('<div/>', {
+    $('<div/>', {
       'class': 'h5p-results-title',
       'text': this.options.results
     }).appendTo(this.$resultScreen);
 
-    var $resultsScore = $('<div/>', {
+    $('<div/>', {
       'class': 'h5p-results-score'
     }).appendTo(this.$resultScreen);
 
-    var $resultsContainer = $('<ul/>', {
+    $('<ul/>', {
       'class': 'h5p-results-list'
     }).appendTo(this.$resultScreen);
 
@@ -413,7 +413,7 @@ H5P.Flashcards = (function ($) {
         $imageHolder.addClass('no-image');
       }
 
-      var $resultsQuestion = $('<div/>', {
+      $('<div/>', {
         'class': 'h5p-results-question',
         'text': card.text
       }).appendTo($listItem);
@@ -430,7 +430,7 @@ H5P.Flashcards = (function ($) {
         $resultsAnswer.append('<span class="h5p-correct">' + card.answer + '</span>');
       }
 
-      var $resultsBox = $('<div/>', {
+      $('<div/>', {
         'class': 'h5p-results-box'
       }).appendTo($listItem);
     }
@@ -456,11 +456,10 @@ H5P.Flashcards = (function ($) {
    * Adjusts classes and tabindexes for existing current card and new
    * card.
    *
-   * @param {jQuery-object} $card
-   * @param {string} newClassForOldCurrentCard
+   * @param {H5P.jQuery} $card
    *   Class to add to existing current card.
    */
-  C.prototype.setCurrent = function ($card, newClassForOldCurrentCard) {
+  C.prototype.setCurrent = function ($card) {
     // Remove from existing card.
     if (this.$current) {
       this.$current.find('.h5p-textinput').attr('tabindex', '-1');
@@ -611,8 +610,6 @@ H5P.Flashcards = (function ($) {
     }
     var maxHeight = 0;
     var maxHeightImage = 0;
-    var imageHolderWidth = self.$inner.find('.h5p-imageholder').width();
-    var minPadding = parseFloat(self.$inner.css('font-size'));
 
     if (this.$inner.width() / parseFloat($("body").css("font-size")) <= 31) {
       self.$container.addClass('h5p-mobile');
@@ -622,7 +619,7 @@ H5P.Flashcards = (function ($) {
     }
 
     //Find container dimensions needed to encapsule image and text.
-    self.$inner.children('.h5p-card').each( function (cardWrapper) {
+    self.$inner.children('.h5p-card').each(function () {
       var cardholderHeight = maxHeightImage + $(this).find('.h5p-foot').outerHeight();
       maxHeight = cardholderHeight > maxHeight ? cardholderHeight : maxHeight;
     });
