@@ -219,7 +219,6 @@ H5P.Flashcards = (function ($) {
     this.$inner = $inner;
     this.setProgress();
     this.trigger('resize');
-    this.$current.find('.h5p-textinput').focus();
   };
 
   /**
