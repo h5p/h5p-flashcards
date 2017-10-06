@@ -656,7 +656,8 @@ H5P.Flashcards = (function ($) {
       } else {
         $button.parent().removeClass('h5p-exceeds-width');
         $tipIcon.css('right', $button.outerWidth());
-        $textInput.css('padding-right', $button.outerWidth() + parseInt($textInput.css('font-size')) * 2.5);
+        var emSize = parseInt($textInput.css('font-size'));
+        $textInput.css('padding-right', $button.outerWidth() + ($textInput.parent().hasClass('has-tip') ? emSize * 2.5 : emSize));
       }
     });
 
