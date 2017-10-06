@@ -242,15 +242,37 @@
   border: none;
   border-radius: 0 2em 2em 0;
   background: #2abee8;
-  padding: 0.5em 0.6em;
+  padding: 0.5em 1em;
   box-shadow: none;
   top: 0;
   right: 0;
   height: 3em;
-  width: 8em;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
+}
+
+.h5p-flashcards .h5p-answer .h5p-check-button {
+  min-width: 6em;
+}
+
+.h5p-flashcards .h5p-answer .h5p-input.h5p-exceeds-width .h5p-check-button {
+  visibility: hidden;
+}
+
+.h5p-flashcards .h5p-answer .h5p-input:not(.h5p-exceeds-width) .h5p-icon-button {
+  visibility: hidden;
+}
+
+.h5p-flashcards .h5p-answer .h5p-input.h5p-exceeds-width .joubel-tip-container {
+  right: 3.2em;
+}
+
+.h5p-flashcards .h5p-answer .h5p-input.h5p-exceeds-width .h5p-textinput {
+  padding-right: 5.5em;
+}
+
+.h5p-flashcards .h5p-answer .h5p-button.h5p-icon-button:after {
+  content: "\f058";
+  font-family: 'H5PFontAwesome4';
+  font-size: 1.5em;
 }
 
 .h5p-flashcards .h5p-answer .h5p-button:hover {
@@ -269,7 +291,7 @@
 .h5p-flashcards .h5p-answer .h5p-textinput {
   width: 100%;
   height: 3em;
-  padding: 0 10em 0 1em;
+  padding: 0 3em 0 1em;
   border-radius: 2em;
   box-sizing: border-box;
   font-family: 'Open Sans', sans-serif;
@@ -536,8 +558,13 @@ button::-moz-focus-inner {
 
 .h5p-flashcards .joubel-tip-container {
   position: absolute;
-  right: 8.5em;
+  margin: 0 0.75em;
   top: 0.4em;
+}
+
+.h5p-flashcards .h5p-answer .h5p-input.h5p-wrong .joubel-tip-container,
+.h5p-flashcards .h5p-answer .h5p-input.h5p-correct .joubel-tip-container {
+  display: none;
 }
 
 .h5p-flashcards .h5p-flashcards-results {
@@ -753,6 +780,7 @@ button::-moz-focus-inner {
 
 .h5p-flashcards .joubel-icon-tip-normal {
   font-size: 1.3em;
+  line-height: 1.5em;
 }
 
 .h5p-flashcards .h5p-show-results {
