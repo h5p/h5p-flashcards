@@ -156,8 +156,7 @@ H5P.Flashcards = (function ($) {
       '<div class="h5p-navigation">' +
         '<button type="button" class="h5p-button h5p-previous h5p-hidden" tabindex="0" title="' + this.options.previous + '"></button>' +
         '<button type="button" class="h5p-button h5p-next" tabindex="0" title="' + this.options.next + '"></button>'
-    )
-      .children('.h5p-inner');
+    ).children('.h5p-inner');
 
     // Create visual progress and add accessibility attributes
     this.$visualProgress = $('<div/>', {
@@ -165,11 +164,9 @@ H5P.Flashcards = (function ($) {
       'role': 'progressbar',
       'aria-valuemax': '100',
       'aria-valuemin': (100 / this.options.cards.length).toFixed(2)
-    })
-      .append($('<div/>', {
+    }).append($('<div/>', {
         'class': 'h5p-visual-progress-inner'
-      }))
-      .appendTo(this.$container);
+    })).appendTo(this.$container);
 
     this.$progress = this.$container.find('.h5p-progress');
 
@@ -293,7 +290,7 @@ H5P.Flashcards = (function ($) {
 
     var $input = $card.find('.h5p-textinput');
 
-    var $button = $card.find('.h5p-check-button, .h5p-icon-button').click(function () {
+    var handleClick = function () {
       var card = that.options.cards[index];
       var userAnswer = $input.val().trim();
       var userCorrect = isCorrectAnswer(card, userAnswer, that.options.caseSensitive);
@@ -348,11 +345,14 @@ H5P.Flashcards = (function ($) {
         that.triggerXAPICompleted(that.getScore(), that.getMaxScore());
         that.trigger('resize');
       }
-    });
+    };
+
+    $card.find('.h5p-check-button, .h5p-icon-button').click(handleClick);
 
     $input.keypress(function (event) {
+
       if (event.keyCode === 13) {
-        $button.click();
+        handleClick();
         return false;
       }
     });
@@ -398,7 +398,7 @@ H5P.Flashcards = (function ($) {
   C.prototype.enableResultScreen = function () {
     this.$inner.addClass('h5p-invisible');
     this.$inner.siblings().addClass('h5p-invisible');
-    this.$resultScreen.appendTo(this.$container).css({display: 'flex'});
+    this.$resultScreen.appendTo(this.$container).addClass('show');
 
     var ofCorrectText = this.options.ofCorrect
       .replace(/@score/g, '<span>' + this.getScore() + '</span>')

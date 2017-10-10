@@ -569,13 +569,19 @@ button::-moz-focus-inner {
 
 .h5p-flashcards .h5p-flashcards-results {
   display: none;
-  flex-direction: column;
+  -webkit-flex-direction: column;
+          flex-direction: column;
   margin: 4em;
   position: absolute;
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
+}
+
+.h5p-flashcards .h5p-flashcards-results.show {
+  display: -webkit-flex;
+  display: flex;
 }
 
 .h5p-flashcards .h5p-results-title {
