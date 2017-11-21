@@ -283,9 +283,14 @@ H5P.Flashcards = (function ($) {
       }
     }));
 
-    // Add tip if tip exists
-    if (card.tip !== undefined && card.tip.trim().length > 0) {
-      $('.h5p-input', $card).append(H5P.JoubelUI.createTip(card.tip).attr({'tabindex': '-1', 'title': this.options.informationText})).addClass('has-tip');
+    // Add tip
+    var $tip = H5P.JoubelUI.createTip(card.tip);
+    if ($tip && $tip.length) { // Check for a jQuery object
+      $tip.attr({
+        tabindex: -1,
+        title: this.options.informationText
+      });
+      $('.h5p-input', $card).append($tip).addClass('has-tip');
     }
 
     var $input = $card.find('.h5p-textinput');
