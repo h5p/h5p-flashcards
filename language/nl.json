@@ -1,36 +1,36 @@
 {
   "semantics":[
     {
-      "label":"Task description"
+      "label":"Taak omschrijving"
     },
     {
       "widgets":[
         {
-          "label":"Default"
+          "label":"Standaard"
         }
       ],
-      "label":"Cards",
-      "entity":"card",
+      "label":"Kaarten",
+      "entity":"kaart",
       "field":{
-        "label":"Card",
+        "label":"Kaart",
         "fields":[
           {
-            "label":"Question",
-            "description":"Optional textual question for the card. (The card may use just an image, just a text or both)"
+            "label":"Vraag",
+            "description":"De optionele vraag voorop de kaart. (De kaart kan voorzien worden van een afbeelding en/of tekst)"
           },
           {
-            "label":"Answer",
-            "description":"Optional answer(solution) for the card."
+            "label":"Antwoord",
+            "description":"Het optionele antwoord(oplossing) achterop de kaart."
           },
           {
-            "label":"Image",
-            "description":"Optional image for the card. (The card may use just an image, just a text or both)"
+            "label":"Afbeelding",
+            "description":"De optionele afbeelding voorop de kaart. (De kaart kan voorzien worden van een afbeelding en/of tekst)"
           },
           {
             "label":"Tip",
             "fields":[
               {
-                "label":"Tip text"
+                "label":"Tip tekst"
               }
             ]
           }
@@ -38,61 +38,61 @@
       }
     },
     {
-      "label":"Progress text",
-      "default":"Card @card of @total",
-      "description":"Progress text, variables available: @card and @total. Example: 'Card @card of @total'"
+      "label":"Voortgangstekst",
+      "default":"Kaart @card van @total",
+      "description":"Voortgangstekst, beschikbare variabelen: @card and @total. Voorbeeld: 'Kaart @card van @total'"
     },
     {
-      "label":"Text for the next button",
-      "default":"Next"
+      "label":"Tekst voor de volgende knop",
+      "default":"Volgende"
     },
     {
-      "label":"Text for the previous button",
-      "default":"Previous"
+      "label":"Tekst voor de vorige knop",
+      "default":"Vorige"
     },
     {
-      "label":"Text for the check answers button",
-      "default":"Check"
+      "label":"Tekst voor de controleer antwoorden knop",
+      "default":"Controleer"
     },
     {
-      "label":"Require user input before the solution can be viewed"
+      "label":"Gebruikers input is vereist, voordat de oplossing kan worden bekeken"
     },
     {
-      "label":"Text for the answer input field",
-      "default":"Your answer"
+      "label":"Tekst voor het antwoord invoerveld",
+      "default":"Jouw antwoord"
     },
     {
-      "label":"Text for correct answer",
-      "default":"Correct"
+      "label":"Tekst voor het juiste antwoord",
+      "default":"Juist"
     },
     {
-      "label":"Text for incorrect answer",
-      "default":"Incorrect"
+      "label":"Tekst voor het onjuiste antwoord",
+      "default":"Onjuist"
     },
     {
-      "label":"Show solution text",
-      "default":"Correct answer"
+      "label":"Toon tekst oplossing",
+      "default":"Juist geantwoord"
     },
     {
-      "label":"Text for results title",
-      "default":"Results"
+      "label":"Titel voor de resultaten",
+      "default":"Resultaten"
     },
     {
-      "label":"Text for number of correct",
-      "default":"@score of @total correct",
-      "description":"Result text, variables available: @score and @total. Example: '@score of @total correct'"
+      "label":"Tekst voor het juiste aantal",
+      "default":"@score van @total juist",
+      "description":"Resultatentekst, beschikbare variabelen: @score en @total. Voorbeeld: '@score van @total juist'"
     },
     {
-      "label":"Text for show results",
-      "default":"Show results"
+      "label":"Tekst voor het tonen van de resultaten",
+      "default":"Toon de resultaten"
     },
     {
-      "label":"Text for short answer label",
+      "label":"Tekstlabel voor een kort antwoord",
       "default":"A:"
     },
     {
-      "label":"Case sensitive",
-      "description":"Makes sure the user input has to be exactly the same as the answer."
+      "label":"Hoofdlettergevoelig",
+      "description":"Zorg ervoor dat de input van de gebruiker exact gelijk is aan het antwoord."
     }
   ]
 }
