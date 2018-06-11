@@ -92,6 +92,10 @@
     },
     {
       "label": "Case sensitive",
+      "default": "Retry"
+    },
+    {
+      "label": "Case sensitive",
       "description": "Makes sure the user input has to be exactly the same as the answer."
     }
   ]
