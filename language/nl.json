@@ -91,7 +91,7 @@
       "default": "A:"
     },
     {
-      "label": "Hoofdlettergevoelig",
+      "label": "Text for \"retry\" button",
       "default": "Retry"
     },
     {
