@@ -1,36 +1,36 @@
 {
-  "semantics":[
+  "semantics": [
     {
-      "label":"Consigne"
+      "label": "Consigne"
     },
     {
-      "widgets":[
+      "widgets": [
         {
-          "label":"Par défaut"
+          "label": "Par défaut"
         }
       ],
-      "label":"Cartes",
-      "entity":"carte",
-      "field":{
-        "label":"Carte",
-        "fields":[
+      "label": "Cartes",
+      "entity": "carte",
+      "field": {
+        "label": "Carte",
+        "fields": [
           {
-            "label":"Question",
-            "description":"Question facultative pour la carte. (La carte peut contenir une image seule, un texte seul ou les deux combinés)"
+            "label": "Question",
+            "description": "Question facultative pour la carte. (La carte peut contenir une image seule, un texte seul ou les deux combinés)"
           },
           {
-            "label":"Réponse",
-            "description":"Réponse facultative (correction) pour la carte."
+            "label": "Réponse",
+            "description": "Réponse facultative (correction) pour la carte."
           },
           {
-            "label":"Image",
-            "description":"Image facultative pour la carte. (La carte peut contenir une image seule, un texte seul ou les deux combinés)"
+            "label": "Image",
+            "description": "Image facultative pour la carte. (La carte peut contenir une image seule, un texte seul ou les deux combinés)"
           },
           {
-            "label":"Indice",
-            "fields":[
+            "label": "Indice",
+            "fields": [
               {
-                "label":"Texte de l'indice"
+                "label": "Texte de l'indice"
               }
             ]
           }
@@ -38,61 +38,65 @@
       }
     },
     {
-      "label":"Texte de progression",
-      "default":"Carte @card sur @total",
-      "description":"Texte de progression, variables possibles : @card et @total. (Exemple: 'Carte @card sur @total')"
+      "label": "Texte de progression",
+      "default": "Carte @card sur @total",
+      "description": "Texte de progression, variables possibles : @card et @total. (Exemple: 'Carte @card sur @total')"
     },
     {
-      "label":"Texte pour le bouton \"Suivant\"",
-      "default":"Suivant"
+      "label": "Texte pour le bouton \"Suivant\"",
+      "default": "Suivant"
     },
     {
-      "label":"Texte pour le bouton \"Précédent\"",
-      "default":"Précédent"
+      "label": "Texte pour le bouton \"Précédent\"",
+      "default": "Précédent"
     },
     {
-      "label":"Texte pour le bouton \"Vérifier\"",
-      "default":"Vérifier"
+      "label": "Texte pour le bouton \"Vérifier\"",
+      "default": "Vérifier"
     },
     {
-      "label":"Obliger l'utilisateur à entrer une réponse avant de pouvoir afficher la correction"
+      "label": "Obliger l'utilisateur à entrer une réponse avant de pouvoir afficher la correction"
     },
     {
-      "label":"Text for the answer input field",
-      "default":"Your answer"
+      "label": "Texte pour l'espace de la réponse",
+      "default": "Votre réponse"
     },
     {
-      "label":"Text for correct answer",
-      "default":"Correct"
+      "label": "Texte pour une bonne réponse",
+      "default": "Réponse exacte"
     },
     {
-      "label":"Text for incorrect answer",
-      "default":"Incorrect"
+      "label": "Texte pour une mauvaise réponse",
+      "default": "Réponse inexacte"
     },
     {
-      "label":"Show solution text",
-      "default":"Correct answer"
+      "label": "Texte pour afficher la réponse exacte",
+      "default": "Réponse correcte"
     },
     {
-      "label":"Text for results title",
-      "default":"Results"
+      "label": "Texte pour l'intitulé des résultats",
+      "default": "Résultats"
     },
     {
-      "label":"Text for number of correct",
-      "default":"@score of @total correct",
-      "description":"Result text, variables available: @score and @total. Example: '@score of @total correct'"
+      "label": "Texte pour le nombre de bonnes réponses",
+      "default": "@score réponses correctes sur un total de @total",
+      "description": "Texte des résultats, variables disponibles: @score et @total. Exemple: '@score réponses correctes sur un total de @total'"
     },
     {
-      "label":"Text for show results",
-      "default":"Show results"
+      "label": "Texte pour montrer les résultats",
+      "default": "Montrer les résultats"
     },
     {
-      "label":"Text for short answer label",
-      "default":"A:"
+      "label": "Texte pour l'intitulé de réponse courte",
+      "default": "R :"
     },
     {
-      "label":"Case sensitive",
-      "description":"Makes sure the user input has to be exactly the same as the answer."
+      "label": "Texte pour le bouton \"Recommencer\"",
+      "default": "Recommencer"
+    },
+    {
+      "label": "Sensible à la casse",
+      "description": "S'assure que l'entrée de l'utilisateur doit être exactement la même que la réponse."
     }
   ]
 }
