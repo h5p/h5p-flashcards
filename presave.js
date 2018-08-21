@@ -10,7 +10,7 @@ var H5PPresave = H5PPresave || {};
 H5PPresave['H5P.Flashcards'] = function (content, finished) {
   var presave = H5PEditor.Presave;
 
-  if (isContentInValid()) {
+  if (isContentInvalid()) {
     throw new presave.exceptions.InvalidContentSemanticsException('Invalid Flashcard Error')
   }
 
@@ -26,7 +26,7 @@ H5PPresave['H5P.Flashcards'] = function (content, finished) {
    * Check if required parameters is present
    * @return {boolean}
    */
-  function isContentInValid() {
+  function isContentInvalid() {
     return !presave.checkNestedRequirements(content, 'content.cards') || !Array.isArray(content.cards);
   }
 };
