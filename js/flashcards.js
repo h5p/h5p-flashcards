@@ -89,7 +89,7 @@ H5P.Flashcards = (function ($) {
 
     $('body').on('keydown', function (event) {
       // The user should be able to use the arrow keys when writing his answer
-      if(event.target.tagName === 'INPUT') {
+      if (event.target.tagName === 'INPUT') {
         return;
       }
 
@@ -128,7 +128,7 @@ H5P.Flashcards = (function ($) {
    * Get Score
    * @return {number}
    */
-  C.prototype.getScore = function (){
+  C.prototype.getScore = function () {
     var that = this;
 
     return that.options.cards.reduce(function (sum, card, i) {
@@ -140,7 +140,7 @@ H5P.Flashcards = (function ($) {
    * Get Score
    * @return {number}
    */
-  C.prototype.getMaxScore = function (){
+  C.prototype.getMaxScore = function () {
     return this.options.cards.length;
   };
 
@@ -165,7 +165,7 @@ H5P.Flashcards = (function ($) {
       'aria-valuemax': '100',
       'aria-valuemin': (100 / this.options.cards.length).toFixed(2)
     }).append($('<div/>', {
-        'class': 'h5p-visual-progress-inner'
+      'class': 'h5p-visual-progress-inner'
     })).appendTo(this.$container);
 
     this.$progress = this.$container.find('.h5p-progress');
@@ -234,7 +234,7 @@ H5P.Flashcards = (function ($) {
     );
 
     $showResults
-      .on('click', function() {
+      .on('click', function () {
         that.enableResultScreen();
       })
       .appendTo($inner.parent());
@@ -271,14 +271,15 @@ H5P.Flashcards = (function ($) {
           '</div>' +
         '</div>' +
       '</div>')
-    .appendTo($inner);
+      .appendTo($inner);
 
     $card.find('.h5p-imageholder').prepend(this.$images[index]);
 
     $card.prepend($('<div class="h5p-flashcard-overlay"></div>').on('click', function () {
       if ($(this).parent().hasClass('h5p-previous')) {
         that.previous();
-      } else {
+      }
+      else {
         that.next();
       }
     }));
@@ -392,7 +393,7 @@ H5P.Flashcards = (function ($) {
     this.$retryButton = $('<button/>', {
       'class': 'h5p-results-retry-button h5p-invisible h5p-button',
       'text': this.options.retry
-    }).on('click', function() {
+    }).on('click', function () {
       that.resetTask();
     }).appendTo(this.$resultScreen);
   };
@@ -654,7 +655,8 @@ H5P.Flashcards = (function ($) {
         $button.parent().addClass('h5p-exceeds-width');
         $tipIcon.attr("style", "");
         $textInput.attr("style", "");
-      } else {
+      }
+      else {
         $button.parent().removeClass('h5p-exceeds-width');
         $tipIcon.css('right', $button.outerWidth());
         var emSize = parseInt($textInput.css('font-size'));
@@ -665,7 +667,7 @@ H5P.Flashcards = (function ($) {
     if (this.numAnswered < this.options.cards.length) {
       //Resize cards holder
       var innerHeight = 0;
-      this.$inner.children('.h5p-card').each(function() {
+      this.$inner.children('.h5p-card').each(function () {
         if ($(this).height() > innerHeight) {
           innerHeight = $(this).height();
         }
