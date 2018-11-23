@@ -154,8 +154,8 @@ H5P.Flashcards = (function ($) {
       '<div class="h5p-progress"></div>' +
       '<div class="h5p-inner" role="list"></div>' +
       '<div class="h5p-navigation">' +
-        '<button type="button" class="h5p-button h5p-previous h5p-hidden" tabindex="0" title="' + this.options.previous + '"></button>' +
-        '<button type="button" class="h5p-button h5p-next" tabindex="0" title="' + this.options.next + '"></button>'
+        '<button type="button" class="h5p-button h5p-previous h5p-hidden" tabindex="0" title="' + this.options.previous + '" aria-label="' + this.options.previous + '"></button>' +
+        '<button type="button" class="h5p-button h5p-next" tabindex="0" title="' + this.options.next + '" aria-label="' + this.options.next + '"></button>'
     ).children('.h5p-inner');
 
     // Create visual progress and add accessibility attributes
