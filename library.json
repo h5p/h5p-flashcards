@@ -22,6 +22,9 @@
   ],
   "preloadedJs": [
     {
+      "path": "js/xapi.js"
+    },
+    {
       "path": "js/flashcards.js"
     }
   ],

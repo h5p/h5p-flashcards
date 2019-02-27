@@ -1,11 +1,9 @@
-var H5P = H5P || {};
-
 /**
  * Flashcards module.
  *
  * @param {H5P.jQuery} $
  */
-H5P.Flashcards = (function ($) {
+H5P.Flashcards = (function ($, XapiGenerator) {
 
   /**
    * Initialize module.
@@ -696,5 +694,18 @@ H5P.Flashcards = (function ($) {
    */
   C.$converter = $('<div/>');
 
+  /**
+   * Get xAPI data.
+   * Contract used by report rendering engine.
+   *
+   * @see contract at {@link https://h5p.org/documentation/developers/contracts#guides-header-6}
+   */
+  C.prototype.getXAPIData = function () {
+    const xAPIEvent = XapiGenerator.getXapiEvent(this);
+    return {
+      statement: xAPIEvent.data.statement
+    };
+  };
+
   return C;
-})(H5P.jQuery);
+})(H5P.jQuery, H5P.Flashcards.xapiGenerator);
