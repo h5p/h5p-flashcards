@@ -52,6 +52,10 @@ H5P.Flashcards = (function ($, XapiGenerator) {
   C.prototype.attach = function ($container) {
     var that = this;
 
+    if (this.isRoot()) {
+      this.setActivityStarted();
+    }
+
     this.$container = $container
       .addClass('h5p-flashcards')
       .html('<div class="h5p-loading">Loading, please wait...</div>');
