@@ -115,6 +115,10 @@
       "label": "Cambio de Tarjeta para tecnologías asistivas",
       "default": "Página @current de @total",
       "description": "Texto que será anunciado a tecnologías asistivas al navegar entre cartas. Use @current y @total como variables."
+    },
+    {
+      "label": "Randomize cards",
+      "description": "Enable to randomize the order of cards on display."
     }
   ]
 }

@@ -115,6 +115,10 @@
       "label": "Sprememba statusa pri obračanju kartice za bralnike zaslona",
       "default": "Stran @current od @total",
       "description": "@current in @total sta spremenljivki."
+    },
+    {
+      "label": "Randomize cards",
+      "description": "Enable to randomize the order of cards on display."
     }
   ]
 }

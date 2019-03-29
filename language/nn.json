@@ -115,6 +115,10 @@
       "label": "Card change for assistive technologies",
       "default": "Side @current av @total",
       "description": "Text that will be announced to assistive technologies when navigating between cards. Use @current and @total as variables."
+    },
+    {
+      "label": "Randomize cards",
+      "description": "Enable to randomize the order of cards on display."
     }
   ]
 }

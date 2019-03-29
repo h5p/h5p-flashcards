@@ -115,6 +115,10 @@
       "label": "Změna karty za podpůrné technologie",
       "default": "Strana @current z @total",
       "description": "Text, který bude při navigaci mezi kartami oznámen podpůrnými technologiemi. Jako proměnné použijte @current a @total."
+    },
+    {
+      "label": "Randomize cards",
+      "description": "Enable to randomize the order of cards on display."
     }
   ]
 }

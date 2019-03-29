@@ -115,6 +115,10 @@
       "label": "Kaart wijzigen voor ondersteunende technologieën",
       "default": "Pagina @current van @total",
       "description": "Tekst die wordt gebruikt door ondersteunende technologieën als van kaart wordt gewisseld. Gebruik @current en @total als variabelen."
+    },
+    {
+      "label": "Kaarten in willekeurige volgorde",
+      "description": "Schakel in om de kaarten in willekeurige volgorde te tonen."
     }
   ]
 }

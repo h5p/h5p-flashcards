@@ -115,6 +115,10 @@
       "label": "Mudança de cartão para tecnologias de assistência",
       "default": "Página @current de @total",
       "description": "Texto que será anunciado às tecnologias de assistência na navegação entre cartões. Utilizar @current e @total como variáveis."
+    },
+    {
+      "label": "Aleatorizar cartões",
+      "description": "Habilite para aleatorizar a ordem em que os cartões são exibidos."
     }
   ]
 }

@@ -115,6 +115,10 @@
       "label": "Смена карточки для ассистирующих технологии",
       "default": "Карточка @current из @total",
       "description": "Текст, объявляемый ассистирующими технологиями при смене карточек. Использовать @current и @total в качестве переменных."
+    },
+    {
+      "label": "Randomize cards",
+      "description": "Enable to randomize the order of cards on display."
     }
   ]
 }

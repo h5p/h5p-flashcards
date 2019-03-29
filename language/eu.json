@@ -115,6 +115,10 @@
       "label": "Txartel aldaketa laguntzarako teknologientzat",
       "default": "@current. orria, @total guztira",
       "description": "Laguntzarako teknologietan txartel artean nabigatzean erabiliko den testua. Erabili @current eta @total aldagai gisa."
+    },
+    {
+      "label": "Ausazko txartelak",
+      "description": "Gaitu pantailako txartelen ordena ausazkoa izatea."
     }
   ]
 }

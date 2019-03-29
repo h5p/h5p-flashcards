@@ -115,6 +115,10 @@
       "label": "Kaartjie verandering vir hulptegnologieë",
       "default": "Bladsy @current van @total",
       "description": "Teks wat aangekondig sal word as hulptegnologieë wanneer u tussen kaarte navigeer. Gebruik @current en @total as veranderlikes."
+    },
+    {
+      "label": "Randomize cards",
+      "description": "Enable to randomize the order of cards on display."
     }
   ]
 }

@@ -115,6 +115,10 @@
       "label": "Зміна картки для допоміжних технологій",
       "default": "Сторінка @current з @total",
       "description": "Текст, який буде оголошено допоміжними технологіями під час навігації між картками. Використовуй @current і @total як змінні."
+    },
+    {
+      "label": "Randomize cards",
+      "description": "Enable to randomize the order of cards on display."
     }
   ]
 }

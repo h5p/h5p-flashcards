@@ -115,6 +115,10 @@
       "label": "Yardımcı teknolojiler için kart değişikliği",
       "default": "@total sayfadan @current. sayfa",
       "description": "Kartlar arasında gezinirken yardımcı teknolojilere toplam sayfa sayısını ve bulunulan sayfayı duyuracak metin. Toplam sayfa sayısı içi @total, bulunulan sayfa için de @current kullanın."
+    },
+    {
+      "label": "Kartları karıştır",
+      "description": "Kartların gösterilme sırasının rasgele olmasını sağlar."
     }
   ]
 }
