@@ -389,7 +389,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
       }
 
       if (done) {
-        that.triggerXAPICompleted(that.getScore(), that.getMaxScore());
+        that.triggerXAPIScored(that.getScore(), that.getMaxScore(), 'answered', true);
         that.trigger('resize');
       }
     };
