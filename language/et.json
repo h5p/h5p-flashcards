@@ -1,36 +1,36 @@
 {
   "semantics": [
     {
-      "label": "Task description"
+      "label": "Ülesande kirjeldus"
     },
     {
       "widgets": [
         {
-          "label": "Default"
+          "label": "Vaikimisi"
         }
       ],
-      "label": "Cards",
-      "entity": "card",
+      "label": "Kaardid",
+      "entity": "kaart",
       "field": {
-        "label": "Card",
+        "label": "Kaart",
         "fields": [
           {
-            "label": "Question",
-            "description": "Optional textual question for the card. (The card may use just an image, just a text or both)"
+            "label": "Küsimus",
+            "description": "Valikuline tekstiküsimus kaardile. (Kaart võib kasutada vaid pilti, vaid teksti või mõlemat)"
           },
           {
-            "label": "Answer",
-            "description": "Optional answer(solution) for the card."
+            "label": "Vastus",
+            "description": "Valikuline vastus (lahendus) kaardile."
           },
           {
-            "label": "Image",
-            "description": "Optional image for the card. (The card may use just an image, just a text or both)"
+            "label": "Pilt",
+            "description": "Valikuline pilt kaardile. (Kaart võib kasutada vaid pilti, vaid teksti või mõlemat)"
           },
           {
-            "label": "Tip",
+            "label": "Vihje",
             "fields": [
               {
-                "label": "Tip text"
+                "label": "Vihje tekst"
               }
             ]
           }
@@ -38,65 +38,65 @@
       }
     },
     {
-      "label": "Progress text",
-      "default": "Card @card of @total",
-      "description": "Progress text, variables available: @card and @total. Example: 'Card @card of @total'"
+      "label": "Edasijõudmise tekst",
+      "default": "Kaart @card / @total",
+      "description": "Edasijõudmise tekst, kasutatavad muutujad on: @card ja @total. Näiteks: 'Kaart @card / @total'"
     },
     {
-      "label": "Text for the next button",
-      "default": "Next"
+      "label": "Järgmine nupu tekst",
+      "default": "Järgmine"
     },
     {
-      "label": "Text for the previous button",
-      "default": "Previous"
+      "label": "Eelmine nupu tekst",
+      "default": "Eelmine"
     },
     {
-      "label": "Text for the check answers button",
-      "default": "Check"
+      "label": "Vastuste kontrolli nupu tekst",
+      "default": "Kontrolli"
     },
     {
-      "label": "Require user input before the solution can be viewed"
+      "label": "Nõua kasutaja sisendit enne, kui lahendust saab vaadata"
     },
     {
-      "label": "Text for the answer input field",
-      "default": "Your answer"
+      "label": "Vastuse sisestamisvälja tekst",
+      "default": "Sinu vastus"
     },
     {
-      "label": "Text for correct answer",
-      "default": "Correct"
+      "label": "Õige vastuse tekst",
+      "default": "Õige"
     },
     {
-      "label": "Text for incorrect answer",
-      "default": "Incorrect"
+      "label": "Vale vastuse tekst",
+      "default": "Vale"
     },
     {
-      "label": "Show solution text",
-      "default": "Correct answer"
+      "label": "Lahenduse näitamise tekst",
+      "default": "Õige vastus"
     },
     {
-      "label": "Text for results title",
-      "default": "Results"
+      "label": "Tulemuste pealkirja tekst",
+      "default": "Tulemused"
     },
     {
-      "label": "Text for number of correct",
-      "default": "@score of @total correct",
-      "description": "Result text, variables available: @score and @total. Example: '@score of @total correct'"
+      "label": "Õigete vastuste arvu tekst",
+      "default": "@score / @total õiget vastust",
+      "description": "Tulemuste tekst, kasutatavad muutujad: @score ja @total. Näiteks: '@score / @total õiget'"
     },
     {
-      "label": "Text for show results",
-      "default": "Show results"
+      "label": "Tulemuste näitamise tekst",
+      "default": "Näita tulemusi"
     },
     {
-      "label": "Text for short answer label",
+      "label": "Lühikese vastusesildi tekst",
       "default": "A:"
     },
     {
-      "label": "Text for \"retry\" button",
-      "default": "Retry"
+      "label": "\"Proovi uuesti\" nupu tekst",
+      "default": "Proovi uuesti"
     },
     {
-      "label": "Case sensitive",
-      "description": "Makes sure the user input has to be exactly the same as the answer."
+      "label": "Tõstutundlik",
+      "description": "Kontrollib, et kasutaja sisend oleks täpselt sama, mis vastus (suur-/väiketähed)."
     }
   ]
 }
