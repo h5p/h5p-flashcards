@@ -1,36 +1,36 @@
 {
   "semantics": [
     {
-      "label": "Task description"
+      "label": "Tehtävänkuvaus"
     },
     {
       "widgets": [
         {
-          "label": "Default"
+          "label": "Oletus"
         }
       ],
-      "label": "Cards",
-      "entity": "card",
+      "label": "Kortit",
+      "entity": "kortti",
       "field": {
-        "label": "Card",
+        "label": "Kortti",
         "fields": [
           {
-            "label": "Question",
-            "description": "Optional textual question for the card. (The card may use just an image, just a text or both)"
+            "label": "Kysymys",
+            "description": "Kortin kysymysteksti, ei pakollinen kenttä. (kortti voi sisältää pelkän kuvan, pelkän tekstin tai sisältää kuvan ja tekstin)"
           },
           {
-            "label": "Answer",
-            "description": "Optional answer(solution) for the card."
+            "label": "Vastaus",
+            "description": "Kortin vastaus (ei pakollinen kenttä)"
           },
           {
-            "label": "Image",
-            "description": "Optional image for the card. (The card may use just an image, just a text or both)"
+            "label": "Kuva",
+            "description": "Kortin kuva (ei pakollinen kenttä) Kortti voi sisältää pelkän kuvan, pelkän tekstin tai sisältää kuvan ja tekstin"
           },
           {
-            "label": "Tip",
+            "label": "Vihje",
             "fields": [
               {
-                "label": "Tip text"
+                "label": "Vihjeteksti"
               }
             ]
           }
@@ -38,65 +38,65 @@
       }
     },
     {
-      "label": "Progress text",
-      "default": "Card @card of @total",
-      "description": "Progress text, variables available: @card and @total. Example: 'Card @card of @total'"
+      "label": "Etenemisteksti",
+      "default": "Kortti @card / @total",
+      "description": "Etenemisteksti, käytettävissä olevat muuttujat @card ja @total Esimerkiksi: 'Kortti @card / @total'"
     },
     {
-      "label": "Text for the next button",
-      "default": "Next"
+      "label": "Seuraava-painikkeen teksti",
+      "default": "Seuraava"
     },
     {
-      "label": "Text for the previous button",
-      "default": "Previous"
+      "label": "Takaisin-painikkeen teksti",
+      "default": "Takaisin"
     },
     {
-      "label": "Text for the check answers button",
-      "default": "Check"
+      "label": "Tarkista vastaukset -painikkeen teksti",
+      "default": "Tarkista vastaukset"
     },
     {
-      "label": "Require user input before the solution can be viewed"
+      "label": "Vaadi käyttäjältä vastaus ennen kuin ratkaisu näytetään."
     },
     {
-      "label": "Text for the answer input field",
-      "default": "Your answer"
+      "label": "Vastauskentän teksti",
+      "default": "Vastauksesi"
     },
     {
-      "label": "Text for correct answer",
-      "default": "Correct"
+      "label": "Oikean vastauksen teksti",
+      "default": "Oikein"
     },
     {
-      "label": "Text for incorrect answer",
-      "default": "Incorrect"
+      "label": "Väärän vastauksen teksti",
+      "default": "Väärin"
     },
     {
-      "label": "Show solution text",
-      "default": "Correct answer"
+      "label": "Näytä vastaukset teksti",
+      "default": "Oikea vastaus"
     },
     {
-      "label": "Text for results title",
-      "default": "Results"
+      "label": "Tulokset otsikko",
+      "default": "Tulokset"
     },
     {
-      "label": "Text for number of correct",
-      "default": "@score of @total correct",
-      "description": "Result text, variables available: @score and @total. Example: '@score of @total correct'"
+      "label": "Teksti oikein saaduille vastauksille",
+      "default": "@score / @total oikein",
+      "description": "tulosteksti, käytettävissä olevat muuttujat: @score ja @total. Esimerkki: '@score / @total oikein'"
     },
     {
-      "label": "Text for show results",
-      "default": "Show results"
+      "label": "Näytä tulokset teksti",
+      "default": "Näytä tulokset"
     },
     {
-      "label": "Text for short answer label",
+      "label": "Lyhyen vastauksen teksti",
       "default": "A:"
     },
     {
-      "label": "Text for \"retry\" button",
-      "default": "Retry"
+      "label": "Teksti \"retry\" painikkeelle",
+      "default": "Yritä uudelleen"
     },
     {
-      "label": "Case sensitive",
-      "description": "Makes sure the user input has to be exactly the same as the answer."
+      "label": "merkkikokoriippuvainen",
+      "description": "Määrittää tuleeko vastauksen olla identtinen määritellyn vastauksen mukaisesti (eli isot ja pienet kirjaimet huomioidaan jne.)"
     }
   ]
 }
