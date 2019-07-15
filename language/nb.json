@@ -92,7 +92,7 @@
     },
     {
       "label": "Text for \"retry\" button",
-      "default": "Retry"
+      "default": "Prøv igjen"
     },
     {
       "label": "Case sensitive",

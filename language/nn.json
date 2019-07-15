@@ -48,14 +48,14 @@
     },
     {
       "label": "Tekst for \"Forrige\" knappen",
-      "default": "Forrige"
+      "default": "Førre"
     },
     {
       "label": "Tekst for \"Sjekk svar\" knappen",
       "default": "Sjekk"
     },
     {
-      "label": "Krev inndata fra brukeren før fasit gis."
+      "label": "Krev inndata frå brukaren før fasit visast."
     },
     {
       "label": "Tekst for \"svar\" feltet",
@@ -84,7 +84,7 @@
     },
     {
       "label": "Tekst for \"vis resultatar\"",
-      "default": "Vis resultatar"
+      "default": "Vis resultat"
     },
     {
       "label": "Tekst for kort svartekst",
@@ -92,7 +92,7 @@
     },
     {
       "label": "Text for \"retry\" button",
-      "default": "Retry"
+      "default": "Prøv igjen"
     },
     {
       "label": "Case sensitive",
