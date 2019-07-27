@@ -1,36 +1,36 @@
 {
   "semantics": [
     {
-      "label": "Task description"
+      "label": "Descripción del trabajo"
     },
     {
       "widgets": [
         {
-          "label": "Default"
+          "label": "Predeterminado"
         }
       ],
-      "label": "Cards",
-      "entity": "card",
+      "label": "Cartas",
+      "entity": "carta",
       "field": {
-        "label": "Card",
+        "label": "Carta",
         "fields": [
           {
-            "label": "Question",
-            "description": "Optional textual question for the card. (The card may use just an image, just a text or both)"
+            "label": "Pregunta",
+            "description": "Pregunta opcional de texto para la carta. (La carta podría usar solamente una imagen, solo un texto o ambos)"
           },
           {
-            "label": "Answer",
-            "description": "Optional answer(solution) for the card."
+            "label": "Respuesta",
+            "description": "Respuesta opcional(solución) para la carta."
           },
           {
-            "label": "Image",
-            "description": "Optional image for the card. (The card may use just an image, just a text or both)"
+            "label": "Imagen",
+            "description": "Imgen opcional para la carta. (La carta podría usar solamente una imagen, solo un texto o ambos)"
           },
           {
-            "label": "Tip",
+            "label": "Pista",
             "fields": [
               {
-                "label": "Tip text"
+                "label": "Texto de pista"
               }
             ]
           }
@@ -38,65 +38,65 @@
       }
     },
     {
-      "label": "Progress text",
-      "default": "Card @card of @total",
-      "description": "Progress text, variables available: @card and @total. Example: 'Card @card of @total'"
+      "label": "Texto para Progreso",
+      "default": "Carta @card de @total",
+      "description": "Texto del Progreso, variables disponibles: @card y @total. Ejemplo: 'Carta @card de @total'"
     },
     {
-      "label": "Text for the next button",
-      "default": "Next"
+      "label": "Texto para el botón Siguiente",
+      "default": "Siguiente"
     },
     {
-      "label": "Text for the previous button",
-      "default": "Previous"
+      "label": "Texto para el botón Anterior",
+      "default": "Anterior"
     },
     {
-      "label": "Text for the check answers button",
-      "default": "Check"
+      "label": "Texto para botón Revisar respuestas",
+      "default": "Revisar"
     },
     {
-      "label": "Require user input before the solution can be viewed"
+      "label": "Requerir entrada del usuario antes que la solución pueda ser vista"
     },
     {
-      "label": "Text for the answer input field",
-      "default": "Your answer"
+      "label": "Texto para el campo de ingreso de respuesta",
+      "default": "Su respuesta"
     },
     {
-      "label": "Text for correct answer",
-      "default": "Correct"
+      "label": "Texto para respuesta correcta",
+      "default": "Correcta"
     },
     {
-      "label": "Text for incorrect answer",
-      "default": "Incorrect"
+      "label": "Texto para respuesta incorrecta",
+      "default": "Incorrecta"
     },
     {
-      "label": "Show solution text",
-      "default": "Correct answer"
+      "label": "Mostrar texto de solución",
+      "default": "Respuesta correcta"
     },
     {
-      "label": "Text for results title",
-      "default": "Results"
+      "label": "Título para texto de Resultados",
+      "default": "Resultados"
     },
     {
-      "label": "Text for number of correct",
-      "default": "@score of @total correct",
-      "description": "Result text, variables available: @score and @total. Example: '@score of @total correct'"
+      "label": "Texto para número de aciertos",
+      "default": "@score de @total correctos",
+      "description": "Texto de Resultados, variables disponibles: @score y @total. Ejemplo: '@score de @total correctos'"
     },
     {
-      "label": "Text for show results",
-      "default": "Show results"
+      "label": "Texto para mostrar resultados",
+      "default": "Mostrar resultados"
     },
     {
-      "label": "Text for short answer label",
+      "label": "Texto para etiqueta de respuesta corta",
       "default": "A:"
     },
     {
-      "label": "Text for \"retry\" button",
-      "default": "Retry"
+      "label": "Texto para botón \"reintentar\"",
+      "default": "Reintentar"
     },
     {
-      "label": "Case sensitive",
-      "description": "Makes sure the user input has to be exactly the same as the answer."
+      "label": "MAYÚSCULAS/minúsculas importan",
+      "description": "Asegurarse que la entrada del usuario sea exactamente la misma que la respuesta."
     }
   ]
 }
