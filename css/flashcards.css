@@ -904,3 +904,11 @@ button::-moz-focus-inner {
 .h5p-flashcards .h5p-results-list::-webkit-scrollbar-button:vertical:increment {
   display: none;
 }
+
+.using-mouse .h5p-flashcards .h5p-button.h5p-check-button:focus {
+  box-shadow: none;
+}
+
+.using-mouse .h5p-flashcards .h5p-button.h5p-check-button:active {
+  background-color: #20a5ca;
+}
