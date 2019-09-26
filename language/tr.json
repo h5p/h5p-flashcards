@@ -1,22 +1,22 @@
 {
   "semantics": [
     {
-      "label": "Task description"
+      "label": "Görev tanımı"
     },
     {
       "widgets": [
         {
-          "label": "Default"
+          "label": "Varsayılan"
         }
       ],
-      "label": "Cards",
+      "label": "Kartlar",
       "entity": "card",
       "field": {
-        "label": "Card",
+        "label": "Kart",
         "fields": [
           {
-            "label": "Question",
-            "description": "Optional textual question for the card. (The card may use just an image, just a text or both)"
+            "label": "Soru",
+            "description": "Kartta görünecek isteğe bağlı yazılı soru. (Kartta sadece bir görsel, sadece metin veya ikisi de olabilir)"
           },
           {
             "label": "Answer",
@@ -24,13 +24,13 @@
           },
           {
             "label": "Image",
-            "description": "Optional image for the card. (The card may use just an image, just a text or both)"
+            "description": "Kartta görünecek isteğe bağlı görsel. (Kartta sadece bir görsel, sadece metin veya ikisi de olabilir)"
           },
           {
-            "label": "Tip",
+            "label": "İpucu",
             "fields": [
               {
-                "label": "Tip text"
+                "label": "İpucu metni"
               }
             ]
           }
@@ -38,65 +38,65 @@
       }
     },
     {
-      "label": "Progress text",
-      "default": "Card @card of @total",
-      "description": "Progress text, variables available: @card and @total. Example: 'Card @card of @total'"
+      "label": "İlerleme metni",
+      "default": "Kart sayısı: @card / @total",
+      "description": "İlerleme metni, mevcut değişkenler: @card ve @total. Örnek: 'Kart sayısı: @card / @total'"
     },
     {
-      "label": "Text for the next button",
-      "default": "Next"
+      "label": "Sonraki düğmesi metni",
+      "default": "Sonraki"
     },
     {
-      "label": "Text for the previous button",
-      "default": "Previous"
+      "label": "Önceki düğmesi metni",
+      "default": "Önceki"
     },
     {
-      "label": "Text for the check answers button",
-      "default": "Check"
+      "label": "Cevaplaro kontrol et düğmesi metni",
+      "default": "Kontrol et"
     },
     {
-      "label": "Require user input before the solution can be viewed"
+      "label": "Çözüm görüntülenemeden önce kullanıcı girişi gereksin"
     },
     {
-      "label": "Text for the answer input field",
-      "default": "Your answer"
+      "label": "Cevap girişi alanı metni",
+      "default": "Cevabınız"
     },
     {
-      "label": "Text for correct answer",
-      "default": "Correct"
+      "label": "Doğru cevap metni",
+      "default": "Doğru cevap"
     },
     {
-      "label": "Text for incorrect answer",
-      "default": "Incorrect"
+      "label": "Yanlış cevap metni",
+      "default": "Yanlış"
     },
     {
-      "label": "Show solution text",
-      "default": "Correct answer"
+      "label": "Çözümü göster metni",
+      "default": "Çözümü göster"
     },
     {
-      "label": "Text for results title",
-      "default": "Results"
+      "label": "Sonuçlar başlığı metni",
+      "default": "Sonuçlar"
     },
     {
-      "label": "Text for number of correct",
-      "default": "@score of @total correct",
-      "description": "Result text, variables available: @score and @total. Example: '@score of @total correct'"
+      "label": "Doğru cevap sayısı metni",
+      "default": "Doğru cevap sayısı: @score / @total",
+      "description": "Sonuç metni, mevcut değişkenler: @score ve @total. Örnek: 'Doğru cvevap sayısı: @score / @total.'"
     },
     {
-      "label": "Text for show results",
-      "default": "Show results"
+      "label": "Sonuçları göster metni",
+      "default": "Sonuçları göster"
     },
     {
-      "label": "Text for short answer label",
+      "label": "Kısa cevap etiket metni",
       "default": "A:"
     },
     {
-      "label": "Text for \"retry\" button",
-      "default": "Retry"
+      "label": "\"Yeniden dene\" düğmesi metni",
+      "default": "Yeniden dene"
     },
     {
-      "label": "Case sensitive",
-      "description": "Makes sure the user input has to be exactly the same as the answer."
+      "label": "Büyük küçük harf duyarlı",
+      "description": "Kullanıcı girişinin aynen cevap gibi olması gerekmesini sağlar."
     }
   ]
 }
