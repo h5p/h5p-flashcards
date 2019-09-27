@@ -27,6 +27,9 @@
             "description": "Aukerako irudia (txartelak izango du bakarrik irudia, bakarrik testua edo biak)"
           },
           {
+            "label": "Alternative text for image"
+          },
+          {
             "label": "Argibidea",
             "fields": [
               {
@@ -97,6 +100,16 @@
     {
       "label": "Bereizi maiuskulak eta minuskulak",
       "description": "Ezartzen du erabiltzailearen sarrera izan behar duela erantzunaren berdina."
+    },
+    {
+      "label": "Incorrect text for assistive technologies",
+      "default": "Incorrect answer. Correct answer was @answer",
+      "description": "Text that will be announced to assistive technologies. Use @answer as variable."
+    },
+    {
+      "label": "Card change for assistive technologies",
+      "default": "Page @current of @total",
+      "description": "Text that will be announced to assistive technologies when navigating between cards. Use @current and @total as variables."
     }
   ]
 }

@@ -912,3 +912,12 @@ button::-moz-focus-inner {
 .using-mouse .h5p-flashcards .h5p-button.h5p-check-button:active {
   background-color: #20a5ca;
 }
+
+.h5p-flashcards .hidden-but-read {
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}

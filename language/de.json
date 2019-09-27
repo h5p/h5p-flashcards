@@ -27,6 +27,9 @@
             "description": "Optionales Bild für die Karte. (Es ist nur ein Text, nur ein Bild oder beides möglich)"
           },
           {
+            "label": "Alternative text for image"
+          },
+          {
             "label": "Tipp",
             "fields": [
               {
@@ -97,6 +100,16 @@
     {
       "label": "Auf Groß-/Kleinschreibung achten",
       "description": "Stellt sicher, dass die Lösung exakt der Vorgabe entspricht."
+    },
+    {
+      "label": "Incorrect text for assistive technologies",
+      "default": "Incorrect answer. Correct answer was @answer",
+      "description": "Text that will be announced to assistive technologies. Use @answer as variable."
+    },
+    {
+      "label": "Card change for assistive technologies",
+      "default": "Page @current of @total",
+      "description": "Text that will be announced to assistive technologies when navigating between cards. Use @current and @total as variables."
     }
   ]
 }

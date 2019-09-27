@@ -50,6 +50,13 @@
           "description": "Optional image for the card. (The card may use just an image, just a text or both)"
         },
         {
+          "name": "imageAltText",
+          "type": "text",
+          "label": "Alternative text for image",
+          "importance": "high",
+          "optional": true
+        },
+        {
           "name": "tip",
           "type": "group",
           "label": "Tip",
@@ -195,5 +202,19 @@
     "type": "boolean",
     "default": false,
     "description": "Makes sure the user input has to be exactly the same as the answer."
+  },
+  {
+    "label": "Incorrect text for assistive technologies",
+    "name": "cardAnnouncement",
+    "type": "text",
+    "default": "Incorrect answer. Correct answer was @answer",
+    "description": "Text that will be announced to assistive technologies. Use @answer as variable."
+  },
+  {
+    "label": "Card change for assistive technologies",
+    "name": "pageAnnouncement",
+    "type": "text",
+    "default": "Page @current of @total",
+    "description": "Text that will be announced to assistive technologies when navigating between cards. Use @current and @total as variables."
   }
 ]

@@ -27,6 +27,9 @@
             "description": "Image facultative pour la carte. (La carte peut contenir une image seule, un texte seul ou les deux combinés)"
           },
           {
+            "label": "Alternative text for image"
+          },
+          {
             "label": "Indice",
             "fields": [
               {
@@ -97,6 +100,16 @@
     {
       "label": "Sensible à la casse",
       "description": "S'assure que l'entrée de l'utilisateur doit être exactement la même que la réponse."
+    },
+    {
+      "label": "Incorrect text for assistive technologies",
+      "default": "Incorrect answer. Correct answer was @answer",
+      "description": "Text that will be announced to assistive technologies. Use @answer as variable."
+    },
+    {
+      "label": "Card change for assistive technologies",
+      "default": "Page @current of @total",
+      "description": "Text that will be announced to assistive technologies when navigating between cards. Use @current and @total as variables."
     }
   ]
 }

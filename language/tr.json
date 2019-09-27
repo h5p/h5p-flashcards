@@ -27,6 +27,9 @@
             "description": "Kartta görünecek isteğe bağlı görsel. (Kartta sadece bir görsel, sadece metin veya ikisi de olabilir)"
           },
           {
+            "label": "Alternative text for image"
+          },
+          {
             "label": "İpucu",
             "fields": [
               {
@@ -97,6 +100,16 @@
     {
       "label": "Büyük küçük harf duyarlı",
       "description": "Kullanıcı girişinin aynen cevap gibi olması gerekmesini sağlar."
+    },
+    {
+      "label": "Incorrect text for assistive technologies",
+      "default": "Incorrect answer. Correct answer was @answer",
+      "description": "Text that will be announced to assistive technologies. Use @answer as variable."
+    },
+    {
+      "label": "Card change for assistive technologies",
+      "default": "Page @current of @total",
+      "description": "Text that will be announced to assistive technologies when navigating between cards. Use @current and @total as variables."
     }
   ]
 }
