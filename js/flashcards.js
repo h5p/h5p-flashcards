@@ -33,9 +33,12 @@ H5P.Flashcards = (function ($, XapiGenerator) {
       results: "Results",
       ofCorrect: "@score of @total correct",
       showResults: "Show results",
-      retry : "Retry"
+      retry : "Retry",
+      cardAnnouncement: 'Incorrect answer. Correct answer was @answer',
+      pageAnnouncement: 'Page @current of @total',
     }, options);
     this.$images = [];
+    this.hasBeenReset = false;
 
     this.on('resize', this.resize, this);
   }
@@ -73,7 +76,14 @@ H5P.Flashcards = (function ($, XapiGenerator) {
       var card = this.options.cards[i];
 
       if (card.image !== undefined) {
-        var $image = $('<img class="h5p-clue" src="' + H5P.getPath(card.image.path, this.id) + '"/>');
+        const $image = $('<img>', {
+          'class': 'h5p-clue',
+          src: H5P.getPath(card.image.path, this.id),
+        });
+        if (card.imageAltText) {
+          $image.attr('alt', card.imageAltText);
+        }
+
         if ($image.get().complete) {
           load();
         }
@@ -218,6 +228,26 @@ H5P.Flashcards = (function ($, XapiGenerator) {
     this.$inner = $inner;
     this.setProgress();
     this.trigger('resize');
+
+    // Attach aria announcer
+    this.$ariaAnnouncer = $('<div>', {
+      'class': 'hidden-but-read',
+      'aria-live': 'assertive',
+      appendTo: this.$container,
+    });
+    this.$pageAnnouncer = $('<div>', {
+      'class': 'hidden-but-read',
+      'aria-live': 'polite',
+      appendTo: this.$container
+    });
+
+    // Announce first page if task was reset
+    if (this.hasBeenReset) {
+      // Read-speaker needs a small timeout to be able to read the announcement
+      setTimeout(function () {
+        this.announceCurrentPage();
+      }.bind(this), 100);
+    }
   };
 
   /**
@@ -335,6 +365,12 @@ H5P.Flashcards = (function ($, XapiGenerator) {
             '<span class="solution-icon h5p-rotate-in"></span>' +
             '<span class="solution-text">' + (that.options.cards[index].answer ? that.options.showSolutionText + ': <span>' + that.options.cards[index].answer + '</span>' : '') + '</span>' +
           '</div>').appendTo($card.find('.h5p-imageholder'));
+
+          const ariaText = that.options.cardAnnouncement.replace(
+            '@answer',
+            that.options.cards[index].answer
+          );
+          that.$ariaAnnouncer.text(ariaText);
         }
 
         $input.siblings('.h5p-feedback-label').focus();
@@ -500,9 +536,9 @@ H5P.Flashcards = (function ($, XapiGenerator) {
        is running, and the card will be misplaced */
     $card.one('transitionend', function () {
       if ($card.hasClass('h5p-current') && !$card.find('.h5p-textinput')[0].disabled) {
-        $card.find('.h5p-textinput').focus();
+        this.announceCurrentPage();
       }
-    });
+    }.bind(this));
 
     // Update card classes
     $card.removeClass('h5p-previous h5p-next');
@@ -528,6 +564,16 @@ H5P.Flashcards = (function ($, XapiGenerator) {
     $card.find('.h5p-check-button').attr('tabindex', '0');
     $card.find('.h5p-icon-button').attr('tabindex', '0');
     $card.find('.joubel-tip-container').attr('tabindex', '0');
+  };
+
+  /**
+   * Announces current page to assistive technologies
+   */
+  C.prototype.announceCurrentPage = function () {
+    const pageText = this.options.pageAnnouncement
+      .replace('@current', this.$current.index() + 1)
+      .replace('@total', this.options.cards.length.toString());
+    this.$pageAnnouncer.text(pageText);
   };
 
   /**
@@ -601,6 +647,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
    */
   C.prototype.resetTask = function () {
     this.numAnswered = 0;
+    this.hasBeenReset = true;
     this.cardsLoaded();
     this.trigger('resize');
   };

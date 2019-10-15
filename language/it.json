@@ -27,6 +27,9 @@
             "description": "Immagine facoltativa per la scheda (la scheda può utilizzare solo un'immagine, solo un testo o entrambi)"
           },
           {
+            "label": "Alternative text for image"
+          },
+          {
             "label": "Suggerimento",
             "fields": [
               {
@@ -97,6 +100,16 @@
     {
       "label": "Tieni conto di maiuscole e minuscole",
       "description": "Accertati che il testo immesso dall'utente sia identico alla risposta attesa."
+    },
+    {
+      "label": "Incorrect text for assistive technologies",
+      "default": "Incorrect answer. Correct answer was @answer",
+      "description": "Text that will be announced to assistive technologies. Use @answer as variable."
+    },
+    {
+      "label": "Card change for assistive technologies",
+      "default": "Page @current of @total",
+      "description": "Text that will be announced to assistive technologies when navigating between cards. Use @current and @total as variables."
     }
   ]
 }

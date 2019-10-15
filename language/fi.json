@@ -27,6 +27,9 @@
             "description": "Kortin kuva (ei pakollinen kenttä) Kortti voi sisältää pelkän kuvan, pelkän tekstin tai sisältää kuvan ja tekstin"
           },
           {
+            "label": "Alternative text for image"
+          },
+          {
             "label": "Vihje",
             "fields": [
               {
@@ -97,6 +100,16 @@
     {
       "label": "merkkikokoriippuvainen",
       "description": "Määrittää tuleeko vastauksen olla identtinen määritellyn vastauksen mukaisesti (eli isot ja pienet kirjaimet huomioidaan jne.)"
+    },
+    {
+      "label": "Incorrect text for assistive technologies",
+      "default": "Incorrect answer. Correct answer was @answer",
+      "description": "Text that will be announced to assistive technologies. Use @answer as variable."
+    },
+    {
+      "label": "Card change for assistive technologies",
+      "default": "Page @current of @total",
+      "description": "Text that will be announced to assistive technologies when navigating between cards. Use @current and @total as variables."
     }
   ]
 }

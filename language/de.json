@@ -27,6 +27,9 @@
             "description": "Optionales Bild für die Karte. (Es ist nur ein Text, nur ein Bild oder beides möglich)"
           },
           {
+            "label": "Alternativtext für das Bild"
+          },
+          {
             "label": "Tipp",
             "fields": [
               {
@@ -58,7 +61,7 @@
       "label": "Lösung kann erst angezeigt werden, wenn eine Antwort eingegeben wurde"
     },
     {
-      "label": "Platzhalter im Antworteingabefeld",
+      "label": "Platzhalter im Antwort-Eingabefeld",
       "default": "Deine Antwort"
     },
     {
@@ -78,9 +81,9 @@
       "default": "Ergebnisse"
     },
     {
-      "label": "Text der angibt, wie viele Karten richtig waren",
+      "label": "Text, der angibt, wie viele Karten richtig waren",
       "default": "@score von @total richtig",
-      "description": "verfügbare Platzhalter: @score und @total. Beispiel: '@score von @total richtig'"
+      "description": "Verfügbare Platzhalter: @score und @total. Beispiel: '@score von @total richtig'"
     },
     {
       "label": "Beschriftung des \"Ergebnisse anzeigen\"-Buttons",
@@ -97,6 +100,16 @@
     {
       "label": "Auf Groß-/Kleinschreibung achten",
       "description": "Stellt sicher, dass die Lösung exakt der Vorgabe entspricht."
+    },
+    {
+      "label": "Bezeichnung einer falschen Antwort für Vorlesewerkzeuge",
+      "default": "Falsche Antwort. Die richtige Antwort ist @answer",
+      "description": "Text, der von Vorlesewerkzeugen vorgelesen wird (Barrierefreiheit). Verwende @answer als Platzhalter."
+    },
+    {
+      "label": "Text zum Kartenwechsel für Vorlesewerkzeuge",
+      "default": "Karte @current von @total",
+      "description": "Text, der von Vorlesewerkzeugen vorgelesen wird, wenn zwischen Karten gewechselt wird (Barrierefreiheit). Verwende @current und @total als Platzhalter."
     }
   ]
 }

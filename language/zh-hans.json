@@ -27,6 +27,9 @@
             "description": "卡片的可选图像. (可以使用图像卡，或者文字卡，也可以是图像配文字的卡片)"
           },
           {
+            "label": "Alternative text for image"
+          },
+          {
             "label": "提示",
             "fields": [
               {
@@ -97,6 +100,16 @@
     {
       "label": "区分大小写",
       "description": "确认用户输入内容必须与答案完全相同."
+    },
+    {
+      "label": "Incorrect text for assistive technologies",
+      "default": "Incorrect answer. Correct answer was @answer",
+      "description": "Text that will be announced to assistive technologies. Use @answer as variable."
+    },
+    {
+      "label": "Card change for assistive technologies",
+      "default": "Page @current of @total",
+      "description": "Text that will be announced to assistive technologies when navigating between cards. Use @current and @total as variables."
     }
   ]
 }
