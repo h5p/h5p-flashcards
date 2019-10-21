@@ -208,13 +208,15 @@
     "name": "cardAnnouncement",
     "type": "text",
     "default": "Incorrect answer. Correct answer was @answer",
-    "description": "Text that will be announced to assistive technologies. Use @answer as variable."
+    "description": "Text that will be announced to assistive technologies. Use @answer as variable.",
+    "common": true
   },
   {
     "label": "Card change for assistive technologies",
     "name": "pageAnnouncement",
     "type": "text",
     "default": "Page @current of @total",
-    "description": "Text that will be announced to assistive technologies when navigating between cards. Use @current and @total as variables."
+    "description": "Text that will be announced to assistive technologies when navigating between cards. Use @current and @total as variables.",
+    "common": true
   }
 ]
