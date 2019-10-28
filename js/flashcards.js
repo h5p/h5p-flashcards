@@ -5,6 +5,8 @@
  */
 H5P.Flashcards = (function ($, XapiGenerator) {
 
+  C.counter = 0;
+
   /**
    * Initialize module.
    *
@@ -281,6 +283,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
   C.prototype.addCard = function (index, $inner) {
     var that = this;
     var card = this.options.cards[index];
+    const cardId = ++C.counter;
 
     // Generate a new flashcards html and add it to h5p-inner
     var $card = $(
@@ -291,12 +294,12 @@ H5P.Flashcards = (function ($, XapiGenerator) {
             '</div>' +
           '</div>' +
           '<div class="h5p-foot">' +
-            '<div class="h5p-imagetext" id="h5p-flashcard-card-' + index + '">' +
+            '<div class="h5p-imagetext" id="h5p-flashcard-card-' + cardId + '">' +
               (card.text !== undefined ? card.text : '') +
             '</div>' +
             '<div class="h5p-answer">' +
               '<div class="h5p-input">' +
-                '<input type="text" class="h5p-textinput" tabindex="-1" placeholder="' + this.options.defaultAnswerText + '" aria-describedby="h5p-flashcard-card-' + index +'" autocomplete="off"/>' +
+                '<input type="text" class="h5p-textinput" tabindex="-1" placeholder="' + this.options.defaultAnswerText + '" aria-describedby="h5p-flashcard-card-' + cardId +'" autocomplete="off"/>' +
                 '<button type="button" class="h5p-button h5p-check-button" tabindex="-1" title="' + this.options.checkAnswerText + '">' + this.options.checkAnswerText + '</button>' +
                 '<button type="button" class="h5p-button h5p-icon-button" tabindex="-1" title="' + this.options.checkAnswerText + '"/>' +
               '</div>' +
