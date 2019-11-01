@@ -5,6 +5,8 @@
  */
 H5P.Flashcards = (function ($, XapiGenerator) {
 
+  C.counter = 0;
+
   /**
    * Initialize module.
    *
@@ -33,9 +35,12 @@ H5P.Flashcards = (function ($, XapiGenerator) {
       results: "Results",
       ofCorrect: "@score of @total correct",
       showResults: "Show results",
-      retry : "Retry"
+      retry : "Retry",
+      cardAnnouncement: 'Incorrect answer. Correct answer was @answer',
+      pageAnnouncement: 'Page @current of @total',
     }, options);
     this.$images = [];
+    this.hasBeenReset = false;
 
     this.on('resize', this.resize, this);
   }
@@ -73,7 +78,14 @@ H5P.Flashcards = (function ($, XapiGenerator) {
       var card = this.options.cards[i];
 
       if (card.image !== undefined) {
-        var $image = $('<img class="h5p-clue" src="' + H5P.getPath(card.image.path, this.id) + '"/>');
+        const $image = $('<img>', {
+          'class': 'h5p-clue',
+          src: H5P.getPath(card.image.path, this.id),
+        });
+        if (card.imageAltText) {
+          $image.attr('alt', card.imageAltText);
+        }
+
         if ($image.get().complete) {
           load();
         }
@@ -218,6 +230,27 @@ H5P.Flashcards = (function ($, XapiGenerator) {
     this.$inner = $inner;
     this.setProgress();
     this.trigger('resize');
+
+    // Attach aria announcer
+    this.$ariaAnnouncer = $('<div>', {
+      role: 'status',
+      'class': 'hidden-but-read',
+      appendTo: this.$container,
+    });
+    this.answerAnnouncement = null;
+    this.$pageAnnouncer = $('<div>', {
+      role: 'status',
+      'class': 'hidden-but-read',
+      appendTo: this.$container
+    });
+
+    // Announce first page if task was reset
+    if (this.hasBeenReset) {
+      // Read-speaker needs a small timeout to be able to read the announcement
+      setTimeout(function () {
+        this.announceCurrentPage();
+      }.bind(this), 100);
+    }
   };
 
   /**
@@ -250,6 +283,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
   C.prototype.addCard = function (index, $inner) {
     var that = this;
     var card = this.options.cards[index];
+    const cardId = ++C.counter;
 
     // Generate a new flashcards html and add it to h5p-inner
     var $card = $(
@@ -260,12 +294,12 @@ H5P.Flashcards = (function ($, XapiGenerator) {
             '</div>' +
           '</div>' +
           '<div class="h5p-foot">' +
-            '<div class="h5p-imagetext">' +
+            '<div class="h5p-imagetext" id="h5p-flashcard-card-' + cardId + '">' +
               (card.text !== undefined ? card.text : '') +
             '</div>' +
             '<div class="h5p-answer">' +
               '<div class="h5p-input">' +
-                '<input type="text" class="h5p-textinput" tabindex="-1" placeholder="' + this.options.defaultAnswerText + '"/>' +
+                '<input type="text" class="h5p-textinput" tabindex="-1" placeholder="' + this.options.defaultAnswerText + '" aria-describedby="h5p-flashcard-card-' + cardId +'" autocomplete="off"/>' +
                 '<button type="button" class="h5p-button h5p-check-button" tabindex="-1" title="' + this.options.checkAnswerText + '">' + this.options.checkAnswerText + '</button>' +
                 '<button type="button" class="h5p-button h5p-icon-button" tabindex="-1" title="' + this.options.checkAnswerText + '"/>' +
               '</div>' +
@@ -315,6 +349,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
         that.answers[index] = userAnswer;
         that.triggerXAPI('interacted');
 
+        that.answerAnnouncement = null;
         if (userCorrect) {
           $input.parent()
             .addClass('h5p-correct')
@@ -335,6 +370,12 @@ H5P.Flashcards = (function ($, XapiGenerator) {
             '<span class="solution-icon h5p-rotate-in"></span>' +
             '<span class="solution-text">' + (that.options.cards[index].answer ? that.options.showSolutionText + ': <span>' + that.options.cards[index].answer + '</span>' : '') + '</span>' +
           '</div>').appendTo($card.find('.h5p-imageholder'));
+
+          const ariaText = that.options.cardAnnouncement.replace(
+            '@answer',
+            that.options.cards[index].answer
+          );
+          that.answerAnnouncement = ariaText;
         }
 
         $input.siblings('.h5p-feedback-label').focus();
@@ -501,8 +542,14 @@ H5P.Flashcards = (function ($, XapiGenerator) {
     $card.one('transitionend', function () {
       if ($card.hasClass('h5p-current') && !$card.find('.h5p-textinput')[0].disabled) {
         $card.find('.h5p-textinput').focus();
+        setTimeout(function () {
+          if (this.answerAnnouncement) {
+            this.$ariaAnnouncer.text(this.answerAnnouncement);
+          }
+          this.announceCurrentPage();
+        }.bind(this), 500);
       }
-    });
+    }.bind(this));
 
     // Update card classes
     $card.removeClass('h5p-previous h5p-next');
@@ -528,6 +575,16 @@ H5P.Flashcards = (function ($, XapiGenerator) {
     $card.find('.h5p-check-button').attr('tabindex', '0');
     $card.find('.h5p-icon-button').attr('tabindex', '0');
     $card.find('.joubel-tip-container').attr('tabindex', '0');
+  };
+
+  /**
+   * Announces current page to assistive technologies
+   */
+  C.prototype.announceCurrentPage = function () {
+    const pageText = this.options.pageAnnouncement
+      .replace('@current', this.$current.index() + 1)
+      .replace('@total', this.options.cards.length.toString());
+    this.$pageAnnouncer.text(pageText);
   };
 
   /**
@@ -601,6 +658,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
    */
   C.prototype.resetTask = function () {
     this.numAnswered = 0;
+    this.hasBeenReset = true;
     this.cardsLoaded();
     this.trigger('resize');
   };

@@ -1,36 +1,39 @@
 {
   "semantics": [
     {
-      "label": "Task description"
+      "label": "Περιγραφή άσκησης"
     },
     {
       "widgets": [
         {
-          "label": "Default"
+          "label": "Βασικό"
         }
       ],
-      "label": "Cards",
-      "entity": "card",
+      "label": "Κάρτες",
+      "entity": "καρτας",
       "field": {
-        "label": "Card",
+        "label": "Κάρτα",
         "fields": [
           {
-            "label": "Question",
-            "description": "Optional textual question for the card. (The card may use just an image, just a text or both)"
+            "label": "Ερώτηση",
+            "description": "Κείμενο ερώτησης για την κάρτα. Η κάρτα μπορεί να έχει μόνο εικόνα, μόνο κείμενο ή και τα δύο (προαιρετικό)"
           },
           {
-            "label": "Answer",
-            "description": "Optional answer(solution) for the card."
+            "label": "Απάντηση",
+            "description": "Προαιρετική"
           },
           {
-            "label": "Image",
-            "description": "Optional image for the card. (The card may use just an image, just a text or both)"
+            "label": "Εικόνα",
+            "description": "Εικόνα για την κάρτα. Η κάρτα μπορεί να έχει μόνο εικόνα, μόνο κείμενο ή και τα δύο (προαιρετικό)"
           },
           {
-            "label": "Tip",
+            "label": "Alternative text for image"
+          },
+          {
+            "label": "Επεξήγηση",
             "fields": [
               {
-                "label": "Tip text"
+                "label": "Επεξηγηματικό κείμενο"
               }
             ]
           }
@@ -38,65 +41,75 @@
       }
     },
     {
-      "label": "Progress text",
-      "default": "Card @card of @total",
-      "description": "Progress text, variables available: @card and @total. Example: 'Card @card of @total'"
+      "label": "Κείμενο προόδου",
+      "default": "Κάρτα @card από @total",
+      "description": "Κείμενο προόδου, διαθέσιμες μεταβλητές: @card και @total. Παράδειγμα: 'Κάρτα @card από @total'"
     },
     {
-      "label": "Text for the next button",
-      "default": "Next"
+      "label": "Ετικέτα κουμπιού μετάβασης στην επόμενη κάρτα",
+      "default": "Επόμενη"
     },
     {
-      "label": "Text for the previous button",
-      "default": "Previous"
+      "label": "Ετικέτα κουμπιού μετάβασης στην προηγούμενη κάρτα",
+      "default": "Προηγούμενη"
     },
     {
-      "label": "Text for the check answers button",
-      "default": "Check"
+      "label": "Ετικέτα κουμπιού ελέγχου απαντήσεων",
+      "default": "Έλεγχος"
     },
     {
-      "label": "Require user input before the solution can be viewed"
+      "label": "Απαιτείται καταχώριση απάντησης πριν την εμφάνιση της λύσης"
     },
     {
-      "label": "Text for the answer input field",
-      "default": "Your answer"
+      "label": "Κείμενο για το πεδίο εισαγωγής απάντησης",
+      "default": "Η απάντησή σου"
     },
     {
-      "label": "Text for correct answer",
-      "default": "Correct"
+      "label": "Κείμενο για σωστή απάντηση",
+      "default": "Σωστό"
     },
     {
-      "label": "Text for incorrect answer",
-      "default": "Incorrect"
+      "label": "Κείμενο για λάθος απάντηση",
+      "default": "Λάθος"
     },
     {
-      "label": "Show solution text",
-      "default": "Correct answer"
+      "label": "Κείμενο εμφάνισης λύσης",
+      "default": "Σωστή απάντηση"
     },
     {
-      "label": "Text for results title",
-      "default": "Results"
+      "label": "Κείμενο τίτλου αποτελεσμάτων",
+      "default": "Αποτελέσματα"
     },
     {
-      "label": "Text for number of correct",
-      "default": "@score of @total correct",
-      "description": "Result text, variables available: @score and @total. Example: '@score of @total correct'"
+      "label": "Κείμενο για αριθμό σωστών απαντήσεων",
+      "default": "@score σωστά από @total",
+      "description": "Κείμενο αποτελεσμάτων, διαθέσιμες μεταβλητές: @score και @total. Παράδειγμα: '@score σωστά από @total'"
     },
     {
-      "label": "Text for show results",
-      "default": "Show results"
+      "label": "Κείμενο εμφάνισης αποτελεσμάτων",
+      "default": "Αποτελέσματα"
     },
     {
-      "label": "Text for short answer label",
+      "label": "Κείμενο ετικέτας σύντομης απάντησης",
       "default": "A:"
     },
     {
-      "label": "Text for \"retry\" button",
-      "default": "Retry"
+      "label": "Κείμενο νέας προσπάθειας",
+      "default": "Επανάληψη"
     },
     {
-      "label": "Case sensitive",
-      "description": "Makes sure the user input has to be exactly the same as the answer."
+      "label": "Διάκριση πεζών-κεφαλαίων",
+      "description": "Το κείμενο που εισάγει ο χρήστης πρέπει να είναι ακριβώς το ίδιο (πεζά-κεφαλαία) με την απάντηση."
+    },
+    {
+      "label": "Incorrect text for assistive technologies",
+      "default": "Incorrect answer. Correct answer was @answer",
+      "description": "Text that will be announced to assistive technologies. Use @answer as variable."
+    },
+    {
+      "label": "Card change for assistive technologies",
+      "default": "Page @current of @total",
+      "description": "Text that will be announced to assistive technologies when navigating between cards. Use @current and @total as variables."
     }
   ]
 }
