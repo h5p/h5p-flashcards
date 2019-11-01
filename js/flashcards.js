@@ -5,6 +5,8 @@
  */
 H5P.Flashcards = (function ($, XapiGenerator) {
 
+  C.counter = 0;
+
   /**
    * Initialize module.
    *
@@ -231,13 +233,14 @@ H5P.Flashcards = (function ($, XapiGenerator) {
 
     // Attach aria announcer
     this.$ariaAnnouncer = $('<div>', {
+      role: 'status',
       'class': 'hidden-but-read',
-      'aria-live': 'assertive',
       appendTo: this.$container,
     });
+    this.answerAnnouncement = null;
     this.$pageAnnouncer = $('<div>', {
+      role: 'status',
       'class': 'hidden-but-read',
-      'aria-live': 'polite',
       appendTo: this.$container
     });
 
@@ -280,6 +283,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
   C.prototype.addCard = function (index, $inner) {
     var that = this;
     var card = this.options.cards[index];
+    const cardId = ++C.counter;
 
     // Generate a new flashcards html and add it to h5p-inner
     var $card = $(
@@ -290,12 +294,12 @@ H5P.Flashcards = (function ($, XapiGenerator) {
             '</div>' +
           '</div>' +
           '<div class="h5p-foot">' +
-            '<div class="h5p-imagetext">' +
+            '<div class="h5p-imagetext" id="h5p-flashcard-card-' + cardId + '">' +
               (card.text !== undefined ? card.text : '') +
             '</div>' +
             '<div class="h5p-answer">' +
               '<div class="h5p-input">' +
-                '<input type="text" class="h5p-textinput" tabindex="-1" placeholder="' + this.options.defaultAnswerText + '"/>' +
+                '<input type="text" class="h5p-textinput" tabindex="-1" placeholder="' + this.options.defaultAnswerText + '" aria-describedby="h5p-flashcard-card-' + cardId +'" autocomplete="off"/>' +
                 '<button type="button" class="h5p-button h5p-check-button" tabindex="-1" title="' + this.options.checkAnswerText + '">' + this.options.checkAnswerText + '</button>' +
                 '<button type="button" class="h5p-button h5p-icon-button" tabindex="-1" title="' + this.options.checkAnswerText + '"/>' +
               '</div>' +
@@ -345,6 +349,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
         that.answers[index] = userAnswer;
         that.triggerXAPI('interacted');
 
+        that.answerAnnouncement = null;
         if (userCorrect) {
           $input.parent()
             .addClass('h5p-correct')
@@ -370,7 +375,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
             '@answer',
             that.options.cards[index].answer
           );
-          that.$ariaAnnouncer.text(ariaText);
+          that.answerAnnouncement = ariaText;
         }
 
         $input.siblings('.h5p-feedback-label').focus();
@@ -536,7 +541,13 @@ H5P.Flashcards = (function ($, XapiGenerator) {
        is running, and the card will be misplaced */
     $card.one('transitionend', function () {
       if ($card.hasClass('h5p-current') && !$card.find('.h5p-textinput')[0].disabled) {
-        this.announceCurrentPage();
+        $card.find('.h5p-textinput').focus();
+        setTimeout(function () {
+          if (this.answerAnnouncement) {
+            this.$ariaAnnouncer.text(this.answerAnnouncement);
+          }
+          this.announceCurrentPage();
+        }.bind(this), 500);
       }
     }.bind(this));
 
