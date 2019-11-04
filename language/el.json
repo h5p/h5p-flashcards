@@ -27,7 +27,7 @@
             "description": "Εικόνα για την κάρτα. Η κάρτα μπορεί να έχει μόνο εικόνα, μόνο κείμενο ή και τα δύο (προαιρετικό)"
           },
           {
-            "label": "Alternative text for image"
+            "label": "Εναλλακτικό κείμενο για την εικόνα"
           },
           {
             "label": "Επεξήγηση",
@@ -102,14 +102,14 @@
       "description": "Το κείμενο που εισάγει ο χρήστης πρέπει να είναι ακριβώς το ίδιο (πεζά-κεφαλαία) με την απάντηση."
     },
     {
-      "label": "Incorrect text for assistive technologies",
-      "default": "Incorrect answer. Correct answer was @answer",
-      "description": "Text that will be announced to assistive technologies. Use @answer as variable."
+      "label": "Κείμενο λάθος απάντησης για υποστηρικτικές τεχνολογίες",
+      "default": "Λάθος απάντηση. Σωστή απάντηση η @answer",
+      "description": "Κείμενο που θα χρησιμοποιηθεί από υποστηρικτικές τεχνολογίες. Χρησιμοποιήστε τη μεταβλητή @answer."
     },
     {
-      "label": "Card change for assistive technologies",
-      "default": "Page @current of @total",
-      "description": "Text that will be announced to assistive technologies when navigating between cards. Use @current and @total as variables."
+      "label": "Κείμενο τρέχουσας κάρτας για υποστηρικτικές τεχνολογίες",
+      "default": "Κάρτα @current από @total",
+      "description": "Κείμενο που θα χρησιμοποιηθεί από υποστηρικτικές τεχνολογίες κατά την πλοήγηση μεταξύ των καρτών. Χρησιμοποιήστε τις μεταβλητές @current, @total."
     }
   ]
 }
