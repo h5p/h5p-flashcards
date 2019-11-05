@@ -73,7 +73,8 @@
                 "p",
                 "br",
                 "strong",
-                "em"
+                "em",
+                "code"
               ],
               "optional": true
             }
