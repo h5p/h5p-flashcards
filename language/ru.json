@@ -1,39 +1,39 @@
 {
   "semantics": [
     {
-      "label": "Task description"
+      "label": "Описание задачи"
     },
     {
       "widgets": [
         {
-          "label": "Default"
+          "label": "По умолчанию"
         }
       ],
-      "label": "Cards",
-      "entity": "card",
+      "label": "Карточки",
+      "entity": "карточка",
       "field": {
-        "label": "Card",
+        "label": "Карточка"
         "fields": [
           {
-            "label": "Question",
-            "description": "Optional textual question for the card. (The card may use just an image, just a text or both)"
+            "label": "Вопрос",
+            "description": "Необязательный вопрос для карточки. (Можно использовать только изображение, только текст или оба одновременно)"
           },
           {
-            "label": "Answer",
-            "description": "Optional answer(solution) for the card."
+            "label": "Ответ",
+            "description": "Ответ или решение для карточки."
           },
           {
-            "label": "Image",
-            "description": "Optional image for the card. (The card may use just an image, just a text or both)"
+            "label": "Изображение",
+            "description": "Необязательное изображение для карточки. (Можно использовать только изображение, только текст или оба одновременно)"
           },
           {
-            "label": "Alternative text for image"
+            "label": "Альтернативный текст вместо изображения"
           },
           {
-            "label": "Tip",
+            "label": "Подсказка",
             "fields": [
               {
-                "label": "Tip text"
+                "label": "Текст подсказки"
               }
             ]
           }
@@ -41,75 +41,75 @@
       }
     },
     {
-      "label": "Progress text",
-      "default": "Card @card of @total",
-      "description": "Progress text, variables available: @card and @total. Example: 'Card @card of @total'"
+      "label": "Текст прогресса",
+      "default": "Карточка @card их @total",
+      "description": "Текст прогресса, доступные переменные: @card и @total. Пример: 'Карточка @card из @total'"
     },
     {
-      "label": "Text for the next button",
-      "default": "Next"
+      "label": "Текст для кнопки Дальше",
+      "default": "Дальше"
     },
     {
-      "label": "Text for the previous button",
-      "default": "Previous"
+      "label": "Текст для кнопки Назад",
+      "default": "Назад "
     },
     {
-      "label": "Text for the check answers button",
-      "default": "Check"
+      "label": "Текст для кнопки Проверить решение",
+      "default": "Проверить"
     },
     {
-      "label": "Require user input before the solution can be viewed"
+      "label": "Требовать ввод пользователя до того, как решение может быть показано"
     },
     {
-      "label": "Text for the answer input field",
-      "default": "Your answer"
+      "label": "Текст для поля ответа",
+      "default": "Ответ"
     },
     {
-      "label": "Text for correct answer",
-      "default": "Correct"
+      "label": "Текст для правильного ответа",
+      "default": "Правильно"
     },
     {
-      "label": "Text for incorrect answer",
-      "default": "Incorrect"
+      "label": "Текст для неправильного ответа",
+      "default": "Неправильно"
     },
     {
-      "label": "Show solution text",
-      "default": "Correct answer"
+      "label": "Текст показать решение",
+      "default": "показать решение"
     },
     {
-      "label": "Text for results title",
-      "default": "Results"
+      "label": "Текст для заголовка результатов",
+      "default": "Результат"
     },
     {
-      "label": "Text for number of correct",
-      "default": "@score of @total correct",
-      "description": "Result text, variables available: @score and @total. Example: '@score of @total correct'"
+      "label": "Текст для количества правильных ответов",
+      "default": "Правильно @score из @total",
+      "description": "Текст результатов, доступные переменные: @score и @total. Пример: '@score из @total правильно'"
     },
     {
-      "label": "Text for show results",
-      "default": "Show results"
+      "label": "Текст для открытия результатов",
+      "default": "Показать результат"
     },
     {
-      "label": "Text for short answer label",
+      "label": "Текст для ярлыка краткого ответа",
       "default": "A:"
     },
     {
-      "label": "Text for \"retry\" button",
-      "default": "Retry"
+      "label": "Текст для кнопки \"повторить\" ",
+      "default": "повторить"
     },
     {
-      "label": "Case sensitive",
-      "description": "Makes sure the user input has to be exactly the same as the answer."
+      "label": "Чувствительность",
+      "description": "Требует, чтобы ввод пользователя в точности совпадал с ответом."
     },
     {
-      "label": "Incorrect text for assistive technologies",
-      "default": "Incorrect answer. Correct answer was @answer",
-      "description": "Text that will be announced to assistive technologies. Use @answer as variable."
+      "label": "Текст неправильного ответа для ассистирующих технологии",
+      "default": "Неправильный ответ. Правильным ответом является @answer",
+      "description": "Текст, объявляемый ассистирующими технологиями. Использовать @answer в качестве переменной."
     },
     {
-      "label": "Card change for assistive technologies",
-      "default": "Page @current of @total",
-      "description": "Text that will be announced to assistive technologies when navigating between cards. Use @current and @total as variables."
+      "label": "Смена карточки для ассистирующих технологии",
+      "default": "Карточка @current из @total",
+      "description": "Текст, объявляемый ассистирующими технологиями при смене карточек. Использовать @current и @total в качестве переменных."
     }
   ]
 }
