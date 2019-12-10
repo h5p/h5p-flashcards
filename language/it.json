@@ -102,14 +102,14 @@
       "description": "Accertati che il testo immesso dall'utente sia identico alla risposta attesa."
     },
     {
-      "label": "Incorrect text for assistive technologies",
-      "default": "Incorrect answer. Correct answer was @answer",
-      "description": "Text that will be announced to assistive technologies. Use @answer as variable."
+      "label": "Testo sbagliato per le technologie assistive",
+      "default": "Risposta sbagliata. La risposta giusta era @answer",
+      "description": "Testo per le technologie assistive. Usa @answer come variabile."
     },
     {
-      "label": "Card change for assistive technologies",
-      "default": "Page @current of @total",
-      "description": "Text that will be announced to assistive technologies when navigating between cards. Use @current and @total as variables."
+      "label": "Cambio carta per le tecnologie assistive",
+      "default": "Pagina @current di @total",
+      "description": "Testo per le technologie assistive durante la navigazione tra carte. Usa @current e @total come variabili."
     }
   ]
 }
