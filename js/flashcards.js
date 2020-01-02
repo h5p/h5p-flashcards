@@ -233,14 +233,13 @@ H5P.Flashcards = (function ($, XapiGenerator) {
 
     // Attach aria announcer
     this.$ariaAnnouncer = $('<div>', {
-      role: 'status',
       'class': 'hidden-but-read',
+      'aria-live': 'assertive',
       appendTo: this.$container,
     });
-    this.answerAnnouncement = null;
     this.$pageAnnouncer = $('<div>', {
-      role: 'status',
       'class': 'hidden-but-read',
+      'aria-live': 'assertive',
       appendTo: this.$container
     });
 
@@ -349,7 +348,6 @@ H5P.Flashcards = (function ($, XapiGenerator) {
         that.answers[index] = userAnswer;
         that.triggerXAPI('interacted');
 
-        that.answerAnnouncement = null;
         if (userCorrect) {
           $input.parent()
             .addClass('h5p-correct')
@@ -359,6 +357,8 @@ H5P.Flashcards = (function ($, XapiGenerator) {
           $('<div class="h5p-solution">' +
             '<span class="solution-icon h5p-rotate-in"></span>' +
           '</div>').appendTo($card.find('.h5p-imageholder'));
+
+          $input.siblings('.h5p-feedback-label').focus();
         }
         else {
           $input.parent()
@@ -375,10 +375,8 @@ H5P.Flashcards = (function ($, XapiGenerator) {
             '@answer',
             that.options.cards[index].answer
           );
-          that.answerAnnouncement = ariaText;
+          that.$ariaAnnouncer.text(ariaText);
         }
-
-        $input.siblings('.h5p-feedback-label').focus();
 
         done = (that.numAnswered >= that.options.cards.length);
 
@@ -542,13 +540,10 @@ H5P.Flashcards = (function ($, XapiGenerator) {
     $card.one('transitionend', function () {
       if ($card.hasClass('h5p-current') && !$card.find('.h5p-textinput')[0].disabled) {
         $card.find('.h5p-textinput').focus();
-        setTimeout(function () {
-          if (this.answerAnnouncement) {
-            this.$ariaAnnouncer.text(this.answerAnnouncement);
-          }
-          this.announceCurrentPage();
-        }.bind(this), 500);
       }
+      setTimeout(function () {
+        this.announceCurrentPage();
+      }.bind(this), 500);
     }.bind(this));
 
     // Update card classes
