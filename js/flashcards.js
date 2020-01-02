@@ -375,7 +375,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
             '@answer',
             that.options.cards[index].answer
           );
-          that.$ariaAnnouncer.text(ariaText);
+          that.$ariaAnnouncer.html(ariaText);
         }
 
         done = (that.numAnswered >= that.options.cards.length);
