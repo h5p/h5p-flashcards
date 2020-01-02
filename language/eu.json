@@ -27,7 +27,7 @@
             "description": "Aukerako irudia (txartelak izango du bakarrik irudia, bakarrik testua edo biak)"
           },
           {
-            "label": "Alternative text for image"
+            "label": "Irudiaren ordezko testua"
           },
           {
             "label": "Argibidea",
@@ -102,14 +102,14 @@
       "description": "Ezartzen du erabiltzailearen sarrera izan behar duela erantzunaren berdina."
     },
     {
-      "label": "Incorrect text for assistive technologies",
-      "default": "Incorrect answer. Correct answer was @answer",
-      "description": "Text that will be announced to assistive technologies. Use @answer as variable."
+      "label": "Erantzun okerrarentzako testua laguntzarako teknologientzat",
+      "default": "Erantzun okerra. Erantzun zuzena @answer zen",
+      "description": "Laguntzarako teknologietan erabiliko den testua. Erabili @answer aldagai gisa."
     },
     {
-      "label": "Card change for assistive technologies",
-      "default": "Page @current of @total",
-      "description": "Text that will be announced to assistive technologies when navigating between cards. Use @current and @total as variables."
+      "label": "Txartel aldaketa laguntzarako teknologientzat",
+      "default": "@current. orria, @total guztira",
+      "description": "Laguntzarako teknologietan txartel artean nabigatzean erabiliko den testua. Erabili @current eta @total aldagai gisa."
     }
   ]
 }
