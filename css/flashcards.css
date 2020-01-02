@@ -811,7 +811,7 @@ button::-moz-focus-inner {
   position: absolute;
   left: 0;
   right: 0;
-  top: -0.1em;
+  top: -0.2em;
 }
 
 .h5p-show-results button {
