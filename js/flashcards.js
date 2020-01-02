@@ -383,7 +383,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
         done = (that.numAnswered >= that.options.cards.length);
 
         if (!done) {
-          that.nextTimer = setTimeout(that.next.bind(that), 1500);
+          that.nextTimer = setTimeout(that.next.bind(that), 3500);
         }
         else {
           that.last();
@@ -560,9 +560,6 @@ H5P.Flashcards = (function ($, XapiGenerator) {
       .removeClass('h5p-current h5p-previous h5p-next left right')
       .attr('aria-hidden', 'true')
       .find('.h5p-rotate-in').removeClass('h5p-rotate-in');
-
-
-
 
     $card.prev().addClass('h5p-previous');
     $card.next('.h5p-card').addClass('h5p-next');
