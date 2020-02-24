@@ -20,7 +20,7 @@
           },
           {
             "label": "答案",
-            "description": "卡片的可选答案(解决方案) ."
+            "description": "卡片的可选答案(解决方案) . Use a pipe symbol | to split alternative solutions. Use \\| if a solution should contain a |."
           },
           {
             "label": "图像",
@@ -75,6 +75,10 @@
     {
       "label": "显示解决方案文本",
       "default": "正确答案"
+    },
+    {
+      "label": "Separator of solution alternatives",
+      "default": "or"
     },
     {
       "label": "成绩标题的文本",

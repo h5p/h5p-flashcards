@@ -20,7 +20,7 @@
           },
           {
             "label": "Svar",
-            "description": "Valfritt svar (lösning) för kortet."
+            "description": "Valfritt svar (lösning) för kortet. Use a pipe symbol | to split alternative solutions. Use \\| if a solution should contain a |."
           },
           {
             "label": "Bild",
@@ -77,8 +77,17 @@
       "default": "Rätt svar"
     },
     {
+<<<<<<< HEAD
       "label": "Rubrik för resultat",
       "default": "Resultat"
+=======
+      "label": "Separator of solution alternatives",
+      "default": "or"
+    },
+    {
+      "label": "Text for results title",
+      "default": "Results"
+>>>>>>> Add option to use alternative solutions separated by |
     },
     {
       "label": "Text för antal korrekta",

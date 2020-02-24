@@ -20,7 +20,7 @@
           },
           {
             "label": "Erantzuna",
-            "description": "Aukerako erantzuna."
+            "description": "Aukerako erantzuna. Use a pipe symbol | to split alternative solutions. Use \\| if a solution should contain a |."
           },
           {
             "label": "Irudia",
@@ -75,6 +75,10 @@
     {
       "label": "Erakutsi erantzun zuzena testua",
       "default": "Erantzun zuzena"
+    },
+    {
+      "label": "Separator of solution alternatives",
+      "default": "or"
     },
     {
       "label": "Emaitzen tituluaren testua",

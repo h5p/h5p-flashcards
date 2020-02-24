@@ -20,7 +20,7 @@
           },
           {
             "label": "Відповідь",
-            "description": "Додактова відповідь для картки."
+            "description": "Додактова відповідь для картки. Use a pipe symbol | to split alternative solutions. Use \\| if a solution should contain a |."
           },
           {
             "label": "Зображення",
@@ -75,6 +75,10 @@
     {
       "label": "Показати текст відповіді",
       "default": "Правильна відповідь"
+    },
+    {
+      "label": "Separator of solution alternatives",
+      "default": "or"
     },
     {
       "label": "Текст для заголовка результатів",

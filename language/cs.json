@@ -20,7 +20,7 @@
           },
           {
             "label": "Odpověď",
-            "description": "Volitelná odpověď (řešení) pro kartu."
+            "description": "Volitelná odpověď (řešení) pro kartu. Use a pipe symbol | to split alternative solutions. Use \\| if a solution should contain a |."
           },
           {
             "label": "Obrázek",
@@ -75,6 +75,10 @@
     {
       "label": "Text pro zobrazit řešení",
       "default": "Správná odpověď"
+    },
+    {
+      "label": "Separator of solution alternatives",
+      "default": "or"
     },
     {
       "label": "Text pro nadpis výsledku",

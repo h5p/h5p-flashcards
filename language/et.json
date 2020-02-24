@@ -20,7 +20,7 @@
           },
           {
             "label": "Vastus",
-            "description": "Valikuline vastus (lahendus) kaardile."
+            "description": "Valikuline vastus (lahendus) kaardile. Use a pipe symbol | to split alternative solutions. Use \\| if a solution should contain a |."
           },
           {
             "label": "Pilt",
@@ -75,6 +75,10 @@
     {
       "label": "Lahenduse näitamise tekst",
       "default": "Õige vastus"
+    },
+    {
+      "label": "Separator of solution alternatives",
+      "default": "or"
     },
     {
       "label": "Tulemuste pealkirja tekst",
