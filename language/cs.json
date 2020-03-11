@@ -1,39 +1,39 @@
 {
   "semantics": [
     {
-      "label": "Task description"
+      "label": "Popis úlohy"
     },
     {
       "widgets": [
         {
-          "label": "Default"
+          "label": "Výchozí"
         }
       ],
-      "label": "Cards",
-      "entity": "card",
+      "label": "Karty",
+      "entity": "karta",
       "field": {
-        "label": "Card",
+        "label": "Karta",
         "fields": [
           {
-            "label": "Question",
-            "description": "Optional textual question for the card. (The card may use just an image, just a text or both)"
+            "label": "Otázka",
+            "description": "Volitelná textová otázka pro kartu. (Karta může používat pouze obrázek, pouze text nebo obojí)"
           },
           {
-            "label": "Answer",
-            "description": "Optional answer(solution) for the card."
+            "label": "Odpověď",
+            "description": "Volitelná odpověď (řešení) pro kartu."
           },
           {
-            "label": "Image",
-            "description": "Optional image for the card. (The card may use just an image, just a text or both)"
+            "label": "Obrázek",
+            "description": "Volitelný obrázek pro kartu. (Karta může používat pouze obrázek, pouze text nebo obojí)"
           },
           {
-            "label": "Alternative text for image"
+            "label": "Alternativní text pro obrázek"
           },
           {
-            "label": "Tip",
+            "label": "Nápověda",
             "fields": [
               {
-                "label": "Tip text"
+                "label": "Text nápovědy"
               }
             ]
           }
@@ -41,75 +41,75 @@
       }
     },
     {
-      "label": "Progress text",
-      "default": "Card @card of @total",
-      "description": "Progress text, variables available: @card and @total. Example: 'Card @card of @total'"
+      "label": "Text pokroku",
+      "default": "Karet @card z @total",
+      "description": "Text pokroku, dostupné proměnné: @card a @total. Příklad: 'Card @card of @total'"
     },
     {
-      "label": "Text for the next button",
-      "default": "Next"
+      "label": "Text pro tlačítko další",
+      "default": "Další"
     },
     {
-      "label": "Text for the previous button",
-      "default": "Previous"
+      "label": "Text pro tlačítko předchozí",
+      "default": "Předchozí"
     },
     {
-      "label": "Text for the check answers button",
-      "default": "Check"
+      "label": "Text pro tlačítko kontrola odpovědi",
+      "default": "Zkontrolovat"
     },
     {
-      "label": "Require user input before the solution can be viewed"
+      "label": "Před zobrazením řešení je třeba zadat vstup uživatele"
     },
     {
-      "label": "Text for the answer input field",
-      "default": "Your answer"
+      "label": "Text pro pole pro zadání odpovědi",
+      "default": "Vaše odpověď"
     },
     {
-      "label": "Text for correct answer",
-      "default": "Correct"
+      "label": "Text pro správnou odpověď",
+      "default": "Správně"
     },
     {
-      "label": "Text for incorrect answer",
-      "default": "Incorrect"
+      "label": "Text pro nesprávnou odpověď",
+      "default": "Nesprávně"
     },
     {
-      "label": "Show solution text",
-      "default": "Correct answer"
+      "label": "Text pro zobrazit řešení",
+      "default": "Správná odpověď"
     },
     {
-      "label": "Text for results title",
-      "default": "Results"
+      "label": "Text pro nadpis výsledku",
+      "default": "Výsledek"
     },
     {
-      "label": "Text for number of correct",
-      "default": "@score of @total correct",
-      "description": "Result text, variables available: @score and @total. Example: '@score of @total correct'"
+      "label": "Text pro počet správných",
+      "default": "@score z @total správně",
+      "description": "Výsledný text, dostupné proměnné: @score a @total. Příklad: '@score z @total správně'"
     },
     {
-      "label": "Text for show results",
-      "default": "Show results"
+      "label": "Text pro zobrazení výsledků",
+      "default": "Zobrazit výsledky"
     },
     {
-      "label": "Text for short answer label",
+      "label": "Text pro popisek s krátkou odpovědí",
       "default": "A:"
     },
     {
-      "label": "Text for \"retry\" button",
-      "default": "Retry"
+      "label": "Text tlačítka \"pakovat\" ",
+      "default": "Opakovat"
     },
     {
-      "label": "Case sensitive",
-      "description": "Makes sure the user input has to be exactly the same as the answer."
+      "label": "Rozlišuje velká a malá písmena",
+      "description": "Zajišťuje, že vstup uživatele musí být přesně stejný jako odpověď."
     },
     {
-      "label": "Incorrect text for assistive technologies",
-      "default": "Incorrect answer. Correct answer was @answer",
-      "description": "Text that will be announced to assistive technologies. Use @answer as variable."
+      "label": "Nesprávný text pro pomocné technologie",
+      "default": "Nesprávná odpověd. Správná odpověď je @answer",
+      "description": "Text, který bude oznámen pomocnými technologiemi. Jako proměnnou použijte @answer."
     },
     {
-      "label": "Card change for assistive technologies",
-      "default": "Page @current of @total",
-      "description": "Text that will be announced to assistive technologies when navigating between cards. Use @current and @total as variables."
+      "label": "Změna karty za pomocné technologie",
+      "default": "Strana @current z @total",
+      "description": "Text, který bude při navigaci mezi kartami oznámen pomocnými technologiemi. Jako proměnné použijte @current a @total."
     }
   ]
 }
