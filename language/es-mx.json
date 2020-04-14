@@ -27,7 +27,7 @@
             "description": "Imgen opcional para la carta. (La carta podría usar solamente una imagen, solo un texto o ambos)"
           },
           {
-            "label": "Alternative text for image"
+            "label": "Texto aternativo para la imagen"
           },
           {
             "label": "Pista",
@@ -102,14 +102,14 @@
       "description": "Asegurarse que la entrada del usuario sea exactamente la misma que la respuesta."
     },
     {
-      "label": "Incorrect text for assistive technologies",
-      "default": "Incorrect answer. Correct answer was @answer",
-      "description": "Text that will be announced to assistive technologies. Use @answer as variable."
+      "label": "Texto incorrecto para tecnologías asistivas",
+      "default": "Respuesta incorrecta. La respuesta correcta era @answer",
+      "description": "Texto que será anunciado a tecnologías asistivas. Use @answer como variable."
     },
     {
-      "label": "Card change for assistive technologies",
-      "default": "Page @current of @total",
-      "description": "Text that will be announced to assistive technologies when navigating between cards. Use @current and @total as variables."
+      "label": "Cambio de Tarjeta para tecnologías asistivas",
+      "default": "Página @current de @total",
+      "description": "Texto que será anunciado a tecnologías asistivas al navegar entre cartas. Use @current y @total como variables."
     }
   ]
 }
