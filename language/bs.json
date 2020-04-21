@@ -27,7 +27,7 @@
             "description": "Opcionalna slika za kartu. (Pitanje može biti tekst, slika ili oboje)"
           },
           {
-            "label": "Alternative text for image"
+            "label": "Alternativni tekst za sliku"
           },
           {
             "label": "Savjet",
@@ -62,53 +62,53 @@
     },
     {
       "label": "Text for the answer input field",
-      "default": "Your answer"
+      "default": "Vaš odgovor"
     },
     {
       "label": "Text for correct answer",
-      "default": "Correct"
+      "default": "Tačno"
     },
     {
       "label": "Text for incorrect answer",
-      "default": "Incorrect"
+      "default": "Netačno"
     },
     {
       "label": "Show solution text",
-      "default": "Correct answer"
+      "default": "Tačan odgovor"
     },
     {
       "label": "Text for results title",
-      "default": "Results"
+      "default": "Rezultati"
     },
     {
       "label": "Text for number of correct",
-      "default": "@score of @total correct",
-      "description": "Result text, variables available: @score and @total. Example: '@score of @total correct'"
+      "default": "@score od @total tačno",
+      "description": "Tekst za rezultat, dostupne varijable: @score i @total. Primjer: '@score od @total tačno'"
     },
     {
-      "label": "Text for show results",
-      "default": "Show results"
+      "label": "Tekst za prikaži rezultat.",
+      "default": "Prikaži rezultate"
     },
     {
       "label": "Text for short answer label",
       "default": "A:"
     },
     {
-      "label": "Text for \"retry\" button",
-      "default": "Retry"
+      "label": "Teskt za \"ponovi\" dugme",
+      "default": "Ponovi"
     },
     {
-      "label": "Case sensitive",
-      "description": "Makes sure the user input has to be exactly the same as the answer."
+      "label": "Pazi na velika i mala slova",
+      "description": "Uneseni tekst mora biti tačan i precizan kao odgovor."
     },
     {
       "label": "Incorrect text for assistive technologies",
-      "default": "Incorrect answer. Correct answer was @answer",
+      "default": "Netačan odgovor. Tačan odgovor je bio @answer",
       "description": "Text that will be announced to assistive technologies. Use @answer as variable."
     },
     {
       "label": "Card change for assistive technologies",
-      "default": "Page @current of @total",
+      "default": "Stranica @current od @total",
       "description": "Text that will be announced to assistive technologies when navigating between cards. Use @current and @total as variables."
     }
   ]
