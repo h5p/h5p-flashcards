@@ -1,39 +1,39 @@
 {
   "semantics": [
     {
-      "label": "Task description"
+      "label": "Beskrivning av uppgift"
     },
     {
       "widgets": [
         {
-          "label": "Default"
+          "label": "Standard"
         }
       ],
-      "label": "Cards",
-      "entity": "card",
+      "label": "Kort",
+      "entity": "kort",
       "field": {
-        "label": "Card",
+        "label": "Kort",
         "fields": [
           {
-            "label": "Question",
-            "description": "Optional textual question for the card. (The card may use just an image, just a text or both)"
+            "label": "Fråga",
+            "description": "Valfri text för kortet. (Kortet kan bestå av enbart en bild, enbart en text, eller båda.)"
           },
           {
-            "label": "Answer",
-            "description": "Optional answer(solution) for the card."
+            "label": "Svar",
+            "description": "Valfritt svar (lösning) för kortet."
           },
           {
-            "label": "Image",
-            "description": "Optional image for the card. (The card may use just an image, just a text or both)"
+            "label": "Bild",
+            "description": "Valfri bild för kortet. (Kortet kan bestå av enbart en bild, enbart en text, eller båda.)"
           },
           {
-            "label": "Alternative text for image"
+            "label": "Alternativ text för bild"
           },
           {
-            "label": "Tip",
+            "label": "Tips",
             "fields": [
               {
-                "label": "Tip text"
+                "label": "Tipstext"
               }
             ]
           }
@@ -41,75 +41,75 @@
       }
     },
     {
-      "label": "Progress text",
-      "default": "Card @card of @total",
-      "description": "Progress text, variables available: @card and @total. Example: 'Card @card of @total'"
+      "label": "Framstegstext",
+      "default": "Kort @card av @total",
+      "description": "Framstegstext, variabler inkluderar : @card och @total. Exempel: 'Kort @card av @total'"
     },
     {
-      "label": "Text for the next button",
-      "default": "Next"
+      "label": "Text för nästa-knappen",
+      "default": "Nästa"
     },
     {
-      "label": "Text for the previous button",
-      "default": "Previous"
+      "label": "Text för föregående-knappen",
+      "default": "Föregående"
     },
     {
-      "label": "Text for the check answers button",
-      "default": "Check"
+      "label": "Text för Rätta-knapp",
+      "default": "Rätta"
     },
     {
-      "label": "Require user input before the solution can be viewed"
+      "label": "Kräv att användaren anger svar innan lösning kan visas"
     },
     {
-      "label": "Text for the answer input field",
-      "default": "Your answer"
+      "label": "Text för svarsinmatningsfält",
+      "default": "Ditt svar"
     },
     {
-      "label": "Text for correct answer",
-      "default": "Correct"
+      "label": "Text vid korrekt svar",
+      "default": "Rätt"
     },
     {
-      "label": "Text for incorrect answer",
-      "default": "Incorrect"
+      "label": "Text vid felaktigt svar",
+      "default": "Fel"
     },
     {
-      "label": "Show solution text",
-      "default": "Correct answer"
+      "label": "Visa lösningstext",
+      "default": "Rätt svar"
     },
     {
-      "label": "Text for results title",
-      "default": "Results"
+      "label": "Rubrik för resultat",
+      "default": "Resultat"
     },
     {
-      "label": "Text for number of correct",
-      "default": "@score of @total correct",
-      "description": "Result text, variables available: @score and @total. Example: '@score of @total correct'"
+      "label": "Text för antal korrekta",
+      "default": "@score av @total var rätt",
+      "description": "Resultattext, variabler som finns är : @score och @total. Example: '@score av @total var rätt'"
     },
     {
-      "label": "Text for show results",
-      "default": "Show results"
+      "label": "Text för visa resultat",
+      "default": "Vis resultat"
     },
     {
-      "label": "Text for short answer label",
+      "label": "Text för kort svarsetikett",
       "default": "A:"
     },
     {
-      "label": "Text for \"retry\" button",
-      "default": "Retry"
+      "label": "Text för knappen \"försök igen\" ",
+      "default": "Försök igen"
     },
     {
-      "label": "Case sensitive",
-      "description": "Makes sure the user input has to be exactly the same as the answer."
+      "label": "Skiftlägeskänsligt",
+      "description": "Kräv att användarens svar är exakt samma som svaret."
     },
     {
-      "label": "Incorrect text for assistive technologies",
-      "default": "Incorrect answer. Correct answer was @answer",
-      "description": "Text that will be announced to assistive technologies. Use @answer as variable."
+      "label": "Text vid felaktigt svar för tillgänglighetshjälpmedel",
+      "default": "Felaktigt svar. Rätt svar var @answer",
+      "description": "Text som kommer användas av tillgänglighetshjälpmedel. Använd @answer som variabel."
     },
     {
-      "label": "Card change for assistive technologies",
-      "default": "Page @current of @total",
-      "description": "Text that will be announced to assistive technologies when navigating between cards. Use @current and @total as variables."
+      "label": "Byte av kort vid tillgänglighetshjälpmedel",
+      "default": "Sida @current av @total",
+      "description": "Text som kommer användas av tillgänglighetshjälpmedel vid navigering mellan kort. Använd @current och @total som variabler."
     }
   ]
 }

@@ -1,0 +1,115 @@
+{
+  "semantics": [
+    {
+      "label": "Описание на задачата"
+    },
+    {
+      "widgets": [
+        {
+          "label": "По подразбиране"
+        }
+      ],
+      "label": "Карти",
+      "entity": "карта",
+      "field": {
+        "label": "Карта",
+        "fields": [
+          {
+            "label": "Въпрос",
+            "description": "Незадължително текстов въпрос за картата. (Картата може да използва само изображение, само текст или и двете)"
+          },
+          {
+            "label": "Отговор",
+            "description": "Незадължително отговор (решение) за картата."
+          },
+          {
+            "label": "Изображение",
+            "description": "Незадължително изображение за картата. (Картата може да използва само изображение, само текст или и двете)"
+          },
+          {
+            "label": "Alternative text for image"
+          },
+          {
+            "label": "Подсказка",
+            "fields": [
+              {
+                "label": "Tip text"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "label": "Текст показващ напредъка",
+      "default": "@card карта/и от общо @total",
+      "description": "Текст, показващ напредъка, променливите са: @card и @total. Пример: '@card карта/и от общо @total'"
+    },
+    {
+      "label": "Текст за следващ бутон",
+      "default": "Следващ"
+    },
+    {
+      "label": "Текст за предходен бутон",
+      "default": "Предешен"
+    },
+    {
+      "label": "Текст на бутона за проверка на отговора",
+      "default": "Провери"
+    },
+    {
+      "label": "Изисквайте потребителски вход, преди решението да може да бъде видяно"
+    },
+    {
+      "label": "Текст за полето за въвеждане на отговор",
+      "default": "Вашият отговор"
+    },
+    {
+      "label": "Текст за верен отговор",
+      "default": "Верен"
+    },
+    {
+      "label": "Текст за грешен отговор",
+      "default": "Грешен"
+    },
+    {
+      "label": "Показване на решението",
+      "default": "Верен отговор"
+    },
+    {
+      "label": "Резултати",
+      "default": "Резултати"
+    },
+    {
+      "label": "Текст за броя верни отговори",
+      "default": "@score от общо @total верни",
+      "description": "Текст, показващ резултата, променливите са: @score and @total. Пример: '@score от общо @total верни'"
+    },
+    {
+      "label": "Текст при показване на резултите",
+      "default": "Показване на резултати"
+    },
+    {
+      "label": "Текст при кратък отговор",
+      "default": "Отг:"
+    },
+    {
+      "label": "Текст на бутона \"Повторен опит\"",
+      "default": "Повторен опит"
+    },
+    {
+      "label": "Чувствителност по отношение на главни и малки букви",
+      "description": "Информира ученика, че въведеното трябва да бъде абсолютно същото като зададения от вас отговор."
+    },
+    {
+      "label": "Incorrect text for assistive technologies",
+      "default": "Incorrect answer. Correct answer was @answer",
+      "description": "Text that will be announced to assistive technologies. Use @answer as variable."
+    },
+    {
+      "label": "Card change for assistive technologies",
+      "default": "Page @current of @total",
+      "description": "Text that will be announced to assistive technologies when navigating between cards. Use @current and @total as variables."
+    }
+  ]
+}
