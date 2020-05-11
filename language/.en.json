@@ -20,7 +20,7 @@
           },
           {
             "label": "Answer",
-            "description": "Optional answer(solution) for the card."
+            "description": "Optional answer (solution) for the card."
           },
           {
             "label": "Image",
