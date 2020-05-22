@@ -478,7 +478,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
 
       $('<div/>', {
         'class': 'h5p-results-question',
-        'text': card.text
+        'text': C.$converter.html(card.text || '').text()
       }).appendTo($listItem);
 
       var $resultsAnswer = $('<div/>', {
