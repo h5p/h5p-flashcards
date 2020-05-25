@@ -90,7 +90,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
           load();
         }
         else {
-          $image.load(load);
+          $image.on('load', load);
         }
 
         this.$images[i] = $image;
