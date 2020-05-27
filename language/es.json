@@ -24,7 +24,7 @@
           },
           {
             "label": "Imagen",
-            "description": "Imgen opcional para la carta. (La carta podría usar solamente una imagen, solo un texto o ambos)"
+            "description": "Imagen opcional para la carta. (La carta podría usar solamente una imagen, solo un texto o ambos)"
           },
           {
             "label": "Texto aternativo para la imagen"
