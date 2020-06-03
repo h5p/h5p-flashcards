@@ -90,7 +90,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
           load();
         }
         else {
-          $image.load(load);
+          $image.on('load', load);
         }
 
         this.$images[i] = $image;
@@ -298,7 +298,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
             '</div>' +
             '<div class="h5p-answer">' +
               '<div class="h5p-input">' +
-                '<input type="text" class="h5p-textinput" tabindex="-1" placeholder="' + this.options.defaultAnswerText + '" aria-describedby="h5p-flashcard-card-' + cardId +'" autocomplete="off"/>' +
+                '<input type="text" class="h5p-textinput" tabindex="-1" placeholder="' + this.options.defaultAnswerText + '" aria-describedby="h5p-flashcard-card-' + cardId +'" autocomplete="off" spellcheck="false"/>' +
                 '<button type="button" class="h5p-button h5p-check-button" tabindex="-1" title="' + this.options.checkAnswerText + '">' + this.options.checkAnswerText + '</button>' +
                 '<button type="button" class="h5p-button h5p-icon-button" tabindex="-1" title="' + this.options.checkAnswerText + '"/>' +
               '</div>' +
