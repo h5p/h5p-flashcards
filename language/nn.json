@@ -58,7 +58,7 @@
       "default": "Sjekk"
     },
     {
-      "label": "Krev inndata frå brukaren før fasit visast."
+      "label": "Krev inndata frå brukaren før fasit blir vist."
     },
     {
       "label": "Tekst for \"svar\" feltet",
@@ -103,12 +103,12 @@
     },
     {
       "label": "Incorrect text for assistive technologies",
-      "default": "Incorrect answer. Correct answer was @answer",
+      "default": "Feil svar. Det rette svaret var @answer",
       "description": "Text that will be announced to assistive technologies. Use @answer as variable."
     },
     {
       "label": "Card change for assistive technologies",
-      "default": "Page @current of @total",
+      "default": "Side @current av @total",
       "description": "Text that will be announced to assistive technologies when navigating between cards. Use @current and @total as variables."
     }
   ]
