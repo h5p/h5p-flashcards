@@ -27,7 +27,7 @@
             "description": "De optionele afbeelding voorop de kaart. (De kaart kan voorzien worden van een afbeelding en/of tekst)"
           },
           {
-            "label": "Alternative text for image"
+            "label": "Alt-tekst voor de afbeelding"
           },
           {
             "label": "Tip",
@@ -58,7 +58,7 @@
       "default": "Controleer"
     },
     {
-      "label": "Gebruikers input is vereist, voordat de oplossing kan worden bekeken"
+      "label": "Gebruikersinvoer is vereist, voordat de oplossing kan worden bekeken"
     },
     {
       "label": "Tekst voor het antwoord invoerveld",
@@ -94,22 +94,22 @@
       "default": "A:"
     },
     {
-      "label": "Text for \"retry\" button",
-      "default": "Retry"
+      "label": "Tekst voor \"Opnieuw\" knop",
+      "default": "Opnieuw"
     },
     {
-      "label": "Case sensitive",
-      "description": "Makes sure the user input has to be exactly the same as the answer."
+      "label": "Hoofdlettergevoelig",
+      "description": "De gebruikersinvoer dient exact hetzelfde te zijn als het antwoord."
     },
     {
-      "label": "Incorrect text for assistive technologies",
-      "default": "Incorrect answer. Correct answer was @answer",
-      "description": "Text that will be announced to assistive technologies. Use @answer as variable."
+      "label": "Onjuist tekst voor ondersteunende technologieën",
+      "default": "Onjuist antwoord. Juist antwoord was @answer",
+      "description": "Tekst die wordt gebruikt door ondersteunende technologieën. Gebruik @answer als variabele."
     },
     {
-      "label": "Card change for assistive technologies",
-      "default": "Page @current of @total",
-      "description": "Text that will be announced to assistive technologies when navigating between cards. Use @current and @total as variables."
+      "label": "Kaart wijzigen voor ondersteunende technologieën",
+      "default": "Pagina @current van @total",
+      "description": "Tekst die wordt gebruikt door ondersteunende technologieën als van kaart wordt gewisseld. Gebruik @current en @total als variabelen."
     }
   ]
 }
