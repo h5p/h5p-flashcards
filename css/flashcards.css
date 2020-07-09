@@ -643,22 +643,29 @@ button::-moz-focus-inner {
 }
 
 .h5p-flashcards .h5p-results-image-holder {
-  width: 5em;
-  height: 4em;
+  width: 4.5em;
+  height: 3.5em;
   overflow: hidden;
   border-radius: 1em;
   position: relative;
   float: left;
   margin-right: 2em;
-  background-size: cover;
+  background-size: contain;
   background-position: center center;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  padding: 0.25em;
 }
-
+.h5p-flashcards .h5p-results-image-holder.no-image {
+  background-color: #c8e0e3;
+  text-align: center;
+}
 .h5p-flashcards .h5p-results-image-holder.no-image:after {
   font-family: 'H5PFontAwesome4';
   content: "\f03e";
-  font-size: 4.5em;
-  line-height: 1em;
+  font-size: 2em;
+  line-height: 1.8em;
   color: #a3b7be;
 }
 
