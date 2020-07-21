@@ -928,3 +928,47 @@ button::-moz-focus-inner {
   left: 0;
   overflow: hidden;
 }
+
+.h5p-flashcards .h5p-card:not(.h5p-current) .h5p-flashcards-audio-button-wrapper {
+  display: none;
+}
+
+.h5p-flashcards .h5p-flashcards-audio-button-wrapper {
+  font-size: 1.5em;
+  position: absolute;
+  right: -.25em;
+  top: -.25em;
+  z-index: 1;
+}
+
+.h5p-flashcards .h5p-flashcards-audio-button-wrapper .h5p-audio-minimal-button {
+  font-weight: normal;
+  padding: 0;
+  font-size: 1em;
+  width: 1.75em;
+  height: 1.75em;
+  line-height: 1.4em;
+}
+
+.h5p-flashcards .h5p-flashcards-audio-button-wrapper .h5p-audio-minimal-button:focus {
+  outline: none;
+  box-shadow: 0 0 0.5em 0 #1d273c;
+}
+
+.h5p-flashcards .h5p-flashcards-audio-button-wrapper .h5p-audio-minimal-button::before {
+  font-size: 1em;
+  vertical-align: bottom;
+}
+
+.h5p-flashcards .h5p-flashcards-audio-button-wrapper .h5p-audio-minimal-button.h5p-audio-minimal-pause::before {
+  font-size: 0.8em;
+}
+
+.h5p-flashcards .h5p-flashcards-audio-button-wrapper .h5p-audio-minimal-button.h5p-audio-minimal-play-paused::before {
+  font-size: 0.8em;
+  padding-left: 0.2em;
+}
+
+.h5p-flashcards .h5p-flashcards-audio-button-wrapper .h5p-audio-minimal-button.h5p-audio-minimal-none {
+  display: none;
+}

@@ -30,6 +30,10 @@
             "label": "Alternative text for image"
           },
           {
+            "label": "Audio",
+            "description": "Optional audio for the card."
+          },
+          {
             "label": "Vihje",
             "fields": [
               {
@@ -110,6 +114,21 @@
       "label": "Card change for assistive technologies",
       "default": "Page @current of @total",
       "description": "Text that will be announced to assistive technologies when navigating between cards. Use @current and @total as variables."
+    },
+    {
+      "label": "Audio play button",
+      "default": "Play",
+      "description": "Text that will be announced to assistive technologies as label for play button."
+    },
+    {
+      "label": "Audio pause button",
+      "default": "Pause",
+      "description": "Text that will be announced to assistive technologies as label for pause button."
+    },
+    {
+      "label": "Audio not supported message",
+      "default": "Your browser does not support this audio.",
+      "description": "Text to report that the browser cannot play the audio file."
     }
   ]
 }

@@ -30,6 +30,10 @@
             "label": "Testo alternativo per l'immagine"
           },
           {
+            "label": "Audio",
+            "description": "Optional audio for the card."
+          },
+          {
             "label": "Suggerimento",
             "fields": [
               {
@@ -110,6 +114,21 @@
       "label": "Cambio scheda per le tecnologie assistive",
       "default": "Pagina @current di @total",
       "description": "Testo per le tecnologie assistive durante la navigazione tra schede. Usa @current e @total come variabili"
+    },
+    {
+      "label": "Audio play button",
+      "default": "Play",
+      "description": "Text that will be announced to assistive technologies as label for play button."
+    },
+    {
+      "label": "Audio pause button",
+      "default": "Pause",
+      "description": "Text that will be announced to assistive technologies as label for pause button."
+    },
+    {
+      "label": "Audio not supported message",
+      "default": "Your browser does not support this audio.",
+      "description": "Text to report that the browser cannot play the audio file."
     }
   ]
 }

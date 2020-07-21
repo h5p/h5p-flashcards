@@ -30,6 +30,10 @@
             "label": "Text alternatiu per a la imatge"
           },
           {
+            "label": "Audio",
+            "description": "Optional audio for the card."
+          },
+          {
             "label": "Pista",
             "fields": [
               {
@@ -110,6 +114,21 @@
       "label": "Canvi de targeta per a les tecnologies d’assistència",
       "default": "Pàgina @current de @total",
       "description": "Text que s’anunciarà a les tecnologies d’assistència en navegar per les targetes. S’utilitza @current i @total com a variables."
+    },
+    {
+      "label": "Audio play button",
+      "default": "Play",
+      "description": "Text that will be announced to assistive technologies as label for play button."
+    },
+    {
+      "label": "Audio pause button",
+      "default": "Pause",
+      "description": "Text that will be announced to assistive technologies as label for pause button."
+    },
+    {
+      "label": "Audio not supported message",
+      "default": "Your browser does not support this audio.",
+      "description": "Text to report that the browser cannot play the audio file."
     }
   ]
 }
