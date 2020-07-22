@@ -938,6 +938,10 @@ button::-moz-focus-inner {
   z-index: 1;
 }
 
+.h5p-flashcards .h5p-speech-recognition-button.h5p-speech-recognition-no-microphone {
+  padding-left: 0.9em;
+}
+
 .h5p-flashcards .h5p-speech-recognition-button::before {
   font-size: 1.5em;
 }
