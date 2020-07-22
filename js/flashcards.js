@@ -617,7 +617,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
     that.$prevButton.removeClass('h5p-hidden');
     that.setProgress();
 
-    if ($next.is(':last-child') && that.numAnswered == that.options.cards.length) {
+    if ($next.is(':last-child') && that.numAnswered == that.getMaxScore()) {
       that.$container.find('.h5p-show-results').show();
     }
   };
