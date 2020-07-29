@@ -77,17 +77,12 @@
       "default": "Rätt svar"
     },
     {
-<<<<<<< HEAD
-      "label": "Rubrik för resultat",
-      "default": "Resultat"
-=======
       "label": "Separator of solution alternatives",
       "default": "or"
     },
     {
-      "label": "Text for results title",
-      "default": "Results"
->>>>>>> Add option to use alternative solutions separated by |
+      "label": "Rubrik för resultat",
+      "default": "Resultat"
     },
     {
       "label": "Text för antal korrekta",
