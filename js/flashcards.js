@@ -760,6 +760,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
    * @return {string[]} Split text.
    */
   C.splitAlternatives = function (text, delimiter, escaper) {
+    text = text || '';
     delimiter = delimiter || '|';
     escaper = escaper || '\\';
 
