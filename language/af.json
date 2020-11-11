@@ -1,39 +1,39 @@
 {
   "semantics": [
     {
-      "label": "Task description"
+      "label": "Taal beskrywing"
     },
     {
       "widgets": [
         {
-          "label": "Default"
+          "label": "Standaard"
         }
       ],
-      "label": "Cards",
-      "entity": "card",
+      "label": "Kaarte",
+      "entity": "Kaart",
       "field": {
-        "label": "Card",
+        "label": "Kaart",
         "fields": [
           {
-            "label": "Question",
-            "description": "Optional textual question for the card. (The card may use just an image, just a text or both)"
+            "label": "Vraag",
+            "description": "Optionele geskrewe vraag vir die kaart. (Die kaart kan slegs 'n prentjie, of slegs teks of albei bevat)"
           },
           {
-            "label": "Answer",
-            "description": "Optional answer(solution) for the card."
+            "label": "Antwoord",
+            "description": "Optionele antwoord(oplossing) vir die kaart."
           },
           {
-            "label": "Image",
-            "description": "Optional image for the card. (The card may use just an image, just a text or both)"
+            "label": "Prent",
+            "description": "Optionele prent vir die kaart . (Die kaart kan slegs 'n prentjie, of slegs teks of albei bevat)"
           },
           {
-            "label": "Alternative text for image"
+            "label": "Alternatiewe teks vir prent"
           },
           {
-            "label": "Tip",
+            "label": "Wenk",
             "fields": [
               {
-                "label": "Tip text"
+                "label": "Wenk teks"
               }
             ]
           }
@@ -41,75 +41,75 @@
       }
     },
     {
-      "label": "Progress text",
-      "default": "Card @card of @total",
-      "description": "Progress text, variables available: @card and @total. Example: 'Card @card of @total'"
+      "label": "Vordering teks",
+      "default": "Kaartjie @card van @total",
+      "description": "Vordering teks, veranderlike beskikbaar: @card en @total. Byvoorbeeld: 'Kaartjie @card van @total'"
     },
     {
-      "label": "Text for the next button",
-      "default": "Next"
+      "label": "Teks vir die volgende knoppie",
+      "default": "Volgende"
     },
     {
-      "label": "Text for the previous button",
-      "default": "Previous"
+      "label": "Teks vir die vorige knoppie",
+      "default": "Vorige"
     },
     {
-      "label": "Text for the check answers button",
-      "default": "Check"
+      "label": "Teks vir die 'Toets antwoord' knoppie",
+      "default": "Toets"
     },
     {
-      "label": "Require user input before the solution can be viewed"
+      "label": "Vereis gebruiker om iets in te sleutel voordat die antwoord gewys word"
     },
     {
-      "label": "Text for the answer input field",
-      "default": "Your answer"
+      "label": "Teks vir die antwoord insleutelveld",
+      "default": "Jou antwoord"
     },
     {
-      "label": "Text for correct answer",
-      "default": "Correct"
+      "label": "Teks vir die regte antwoord",
+      "default": "Reg"
     },
     {
-      "label": "Text for incorrect answer",
-      "default": "Incorrect"
+      "label": "Teks vir die verkeerde antwoord",
+      "default": "Verkeerd"
     },
     {
-      "label": "Show solution text",
-      "default": "Correct answer"
+      "label": "Wys antwoord teks",
+      "default": "Regte antwoord"
     },
     {
-      "label": "Text for results title",
-      "default": "Results"
+      "label": "Teks vir resultate antwoord",
+      "default": "Resultate"
     },
     {
-      "label": "Text for number of correct",
-      "default": "@score of @total correct",
-      "description": "Result text, variables available: @score and @total. Example: '@score of @total correct'"
+      "label": "Teks vir aantal regte antwoorde",
+      "default": "@score van @total reg",
+      "description": "Resultaat teks, veranderlike beskikbaar: @score en @total. Byvoorbeeld: '@score van @total reg'"
     },
     {
-      "label": "Text for show results",
-      "default": "Show results"
+      "label": "Teks vir wys resultate",
+      "default": "Wys resultate"
     },
     {
-      "label": "Text for short answer label",
+      "label": "Teks vir kort antwoord etiket",
       "default": "A:"
     },
     {
-      "label": "Text for \"retry\" button",
-      "default": "Retry"
+      "label": "Teks vir \"probeer weer\" knoppie",
+      "default": "Probeer weer"
     },
     {
-      "label": "Case sensitive",
-      "description": "Makes sure the user input has to be exactly the same as the answer."
+      "label": "Hooflettergevoelig",
+      "description": "Maak seker dat die gebruiker se antwoord presies dieselfde as die vereisde antwoord is."
     },
     {
-      "label": "Incorrect text for assistive technologies",
-      "default": "Incorrect answer. Correct answer was @answer",
-      "description": "Text that will be announced to assistive technologies. Use @answer as variable."
+      "label": "Verkeerde teks vir hulptegnologieë",
+      "default": "Verkeerde antwoord. Die regte antwoord was @answer",
+      "description": "Teks wat vertoon sal word vir hulptegnologieë. Gebruik @answer as veranderlike."
     },
     {
-      "label": "Card change for assistive technologies",
-      "default": "Page @current of @total",
-      "description": "Text that will be announced to assistive technologies when navigating between cards. Use @current and @total as variables."
+      "label": "Kaartjie verandering vir hulptegnologieë",
+      "default": "Bladsy @current van @total",
+      "description": "Teks wat aangekondig sal word as hulptegnologieë wanneer u tussen kaarte navigeer. Gebruik @current en @total as veranderlikes."
     }
   ]
 }
