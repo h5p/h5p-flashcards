@@ -20,7 +20,7 @@
           },
           {
             "label": "Risposta",
-            "description": "Risposta facoltativa (soluzione) per la scheda"
+            "description": "Risposta (soluzione) facoltativa per la scheda"
           },
           {
             "label": "Immagine",
@@ -42,16 +42,16 @@
     },
     {
       "label": "Testo di avanzamento",
-      "default": "Carta @card di @total",
+      "default": "Scheda @card di @total",
       "description": "Testo di avanzamento, variabili disponibili: @card e @total. Esempio: 'Scheda @card di @total'"
     },
     {
       "label": "Testo per il pulsante \"Prossima\"",
-      "default": "Avanti"
+      "default": "Prossima"
     },
     {
       "label": "Testo per il pulsante \"Precedente\"",
-      "default": "Indietro"
+      "default": "Precedente"
     },
     {
       "label": "Testo per il pulsante \"Verifica\"",
@@ -107,9 +107,9 @@
       "description": "Testo per le tecnologie assistive. Usa @answer come variabile"
     },
     {
-      "label": "Cambio carta per le tecnologie assistive",
+      "label": "Cambio scheda per le tecnologie assistive",
       "default": "Pagina @current di @total",
-      "description": "Testo per le tecnologie assistive durante la navigazione tra carte. Usa @current e @total come variabili"
+      "description": "Testo per le tecnologie assistive durante la navigazione tra schede. Usa @current e @total come variabili"
     }
   ]
 }
