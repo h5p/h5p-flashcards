@@ -6,11 +6,11 @@
     {
       "widgets": [
         {
-          "label": "Standaard"
+          "label": "Verstek"
         }
       ],
       "label": "Kaarte",
-      "entity": "Kaart",
+      "entity": "kaart",
       "field": {
         "label": "Kaart",
         "fields": [
@@ -61,7 +61,7 @@
       "label": "Vereis gebruiker om iets in te sleutel voordat die antwoord gewys word"
     },
     {
-      "label": "Teks vir die antwoord insleutelveld",
+      "label": "Teks vir die antwoord invoerveld",
       "default": "Jou antwoord"
     },
     {
@@ -77,17 +77,17 @@
       "default": "Regte antwoord"
     },
     {
-      "label": "Teks vir resultate antwoord",
-      "default": "Resultate"
+      "label": "Titelteks vir uitslae",
+      "default": "Uitslae"
     },
     {
       "label": "Teks vir aantal regte antwoorde",
       "default": "@score van @total reg",
-      "description": "Resultaat teks, veranderlike beskikbaar: @score en @total. Byvoorbeeld: '@score van @total reg'"
+      "description": "Uitslae teks, veranderlike beskikbaar: @score en @total. Byvoorbeeld: '@score van @total reg'"
     },
     {
-      "label": "Teks vir wys resultate",
-      "default": "Wys resultate"
+      "label": "Teks vir wys uitslae",
+      "default": "Wys uitslae"
     },
     {
       "label": "Teks vir kort antwoord etiket",
