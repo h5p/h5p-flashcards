@@ -1,39 +1,39 @@
 {
   "semantics": [
     {
-      "label": "Task description"
+      "label": "Descripció de la tasca"
     },
     {
       "widgets": [
         {
-          "label": "Default"
+          "label": "Opció predeterminada"
         }
       ],
-      "label": "Cards",
-      "entity": "card",
+      "label": "Targetes",
+      "entity": "fitxa",
       "field": {
-        "label": "Card",
+        "label": "Fitxa",
         "fields": [
           {
-            "label": "Question",
-            "description": "Optional textual question for the card. (The card may use just an image, just a text or both)"
+            "label": "Pregunta",
+            "description": "Pregunta textual opcional per a la targeta. (La targeta pot incloure només una imatge, només text o una combinació d’imatge i text.)"
           },
           {
-            "label": "Answer",
+            "label": "Resposta",
             "description": "Optional answer(solution) for the card."
           },
           {
-            "label": "Image",
-            "description": "Optional image for the card. (The card may use just an image, just a text or both)"
+            "label": "Imatge",
+            "description": "Imatge opcional de la fitxa. (La fitxa pot utilitzar només una imatge, només un text o ambdues)"
           },
           {
-            "label": "Alternative text for image"
+            "label": "Text alternatiu per a la imatge"
           },
           {
-            "label": "Tip",
+            "label": "Pista",
             "fields": [
               {
-                "label": "Tip text"
+                "label": "Text del consell"
               }
             ]
           }
@@ -41,75 +41,75 @@
       }
     },
     {
-      "label": "Progress text",
-      "default": "Card @card of @total",
-      "description": "Progress text, variables available: @card and @total. Example: 'Card @card of @total'"
+      "label": "Text del progrés",
+      "default": "Fitxa @card de @total",
+      "description": "Text de progrés, variables disponibles: @card i @total. Exemple: \"Targeta @card de @total\"."
     },
     {
-      "label": "Text for the next button",
-      "default": "Next"
+      "label": "Text del botó següent",
+      "default": "Següent"
     },
     {
-      "label": "Text for the previous button",
-      "default": "Previous"
+      "label": "Text del botó anterior",
+      "default": "Anterior"
     },
     {
-      "label": "Text for the check answers button",
-      "default": "Check"
+      "label": "Text del botó \"Comprova les respostes\"",
+      "default": "Verifica"
     },
     {
-      "label": "Require user input before the solution can be viewed"
+      "label": "Requereix l’entrada de dades per part de l’usuari abans que es pugui visualitzar la solució"
     },
     {
-      "label": "Text for the answer input field",
-      "default": "Your answer"
+      "label": "Text per al camp d’entrada de la resposta",
+      "default": "La teva resposta"
     },
     {
-      "label": "Text for correct answer",
-      "default": "Correct"
+      "label": "Text per a resposta correcta",
+      "default": "Correcte"
     },
     {
-      "label": "Text for incorrect answer",
-      "default": "Incorrect"
+      "label": "Text per a resposta incorrecta",
+      "default": "Incorrecte"
     },
     {
-      "label": "Show solution text",
-      "default": "Correct answer"
+      "label": "Mostra el text de la solució",
+      "default": "Resposta correcta"
     },
     {
-      "label": "Text for results title",
-      "default": "Results"
+      "label": "Text per al títol de resultats",
+      "default": "Resultats"
     },
     {
-      "label": "Text for number of correct",
-      "default": "@score of @total correct",
-      "description": "Result text, variables available: @score and @total. Example: '@score of @total correct'"
+      "label": "Text per al nombre de respostes correctes",
+      "default": "@score de @total correcte",
+      "description": "Text de resultats, variables disponibles: @score i @total. Exemple: \"Correctes: @score\" de \"@total\""
     },
     {
-      "label": "Text for show results",
-      "default": "Show results"
+      "label": "Text per mostrar els resultats",
+      "default": "Mostra els resultats"
     },
     {
-      "label": "Text for short answer label",
-      "default": "A:"
+      "label": "Text per a l’etiqueta de resposta curta",
+      "default": "A;"
     },
     {
-      "label": "Text for \"retry\" button",
-      "default": "Retry"
+      "label": "Text del botó \"Torna-ho a provar\"",
+      "default": "Torna-ho a provar"
     },
     {
-      "label": "Case sensitive",
-      "description": "Makes sure the user input has to be exactly the same as the answer."
+      "label": "Distingeix entre majúscules i minúscules",
+      "description": "Comprova que l’entrada de text de l’usuari sigui exactament igual que la resposta."
     },
     {
-      "label": "Incorrect text for assistive technologies",
-      "default": "Incorrect answer. Correct answer was @answer",
-      "description": "Text that will be announced to assistive technologies. Use @answer as variable."
+      "label": "Text incorrecte per a les tecnologies d’assistència",
+      "default": "Resposta incorrecta. La resposta correcta es @answer",
+      "description": "Text que s’anunciarà a les tecnologies d’assistència. S’utilitza @answer com a variable."
     },
     {
-      "label": "Card change for assistive technologies",
-      "default": "Page @current of @total",
-      "description": "Text that will be announced to assistive technologies when navigating between cards. Use @current and @total as variables."
+      "label": "Canvi de targeta per a les tecnologies d’assistència",
+      "default": "Pàgina @current de @total",
+      "description": "Text que s’anunciarà a les tecnologies d’assistència en navegar per les targetes. S’utilitza @current i @total com a variables."
     }
   ]
 }
