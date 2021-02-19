@@ -27,13 +27,13 @@
             "description": "Незадължително изображение за картата. (Картата може да използва само изображение, само текст или и двете)"
           },
           {
-            "label": "Alternative text for image"
+            "label": "Алтернативен текст за изображение"
           },
           {
             "label": "Подсказка",
             "fields": [
               {
-                "label": "Tip text"
+                "label": "Подсказка"
               }
             ]
           }
@@ -476,14 +476,14 @@
       "description": "Информира ученика, че въведеното трябва да бъде абсолютно същото като зададения от вас отговор."
     },
     {
-      "label": "Incorrect text for assistive technologies",
-      "default": "Incorrect answer. Correct answer was @answer",
-      "description": "Text that will be announced to assistive technologies. Use @answer as variable."
+      "label": "Неправилен текст за помощни технологии",
+      "default": "Неправилен отговор. Правилнията отговор беше @answer",
+      "description": "Текст, предназначен за помощните технологии. Използвайте @answer като променлива."
     },
     {
-      "label": "Card change for assistive technologies",
-      "default": "Page @current of @total",
-      "description": "Text that will be announced to assistive technologies when navigating between cards. Use @current and @total as variables."
+      "label": "Смяна на картата за помощни техмологии",
+      "default": "Страница @current от @total",
+      "description": "Текстът ще се показва при движение между картите и използване на помощни технологии. Използвайте @current и @total като променливи."
     },
     {
       "label": "Microphone listen button title for assistive technologies",
