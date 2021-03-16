@@ -20,7 +20,7 @@
           },
           {
             "label": "Resposta",
-            "description": "Optional answer(solution) for the card."
+            "description": "Resposta opcional (solució) per a la targeta."
           },
           {
             "label": "Imatge",
@@ -43,7 +43,7 @@
     {
       "label": "Text del progrés",
       "default": "Fitxa @card de @total",
-      "description": "Text de progrés, variables disponibles: @card i @total. Exemple: \"Targeta @card de @total\"."
+      "description": "Text de progrés, variables disponibles: @card i @total. Exemple: \"Targeta @card de @total\""
     },
     {
       "label": "Text del botó següent",
@@ -91,7 +91,7 @@
     },
     {
       "label": "Text per a l’etiqueta de resposta curta",
-      "default": "A;"
+      "default": "A:"
     },
     {
       "label": "Text del botó \"Torna-ho a provar\"",
