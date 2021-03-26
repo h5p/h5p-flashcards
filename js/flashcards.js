@@ -379,7 +379,9 @@ H5P.Flashcards = (function ($, XapiGenerator) {
         that.numAnswered++;
 
         // Deactivate input options
-        that.speechRecognitions[index].disableButton();
+        if (that.speechRecognitions && that.speechRecognitions.length > index) {
+          that.speechRecognitions[index].disableButton();
+        }
         $input.add(this).attr('disabled', true);
 
         that.answers[index] = userAnswer;
