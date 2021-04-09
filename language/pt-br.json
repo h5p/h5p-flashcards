@@ -20,7 +20,7 @@
           },
           {
             "label": "Resposta",
-            "description": "Resposta (solução) opcional para o cartão."
+            "description": "Resposta (solução) opcional para o cartão. Use a pipe symbol | to split alternative solutions. Use \\| if a solution should contain a |."
           },
           {
             "label": "Imagem",
@@ -75,6 +75,10 @@
     {
       "label": "Texto de mostrar solução",
       "default": "Resposta correta"
+    },
+    {
+      "label": "Separator of solution alternatives",
+      "default": "or"
     },
     {
       "label": "Texto do título de resultados",

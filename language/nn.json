@@ -20,7 +20,7 @@
           },
           {
             "label": "Svar",
-            "description": "Valfritt svar(fasit) for kortet."
+            "description": "Svar (fasit) for kortet. Use a pipe symbol | to split alternative solutions. Use \\| if a solution should contain a |."
           },
           {
             "label": "Bilde",
@@ -75,6 +75,10 @@
     {
       "label": "Tekst for vis svar.",
       "default": "Riktig svar"
+    },
+    {
+      "label": "Separator of solution alternatives",
+      "default": "or"
     },
     {
       "label": "Tekst for tittel på Resultatskjerm",

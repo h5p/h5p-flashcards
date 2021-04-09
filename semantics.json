@@ -38,7 +38,8 @@
           "type": "text",
           "label": "Answer",
           "importance": "high",
-          "description": "Answer(solution) for the card."
+          "optional": true,
+          "description": "Answer (solution) for the card. Use a pipe symbol | to split alternative solutions. Use \\| if a solution should contain a |. Use a pipe symbol | to split alternative solutions. Use \\| if a solution should contain a |."
         },
         {
           "name": "image",
@@ -152,6 +153,14 @@
     "name": "showSolutionText",
     "type": "text",
     "default": "Correct answer",
+    "importance": "low",
+    "common": true
+  },
+  {
+    "label": "Separator of solution alternatives",
+    "name": "or",
+    "type": "text",
+    "default": "or",
     "importance": "low",
     "common": true
   },

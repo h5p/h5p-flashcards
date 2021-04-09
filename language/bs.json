@@ -20,7 +20,7 @@
           },
           {
             "label": "Odgovor",
-            "description": "Opcionalni odgovor (Rješenje) za kartu."
+            "description": "Odgovor (Rješenje) za kartu. Use a pipe symbol | to split alternative solutions. Use \\| if a solution should contain a |."
           },
           {
             "label": "Slika",
@@ -75,6 +75,10 @@
     {
       "label": "Show solution text",
       "default": "Tačan odgovor"
+    },
+    {
+      "label": "Separator of solution alternatives",
+      "default": "or"
     },
     {
       "label": "Text for results title",

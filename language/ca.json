@@ -20,7 +20,7 @@
           },
           {
             "label": "Resposta",
-            "description": "Resposta opcional (solució) per a la targeta."
+            "description": "Resposta (solució) per a la targeta. Use a pipe symbol | to split alternative solutions. Use \\| if a solution should contain a |."
           },
           {
             "label": "Imatge",
@@ -75,6 +75,10 @@
     {
       "label": "Mostra el text de la solució",
       "default": "Resposta correcta"
+    },
+    {
+      "label": "Separator of solution alternatives",
+      "default": "or"
     },
     {
       "label": "Text per al títol de resultats",

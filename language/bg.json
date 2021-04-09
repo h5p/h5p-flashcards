@@ -20,7 +20,7 @@
           },
           {
             "label": "Отговор",
-            "description": "Незадължително отговор (решение) за картата."
+            "description": "Незадължително отговор (решение) за картата. Use a pipe symbol | to split alternative solutions. Use \\| if a solution should contain a |."
           },
           {
             "label": "Изображение",
@@ -75,6 +75,10 @@
     {
       "label": "Показване на решението",
       "default": "Верен отговор"
+    },
+    {
+      "label": "Separator of solution alternatives",
+      "default": "or"
     },
     {
       "label": "Резултати",

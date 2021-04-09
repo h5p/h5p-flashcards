@@ -20,7 +20,7 @@
           },
           {
             "label": "Risposta",
-            "description": "Risposta (soluzione) facoltativa per la scheda"
+            "description": "Risposta (soluzione) facoltativa per la scheda Use a pipe symbol | to split alternative solutions. Use \\| if a solution should contain a |."
           },
           {
             "label": "Immagine",
@@ -75,6 +75,10 @@
     {
       "label": "Mostra il testo della soluzione",
       "default": "Risposta giusta"
+    },
+    {
+      "label": "Separator of solution alternatives",
+      "default": "or"
     },
     {
       "label": "Titolo del messaggio per i risultati",
