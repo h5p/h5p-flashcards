@@ -115,6 +115,10 @@
       "label": "Смяна на картата за помощни техмологии",
       "default": "Страница @current от @total",
       "description": "Текстът ще се показва при движение между картите и използване на помощни технологии. Използвайте @current и @total като променливи."
+    },
+    {
+      "label": "Randomize cards",
+      "description": "Enable to randomize the order of cards on display."
     }
   ]
 }
