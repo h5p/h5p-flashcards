@@ -20,7 +20,7 @@
           },
           {
             "label": "Vastus",
-            "description": "Valikuline vastus (lahendus) kaardile. Use a pipe symbol | to split alternative solutions. Use \\| if a solution should contain a |."
+            "description": "Vastus (lahendus) kaardile. Use a pipe symbol | to split alternative solutions. Use \\| if a solution should contain a |."
           },
           {
             "label": "Pilt",

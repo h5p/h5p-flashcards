@@ -20,7 +20,7 @@
           },
           {
             "label": "Réponse",
-            "description": "Réponse facultative (correction) pour la carte. Use a pipe symbol | to split alternative solutions. Use \\| if a solution should contain a |."
+            "description": "Réponse (correction) pour la carte. Use a pipe symbol | to split alternative solutions. Use \\| if a solution should contain a |."
           },
           {
             "label": "Image",

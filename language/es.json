@@ -20,7 +20,7 @@
           },
           {
             "label": "Respuesta",
-            "description": "Respuesta opcional (solución) para la carta. Use a pipe symbol | to split alternative solutions. Use \\| if a solution should contain a |."
+            "description": "Respuesta (solución) para la carta. Use a pipe symbol | to split alternative solutions. Use \\| if a solution should contain a |."
           },
           {
             "label": "Imagen",

@@ -20,7 +20,7 @@
           },
           {
             "label": "Answer",
-            "description": "Optional answer (solution) for the card."
+            "description": "Answer (solution) for the card. Use a pipe symbol | to split alternative solutions. Use \\| if a solution should contain a |."
           },
           {
             "label": "Image",
@@ -75,6 +75,10 @@
     {
       "label": "Show solution text",
       "default": "ចម្លើយ​ត្រឹមត្រូវ"
+    },
+    {
+      "label": "Separator of solution alternatives",
+      "default": "or"
     },
     {
       "label": "Text for results title",

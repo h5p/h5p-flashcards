@@ -20,7 +20,7 @@
           },
           {
             "label": "Antwort",
-            "description": "Optionale Antwort (Lösung) für die Karte. Benutze ein \"Pipe\"-Symbol |, um alternative Lösungen voneinander abzugrenzen. Benutze \\|, falls eine Lösung ein | enthalten muss."
+            "description": "Antwort (Lösung) für die Karte. Benutze ein \"Pipe\"-Symbol |, um alternative Lösungen voneinander abzugrenzen. Benutze \\|, falls eine Lösung ein | enthalten muss."
           },
           {
             "label": "Bild",

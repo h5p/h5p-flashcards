@@ -20,7 +20,7 @@
           },
           {
             "label": "Vastaus",
-            "description": "Kortin vastaus (ei pakollinen kenttä). Use a pipe symbol | to split alternative solutions. Use \\| if a solution should contain a |."
+            "description": "Vastaus (ei pakollinen kenttä). Use a pipe symbol | to split alternative solutions. Use \\| if a solution should contain a |."
           },
           {
             "label": "Kuva",

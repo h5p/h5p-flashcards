@@ -20,7 +20,7 @@
           },
           {
             "label": "Erantzuna",
-            "description": "Aukerako erantzuna. Use a pipe symbol | to split alternative solutions. Use \\| if a solution should contain a |."
+            "description": "Erantzuna. Use a pipe symbol | to split alternative solutions. Use \\| if a solution should contain a |."
           },
           {
             "label": "Irudia",
