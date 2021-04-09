@@ -110,6 +110,10 @@
       "label": "Card change for assistive technologies",
       "default": "Page @current of @total",
       "description": "Text that will be announced to assistive technologies when navigating between cards. Use @current and @total as variables."
+    },
+    {
+      "label": "Kartları karıştır",
+      "description": "Kartların gösterilme sırasının rasgele olmasını sağlar."
     }
   ]
 }

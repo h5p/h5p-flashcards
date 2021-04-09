@@ -110,6 +110,10 @@
       "label": "Card change for assistive technologies",
       "default": "Page @current of @total",
       "description": "Text that will be announced to assistive technologies when navigating between cards. Use @current and @total as variables."
+    },
+    {
+      "label": "Aleatorizar cartões",
+      "description": "Habilite para aleatorizar a ordem em que os cartões são exibidos."
     }
   ]
 }

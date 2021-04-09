@@ -110,6 +110,10 @@
       "label": "Byte av kort vid tillgänglighetshjälpmedel",
       "default": "Sida @current av @total",
       "description": "Text som kommer användas av tillgänglighetshjälpmedel vid navigering mellan kort. Använd @current och @total som variabler."
+    },
+    {
+      "label": "Randomize cards",
+      "description": "Enable to randomize the order of cards on display."
     }
   ]
 }

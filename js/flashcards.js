@@ -32,6 +32,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
       answerShortText: "A:",
       informationText: "Information",
       caseSensitive: false,
+      randomCards: false,
       results: "Results",
       ofCorrect: "@score of @total correct",
       showResults: "Show results",
@@ -43,6 +44,10 @@ H5P.Flashcards = (function ($, XapiGenerator) {
     this.hasBeenReset = false;
 
     this.on('resize', this.resize, this);
+
+    if (this.options.randomCards === true) {
+      this.options.cards = this.shuffle(this.options.cards);
+    }
   }
 
   C.prototype = Object.create(H5P.EventDispatcher.prototype);
@@ -137,6 +142,27 @@ H5P.Flashcards = (function ($, XapiGenerator) {
 
     return answer === userAnswer;
   }
+
+  /**
+   * Shuffle the cards.
+   * @param {object} card Cards.
+   */
+  C.prototype.shuffle = function (cards) {
+    let currentIndex = cards.length;
+    let tmp;
+    let randomIndex;
+
+    while (currentIndex !== 0) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+
+      tmp = cards[currentIndex];
+      cards[currentIndex] = cards[randomIndex];
+      cards[randomIndex] = tmp;
+    }
+
+    return cards;
+  };
 
   /**
    * Get Score
