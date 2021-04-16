@@ -20,7 +20,7 @@
           },
           {
             "label": "Answer",
-            "description": "Optional answer(solution) for the card."
+            "description": "תשובה אפשרית (פתרון) לכרטיס."
           },
           {
             "label": "Image",
@@ -30,10 +30,10 @@
             "label": "Alternative text for image"
           },
           {
-            "label": "Tip",
+            "label": "טיפ",
             "fields": [
               {
-                "label": "Tip text"
+                "label": "תוכן טיפ"
               }
             ]
           }
@@ -102,14 +102,14 @@
       "description": "Makes sure the user input has to be exactly the same as the answer."
     },
     {
-      "label": "Incorrect text for assistive technologies",
-      "default": "Incorrect answer. Correct answer was @answer",
-      "description": "Text that will be announced to assistive technologies. Use @answer as variable."
+      "label": "תוכן לא נכון עבור טכנולוגיות מסייעות",
+      "default": "תשובה לא נכונה. התשובה הנכונה הייתה anwser@",
+      "description": "תוכן יוקרא בקול לטכנולוגיות מסייעות. השתמשו ב- answer@ כמשתנה."
     },
     {
-      "label": "Card change for assistive technologies",
-      "default": "Page @current of @total",
-      "description": "Text that will be announced to assistive technologies when navigating between cards. Use @current and @total as variables."
+      "label": "החלפת כרטיס עבור טכנולוגיות מסייעות",
+      "default": "דף current@ מתוך total@",
+      "description": "תוכן שיוקרא לטכנולוגיות מסייעות בעת ניווט בין כרטיסים. השתמשו ב- current@ ו- total@ כמשתנים."
     }
   ]
 }
