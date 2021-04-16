@@ -54,8 +54,8 @@
       "default": "Anterior"
     },
     {
-      "label": "Texto para botón Revisar respuestas",
-      "default": "Revisar"
+      "label": "Texto para el botón Revisar respuestas",
+      "default": "Comprobar"
     },
     {
       "label": "Requerir entrada del usuario antes que la solución pueda ser vista"
@@ -98,8 +98,8 @@
       "default": "Reintentar"
     },
     {
-      "label": "MAYÚSCULAS/minúsculas importan",
-      "description": "Asegurarse que la entrada del usuario sea exactamente la misma que la respuesta."
+      "label": "MAYÚSCULAS/minúsculas si importan",
+      "description": "Asegurarse que la entrada del usuario tenga que ser exactamente la misma que la respuesta."
     },
     {
       "label": "Texto incorrecto para tecnologías asistivas",
