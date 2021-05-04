@@ -83,7 +83,7 @@
     {
       "label": "Text pro počet správných",
       "default": "@score z @total správně",
-      "description": "Výsledný text, dostupné proměnné: @score a @total. Příklad: '@score z @total správně'"
+      "description": "Výsledný text, dostupné proměnné: @score a @total. Příklad: \"@score z @total správně\""
     },
     {
       "label": "Text pro zobrazení výsledků",
@@ -94,7 +94,7 @@
       "default": "A:"
     },
     {
-      "label": "Text tlačítka \"pakovat\" ",
+      "label": "Text tlačítka \"opakovat\"",
       "default": "Opakovat"
     },
     {
