@@ -24,10 +24,10 @@
           },
           {
             "label": "Imagen",
-            "description": "Imgen opcional para la carta. (La carta podría usar solamente una imagen, solo un texto o ambos)"
+            "description": "Imagen opcional para la carta. (La carta podría usar solamente una imagen, solo un texto o ambos)"
           },
           {
-            "label": "Texto aternativo para la imagen"
+            "label": "Texto alternativo para la imagen"
           },
           {
             "label": "Pista",
@@ -54,7 +54,7 @@
       "default": "Anterior"
     },
     {
-      "label": "Texto para el botón Revisar respuestas",
+      "label": "Texto para el botón Comprobar respuestas",
       "default": "Comprobar"
     },
     {
@@ -66,14 +66,14 @@
     },
     {
       "label": "Texto para respuesta correcta",
-      "default": "Correcta"
+      "default": "Correcto"
     },
     {
       "label": "Texto para respuesta incorrecta",
       "default": "Incorrecta"
     },
     {
-      "label": "Mostrar texto de solución",
+      "label": "Texto de Mostrar solución",
       "default": "Respuesta correcta"
     },
     {
