@@ -19,15 +19,15 @@
             "description": "Kartta görünecek isteğe bağlı yazılı soru. (Kartta sadece bir görsel, sadece metin veya ikisi de olabilir)"
           },
           {
-            "label": "Answer",
-            "description": "Optional answer(solution) for the card."
+            "label": "Cevap",
+            "description": "Kart için isteğe bağlı cevap (çözüm)."
           },
           {
-            "label": "Image",
+            "label": "Görsel",
             "description": "Kartta görünecek isteğe bağlı görsel. (Kartta sadece bir görsel, sadece metin veya ikisi de olabilir)"
           },
           {
-            "label": "Alternative text for image"
+            "label": "Görsel için alternatif metin"
           },
           {
             "label": "İpucu",
@@ -107,9 +107,9 @@
       "description": "Text that will be announced to assistive technologies. Use @answer as variable."
     },
     {
-      "label": "Card change for assistive technologies",
+      "label": "Yardımcı teknolojiler için kart değişimi",
       "default": "Page @current of @total",
-      "description": "Text that will be announced to assistive technologies when navigating between cards. Use @current and @total as variables."
+      "description": "Kartlar arasında gezinirken yardımcı teknolojilere duyurulacak metin. @current ve @total'i değişken olarak kullanın."
     }
   ]
 }
