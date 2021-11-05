@@ -1,39 +1,39 @@
 {
   "semantics": [
     {
-      "label": "Task description"
+      "label": "Опис задатка"
     },
     {
       "widgets": [
         {
-          "label": "Default"
+          "label": "Уобичајено"
         }
       ],
-      "label": "Cards",
+      "label": "Картице",
       "entity": "card",
       "field": {
-        "label": "Card",
+        "label": "Картица",
         "fields": [
           {
-            "label": "Question",
-            "description": "Optional textual question for the card. (The card may use just an image, just a text or both)"
+            "label": "Питање",
+            "description": "Необвезно текстуално питање за картицу. (Картица може користити само слику, само текст или обоје)"
           },
           {
-            "label": "Answer",
-            "description": "Answer (solution) for the card. Use a pipe symbol | to split alternative solutions. Use \\| if a solution should contain a |."
+            "label": "Одговор",
+            "description": "Необвезни одговор (решење) за картицу."
           },
           {
-            "label": "Image",
-            "description": "Optional image for the card. (The card may use just an image, just a text or both)"
+            "label": "Слика",
+            "description": "Необвезна слика за картицу. (Картица може користити само слику, само текст или обоје)"
           },
           {
-            "label": "Alternative text for image"
+            "label": "Алтернативни текст за слику"
           },
           {
-            "label": "Tip",
+            "label": "Савет",
             "fields": [
               {
-                "label": "Tip text"
+                "label": "Текст савета"
               }
             ]
           }
@@ -41,79 +41,79 @@
       }
     },
     {
-      "label": "Progress text",
-      "default": "Card @card of @total",
-      "description": "Progress text, variables available: @card and @total. Example: 'Card @card of @total'"
+      "label": "Текст Напредак",
+      "default": "Картица @card од @total",
+      "description": "Текст напретка, доступне променљиве: @card и @total. Пример: 'Картица @card од @total'"
     },
     {
-      "label": "Text for the next button",
-      "default": "Next"
+      "label": "Текст за дугме Следеће",
+      "default": "Следећа"
     },
     {
-      "label": "Text for the previous button",
-      "default": "Previous"
+      "label": "Текст за дугме Претходна",
+      "default": "Претходна"
     },
     {
-      "label": "Text for the check answers button",
-      "default": "Check"
+      "label": "Текст за дугме Провери",
+      "default": "Провери"
     },
     {
-      "label": "Require user input before the solution can be viewed"
+      "label": "Захтевајте кориснички унос пре него што се решење може погледати"
     },
     {
-      "label": "Text for the answer input field",
-      "default": "Your answer"
+      "label": "Текст за Одговоре",
+      "default": "Ваш одговор"
     },
     {
-      "label": "Text for correct answer",
-      "default": "Correct"
+      "label": "Текст за тачан одговор",
+      "default": "Тачно"
     },
     {
-      "label": "Text for incorrect answer",
-      "default": "Incorrect"
+      "label": "Текст за погрешан одговор",
+      "default": "Погрешан"
     },
     {
-      "label": "Show solution text",
-      "default": "Correct answer"
+      "label": "Текст за приказ решења",
+      "default": "Тачан одговор"
     },
     {
       "label": "Separator of solution alternatives",
       "default": "or"
     },
     {
-      "label": "Text for results title",
-      "default": "Results"
+      "label": "Текст за Резултате",
+      "default": "Резултати"
     },
     {
-      "label": "Text for number of correct",
-      "default": "@score of @total correct",
-      "description": "Result text, variables available: @score and @total. Example: '@score of @total correct'"
+      "label": "Текст за број тачних одговора",
+      "default": "@score од @total тачних",
+      "description": "Текст резултата, доступне променљиве: @score и @total. Пример: '@score од @total тачних'"
     },
     {
-      "label": "Text for show results",
-      "default": "Show results"
+      "label": "Текст за приказ резултата",
+      "default": "Прикажи резултате"
     },
     {
-      "label": "Text for short answer label",
+      "label": "Текст за кратак одговор",
       "default": "A:"
     },
     {
-      "label": "Text for \"retry\" button",
-      "default": "Retry"
+      "label": "Текст за \"врати\" дугме",
+      "default": "Врати"
     },
     {
-      "label": "Case sensitive",
-      "description": "Makes sure the user input has to be exactly the same as the answer."
+      "label": "Велика и мала слова",
+      "description": "Уверава се да кориснички унос мора бити потпуно исти као и одговор."
     },
     {
-      "label": "Incorrect text for assistive technologies",
-      "default": "Incorrect answer. Correct answer was @answer",
-      "description": "Text that will be announced to assistive technologies. Use @answer as variable."
+      "label": "Нетачан текст за помоћне технологије",
+      "default": "Нетачан одговор. Тачан одговор је @answer",
+      "description": "Текст који ће бити најављен за помоћне технологије. Користите @answer као променљиву."
     },
     {
-      "label": "Card change for assistive technologies",
-      "default": "Page @current of @total",
-      "description": "Text that will be announced to assistive technologies when navigating between cards. Use @current and @total as variables."
+      "label": "Промена картице за помоћне технологије",
+      "default": "Страна @current од @total",
+      "description": "Текст који ће бити најављен помоћним технологијама приликом навигације између картица. Користите @current и @total као променљиве."
     }
   ]
 }
