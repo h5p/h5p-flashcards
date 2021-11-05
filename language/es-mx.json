@@ -24,10 +24,10 @@
           },
           {
             "label": "Imagen",
-            "description": "Imgen opcional para la carta. (La carta podría usar solamente una imagen, solo un texto o ambos)"
+            "description": "Imagen opcional para la carta. (La carta podría usar solamente una imagen, solo un texto o ambos)"
           },
           {
-            "label": "Texto aternativo para la imagen"
+            "label": "Texto alternativo para la imagen"
           },
           {
             "label": "Audio",
@@ -58,8 +58,8 @@
       "default": "Anterior"
     },
     {
-      "label": "Texto para botón Revisar respuestas",
-      "default": "Revisar"
+      "label": "Texto para el botón Comprobar respuestas",
+      "default": "Comprobar"
     },
     {
       "label": "Requerir entrada del usuario antes que la solución pueda ser vista"
@@ -70,14 +70,14 @@
     },
     {
       "label": "Texto para respuesta correcta",
-      "default": "Correcta"
+      "default": "Correcto"
     },
     {
       "label": "Texto para respuesta incorrecta",
       "default": "Incorrecta"
     },
     {
-      "label": "Mostrar texto de solución",
+      "label": "Texto de Mostrar solución",
       "default": "Respuesta correcta"
     },
     {
@@ -102,8 +102,8 @@
       "default": "Reintentar"
     },
     {
-      "label": "MAYÚSCULAS/minúsculas importan",
-      "description": "Asegurarse que la entrada del usuario sea exactamente la misma que la respuesta."
+      "label": "MAYÚSCULAS/minúsculas si importan",
+      "description": "Asegurarse que la entrada del usuario tenga que ser exactamente la misma que la respuesta."
     },
     {
       "label": "Texto incorrecto para tecnologías asistivas",
