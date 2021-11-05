@@ -1,39 +1,39 @@
 {
   "semantics": [
     {
-      "label": "Task description"
+      "label": "과제 설명"
     },
     {
       "widgets": [
         {
-          "label": "Default"
+          "label": "기본 설정"
         }
       ],
-      "label": "Cards",
-      "entity": "card",
+      "label": "카드",
+      "entity": "카드",
       "field": {
-        "label": "Card",
+        "label": "카드",
         "fields": [
           {
-            "label": "Question",
-            "description": "Optional textual question for the card. (The card may use just an image, just a text or both)"
+            "label": "문제",
+            "description": "카드에 대한 선택적 텍스트 질문(카드는 이미지, 텍스트 또는 둘 모두를 사용할 수 있습니다.)"
           },
           {
-            "label": "Answer",
-            "description": "Optional answer(solution) for the card."
+            "label": "답",
+            "description": "카드에 대한 선택적 해답."
           },
           {
             "label": "Image",
-            "description": "Optional image for the card. (The card may use just an image, just a text or both)"
+            "description": "카드에 대한 선택적 이미지(카드는 이미지, 텍스트 또는 둘 모두를 사용할 수 있습니다.)"
           },
           {
-            "label": "Alternative text for image"
+            "label": "이미지의 대체 텍스트"
           },
           {
-            "label": "Tip",
+            "label": "힌트",
             "fields": [
               {
-                "label": "Tip text"
+                "label": "힌트 텍스트"
               }
             ]
           }
@@ -41,21 +41,21 @@
       }
     },
     {
-      "label": "Progress text",
-      "default": "Card @card of @total",
-      "description": "Progress text, variables available: @card and @total. Example: 'Card @card of @total'"
+      "label": "진행 텍스트",
+      "default": "총 @total 중 @card 카드",
+      "description": "진행 텍스트, 사용 가능한 변수: 총 @total 중 @card 카드. 예: '총 @total 중 @card 카드'"
     },
     {
-      "label": "Text for the next button",
-      "default": "Next"
+      "label": "다음 버튼을 위한 텍스트",
+      "default": "다음"
     },
     {
-      "label": "Text for the previous button",
-      "default": "Previous"
+      "label": "이전 버튼을 위한 텍스트",
+      "default": "이전"
     },
     {
-      "label": "Text for the check answers button",
-      "default": "Check"
+      "label": "정답 확인 버튼 텍스트",
+      "default": "정답 확인"
     },
     {
       "label": "Allow user to enter answer using speech recognition"
@@ -432,58 +432,58 @@
       ]
     },
     {
-      "label": "Require user input before the solution can be viewed"
+      "label": "해답 보기 전에 사용자 입력 필요"
     },
     {
-      "label": "Text for the answer input field",
-      "default": "Your answer"
+      "label": "답변 입력 필드의 텍스트",
+      "default": "답변"
     },
     {
-      "label": "Text for correct answer",
-      "default": "Correct"
+      "label": "정답 텍스트",
+      "default": "정답"
     },
     {
-      "label": "Text for incorrect answer",
-      "default": "Incorrect"
+      "label": "오답 텍스트",
+      "default": "오답"
     },
     {
-      "label": "Show solution text",
-      "default": "Correct answer"
+      "label": "해답 보이기 텍스트",
+      "default": "정답"
     },
     {
-      "label": "Text for results title",
-      "default": "Results"
+      "label": "결과 제목 텍스트",
+      "default": "결과"
     },
     {
-      "label": "Text for number of correct",
-      "default": "@score of @total correct",
-      "description": "Result text, variables available: @score and @total. Example: '@score of @total correct'"
+      "label": "정답 수 텍스트",
+      "default": "총 @total 중 @score 점",
+      "description": "결과 텍스트, 이용가능한 변수: 총 @total 중 @score 점. 예: '총 @total 중 @score 점'"
     },
     {
-      "label": "Text for show results",
-      "default": "Show results"
+      "label": "결과 보기 텍스트",
+      "default": "결과 보기"
     },
     {
-      "label": "Text for short answer label",
+      "label": "단답 레이블 텍스트",
       "default": "A:"
     },
     {
-      "label": "Text for \"retry\" button",
-      "default": "Retry"
+      "label": "재시도 단추 텍스트",
+      "default": "재시도"
     },
     {
-      "label": "Case sensitive",
-      "description": "Makes sure the user input has to be exactly the same as the answer."
+      "label": "대소문자 구분",
+      "description": "사용자 입력이 답변과 정확히 동일해야 합니다."
     },
     {
-      "label": "Incorrect text for assistive technologies",
-      "default": "Incorrect answer. Correct answer was @answer",
-      "description": "Text that will be announced to assistive technologies. Use @answer as variable."
+      "label": "보조 기술에 대한 오답 텍스트",
+      "default": "오답입니다. 정답은 @answer 입니다.",
+      "description": "보조 기술로 말해지는 텍스트. @answer 을(를) 변수로 사용하세요."
     },
     {
-      "label": "Card change for assistive technologies",
-      "default": "Page @current of @total",
-      "description": "Text that will be announced to assistive technologies when navigating between cards. Use @current and @total as variables."
+      "label": "보조 기술을 위한 카드 변경",
+      "default": "총 @total 중 현재 페이지 @current",
+      "description": "카드간 이동에서 보조 기술로 말해지는 텍스트. @current 와 @total 를 변수로 사용하세요."
     },
     {
       "label": "Microphone listen button title for assistive technologies",
