@@ -19,15 +19,15 @@
             "description": "Kartta görünecek isteğe bağlı yazılı soru. (Kartta sadece bir görsel, sadece metin veya ikisi de olabilir)"
           },
           {
-            "label": "Answer",
-            "description": "Optional answer(solution) for the card."
+            "label": "Cevap",
+            "description": "Kart için isteğe bağlı cevap (çözüm)."
           },
           {
-            "label": "Image",
+            "label": "Resim",
             "description": "Kartta görünecek isteğe bağlı görsel. (Kartta sadece bir görsel, sadece metin veya ikisi de olabilir)"
           },
           {
-            "label": "Alternative text for image"
+            "label": "Resim için alternatif metin"
           },
           {
             "label": "Audio",
@@ -59,7 +59,7 @@
     },
     {
       "label": "Cevapları kontrol et düğmesi metni",
-      "default": "Kontrol et"
+      "default": "Kontrol Et"
     },
     {
       "label": "Çözüm görüntülenemeden önce kullanıcı girişi gereksin"
@@ -70,7 +70,7 @@
     },
     {
       "label": "Doğru cevap metni",
-      "default": "Doğru cevap"
+      "default": "Doğru"
     },
     {
       "label": "Yanlış cevap metni",
@@ -78,7 +78,7 @@
     },
     {
       "label": "Çözümü göster metni",
-      "default": "Çözümü göster"
+      "default": "Çözümü Göster"
     },
     {
       "label": "Sonuçlar başlığı metni",
@@ -91,29 +91,29 @@
     },
     {
       "label": "Sonuçları göster metni",
-      "default": "Sonuçları göster"
+      "default": "Sonuçları Göster"
     },
     {
       "label": "Kısa cevap etiket metni",
       "default": "A:"
     },
     {
-      "label": "\"Yeniden dene\" düğmesi metni",
-      "default": "Yeniden dene"
+      "label": "\"Yeniden Dene\" düğmesi metni",
+      "default": "Yeniden Dene"
     },
     {
       "label": "Büyük küçük harf duyarlı",
-      "description": "Kullanıcı girişinin aynen cevap gibi olması gerekmesini sağlar."
+      "description": "Kullanıcı cevabının, aynen belirlediğiniz cevap gibi olması gerekliliğini sağlar."
     },
     {
-      "label": "Incorrect text for assistive technologies",
-      "default": "Incorrect answer. Correct answer was @answer",
-      "description": "Text that will be announced to assistive technologies. Use @answer as variable."
+      "label": "Yardımcı teknolojiler için yanlış metin",
+      "default": "Yanlış cevap. Doğru cevap @answer",
+      "description": "Yardımcı teknolojilere cevabın yanlış olduğunu ve doğru cevabı duyuracak metin. @answer ifadesini yerine doğru cevabın gelmesi için kullanın."
     },
     {
-      "label": "Card change for assistive technologies",
-      "default": "Page @current of @total",
-      "description": "Text that will be announced to assistive technologies when navigating between cards. Use @current and @total as variables."
+      "label": "Yardımcı teknolojiler için kart değişikliği",
+      "default": "@total sayfadan @current. sayfa",
+      "description": "Kartlar arasında gezinirken yardımcı teknolojilere toplam sayfa sayısını ve bulunulan sayfayı duyuracak metin. Toplam sayfa sayısı içi @total, bulunulan sayfa için de @current kullanın."
     },
     {
       "label": "Audio play button",
