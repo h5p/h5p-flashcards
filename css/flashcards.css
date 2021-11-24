@@ -241,7 +241,7 @@
   display: inline-block;
   border: none;
   border-radius: 0 2em 2em 0;
-  background: #2abee8;
+  background: #2A64E8;
   padding: 0.5em 1em;
   box-shadow: none;
   top: 0;
@@ -350,7 +350,7 @@
   right: 1em;
   top: 1em;
   line-height: 1em;
-  color: #5dae45;
+  color: #437C31;
   transition: opacity 2s;
   opacity: 1;
   outline: none;
