@@ -232,11 +232,6 @@ H5P.Flashcards = (function ($, XapiGenerator) {
     this.trigger('resize');
 
     // Attach aria announcer
-    this.$ariaAnnouncer = $('<div>', {
-      'class': 'hidden-but-read',
-      'aria-live': 'assertive',
-      appendTo: this.$container,
-    });
     this.$pageAnnouncer = $('<div>', {
       'class': 'hidden-but-read',
       'aria-live': 'assertive',
@@ -349,9 +344,11 @@ H5P.Flashcards = (function ($, XapiGenerator) {
         that.triggerXAPI('interacted');
 
         if (userCorrect) {
+          const ariaAttributes = {'aria-live':"assertive", 'aria-label':that.options.correctAnswerText};
+          $input.parent().attr(ariaAttributes);
           $input.parent()
             .addClass('h5p-correct')
-            .append('<div class="h5p-feedback-label" tabindex="-1" aria-label="' + that.options.correctAnswerText + '">' + that.options.correctAnswerText + '!</div>');
+            .append('<div class="h5p-feedback-label" aria-hidden="true">' + that.options.correctAnswerText + '!</div>');
           $card.addClass('h5p-correct');
 
           $('<div class="h5p-solution">' +
@@ -361,21 +358,22 @@ H5P.Flashcards = (function ($, XapiGenerator) {
           $input.siblings('.h5p-feedback-label').focus();
         }
         else {
+          const ariaText = that.options.cardAnnouncement.replace(
+            '@answer',
+            that.options.cards[index].answer
+          );
+          const ariaAttributes = {'aria-live':"assertive", 'aria-label':ariaText};
+          $input.parent().attr(ariaAttributes);
+          
           $input.parent()
             .addClass('h5p-wrong')
-            .append('<span class="h5p-feedback-label" tabindex="-1" aria-label="' + that.options.incorrectAnswerText + '">' + that.options.incorrectAnswerText + '!</span>');
+            .append('<span class="h5p-feedback-label" aria-hidden="true">' + that.options.incorrectAnswerText + '!</span>');
           $card.addClass('h5p-wrong');
 
           $('<div class="h5p-solution">' +
             '<span class="solution-icon h5p-rotate-in"></span>' +
             '<span class="solution-text">' + (that.options.cards[index].answer ? that.options.showSolutionText + ': <span>' + that.options.cards[index].answer + '</span>' : '') + '</span>' +
           '</div>').appendTo($card.find('.h5p-imageholder'));
-
-          const ariaText = that.options.cardAnnouncement.replace(
-            '@answer',
-            that.options.cards[index].answer
-          );
-          that.$ariaAnnouncer.html(ariaText);
         }
 
         done = (that.numAnswered >= that.options.cards.length);
