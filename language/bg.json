@@ -107,6 +107,11 @@
       "description": "Текст, предназначен за помощните технологии. Използвайте @answer като променлива."
     },
     {
+      "label": "Correct feedback text for assistive technologies",
+      "default": "@answer is correct. Correct answer was @answer",
+      "description": "Text that will be announced to assistive technologies when a card is answered correctly. Use @answer as variable."
+    },
+    {
       "label": "Смяна на картата за помощни техмологии",
       "default": "Страница @current от @total",
       "description": "Текстът ще се показва при движение между картите и използване на помощни технологии. Използвайте @current и @total като променливи."

@@ -107,6 +107,11 @@
       "description": "O texto pasarase ás tecnoloxías de asistencia. Usa @answer como variable."
     },
     {
+      "label": "Correct feedback text for assistive technologies",
+      "default": "@answer is correct. Correct answer was @answer",
+      "description": "Text that will be announced to assistive technologies when a card is answered correctly. Use @answer as variable."
+    },
+    {
       "label": "Cambio de tarxeta para as tecnoloxías de asistencia",
       "default": "Páxina @current de @total",
       "description": "O texto pasarase ás tecnoloxías de asistencia cando se navegue entre tarxetas. Usa @current e @total como variables."

@@ -107,6 +107,11 @@
       "description": "Testo per le tecnologie assistive. Usa @answer come variabile"
     },
     {
+      "label": "Correct feedback text for assistive technologies",
+      "default": "@answer is correct. Correct answer was @answer",
+      "description": "Text that will be announced to assistive technologies when a card is answered correctly. Use @answer as variable."
+    },
+    {
       "label": "Cambio scheda per le tecnologie assistive",
       "default": "Pagina @current di @total",
       "description": "Testo per le tecnologie assistive durante la navigazione tra schede. Usa @current e @total come variabili"

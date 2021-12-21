@@ -38,6 +38,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
       retry : "Retry",
       cardAnnouncement: 'Incorrect answer. Correct answer was @answer',
       pageAnnouncement: 'Page @current of @total',
+      correctAnswerAnnouncement: '@answer is correct!',
     }, options);
     this.$images = [];
     this.hasBeenReset = false;
@@ -351,19 +352,19 @@ H5P.Flashcards = (function ($, XapiGenerator) {
         if (userCorrect) {
           $input.parent()
             .addClass('h5p-correct')
-            .append('<div class="h5p-feedback-label" tabindex="-1" aria-label="' + that.options.correctAnswerText + '">' + that.options.correctAnswerText + '!</div>');
+            .append('<div class="h5p-feedback-label">' + that.options.correctAnswerText + '!</div>');
           $card.addClass('h5p-correct');
 
           $('<div class="h5p-solution">' +
             '<span class="solution-icon h5p-rotate-in"></span>' +
           '</div>').appendTo($card.find('.h5p-imageholder'));
 
-          $input.siblings('.h5p-feedback-label').focus();
+          that.$ariaAnnouncer.html(that.options.correctAnswerAnnouncement.replace('@answer', userAnswer));
         }
         else {
           $input.parent()
             .addClass('h5p-wrong')
-            .append('<span class="h5p-feedback-label" tabindex="-1" aria-label="' + that.options.incorrectAnswerText + '">' + that.options.incorrectAnswerText + '!</span>');
+            .append('<span class="h5p-feedback-label">' + that.options.incorrectAnswerText + '!</span>');
           $card.addClass('h5p-wrong');
 
           $('<div class="h5p-solution">' +
