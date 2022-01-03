@@ -107,6 +107,11 @@
       "description": "보조 기술로 말해지는 텍스트. @answer 을(를) 변수로 사용하세요."
     },
     {
+      "label": "Correct feedback text for assistive technologies",
+      "default": "@answer is correct.",
+      "description": "Text that will be announced to assistive technologies when a card is answered correctly. Use @answer as variable."
+    },
+    {
       "label": "보조 기술을 위한 카드 변경",
       "default": "총 @total 중 현재 페이지 @current",
       "description": "카드간 이동에서 보조 기술로 말해지는 텍스트. @current 와 @total 를 변수로 사용하세요."

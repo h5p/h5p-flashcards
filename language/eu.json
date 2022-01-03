@@ -107,6 +107,11 @@
       "description": "Laguntzarako teknologietan erabiliko den testua. Erabili @answer aldagai gisa."
     },
     {
+      "label": "Correct feedback text for assistive technologies",
+      "default": "@answer is correct.",
+      "description": "Text that will be announced to assistive technologies when a card is answered correctly. Use @answer as variable."
+    },
+    {
       "label": "Txartel aldaketa laguntzarako teknologientzat",
       "default": "@current. orria, @total guztira",
       "description": "Laguntzarako teknologietan txartel artean nabigatzean erabiliko den testua. Erabili @current eta @total aldagai gisa."

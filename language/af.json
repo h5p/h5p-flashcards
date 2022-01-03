@@ -107,6 +107,11 @@
       "description": "Teks wat vertoon sal word vir hulptegnologieë. Gebruik @answer as veranderlike."
     },
     {
+      "label": "Correct feedback text for assistive technologies",
+      "default": "@answer is correct.",
+      "description": "Text that will be announced to assistive technologies when a card is answered correctly. Use @answer as variable."
+    },
+    {
       "label": "Kaartjie verandering vir hulptegnologieë",
       "default": "Bladsy @current van @total",
       "description": "Teks wat aangekondig sal word as hulptegnologieë wanneer u tussen kaarte navigeer. Gebruik @current en @total as veranderlikes."

@@ -212,6 +212,14 @@
     "common": true
   },
   {
+    "label": "Correct feedback text for assistive technologies",
+    "name": "correctAnswerAnnouncement",
+    "type": "text",
+    "default": "@answer is correct.",
+    "description": "Text that will be announced to assistive technologies when a card is answered correctly. Use @answer as variable.",
+    "common": true
+  },
+  {
     "label": "Card change for assistive technologies",
     "name": "pageAnnouncement",
     "type": "text",

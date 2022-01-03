@@ -107,6 +107,11 @@
       "description": "Text som kommer användas av tillgänglighetshjälpmedel. Använd @answer som variabel."
     },
     {
+      "label": "Correct feedback text for assistive technologies",
+      "default": "@answer is correct.",
+      "description": "Text that will be announced to assistive technologies when a card is answered correctly. Use @answer as variable."
+    },
+    {
       "label": "Byte av kort vid tillgänglighetshjälpmedel",
       "default": "Sida @current av @total",
       "description": "Text som kommer användas av tillgänglighetshjälpmedel vid navigering mellan kort. Använd @current och @total som variabler."
