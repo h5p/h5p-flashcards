@@ -1,7 +1,7 @@
 {
   "semantics": [
     {
-      "label": "Taak omschrijving"
+      "label": "Taakomschrijving"
     },
     {
       "widgets": [
@@ -20,20 +20,20 @@
           },
           {
             "label": "Antwoord",
-            "description": "Het optionele antwoord(oplossing) achterop de kaart."
+            "description": "Het optionele antwoord (oplossing) achterop de kaart."
           },
           {
             "label": "Afbeelding",
             "description": "De optionele afbeelding voorop de kaart. (De kaart kan voorzien worden van een afbeelding en/of tekst)"
           },
           {
-            "label": "Alt-tekst voor de afbeelding"
+            "label": "Alternatieve tekst voor afbeelding"
           },
           {
             "label": "Tip",
             "fields": [
               {
-                "label": "Tip tekst"
+                "label": "Tekst voor tip"
               }
             ]
           }
@@ -43,18 +43,18 @@
     {
       "label": "Voortgangstekst",
       "default": "Kaart @card van @total",
-      "description": "Voortgangstekst, beschikbare variabelen: @card and @total. Voorbeeld: 'Kaart @card van @total'"
+      "description": "Voortgangstekst, beschikbare variabelen: @card en @total. Voorbeeld: 'Kaart @card van @total'"
     },
     {
-      "label": "Tekst voor de volgende knop",
+      "label": "Tekst voor \"Volgende\"-knop",
       "default": "Volgende"
     },
     {
-      "label": "Tekst voor de vorige knop",
+      "label": "Tekst voor \"Vorige\"-knop",
       "default": "Vorige"
     },
     {
-      "label": "Tekst voor de controleer antwoorden knop",
+      "label": "Tekst voor \"Controleer\"-knop",
       "default": "Controleer"
     },
     {
@@ -62,14 +62,14 @@
     },
     {
       "label": "Tekst voor het antwoord invoerveld",
-      "default": "Jouw antwoord"
+      "default": "Je antwoord"
     },
     {
-      "label": "Tekst voor het juiste antwoord",
+      "label": "Tekst voor juist antwoord",
       "default": "Juist"
     },
     {
-      "label": "Tekst voor het onjuiste antwoord",
+      "label": "Tekst voor onjuiste antwoord",
       "default": "Onjuist"
     },
     {
@@ -77,24 +77,24 @@
       "default": "Juist antwoord"
     },
     {
-      "label": "Titel voor de resultaten",
+      "label": "Titel voor resultaten",
       "default": "Resultaten"
     },
     {
-      "label": "Tekst voor het juiste aantal",
+      "label": "Tekst voor aantal juist",
       "default": "@score van @total juist",
       "description": "Resultatentekst, beschikbare variabelen: @score en @total. Voorbeeld: '@score van @total juist'"
     },
     {
       "label": "Tekst voor het tonen van de resultaten",
-      "default": "Toon de resultaten"
+      "default": "Toon resultaten"
     },
     {
       "label": "Tekstlabel voor een kort antwoord",
       "default": "A:"
     },
     {
-      "label": "Tekst voor \"Opnieuw\" knop",
+      "label": "Tekst voor \"Opnieuw\"-knop",
       "default": "Opnieuw"
     },
     {
@@ -107,9 +107,9 @@
       "description": "Tekst die wordt gebruikt door ondersteunende technologieën. Gebruik @answer als variabele."
     },
     {
-      "label": "Correct feedback text for assistive technologies",
+      "label": "Feedback tekst voor juiste antwoord voor ondersteunende technologieën",
       "default": "@answer is correct.",
-      "description": "Text that will be announced to assistive technologies when a card is answered correctly. Use @answer as variable."
+      "description": "Tekst die wordt aangegeven aan ondersteunende technologieën als een kaart juist is beantwoord. Gebruik @answer als variabele."
     },
     {
       "label": "Kaart wijzigen voor ondersteunende technologieën",
