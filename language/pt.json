@@ -6,7 +6,7 @@
     {
       "widgets": [
         {
-          "label": "Default"
+          "label": "Padrão"
         }
       ],
       "label": "Cards",
@@ -95,11 +95,11 @@
     },
     {
       "label": "Text for \"retry\" button",
-      "default": "Retry"
+      "default": "Repetir"
     },
     {
-      "label": "Case sensitive",
-      "description": "Makes sure the user input has to be exactly the same as the answer."
+      "label": "Diferenciar maiúsculas de minúsculas",
+      "description": "Garante que o utilizador digita o texto exatamente igual à resposta."
     },
     {
       "label": "Incorrect text for assistive technologies",
