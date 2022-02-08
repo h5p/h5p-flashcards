@@ -54,8 +54,8 @@
       "default": "Föregående"
     },
     {
-      "label": "Text för Rätta-knapp",
-      "default": "Rätta"
+      "label": "Text för knappen \"Svara\"",
+      "default": "Svara"
     },
     {
       "label": "Kräv att användaren anger svar innan lösning kan visas"

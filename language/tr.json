@@ -10,7 +10,7 @@
         }
       ],
       "label": "Kartlar",
-      "entity": "card",
+      "entity": "kart",
       "field": {
         "label": "Kart",
         "fields": [
