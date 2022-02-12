@@ -107,9 +107,9 @@
       "description": "ტექსტი, რომელსაც კითხულობს დამხმარე ტექნოლოგია. @answer-ის გამოყენება ცვლადის სახით."
     },
     {
-      "label": "Correct feedback text for assistive technologies",
-      "default": "@answer is correct.",
-      "description": "Text that will be announced to assistive technologies when a card is answered correctly. Use @answer as variable."
+      "label": "ტექსტი სწორ პასუხზე დამხმარე ტექნოლოგიებისთვის",
+      "default": "@answer სწორია.",
+      "description": "ტექსტი, რომელსაც ამოიკითხავს დამხმარე ტექნოლოგიები, როდესაც სწორი პასუხი გაიცემა. გამოიყენეთ @answer როგორც ცვლადი."
     },
     {
       "label": "ბარათის შეცვლა დამხმარე ტექნოლოგიისთვის",
