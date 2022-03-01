@@ -111,6 +111,11 @@
       "description": "Text, der von Vorlesewerkzeugen vorgelesen wird (Barrierefreiheit). Verwende @answer als Platzhalter."
     },
     {
+      "label": "Correct feedback text for assistive technologies",
+      "default": "@answer ist richtig.",
+      "description": "Text, der durch Vorlesewerkzeuge (Barrierefreiheit) vorgelesen wird, wenn eine Karte richtig beantwortet wird. Nutze @answer als Platzhalter."
+    },
+    {
       "label": "Text zum Kartenwechsel für Vorlesewerkzeuge",
       "default": "Karte @current von @total",
       "description": "Text, der von Vorlesewerkzeugen vorgelesen wird, wenn zwischen Karten gewechselt wird (Barrierefreiheit). Verwende @current und @total als Platzhalter."

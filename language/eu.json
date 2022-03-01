@@ -1,12 +1,12 @@
 {
   "semantics": [
     {
-      "label": "Zereginaren deskribapena"
+      "label": "Lanaren deskribapena"
     },
     {
       "widgets": [
         {
-          "label": "Lehenetsia"
+          "label": "Lehentsitakoa"
         }
       ],
       "label": "Txartelak",
@@ -16,7 +16,7 @@
         "fields": [
           {
             "label": "Galdera",
-            "description": "Aukerako testu-galdera (txartelak izango du bakarrik irudia, bakarrik testua edo biak)"
+            "description": "Txartelarentzako aukerazko testu-galdera. (Txartelak soilik irudia, soilik testua edo erabili ditzake)"
           },
           {
             "label": "Erantzuna",
@@ -58,7 +58,7 @@
       "default": "Aurrekoa"
     },
     {
-      "label": "Egiaztatu erantzuna botoiaren testua",
+      "label": "\"Egiaztatu\" botoiarentzako testua",
       "default": "Egiaztatu"
     },
     {
@@ -98,7 +98,7 @@
       "default": "Erantzuna:"
     },
     {
-      "label": "\"Saiatu berriro\" botoiaren testua",
+      "label": "\"Saiatu berriro\" botoiarentzako testua",
       "default": "Saiatu berriro"
     },
     {
@@ -109,6 +109,11 @@
       "label": "Erantzun okerrarentzako testua laguntzarako teknologientzat",
       "default": "Erantzun okerra. Erantzun zuzena @answer zen",
       "description": "Laguntzarako teknologietan erabiliko den testua. Erabili @answer aldagai gisa."
+    },
+    {
+      "label": "Erantzun zuzenerako feedbackaren testua laguntza teknologietarako",
+      "default": "@answer zuzena da.",
+      "description": "Txartel bati modu zuzenean erantzunez gero laguntza teknologientzako iragarriko den testua. @answer aldagi gisa erabili dezakezu."
     },
     {
       "label": "Txartel aldaketa laguntzarako teknologientzat",

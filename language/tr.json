@@ -10,7 +10,7 @@
         }
       ],
       "label": "Kartlar",
-      "entity": "card",
+      "entity": "kart",
       "field": {
         "label": "Kart",
         "fields": [
@@ -109,6 +109,11 @@
       "label": "Yardımcı teknolojiler için yanlış metin",
       "default": "Yanlış cevap. Doğru cevap @answer",
       "description": "Yardımcı teknolojilere cevabın yanlış olduğunu ve doğru cevabı duyuracak metin. @answer ifadesini yerine doğru cevabın gelmesi için kullanın."
+    },
+    {
+      "label": "Correct feedback text for assistive technologies",
+      "default": "@answer is correct.",
+      "description": "Text that will be announced to assistive technologies when a card is answered correctly. Use @answer as variable."
     },
     {
       "label": "Yardımcı teknolojiler için kart değişikliği",
