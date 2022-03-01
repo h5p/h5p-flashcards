@@ -54,8 +54,8 @@
       "default": "Föregående"
     },
     {
-      "label": "Text för Rätta-knapp",
-      "default": "Rätta"
+      "label": "Text för knappen \"Svara\"",
+      "default": "Svara"
     },
     {
       "label": "Kräv att användaren anger svar innan lösning kan visas"
@@ -109,6 +109,11 @@
       "label": "Text vid felaktigt svar för tillgänglighetshjälpmedel",
       "default": "Felaktigt svar. Rätt svar var @answer",
       "description": "Text som kommer användas av tillgänglighetshjälpmedel. Använd @answer som variabel."
+    },
+    {
+      "label": "Correct feedback text for assistive technologies",
+      "default": "@answer is correct.",
+      "description": "Text that will be announced to assistive technologies when a card is answered correctly. Use @answer as variable."
     },
     {
       "label": "Byte av kort vid tillgänglighetshjälpmedel",

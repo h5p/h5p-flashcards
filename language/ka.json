@@ -51,7 +51,7 @@
     },
     {
       "label": "ტექსტი ღილაკისთვის 'უკან'",
-      "default": "უკან "
+      "default": "უკან"
     },
     {
       "label": "ტექსტი ღილაკისთვის 'შემოწმება'",
@@ -94,7 +94,7 @@
       "default": "პ:"
     },
     {
-      "label": "ტექსტი ღილაკისთვის \"გამეორება\" ",
+      "label": "ტექსტი ღილაკისთვის \"გამეორება\"",
       "default": "გამეორება"
     },
     {
@@ -105,6 +105,11 @@
       "label": "არასწორი პასუხის ტექსტი დამხმარე ტექნოლოგიებისთვის",
       "default": "არასწორი პასუხი. სწორი პასუხია @answer",
       "description": "ტექსტი, რომელსაც კითხულობს დამხმარე ტექნოლოგია. @answer-ის გამოყენება ცვლადის სახით."
+    },
+    {
+      "label": "Correct feedback text for assistive technologies",
+      "default": "@answer is correct.",
+      "description": "Text that will be announced to assistive technologies when a card is answered correctly. Use @answer as variable."
     },
     {
       "label": "ბარათის შეცვლა დამხმარე ტექნოლოგიისთვის",

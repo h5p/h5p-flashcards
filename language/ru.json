@@ -111,6 +111,11 @@
       "description": "Текст, объявляемый ассистирующими технологиями. Использовать @answer в качестве переменной."
     },
     {
+      "label": "Correct feedback text for assistive technologies",
+      "default": "@answer is correct.",
+      "description": "Text that will be announced to assistive technologies when a card is answered correctly. Use @answer as variable."
+    },
+    {
       "label": "Смена карточки для ассистирующих технологии",
       "default": "Карточка @current из @total",
       "description": "Текст, объявляемый ассистирующими технологиями при смене карточек. Использовать @current и @total в качестве переменных."

@@ -111,6 +111,11 @@
       "description": "Texto que será anunciado a tecnologías asistivas. Use @answer como variable."
     },
     {
+      "label": "Texto de retroalimentación correcta para tecnologías asistivas",
+      "default": "@answer es correcta.",
+      "description": "Texto que será anunciado a tecnologías asistivas cuando una tarjeta es contestada correctamente. Use @answer como variable."
+    },
+    {
       "label": "Cambio de Tarjeta para tecnologías asistivas",
       "default": "Página @current de @total",
       "description": "Texto que será anunciado a tecnologías asistivas al navegar entre cartas. Use @current y @total como variables."

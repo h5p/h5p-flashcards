@@ -111,6 +111,11 @@
       "description": "Text, který bude oznámen pomocnými technologiemi. Jako proměnnou použijte @answer."
     },
     {
+      "label": "Correct feedback text for assistive technologies",
+      "default": "@answer is correct.",
+      "description": "Text that will be announced to assistive technologies when a card is answered correctly. Use @answer as variable."
+    },
+    {
       "label": "Změna karty za pomocné technologie",
       "default": "Strana @current z @total",
       "description": "Text, který bude při navigaci mezi kartami oznámen pomocnými technologiemi. Jako proměnné použijte @current a @total."

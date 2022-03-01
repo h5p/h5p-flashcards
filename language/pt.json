@@ -6,7 +6,7 @@
     {
       "widgets": [
         {
-          "label": "Default"
+          "label": "Padrão"
         }
       ],
       "label": "Cards",
@@ -99,16 +99,21 @@
     },
     {
       "label": "Text for \"retry\" button",
-      "default": "Retry"
+      "default": "Repetir"
     },
     {
-      "label": "Case sensitive",
-      "description": "Makes sure the user input has to be exactly the same as the answer."
+      "label": "Diferenciar maiúsculas de minúsculas",
+      "description": "Garante que o utilizador digita o texto exatamente igual à resposta."
     },
     {
       "label": "Incorrect text for assistive technologies",
       "default": "Incorrect answer. Correct answer was @answer",
       "description": "Text that will be announced to assistive technologies. Use @answer as variable."
+    },
+    {
+      "label": "Correct feedback text for assistive technologies",
+      "default": "@answer is correct.",
+      "description": "Text that will be announced to assistive technologies when a card is answered correctly. Use @answer as variable."
     },
     {
       "label": "Card change for assistive technologies",

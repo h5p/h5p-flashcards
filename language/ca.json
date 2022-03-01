@@ -111,6 +111,11 @@
       "description": "Text que s’anunciarà a les tecnologies d’assistència. S’utilitza @answer com a variable."
     },
     {
+      "label": "Correct feedback text for assistive technologies",
+      "default": "@answer is correct.",
+      "description": "Text that will be announced to assistive technologies when a card is answered correctly. Use @answer as variable."
+    },
+    {
       "label": "Canvi de targeta per a les tecnologies d’assistència",
       "default": "Pàgina @current de @total",
       "description": "Text que s’anunciarà a les tecnologies d’assistència en navegar per les targetes. S’utilitza @current i @total com a variables."
