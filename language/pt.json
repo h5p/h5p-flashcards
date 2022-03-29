@@ -1,7 +1,7 @@
 {
   "semantics": [
     {
-      "label": "Task description"
+      "label": "Descrição da tarefa"
     },
     {
       "widgets": [
@@ -9,25 +9,25 @@
           "label": "Padrão"
         }
       ],
-      "label": "Cards",
-      "entity": "card",
+      "label": "Cartões",
+      "entity": "cartão",
       "field": {
-        "label": "Card",
+        "label": "Cartão",
         "fields": [
           {
             "label": "Question",
-            "description": "Optional textual question for the card. (The card may use just an image, just a text or both)"
+            "description": "Pergunta textual opcional para o cartão. (O cartão pode utilizar apenas uma imagem, apenas um texto ou ambos)"
           },
           {
-            "label": "Answer",
+            "label": "Resposta",
             "description": "Optional answer(solution) for the card."
           },
           {
             "label": "Image",
-            "description": "Optional image for the card. (The card may use just an image, just a text or both)"
+            "description": "Imagem opcional para o cartão. (O cartão pode utilizar apenas uma imagem, apenas um texto ou ambos)"
           },
           {
-            "label": "Alternative text for image"
+            "label": "Texto alternativo para imagem"
           },
           {
             "label": "Tip",
@@ -42,59 +42,59 @@
     },
     {
       "label": "Progress text",
-      "default": "Card @card of @total",
-      "description": "Progress text, variables available: @card and @total. Example: 'Card @card of @total'"
+      "default": "Cartão @card de @total",
+      "description": "Texto de progresso, variáveis disponíveis: @card e @total. Exemplo: 'Cartão @card de @total'."
     },
     {
-      "label": "Text for the next button",
+      "label": "Texto para o botão seguinte",
       "default": "Next"
     },
     {
-      "label": "Text for the previous button",
-      "default": "Previous"
+      "label": "Texto para o botão anterior",
+      "default": "Anterior"
     },
     {
-      "label": "Text for the check answers button",
-      "default": "Check"
+      "label": "Texto para o botão de verificação de respostas",
+      "default": "Verifique"
     },
     {
-      "label": "Require user input before the solution can be viewed"
+      "label": "Exigir a entrada do usuário antes que a solução possa ser visualizada"
     },
     {
-      "label": "Text for the answer input field",
-      "default": "Your answer"
+      "label": "Texto para o campo de entrada de respostas",
+      "default": "Sua resposta"
     },
     {
-      "label": "Text for correct answer",
-      "default": "Correct"
+      "label": "Texto para a resposta correta",
+      "default": "Correto"
     },
     {
-      "label": "Text for incorrect answer",
-      "default": "Incorrect"
+      "label": "Texto para resposta incorreta",
+      "default": "Incorreto"
     },
     {
-      "label": "Show solution text",
-      "default": "Correct answer"
+      "label": "Mostrar texto da solução",
+      "default": "Resposta correta"
     },
     {
-      "label": "Text for results title",
-      "default": "Results"
+      "label": "Texto para título de resultados",
+      "default": "Resultados"
     },
     {
-      "label": "Text for number of correct",
-      "default": "@score of @total correct",
-      "description": "Result text, variables available: @score and @total. Example: '@score of @total correct'"
+      "label": "Texto para o número de corretos",
+      "default": "@score de @total corretos",
+      "description": "Texto do resultado, variáveis disponíveis: @score e @total. Exemplo: '@score de @total correto'."
     },
     {
-      "label": "Text for show results",
-      "default": "Show results"
+      "label": "Texto para mostrar resultados",
+      "default": "Mostrar resultados"
     },
     {
-      "label": "Text for short answer label",
+      "label": "Texto para etiqueta de resposta curta",
       "default": "A:"
     },
     {
-      "label": "Text for \"retry\" button",
+      "label": "Texto para botão de \"repetir\"",
       "default": "Repetir"
     },
     {
@@ -102,19 +102,19 @@
       "description": "Garante que o utilizador digita o texto exatamente igual à resposta."
     },
     {
-      "label": "Incorrect text for assistive technologies",
-      "default": "Incorrect answer. Correct answer was @answer",
-      "description": "Text that will be announced to assistive technologies. Use @answer as variable."
+      "label": "Texto incorreto para tecnologias de assistência",
+      "default": "Resposta incorreta. A resposta correta foi @answer",
+      "description": "Texto que será anunciado para as tecnologias de assistência. Use @answer como variável."
     },
     {
-      "label": "Correct feedback text for assistive technologies",
-      "default": "@answer is correct.",
-      "description": "Text that will be announced to assistive technologies when a card is answered correctly. Use @answer as variable."
+      "label": "Texto de feedback correto para tecnologias de assistência",
+      "default": "@answer está correta.",
+      "description": "Texto que será anunciado às tecnologias de assistência quando um cartão for respondido corretamente. Use @answer como variável."
     },
     {
-      "label": "Card change for assistive technologies",
-      "default": "Page @current of @total",
-      "description": "Text that will be announced to assistive technologies when navigating between cards. Use @current and @total as variables."
+      "label": "Mudança de cartão para tecnologias de assistência",
+      "default": "Página @current de @total",
+      "description": "Texto que será anunciado às tecnologias de assistência na navegação entre cartões. Utilizar @current e @total como variáveis."
     }
   ]
 }
