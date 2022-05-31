@@ -115,6 +115,10 @@
       "default": "Lapa @current no @total",
       "label": "Kartītes maiņa asistīvajām tehnoloģijām",
       "description": "Teksts, kuru atskaņos asistīvās tehnoloģijas kad pārvietosies starp kartītēm. Izmantojiet @current un @total kā mainīgos."
+    },
+    {
+      "label": "Randomize cards",
+      "description": "Enable to randomize the order of cards on display."
     }
   ]
 }
