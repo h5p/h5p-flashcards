@@ -1,12 +1,12 @@
 {
   "semantics": [
     {
-      "label": "Oppgavetekst"
+      "label": "Oppgavebeskrivelse"
     },
     {
       "widgets": [
         {
-          "label": "Default"
+          "label": "Standard"
         }
       ],
       "label": "Kort",
