@@ -111,9 +111,9 @@
       "description": "Κείμενο που θα χρησιμοποιηθεί από υποστηρικτικές τεχνολογίες. Χρησιμοποιήστε τη μεταβλητή @answer."
     },
     {
-      "label": "Correct feedback text for assistive technologies",
-      "default": "@answer is correct.",
-      "description": "Text that will be announced to assistive technologies when a card is answered correctly. Use @answer as variable."
+      "label": "Κείμενο σωστής απάντησης για υποστηρικτικές τεχνολογίες",
+      "default": "Η απάντηση @answer είναι σωστή.",
+      "description": "Κείμενο που θα χρησιμοποιηθεί από υποστηρικτικές τεχνολογίες όταν μια κάρτα απαντηθεί σωστά. Χρησιμοποιήστε τη μεταβλητή @answer."
     },
     {
       "label": "Κείμενο τρέχουσας κάρτας για υποστηρικτικές τεχνολογίες",
