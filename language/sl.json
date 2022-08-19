@@ -27,7 +27,7 @@
             "description": "Neobvezna slika za kartico. Na kartici je lahko samo slika, samo besedilo ali oboje."
           },
           {
-            "label": "Alternative text for image"
+            "label": "Nadomestno besedilo za sliko"
           },
           {
             "label": "Namig",
@@ -102,19 +102,19 @@
       "description": "Razlikuje med zapisom v velikih ali malih tiskanih črkah."
     },
     {
-      "label": "Incorrect text for assistive technologies",
-      "default": "Incorrect answer. Correct answer was @answer",
-      "description": "Text that will be announced to assistive technologies. Use @answer as variable."
+      "label": "Besedilo za nepravilen odgovor za bralnike zaslona",
+      "default": "Nepravilen odgovor. Pravilen odgovor bi bil @answer",
+      "description": "@answer je spremenljivka."
     },
     {
-      "label": "Correct feedback text for assistive technologies",
-      "default": "@answer is correct.",
-      "description": "Text that will be announced to assistive technologies when a card is answered correctly. Use @answer as variable."
+      "label": "Besedilo za pravilen odgovor za bralnike zaslona",
+      "default": "@answer je pravilen odgovor.",
+      "description": "@answer je spremenljivka."
     },
     {
-      "label": "Card change for assistive technologies",
-      "default": "Page @current of @total",
-      "description": "Text that will be announced to assistive technologies when navigating between cards. Use @current and @total as variables."
+      "label": "Sprememba statusa pri obračanju kartice za bralnike zaslona",
+      "default": "Stran @current od @total",
+      "description": "@current in @total sta spremenljivki."
     }
   ]
 }
