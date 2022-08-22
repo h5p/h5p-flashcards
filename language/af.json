@@ -30,6 +30,10 @@
             "label": "Alternatiewe teks vir prent"
           },
           {
+            "label": "Audio",
+            "description": "Optional audio for the card."
+          },
+          {
             "label": "Wenk",
             "fields": [
               {
@@ -115,6 +119,21 @@
       "label": "Kaartjie verandering vir hulptegnologieë",
       "default": "Bladsy @current van @total",
       "description": "Teks wat aangekondig sal word as hulptegnologieë wanneer u tussen kaarte navigeer. Gebruik @current en @total as veranderlikes."
+    },
+    {
+      "label": "Audio play button",
+      "default": "Play",
+      "description": "Text that will be announced to assistive technologies as label for play button."
+    },
+    {
+      "label": "Audio pause button",
+      "default": "Pause",
+      "description": "Text that will be announced to assistive technologies as label for pause button."
+    },
+    {
+      "label": "Audio not supported message",
+      "default": "Your browser does not support this audio.",
+      "description": "Text to report that the browser cannot play the audio file."
     }
   ]
 }

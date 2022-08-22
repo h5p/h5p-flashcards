@@ -30,6 +30,10 @@
             "label": "Alternative text for image"
           },
           {
+            "label": "Audio",
+            "description": "Optional audio for the card."
+          },
+          {
             "label": "Порада",
             "fields": [
               {
@@ -115,6 +119,21 @@
       "label": "Зміна картки для допоміжних технологій",
       "default": "Сторінка @current з @total",
       "description": "Текст, який буде оголошено допоміжними технологіями під час навігації між картками. Використовуй @current і @total як змінні."
+    },
+    {
+      "label": "Audio play button",
+      "default": "Play",
+      "description": "Text that will be announced to assistive technologies as label for play button."
+    },
+    {
+      "label": "Audio pause button",
+      "default": "Pause",
+      "description": "Text that will be announced to assistive technologies as label for pause button."
+    },
+    {
+      "label": "Audio not supported message",
+      "default": "Your browser does not support this audio.",
+      "description": "Text to report that the browser cannot play the audio file."
     }
   ]
 }

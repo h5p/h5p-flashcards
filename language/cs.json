@@ -30,6 +30,10 @@
             "label": "Alternativní text pro obrázek"
           },
           {
+            "label": "Audio",
+            "description": "Optional audio for the card."
+          },
+          {
             "label": "Nápověda",
             "fields": [
               {
@@ -115,6 +119,21 @@
       "label": "Změna karty za podpůrné technologie",
       "default": "Strana @current z @total",
       "description": "Text, který bude při navigaci mezi kartami oznámen podpůrnými technologiemi. Jako proměnné použijte @current a @total."
+    },
+    {
+      "label": "Audio play button",
+      "default": "Play",
+      "description": "Text that will be announced to assistive technologies as label for play button."
+    },
+    {
+      "label": "Audio pause button",
+      "default": "Pause",
+      "description": "Text that will be announced to assistive technologies as label for pause button."
+    },
+    {
+      "label": "Audio not supported message",
+      "default": "Your browser does not support this audio.",
+      "description": "Text to report that the browser cannot play the audio file."
     }
   ]
 }

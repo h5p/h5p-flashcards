@@ -56,6 +56,14 @@
           "optional": true
         },
         {
+          "name": "audio",
+          "type": "audio",
+          "label": "Audio",
+          "description": "Optional audio for the card.",
+          "importance": "high",
+          "optional": true
+        },
+        {
           "name": "tip",
           "type": "group",
           "label": "Tip",
@@ -225,6 +233,30 @@
     "type": "text",
     "default": "Page @current of @total",
     "description": "Text that will be announced to assistive technologies when navigating between cards. Use @current and @total as variables.",
+    "common": true
+  },
+  {
+    "label": "Audio play button",
+    "name": "audioPlay",
+    "type": "text",
+    "default": "Play",
+    "description": "Text that will be announced to assistive technologies as label for play button.",
+    "common": true
+  },
+  {
+    "label": "Audio pause button",
+    "name": "audioPause",
+    "type": "text",
+    "default": "Pause",
+    "description": "Text that will be announced to assistive technologies as label for pause button.",
+    "common": true
+  },
+  {
+    "label": "Audio not supported message",
+    "name": "audioNotSupported",
+    "type": "text",
+    "default": "Your browser does not support this audio.",
+    "description": "Text to report that the browser cannot play the audio file.",
     "common": true
   }
 ]

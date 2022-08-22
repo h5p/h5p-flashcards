@@ -30,6 +30,10 @@
             "label": "Εναλλακτικό κείμενο για την εικόνα"
           },
           {
+            "label": "Audio",
+            "description": "Optional audio for the card."
+          },
+          {
             "label": "Επεξήγηση",
             "fields": [
               {
@@ -115,6 +119,21 @@
       "label": "Κείμενο τρέχουσας κάρτας για υποστηρικτικές τεχνολογίες",
       "default": "Κάρτα @current από @total",
       "description": "Κείμενο που θα χρησιμοποιηθεί από υποστηρικτικές τεχνολογίες κατά την πλοήγηση μεταξύ των καρτών. Χρησιμοποιήστε τις μεταβλητές @current, @total."
+    },
+    {
+      "label": "Audio play button",
+      "default": "Play",
+      "description": "Text that will be announced to assistive technologies as label for play button."
+    },
+    {
+      "label": "Audio pause button",
+      "default": "Pause",
+      "description": "Text that will be announced to assistive technologies as label for pause button."
+    },
+    {
+      "label": "Audio not supported message",
+      "default": "Your browser does not support this audio.",
+      "description": "Text to report that the browser cannot play the audio file."
     }
   ]
 }
