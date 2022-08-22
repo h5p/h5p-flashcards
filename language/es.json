@@ -1,12 +1,12 @@
 {
   "semantics": [
     {
-      "label": "Descripción del trabajo"
+      "label": "Descripción de la tarea"
     },
     {
       "widgets": [
         {
-          "label": "Predeterminado"
+          "label": "Por defecto"
         }
       ],
       "label": "Cartas",
@@ -16,7 +16,7 @@
         "fields": [
           {
             "label": "Pregunta",
-            "description": "Pregunta opcional de texto para la carta. (La carta podría usar solamente una imagen, solo un texto o ambos)"
+            "description": "Pregunta opcional de texto para la carta. (La carta puede usar sólo una imagen, sólo un texto o ambos)"
           },
           {
             "label": "Respuesta",
@@ -24,10 +24,10 @@
           },
           {
             "label": "Imagen",
-            "description": "Imagen opcional para la carta. (La carta podría usar solamente una imagen, solo un texto o ambos)"
+            "description": "Imagen opcional para la carta. (La carta puede usar sólo una imagen, sólo un texto o ambos)"
           },
           {
-            "label": "Texto aternativo para la imagen"
+            "label": "Texto alternativo para la imagen"
           },
           {
             "label": "Audio",
@@ -45,9 +45,9 @@
       }
     },
     {
-      "label": "Texto para Progreso",
+      "label": "Texto de Progreso",
       "default": "Carta @card de @total",
-      "description": "Texto del Progreso, variables disponibles: @card y @total. Ejemplo: 'Carta @card de @total'"
+      "description": "Texto de Progreso, variables disponibles: @card y @total. Ejemplo: 'Carta @card de @total'"
     },
     {
       "label": "Texto para el botón Siguiente",
@@ -62,11 +62,11 @@
       "default": "Comprobar"
     },
     {
-      "label": "Requerir entrada del usuario antes que la solución pueda ser vista"
+      "label": "Requerir entrada del usuario antes de poder ver la solución"
     },
     {
-      "label": "Texto para el campo de ingreso de respuesta",
-      "default": "Su respuesta"
+      "label": "Texto para el campo de entrada de respuesta",
+      "default": "Tu respuesta"
     },
     {
       "label": "Texto para respuesta correcta",
@@ -81,13 +81,13 @@
       "default": "Respuesta correcta"
     },
     {
-      "label": "Título para texto de Resultados",
+      "label": "Texto de título para resultados",
       "default": "Resultados"
     },
     {
       "label": "Texto para número de aciertos",
       "default": "@score de @total correctos",
-      "description": "Texto de Resultados, variables disponibles: @score y @total. Ejemplo: '@score de @total correctos'"
+      "description": "Texto de resultados, variables disponibles: @score y @total. Ejemplo: '@score de @total correctos'"
     },
     {
       "label": "Texto para mostrar resultados",
@@ -98,27 +98,27 @@
       "default": "A:"
     },
     {
-      "label": "Texto para botón \"reintentar\"",
-      "default": "Reintentar"
+      "label": "Texto para botón \"intentar de nuevo\"",
+      "default": "Intentar de nuevo"
     },
     {
-      "label": "MAYÚSCULAS/minúsculas si importan",
-      "description": "Asegurarse que la entrada del usuario tenga que ser exactamente la misma que la respuesta."
+      "label": "Diferenciar entre MAYÚSCULAS/minúsculas",
+      "description": "Se asegura de que la entrada del usuario tenga que ser exactamente la misma que la respuesta."
     },
     {
-      "label": "Texto incorrecto para tecnologías asistivas",
+      "label": "Texto de respuesta incorrecta para tecnologías de asistencia",
       "default": "Respuesta incorrecta. La respuesta correcta era @answer",
-      "description": "Texto que será anunciado a tecnologías asistivas. Use @answer como variable."
+      "description": "Texto anunciado a las tecnologías de asistencia. Usa @answer como variable."
     },
     {
-      "label": "Texto de retroalimentación correcta para tecnologías asistivas",
+      "label": "Texto de retroalimentación para correcto para tecnologías de asistencia",
       "default": "@answer es correcta.",
-      "description": "Texto que será anunciado a tecnologías asistivas cuando una tarjeta es contestada correctamente. Use @answer como variable."
+      "description": "Texto anunciado a las tecnologías de asistencia cuando se contesta una tarjeta correctamente. Usa @answer como variable."
     },
     {
-      "label": "Cambio de Tarjeta para tecnologías asistivas",
+      "label": "Cambio de tarjeta para tecnologías de asistencia",
       "default": "Página @current de @total",
-      "description": "Texto que será anunciado a tecnologías asistivas al navegar entre cartas. Use @current y @total como variables."
+      "description": "Texto anunciado a las tecnologías de asistencia al navegar entre cartas. Usa @current y @total como variables."
     },
     {
       "label": "Audio play button",
