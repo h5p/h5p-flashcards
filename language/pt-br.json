@@ -10,9 +10,9 @@
         }
       ],
       "label": "Cartões",
-      "entity": "card",
+      "entity": "cartão",
       "field": {
-        "label": "Cartões",
+        "label": "Cartão",
         "fields": [
           {
             "label": "Questão",
@@ -27,7 +27,7 @@
             "description": "Imagem opcional para o cartão. (O cartão pode usar apenas uma imagem, apenas um texto ou ambos)"
           },
           {
-            "label": "Alternative text for image"
+            "label": "Texto alternativo para a imagem"
           },
           {
             "label": "Dica",
@@ -46,16 +46,16 @@
       "description": "Texto de progresso, variáveis disponíveis: @card e @total. Exemplo: 'Cartão @card de @total'"
     },
     {
-      "label": "Texto para o botão de próximo",
+      "label": "Texto para o botão Próximo",
       "default": "Próximo"
     },
     {
-      "label": "Texto para o botão de anterior",
+      "label": "Texto para o botão Anterior",
       "default": "Anterior"
     },
     {
-      "label": "Texto para o botão de verificar resposta",
-      "default": "Verificar resposta"
+      "label": "Texto para o botão Verificar",
+      "default": "Verificar"
     },
     {
       "label": "Requer resposta do usuário antes da solução poder ser visualizada"
@@ -85,7 +85,7 @@
       "default": "Resultados"
     },
     {
-      "label": "Texto para número de corretos",
+      "label": "Texto para o número de corretos",
       "default": "@score de @total corretos",
       "description": "Texto de resultado, variáveis disponíveis: @score e @total. Exemplo: '@score de @total corretos'"
     },
@@ -94,31 +94,31 @@
       "default": "Mostrar resultados"
     },
     {
-      "label": "Texto para rótul ode resposta curta",
+      "label": "Texto para rótulo de resposta curta",
       "default": "R:"
     },
     {
-      "label": "Texto para botão \"Tentar novamente\"",
-      "default": "Tentar novamente"
+      "label": "Texto para o botão \"Tentar Novamente\"",
+      "default": "Tentar Novamente"
     },
     {
-      "label": "Diferenciar maiúscular/minúsculas",
+      "label": "Diferenciar maiúsculas e minúsculas",
       "description": "Assegura que o usuário digite a palavra/frase exatamente igual à resposta."
     },
     {
-      "label": "Incorrect text for assistive technologies",
-      "default": "Incorrect answer. Correct answer was @answer",
-      "description": "Text that will be announced to assistive technologies. Use @answer as variable."
+      "label": "Texto incorreto para tecnologias de assistência",
+      "default": "Resposta incorreta. A resposta correta foi @answer",
+      "description": "Texto que será anunciado para as tecnologias de assistência. Use @answer como variável."
     },
     {
-      "label": "Correct feedback text for assistive technologies",
-      "default": "@answer is correct.",
-      "description": "Text that will be announced to assistive technologies when a card is answered correctly. Use @answer as variable."
+      "label": "Texto de feedback correto para tecnologias de assistência",
+      "default": "@answer está correta.",
+      "description": "Texto que será anunciado às tecnologias de assistência quando um cartão for respondido corretamente. Use @answer como variável."
     },
     {
-      "label": "Card change for assistive technologies",
-      "default": "Page @current of @total",
-      "description": "Text that will be announced to assistive technologies when navigating between cards. Use @current and @total as variables."
+      "label": "Troca de cartões para tecnologias de assistência",
+      "default": "Página @current de @total",
+      "description": "Texto que será anunciado para as tecnologias de assistência na navegação entre cartões. Use @current e @total como variáveis."
     }
   ]
 }
