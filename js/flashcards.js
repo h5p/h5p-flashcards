@@ -772,7 +772,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
     return text
       .split(delimiter)
       .map(function (element) {
-        return element = element.replace('\u001a', delimiter);
+        return element = element.replace('\u001a', delimiter).trim();
       });
   };
 
