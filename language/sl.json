@@ -20,7 +20,7 @@
           },
           {
             "label": "Odgovor",
-            "description": "Odgovor na vprašanje."
+            "description": "Odgovor na vprašanje. Use a pipe symbol | to split alternative solutions. Use \\| if a solution should contain a |."
           },
           {
             "label": "Slika",
@@ -75,6 +75,10 @@
     {
       "label": "Besedilo za prikaz rešitve",
       "default": "Prikaži rešitev"
+    },
+    {
+      "label": "Separator of solution alternatives",
+      "default": "or"
     },
     {
       "label": "Besedilo za naslov rezultatov",

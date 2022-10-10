@@ -38,7 +38,8 @@ H5P.Flashcards = (function ($, XapiGenerator) {
       retry : "Retry",
       cardAnnouncement: 'Incorrect answer. Correct answer was @answer',
       pageAnnouncement: 'Page @current of @total',
-      correctAnswerAnnouncement: '@answer is correct!',
+      or: 'or',
+      correctAnswerAnnouncement: '@answer is correct!'
     }, options);
     this.$images = [];
     this.hasBeenReset = false;
@@ -136,7 +137,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
       userAnswer = (userAnswer ? userAnswer.toLowerCase() : userAnswer);
     }
 
-    return answer === userAnswer;
+    return C.splitAlternatives(answer).indexOf(userAnswer, '') !== -1;
   }
 
   /**
@@ -369,7 +370,10 @@ H5P.Flashcards = (function ($, XapiGenerator) {
 
           $('<div class="h5p-solution">' +
             '<span class="solution-icon h5p-rotate-in"></span>' +
-            '<span class="solution-text">' + (that.options.cards[index].answer ? that.options.showSolutionText + ': <span>' + that.options.cards[index].answer + '</span>' : '') + '</span>' +
+            '<span class="solution-text">' +
+              (that.options.cards[index].answer ?
+                that.options.showSolutionText + ': <span>' + C.splitAlternatives(that.options.cards[index].answer).join('<span> ' + that.options.or + ' </span>') + '</span>' :
+                '') + '</span>' +
           '</div>').appendTo($card.find('.h5p-imageholder'));
 
           const ariaText = that.options.cardAnnouncement.replace(
@@ -390,7 +394,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
       }
 
       if (done) {
-        that.triggerXAPICompleted(that.getScore(), that.getMaxScore());
+        that.trigger(XapiGenerator.getXapiEvent(that));
         that.trigger('resize');
       }
     };
@@ -491,7 +495,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
 
       if (!userCorrect) {
         $resultsAnswer.append('<span> ' + this.options.showSolutionText + ': </span>');
-        $resultsAnswer.append('<span class="h5p-correct">' + card.answer + '</span>');
+        $resultsAnswer.append('<span class="h5p-correct">' + C.splitAlternatives(card.answer).join('<span> ' + this.options.or + ' </span>') + '</span>');
       }
 
       $('<div/>', {
@@ -748,6 +752,29 @@ H5P.Flashcards = (function ($, XapiGenerator) {
    * @type {H5P.jQuery}
    */
   C.$converter = $('<div/>');
+
+  /**
+   * Split text by | while respecting \| as escaped |.
+   * @param {string} text Text to split.
+   * @param {string} [delimiter='|'] Delimiter.
+   * @param {string} [escaper='\\'] Escape sequence, default: single backslash.
+   * @return {string[]} Split text.
+   */
+  C.splitAlternatives = function (text, delimiter, escaper) {
+    text = text || '';
+    delimiter = delimiter || '|';
+    escaper = escaper || '\\';
+
+    while (text.indexOf(escaper + delimiter) !== -1) {
+      text = text.replace(escaper + delimiter, '\u001a');
+    }
+
+    return text
+      .split(delimiter)
+      .map(function (element) {
+        return element = element.replace(/\u001a/g, delimiter).trim();
+      });
+  };
 
   /**
    * Get xAPI data.

@@ -77,6 +77,10 @@
       "default": "ამოხსნის ჩვენება"
     },
     {
+      "label": "Separator of solution alternatives",
+      "default": "or"
+    },
+    {
       "label": "ტექსტი შედეგებისთვის",
       "default": "შედეგი"
     },

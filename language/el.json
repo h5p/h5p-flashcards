@@ -20,7 +20,7 @@
           },
           {
             "label": "Απάντηση",
-            "description": "Προαιρετική"
+            "description": "Προαιρετική. Use a pipe symbol | to split alternative solutions. Use \\| if a solution should contain a |."
           },
           {
             "label": "Εικόνα",
@@ -75,6 +75,10 @@
     {
       "label": "Κείμενο εμφάνισης λύσης",
       "default": "Σωστή απάντηση"
+    },
+    {
+      "label": "Separator of solution alternatives",
+      "default": "or"
     },
     {
       "label": "Κείμενο τίτλου αποτελεσμάτων",

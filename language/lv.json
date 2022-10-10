@@ -15,7 +15,7 @@
           },
           {
             "label": "Atbilde",
-            "description": "Neobligāta kartītes atbilde (risinājums)."
+            "description": "Neobligāta kartītes atbilde (risinājums). Use a pipe symbol | to split alternative solutions. Use \\| if a solution should contain a |."
           },
           {
             "label": "Attēls",
@@ -75,6 +75,10 @@
     {
       "label": "Rādīt risinājuma tekstu",
       "default": "Pareiza atbilde"
+    },
+    {
+      "label": "Separator of solution alternatives",
+      "default": "or"
     },
     {
       "label": "Rezultātu virsraksta teksts",
