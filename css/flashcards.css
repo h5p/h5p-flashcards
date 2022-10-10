@@ -533,6 +533,10 @@
   vertical-align: bottom;
 }
 
+.h5p-flashcards .h5p-solution > span > span > span{
+  font-size: initial;
+}
+
 .h5p-flashcards .h5p-solution.h5p-hidden {
   display: block;
 }
@@ -688,8 +692,13 @@ button::-moz-focus-inner {
   color: #adb6c7;
 }
 
+
 .h5p-flashcards .h5p-results-answer span.h5p-correct {
   color: #7cf0c1;
+}
+
+.h5p-flashcards .h5p-results-answer span.h5p-correct span {
+  color: #adb6c7;
 }
 
 .h5p-flashcards .h5p-results-box {

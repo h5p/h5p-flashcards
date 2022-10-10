@@ -2,8 +2,8 @@
   "title": "Flashcards",
   "description": "Create cards where the user has to guess the answer.",
   "majorVersion": 1,
-  "minorVersion": 5,
-  "patchVersion": 24,
+  "minorVersion": 6,
+  "patchVersion": 0,
   "runnable": 1,
   "embedTypes": [
     "iframe"

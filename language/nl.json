@@ -20,7 +20,7 @@
           },
           {
             "label": "Antwoord",
-            "description": "Het optionele antwoord (oplossing) achterop de kaart."
+            "description": "Het optionele antwoord (oplossing) achterop de kaart. Use a pipe symbol | to split alternative solutions. Use \\| if a solution should contain a |."
           },
           {
             "label": "Afbeelding",
@@ -75,6 +75,10 @@
     {
       "label": "Toon tekst oplossing",
       "default": "Juist antwoord"
+    },
+    {
+      "label": "Separator of solution alternatives",
+      "default": "or"
     },
     {
       "label": "Titel voor resultaten",

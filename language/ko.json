@@ -19,8 +19,8 @@
             "description": "카드에 대한 선택적 텍스트 질문(카드는 이미지, 텍스트 또는 둘 모두를 사용할 수 있습니다.)"
           },
           {
-            "label": "답",
-            "description": "카드에 대한 선택적 해답."
+            "label": "Answer",
+            "description": "카드에 대한 선택적 해답. Use a pipe symbol | to split alternative solutions. Use \\| if a solution should contain a |."
           },
           {
             "label": "이미지",
@@ -75,6 +75,10 @@
     {
       "label": "해답 보이기 텍스트",
       "default": "정답"
+    },
+    {
+      "label": "Separator of solution alternatives",
+      "default": "or"
     },
     {
       "label": "결과 제목 텍스트",

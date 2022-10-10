@@ -77,6 +77,10 @@
       "default": "Тачан одговор"
     },
     {
+      "label": "Separator of solution alternatives",
+      "default": "or"
+    },
+    {
       "label": "Текст за Резултате",
       "default": "Резултати"
     },

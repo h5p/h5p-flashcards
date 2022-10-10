@@ -20,7 +20,7 @@
           },
           {
             "label": "Cevap",
-            "description": "Kart için isteğe bağlı cevap (çözüm)."
+            "description": "Kart için isteğe bağlı cevap (çözüm). Use a pipe symbol | to split alternative solutions. Use \\| if a solution should contain a |."
           },
           {
             "label": "Resim",
@@ -75,6 +75,10 @@
     {
       "label": "Çözümü göster metni",
       "default": "Çözümü Göster"
+    },
+    {
+      "label": "Separator of solution alternatives",
+      "default": "or"
     },
     {
       "label": "Sonuçlar başlığı metni",
