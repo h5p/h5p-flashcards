@@ -39,7 +39,7 @@
           "label": "Answer",
           "importance": "high",
           "optional": true,
-          "description": "Answer (solution) for the card. Use a pipe symbol | to split alternative solutions. Use \\| if a solution should contain a |. Use a pipe symbol | to split alternative solutions. Use \\| if a solution should contain a |."
+          "description": "Answer (solution) for the card. Use a pipe symbol | to split alternative solutions. Use \\| if a solution should contain a |."
         },
         {
           "name": "image",
