@@ -77,10 +77,6 @@
       "default": "정답"
     },
     {
-      "label": "Separator of solution alternatives",
-      "default": ","
-    },
-    {
       "label": "결과 제목 텍스트",
       "default": "결과"
     },

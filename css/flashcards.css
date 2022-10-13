@@ -536,6 +536,7 @@
 
 .h5p-flashcards .h5p-solution > span > span > span{
   font-size: initial;
+  margin-left: -0.2em;
 }
 
 .h5p-flashcards .h5p-solution.h5p-hidden {

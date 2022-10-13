@@ -77,10 +77,6 @@
       "default": "Çözümü Göster"
     },
     {
-      "label": "Separator of solution alternatives",
-      "default": ","
-    },
-    {
       "label": "Sonuçlar başlığı metni",
       "default": "Sonuçlar"
     },

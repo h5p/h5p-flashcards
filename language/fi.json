@@ -77,10 +77,6 @@
       "default": "Oikea vastaus"
     },
     {
-      "label": "Separator of solution alternatives",
-      "default": ","
-    },
-    {
       "label": "Tulokset otsikko",
       "default": "Tulokset"
     },

@@ -157,14 +157,6 @@
     "common": true
   },
   {
-    "label": "Separator of solution alternatives",
-    "name": ",",
-    "type": "text",
-    "default": ",",
-    "importance": "low",
-    "common": true
-  },
-  {
     "label": "Text for results title",
     "name": "results",
     "type": "text",

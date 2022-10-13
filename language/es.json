@@ -77,10 +77,6 @@
       "default": "Respuesta correcta"
     },
     {
-      "label": "Separator of solution alternatives",
-      "default": ","
-    },
-    {
       "label": "Texto de título para resultados",
       "default": "Resultados"
     },

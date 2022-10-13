@@ -77,10 +77,6 @@
       "default": "Õige vastus"
     },
     {
-      "label": "Separator of solution alternatives",
-      "default": ","
-    },
-    {
       "label": "Tulemuste pealkirja tekst",
       "default": "Tulemused"
     },
