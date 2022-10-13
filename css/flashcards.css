@@ -529,7 +529,8 @@
 }
 
 .h5p-flashcards .h5p-solution > span > span {
-  font-size: 1.5em;
+  font-size: 1.25em;
+  line-height: 1.25em;
   vertical-align: bottom;
 }
 

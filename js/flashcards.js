@@ -38,7 +38,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
       retry : "Retry",
       cardAnnouncement: 'Incorrect answer. Correct answer was @answer',
       pageAnnouncement: 'Page @current of @total',
-      or: 'or',
+      or: ',',
       correctAnswerAnnouncement: '@answer is correct!'
     }, options);
     this.$images = [];
