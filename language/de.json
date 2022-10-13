@@ -78,7 +78,7 @@
     },
     {
       "label": "Trennung von Lösungsalternativen",
-      "default": "oder"
+      "default": ","
     },
     {
       "label": "Überschrift der Ergebnisseite",

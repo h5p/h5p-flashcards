@@ -78,7 +78,7 @@
     },
     {
       "label": "Separator of solution alternatives",
-      "default": "or"
+      "default": ","
     },
     {
       "label": "Tulemuste pealkirja tekst",

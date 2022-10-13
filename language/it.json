@@ -78,7 +78,7 @@
     },
     {
       "label": "Separator of solution alternatives",
-      "default": "or"
+      "default": ","
     },
     {
       "label": "Titolo del messaggio per i risultati",
