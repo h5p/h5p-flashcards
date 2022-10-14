@@ -77,10 +77,6 @@
       "default": "ចម្លើយ​ត្រឹមត្រូវ"
     },
     {
-      "label": "Separator of solution alternatives",
-      "default": "or"
-    },
-    {
       "label": "Text for results title",
       "default": "លទ្ធផល"
     },

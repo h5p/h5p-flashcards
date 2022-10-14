@@ -28,7 +28,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
       defaultAnswerText: "Your answer",
       correctAnswerText: "Correct",
       incorrectAnswerText: "Incorrect",
-      showSolutionText: "Correct answer",
+      showSolutionText: "Correct answer(s)",
       answerShortText: "A:",
       informationText: "Information",
       caseSensitive: false,
@@ -38,7 +38,6 @@ H5P.Flashcards = (function ($, XapiGenerator) {
       retry : "Retry",
       cardAnnouncement: 'Incorrect answer. Correct answer was @answer',
       pageAnnouncement: 'Page @current of @total',
-      or: 'or',
       correctAnswerAnnouncement: '@answer is correct!'
     }, options);
     this.$images = [];
@@ -372,7 +371,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
             '<span class="solution-icon h5p-rotate-in"></span>' +
             '<span class="solution-text">' +
               (that.options.cards[index].answer ?
-                that.options.showSolutionText + ': <span>' + C.splitAlternatives(that.options.cards[index].answer).join('<span> ' + that.options.or + ' </span>') + '</span>' :
+                that.options.showSolutionText + ': ' + C.splitAlternatives(that.options.cards[index].answer).join(', ') :
                 '') + '</span>' +
           '</div>').appendTo($card.find('.h5p-imageholder'));
 
@@ -495,7 +494,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
 
       if (!userCorrect) {
         $resultsAnswer.append('<span> ' + this.options.showSolutionText + ': </span>');
-        $resultsAnswer.append('<span class="h5p-correct">' + C.splitAlternatives(card.answer).join('<span> ' + this.options.or + ' </span>') + '</span>');
+        $resultsAnswer.append('<span class="h5p-correct">' + C.splitAlternatives(card.answer).join(', ') + '</span>');
       }
 
       $('<div/>', {

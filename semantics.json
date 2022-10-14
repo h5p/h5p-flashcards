@@ -152,15 +152,7 @@
     "label": "Show solution text",
     "name": "showSolutionText",
     "type": "text",
-    "default": "Correct answer",
-    "importance": "low",
-    "common": true
-  },
-  {
-    "label": "Separator of solution alternatives",
-    "name": "or",
-    "type": "text",
-    "default": "or",
+    "default": "Correct answer(s)",
     "importance": "low",
     "common": true
   },

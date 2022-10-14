@@ -77,10 +77,6 @@
       "default": "Σωστή απάντηση"
     },
     {
-      "label": "Separator of solution alternatives",
-      "default": "or"
-    },
-    {
       "label": "Κείμενο τίτλου αποτελεσμάτων",
       "default": "Αποτελέσματα"
     },

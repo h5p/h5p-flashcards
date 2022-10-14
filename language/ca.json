@@ -77,10 +77,6 @@
       "default": "Resposta correcta"
     },
     {
-      "label": "Separator of solution alternatives",
-      "default": "or"
-    },
-    {
       "label": "Text per al títol de resultats",
       "default": "Resultats"
     },
