@@ -528,15 +528,14 @@
   color: white;
 }
 
-.h5p-flashcards .h5p-solution > span > span {
+.h5p-flashcards .h5p-solution .h5p-flashcards-solution-alternatives {
   font-size: 1.25em;
   line-height: 1.25em;
   vertical-align: bottom;
 }
 
-.h5p-flashcards .h5p-solution > span > span > span{
+.h5p-flashcards .h5p-flashcards-solution-separator {
   font-size: initial;
-  margin-left: -0.2em;
 }
 
 .h5p-flashcards .h5p-solution.h5p-hidden {
