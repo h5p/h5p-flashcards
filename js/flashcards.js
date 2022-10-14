@@ -371,7 +371,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
             '<span class="solution-icon h5p-rotate-in"></span>' +
             '<span class="solution-text">' +
               (that.options.cards[index].answer ?
-                that.options.showSolutionText + ': <span class="h5p-flashcards-solution-alternatives">' + C.splitAlternatives(that.options.cards[index].answer).join('<span class="h5p-flashcards-solution-separator">' + ',' + ' </span>') + '</span>' :
+                that.options.showSolutionText + ': ' + C.splitAlternatives(that.options.cards[index].answer).join(', ') :
                 '') + '</span>' +
           '</div>').appendTo($card.find('.h5p-imageholder'));
 
@@ -494,7 +494,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
 
       if (!userCorrect) {
         $resultsAnswer.append('<span> ' + this.options.showSolutionText + ': </span>');
-        $resultsAnswer.append('<span class="h5p-correct">' + C.splitAlternatives(card.answer).join('<span class="h5p-flashcards-solution-separator">' + ',' + ' </span>') + '</span>');
+        $resultsAnswer.append('<span class="h5p-correct">' + C.splitAlternatives(card.answer).join(', ') + '</span>');
       }
 
       $('<div/>', {
