@@ -152,7 +152,7 @@
     "label": "Show solution text",
     "name": "showSolutionText",
     "type": "text",
-    "default": "Correct answer",
+    "default": "Correct answer(s)",
     "importance": "low",
     "common": true
   },

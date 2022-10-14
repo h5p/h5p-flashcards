@@ -28,7 +28,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
       defaultAnswerText: "Your answer",
       correctAnswerText: "Correct",
       incorrectAnswerText: "Incorrect",
-      showSolutionText: "Correct answer",
+      showSolutionText: "Correct answer(s)",
       answerShortText: "A:",
       informationText: "Information",
       caseSensitive: false,

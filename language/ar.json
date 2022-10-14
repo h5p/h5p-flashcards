@@ -74,7 +74,7 @@
     },
     {
       "label": "Show solution text",
-      "default": "Correct answer"
+      "default": "Correct answer(s)"
     },
     {
       "label": "Text for results title",
