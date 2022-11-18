@@ -9,8 +9,8 @@
           "label": "Default"
         }
       ],
-      "label": "Cards",
-      "entity": "card",
+      "label": "כרטיסים",
+      "entity": "כרטיס",
       "field": {
         "label": "Card",
         "fields": [
@@ -19,7 +19,7 @@
             "description": "Optional textual question for the card. (The card may use just an image, just a text or both)"
           },
           {
-            "label": "Answer",
+            "label": "תשובה",
             "description": "תשובה אפשרית (פתרון) לכרטיס. Use a pipe symbol | to split alternative solutions. Use \\| if a solution should contain a |."
           },
           {
