@@ -77,10 +77,6 @@
       "default": "正确答案"
     },
     {
-      "label": "Separator of solution alternatives",
-      "default": "or"
-    },
-    {
       "label": "成绩标题的文本",
       "default": "成绩"
     },

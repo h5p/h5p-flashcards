@@ -74,11 +74,7 @@
     },
     {
       "label": "Show solution text",
-      "default": "Correct answer"
-    },
-    {
-      "label": "Separator of solution alternatives",
-      "default": "or"
+      "default": "Correct answer(s)"
     },
     {
       "label": "Text for results title",

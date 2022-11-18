@@ -39,7 +39,7 @@
           "label": "Answer",
           "importance": "high",
           "optional": true,
-          "description": "Answer (solution) for the card. Use a pipe symbol | to split alternative solutions. Use \\| if a solution should contain a |. Use a pipe symbol | to split alternative solutions. Use \\| if a solution should contain a |."
+          "description": "Answer (solution) for the card. Use a pipe symbol | to split alternative solutions. Use \\| if a solution should contain a |."
         },
         {
           "name": "image",
@@ -152,15 +152,7 @@
     "label": "Show solution text",
     "name": "showSolutionText",
     "type": "text",
-    "default": "Correct answer",
-    "importance": "low",
-    "common": true
-  },
-  {
-    "label": "Separator of solution alternatives",
-    "name": "or",
-    "type": "text",
-    "default": "or",
+    "default": "Correct answer(s)",
     "importance": "low",
     "common": true
   },

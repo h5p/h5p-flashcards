@@ -522,19 +522,20 @@
 
 .h5p-flashcards .h5p-solution > .solution-text {
   position: absolute;
-  bottom: 2em;
-  left: 0;
-  width: 100%;
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+  font-size: 1.25em;
+  line-height: 1.25;
+  padding: 0.25em 1em;
+  border-radius: 1em;
+  bottom: 1em;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: min-content;
+  min-width: 70%;
+  max-width: calc(100% - 1em);
   color: white;
-}
-
-.h5p-flashcards .h5p-solution > span > span {
-  font-size: 1.5em;
-  vertical-align: bottom;
-}
-
-.h5p-flashcards .h5p-solution > span > span > span{
-  font-size: initial;
+  background: #E50B0B;
 }
 
 .h5p-flashcards .h5p-solution.h5p-hidden {
@@ -684,8 +685,9 @@ button::-moz-focus-inner {
 .h5p-flashcards .h5p-results-answer {
   color: #7cf0c1;
   line-height: 2em;
-  margin-right: 3.5em;
+  margin-right: 4.5em;
   font-size: 0.8em;
+  overflow-wrap: break-word;
 }
 
 .h5p-flashcards .h5p-results-answer span {
