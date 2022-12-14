@@ -9,8 +9,10 @@
           "label": "Өгөгдмөл"
         }
       ],
+      "label": "Картууд",
       "entity": "карт",
       "field": {
+        "label": "Карт",
         "fields": [
           {
             "label": "Асуулт",
@@ -28,21 +30,19 @@
             "label": "Зургийн өөр текст"
           },
           {
+            "label": "Зөвлөгөө",
             "fields": [
               {
                 "label": "Зөвлөгөө текст"
               }
-            ],
-            "label": "Зөвлөгөө"
+            ]
           }
-        ],
-        "label": "Карт"
-      },
-      "label": "Картууд"
+        ]
+      }
     },
     {
-      "default": "@total дундаас @card карт",
       "label": "Явцын текст",
+      "default": "@total дундаас @card карт",
       "description": "Явцын текст, боломжтой хувьсагч: @card болон @total. Жишээ нь: '@total дундаас @card карт'"
     },
     {
@@ -61,34 +61,33 @@
       "label": "Шийдвэрийг үзэхийн өмнө хэрэглэгчийн оруулах шаардлагатай"
     },
     {
-      "default": "Таны хариулт",
-      "label": "Хариулт оруулах талбарт зориулсан текст"
+      "label": "Хариулт оруулах талбарт зориулсан текст",
+      "default": "Таны хариулт"
     },
     {
-      "default": "Зөв",
-      "label": "Зөв хариултын текст"
+      "label": "Зөв хариултын текст",
+      "default": "Зөв"
     },
     {
-      "default": "Буруу",
-      "label": "Буруу хариултын текст"
+      "label": "Буруу хариултын текст",
+      "default": "Буруу"
     },
     {
-      "default": "Зөв хариулт",
-      "label": "Шийдлийн текстийг харуулах"
+      "label": "Шийдлийн текстийг харуулах",
+      "default": "Зөв хариулт"
     },
     {
-      "default": "Үр дүн",
-      "label": "Үр дүнгийн гарчигт зориулсан текст"
+      "label": "Үр дүнгийн гарчигт зориулсан текст",
+      "default": "Үр дүн"
     },
     {
-      "default": "@total онооноос @score зөв",
       "label": "Зөв тоо бичих текст",
+      "default": "@total онооноос @score зөв",
       "description": "Үр дүнгийн текст, боломжтой хувьсагч: @score болон @total. Жишээ нь: '@total онооноос @score нь зөв'"
     },
     {
       "label": "Үр дүнг харуулах текст",
-      "default": "Үр дүнг харуулах",
-      "description": "Result text, variables available: @score and @total. Example: '@score of @total correct'"
+      "default": "Үр дүнг харуулах"
     },
     {
       "label": "Богино хариултын шошгонд зориулсан текст",
@@ -100,8 +99,7 @@
     },
     {
       "label": "Том жижгээр бичхээс хамаарна",
-      "description": "Хэрэглэгчийн оруулсан мэдээлэл хариулттай яг адилхан байх ёстой.",
-      "default": "Retry"
+      "description": "Хэрэглэгчийн оруулсан мэдээлэл хариулттай яг адилхан байх ёстой."
     },
     {
       "label": "Туслах технологид зориулсан буруу текст",
@@ -109,19 +107,18 @@
       "default": "Буруу хариулт. Зөв хариулт нь @answer байсан"
     },
     {
-      "default": "@answer нь зөв.",
       "label": "Туслах технологид зориулсан зөв санал хүсэлтийн текст",
+      "default": "@answer нь зөв.",
       "description": "Картанд зөв хариулсан тохиолдолд туслах технологид мэдэгдэх текст. @answer -ыг хувьсагч болгон ашигла."
     },
     {
       "label": "Туслах технологид зориулж карт солих",
-      "description": "Картуудын хооронд шилжихэд туслах технологид мэдэгдэх текст. @current болон @total-г хувьсагч болгон ашигла.",
-      "default": "Нийт @total -аас @current хуудас"
+      "default": "Нийт @total -аас @current хуудас",
+      "description": "Картуудын хооронд шилжихэд туслах технологид мэдэгдэх текст. @current болон @total-г хувьсагч болгон ашигла."
     },
     {
-      "label": "Card change for assistive technologies",
-      "default": "Page @current of @total",
-      "description": "Text that will be announced to assistive technologies when navigating between cards. Use @current and @total as variables."
+      "label": "Randomize cards",
+      "description": "Enable to randomize the order of cards on display."
     }
   ]
 }
