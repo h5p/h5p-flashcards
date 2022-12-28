@@ -115,6 +115,10 @@
       "label": "Canvi de targeta per a les tecnologies d’assistència",
       "default": "Pàgina @current de @total",
       "description": "Text que s’anunciarà a les tecnologies d’assistència en navegar per les targetes. S’utilitza @current i @total com a variables."
+    },
+    {
+      "label": "Randomize cards",
+      "description": "Enable to randomize the order of cards on display."
     }
   ]
 }

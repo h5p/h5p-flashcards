@@ -115,6 +115,10 @@
       "label": "ბარათის შეცვლა დამხმარე ტექნოლოგიისთვის",
       "default": "@current ბარათი @total-დან",
       "description": "ტექსტი, რომელსაც კითხულობს დამხმარე ტექნოლოგია ბარათის შეცვლისას. @current-ისა და @total-ის გამოყენება ცვლადების სახით."
+    },
+    {
+      "label": "Randomize cards",
+      "description": "Enable to randomize the order of cards on display."
     }
   ]
 }

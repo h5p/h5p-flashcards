@@ -115,6 +115,10 @@
       "label": "Text zum Kartenwechsel für Vorlesewerkzeuge",
       "default": "Karte @current von @total",
       "description": "Text, der von Vorlesewerkzeugen vorgelesen wird, wenn zwischen Karten gewechselt wird (Barrierefreiheit). Verwende @current und @total als Platzhalter."
+    },
+    {
+      "label": "Karten mischen",
+      "description": "Anwählen, um die Karten zufällig anzuordnen."
     }
   ]
 }

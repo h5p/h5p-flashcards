@@ -115,6 +115,10 @@
       "label": "Card change for assistive technologies",
       "default": "Page @current of @total",
       "description": "Text that will be announced to assistive technologies when navigating between cards. Use @current and @total as variables."
+    },
+    {
+      "label": "Ngẫu nhiên hóa thẻ",
+      "description": "Kích hoạt để ngẫu nhiên hóa thứ tự các thẻ được hiển thị."
     }
   ]
 }

@@ -115,6 +115,10 @@
       "label": "החלפת כרטיס עבור טכנולוגיות מסייעות",
       "default": "דף current@ מתוך total@",
       "description": "תוכן שיוקרא לטכנולוגיות מסייעות בעת ניווט בין כרטיסים. השתמשו ב- current@ ו- total@ כמשתנים."
+    },
+    {
+      "label": "Randomize cards",
+      "description": "Enable to randomize the order of cards on display."
     }
   ]
 }

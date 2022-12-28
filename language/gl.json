@@ -115,6 +115,10 @@
       "label": "Cambio de tarxeta para as tecnoloxías de asistencia",
       "default": "Páxina @current de @total",
       "description": "O texto pasarase ás tecnoloxías de asistencia cando se navegue entre tarxetas. Usa @current e @total como variables."
+    },
+    {
+      "label": "Randomize cards",
+      "description": "Enable to randomize the order of cards on display."
     }
   ]
 }

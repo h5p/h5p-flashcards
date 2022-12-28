@@ -227,5 +227,13 @@
     "default": "Page @current of @total",
     "description": "Text that will be announced to assistive technologies when navigating between cards. Use @current and @total as variables.",
     "common": true
+  },
+  {
+    "name": "randomCards",
+    "type": "boolean",
+    "label": "Randomize cards",
+    "importance": "low",
+    "description": "Enable to randomize the order of cards on display.",
+    "default": false
   }
 ]

@@ -115,6 +115,10 @@
       "label": "Промена картице за помоћне технологије",
       "default": "Страна @current од @total",
       "description": "Текст који ће бити најављен помоћним технологијама приликом навигације између картица. Користите @current и @total као променљиве."
+    },
+    {
+      "label": "Randomize cards",
+      "description": "Enable to randomize the order of cards on display."
     }
   ]
 }

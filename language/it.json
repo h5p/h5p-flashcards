@@ -115,6 +115,10 @@
       "label": "Cambio scheda per le tecnologie assistive",
       "default": "Pagina @current di @total",
       "description": "Testo per le tecnologie assistive durante la navigazione tra schede. Usa @current e @total come variabili"
+    },
+    {
+      "label": "Randomize cards",
+      "description": "Enable to randomize the order of cards on display."
     }
   ]
 }
