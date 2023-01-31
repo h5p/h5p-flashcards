@@ -74,7 +74,7 @@
     },
     {
       "label": "Texto para amosar a solución",
-      "default": "Resposta correcta"
+      "default": "Resposta(s) correcta(s)"
     },
     {
       "label": "Texto para o título dos resultados",
@@ -117,8 +117,8 @@
       "description": "O texto pasarase ás tecnoloxías de asistencia cando se navegue entre tarxetas. Usa @current e @total como variables."
     },
     {
-      "label": "Randomize cards",
-      "description": "Enable to randomize the order of cards on display."
+      "label": "Facer aleatorias as tarxetas",
+      "description": "Activar para facer aleatoria a orde das tarxetas amosadas."
     }
   ]
 }
