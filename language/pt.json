@@ -6,7 +6,7 @@
     {
       "widgets": [
         {
-          "label": "Default"
+          "label": "Padrão"
         }
       ],
       "label": "Cartões",
@@ -74,7 +74,7 @@
     },
     {
       "label": "Mostrar texto da solução",
-      "default": "Resposta correta"
+      "default": "Resposta correcta"
     },
     {
       "label": "Texto para título de resultados",
