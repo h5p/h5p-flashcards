@@ -81,7 +81,7 @@
       "default": "o"
     },
     {
-      "label": "Texto de título para resultados",
+      "label": "Texto para título de resultados",
       "default": "Resultados",
       "description": "Texto de Resultados, variables disponibles: @score y @total. Ejemplo: '@score de @total correctos'"
     },

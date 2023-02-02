@@ -103,7 +103,7 @@
     },
     {
       "label": "Incorrect text for assistive technologies",
-      "default": "Incorrect answer. Correct answer was @answer",
+      "default": "Réponse incorrecte. La réponse correcte était @answer",
       "description": "Text that will be announced to assistive technologies. Use @answer as variable."
     },
     {
@@ -118,7 +118,7 @@
     },
     {
       "label": "Randomize cards",
-      "description": "Enable to randomize the order of cards on display."      
+      "description": "Enable to randomize the order of cards on display."
     }
   ]
 }
