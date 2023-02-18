@@ -74,7 +74,7 @@
     },
     {
       "label": "Beschriftung der Lösung",
-      "default": "Richtige Antwort"
+      "default": "Richtige Antwort(en)"
     },
     {
       "label": "Überschrift der Ergebnisseite",
@@ -107,7 +107,7 @@
       "description": "Text, der von Vorlesewerkzeugen vorgelesen wird (Barrierefreiheit). Verwende @answer als Platzhalter."
     },
     {
-      "label": "Correct feedback text for assistive technologies",
+      "label": "Bezeichnung einer richtigen Antwort für Vorlesewerkzeuge",
       "default": "@answer ist richtig.",
       "description": "Text, der durch Vorlesewerkzeuge (Barrierefreiheit) vorgelesen wird, wenn eine Karte richtig beantwortet wird. Nutze @answer als Platzhalter."
     },
