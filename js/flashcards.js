@@ -787,7 +787,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
    */
   C.splitAlternatives = function (text, delimiter, escaper) {
     text = text || '';
-    delimiter = delimiter || '|';
+    delimiter = delimiter || '/';
     escaper = escaper || '\\';
 
     while (text.indexOf(escaper + delimiter) !== -1) {
