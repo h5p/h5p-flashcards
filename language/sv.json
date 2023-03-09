@@ -94,7 +94,7 @@
       "default": "A:"
     },
     {
-      "label": "Text för knappen \"försök igen\" ",
+      "label": "Text för knappen \"försök igen\"",
       "default": "Försök igen"
     },
     {
@@ -107,9 +107,9 @@
       "description": "Text som kommer användas av tillgänglighetshjälpmedel. Använd @answer som variabel."
     },
     {
-      "label": "Correct feedback text for assistive technologies",
-      "default": "@answer is correct.",
-      "description": "Text that will be announced to assistive technologies when a card is answered correctly. Use @answer as variable."
+      "label": "Text för korrekt feedback text för tillgänglighetshjälpmedel",
+      "default": "@answer är korrekt",
+      "description": "Text som beskrivs för tillgänglighetshjälpmedel när ett kort är besvarat korrekt. Använd @answer som variabel."
     },
     {
       "label": "Byte av kort vid tillgänglighetshjälpmedel",
@@ -117,8 +117,8 @@
       "description": "Text som kommer användas av tillgänglighetshjälpmedel vid navigering mellan kort. Använd @current och @total som variabler."
     },
     {
-      "label": "Randomize cards",
-      "description": "Enable to randomize the order of cards on display."
+      "label": "Slumpa kort",
+      "description": "Aktivera för att skapa slumpmässig ordning på hur korten visas."
     }
   ]
 }

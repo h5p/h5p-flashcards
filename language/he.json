@@ -6,16 +6,16 @@
     {
       "widgets": [
         {
-          "label": "Default"
+          "label": "ברירת מחדל"
         }
       ],
       "label": "כרטיסים",
       "entity": "כרטיס",
       "field": {
-        "label": "Card",
+        "label": "כרטיס",
         "fields": [
           {
-            "label": "Question",
+            "label": "שאלה",
             "description": "Optional textual question for the card. (The card may use just an image, just a text or both)"
           },
           {
@@ -23,17 +23,17 @@
             "description": "תשובה אפשרית (פתרון) לכרטיס. Use a pipe symbol | to split alternative solutions. Use \\| if a solution should contain a |."
           },
           {
-            "label": "Image",
+            "label": "תמונה",
             "description": "Optional image for the card. (The card may use just an image, just a text or both)"
           },
           {
             "label": "Alternative text for image"
           },
           {
-            "label": "טיפ",
+            "label": "עצה",
             "fields": [
               {
-                "label": "תוכן טיפ"
+                "label": "תוכן העצה"
               }
             ]
           }
@@ -42,52 +42,52 @@
     },
     {
       "label": "Progress text",
-      "default": "Card @card of @total",
+      "default": "כרטיס @card מתוך @total",
       "description": "Progress text, variables available: @card and @total. Example: 'Card @card of @total'"
     },
     {
       "label": "Text for the next button",
-      "default": "Next"
+      "default": "הבא"
     },
     {
       "label": "Text for the previous button",
-      "default": "Previous"
+      "default": "הקודם"
     },
     {
       "label": "Text for the check answers button",
-      "default": "Check"
+      "default": "בדיקה"
     },
     {
       "label": "Require user input before the solution can be viewed"
     },
     {
       "label": "Text for the answer input field",
-      "default": "Your answer"
+      "default": "תשובתך"
     },
     {
       "label": "Text for correct answer",
-      "default": "Correct"
+      "default": "נכון"
     },
     {
       "label": "Text for incorrect answer",
-      "default": "Incorrect"
+      "default": "שגוי"
     },
     {
       "label": "Show solution text",
-      "default": "Correct answer(s)"
+      "default": "תשובות נכונות"
     },
     {
       "label": "Text for results title",
-      "default": "Results"
+      "default": "תוצאות"
     },
     {
       "label": "Text for number of correct",
-      "default": "@score of @total correct",
+      "default": "@score מתוך @total נכונים",
       "description": "Result text, variables available: @score and @total. Example: '@score of @total correct'"
     },
     {
       "label": "Text for show results",
-      "default": "Show results"
+      "default": "תצוגת תוצאות"
     },
     {
       "label": "Text for short answer label",
@@ -95,7 +95,7 @@
     },
     {
       "label": "Text for \"retry\" button",
-      "default": "Retry"
+      "default": "ניסיון חוזר"
     },
     {
       "label": "Case sensitive",
@@ -108,7 +108,7 @@
     },
     {
       "label": "Correct feedback text for assistive technologies",
-      "default": "@answer is correct.",
+      "default": "@answer תשובה נכונה.",
       "description": "Text that will be announced to assistive technologies when a card is answered correctly. Use @answer as variable."
     },
     {
@@ -117,7 +117,7 @@
       "description": "תוכן שיוקרא לטכנולוגיות מסייעות בעת ניווט בין כרטיסים. השתמשו ב- current@ ו- total@ כמשתנים."
     },
     {
-      "label": "Randomize cards",
+      "label": "כרטיסים אקראיים",
       "description": "Enable to randomize the order of cards on display."
     }
   ]
