@@ -20,7 +20,7 @@
           },
           {
             "label": "Respuesta",
-            "description": "Respuesta (solución) para la carta. Use a pipe symbol | to split alternative solutions. Use \\| if a solution should contain a |."
+            "description": "Respuesta (solución) para la carta. Use un símbolo de barra vertical | para dividir soluciones alternas. Use \\| si una solución debería de contener una |."
           },
           {
             "label": "Imagen",
@@ -77,13 +77,17 @@
       "default": "Respuesta correcta"
     },
     {
-      "label": "Título para texto de Resultados",
-      "default": "Resultados"
+      "label": "Separador de soluciones alternas",
+      "default": "o"
+    },
+    {
+      "label": "Texto para título de resultados",
+      "default": "Resultados",
+      "description": "Texto de Resultados, variables disponibles: @score y @total. Ejemplo: '@score de @total correctos'"
     },
     {
       "label": "Texto para número de aciertos",
-      "default": "@score de @total correctos",
-      "description": "Texto de Resultados, variables disponibles: @score y @total. Ejemplo: '@score de @total correctos'"
+      "default": "@score de @total correctos"
     },
     {
       "label": "Texto para mostrar resultados",
@@ -95,30 +99,26 @@
     },
     {
       "label": "Texto para botón \"reintentar\"",
-      "default": "Reintentar"
-    },
-    {
-      "label": "MAYÚSCULAS/minúsculas si importan",
       "description": "Asegurarse que la entrada del usuario tenga que ser exactamente la misma que la respuesta."
     },
     {
-      "label": "Texto incorrecto para tecnologías asistivas",
+      "label": "MAYÚSCULAS/minúsculas si importan",
       "default": "Respuesta incorrecta. La respuesta correcta era @answer",
-      "description": "Texto que será anunciado a tecnologías asistivas. Use @answer como variable."
+      "description": "Asegurarse que la entrada del usuario tenga que ser exactamente la misma que la respuesta."
     },
     {
-      "label": "Texto de retroalimentación correcta para tecnologías asistivas",
+      "label": "Texto de respuesta incorrecta para tecnologías de asistencia",
+      "default": "Respuesta incorrecta. La respuesta correcta era @answer",
+      "description": "Texto que será anunciado a tecnologías de asistencia. Use @answer como variable."
+    },
+    {
+      "label": "Texto de retroalimentación para correcto para tecnologías de asistencia",
       "default": "@answer es correcta.",
-      "description": "Texto que será anunciado a tecnologías asistivas cuando una tarjeta es contestada correctamente. Use @answer como variable."
+      "description": "Texto anunciado a las tecnologías de asistencia cuando se contesta una tarjeta correctamente. Usa @answer como variable."
     },
     {
-      "label": "Cambio de Tarjeta para tecnologías asistivas",
-      "default": "Página @current de @total",
-      "description": "Texto que será anunciado a tecnologías asistivas al navegar entre cartas. Use @current y @total como variables."
-    },
-    {
-      "label": "Randomize cards",
-      "description": "Enable to randomize the order of cards on display."
+      "label": "Cambio de tarjeta para tecnologías de asistencia",
+      "description": "Texto anunciado a las tecnologías de asistencia al navegar entre cartas. Usa @current y @total como variables."
     }
   ]
 }

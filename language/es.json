@@ -20,7 +20,7 @@
           },
           {
             "label": "Respuesta",
-            "description": "Respuesta (solución) para la carta. Use a pipe symbol | to split alternative solutions. Use \\| if a solution should contain a |."
+            "description": "Respuesta (solución) para la carta. Use un símbolo de barra vertical | para dividir soluciones alternas. Use \\| si una solución debería de contener una |."
           },
           {
             "label": "Imagen",
@@ -61,7 +61,7 @@
       "label": "Requerir entrada del usuario antes de poder ver la solución"
     },
     {
-      "label": "Texto para el campo de entrada de respuesta",
+      "label": "Texto para el campo de ingreso de respuesta",
       "default": "Tu respuesta"
     },
     {
@@ -74,7 +74,7 @@
     },
     {
       "label": "Mostrar texto de solución",
-      "default": "Respuesta correcta"
+      "default": "Respuesta(s) correcta(s)"
     },
     {
       "label": "Texto de título para resultados",
@@ -117,8 +117,8 @@
       "description": "Texto anunciado a las tecnologías de asistencia al navegar entre cartas. Usa @current y @total como variables."
     },
     {
-      "label": "Randomize cards",
-      "description": "Enable to randomize the order of cards on display."
+      "label": "Barajar cartas",
+      "description": "Habilitar para barajar el orden de preguntas mostradas."
     }
   ]
 }

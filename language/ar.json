@@ -83,7 +83,7 @@
     {
       "label": "Text for number of correct",
       "default": "@score of @total correct",
-      "description": "Result text, variables available: @score and @total. Example: '@score of @total correct'"
+      "description": "نص النتيجة والمتغيرات المتاحة: @score و @total. مثال: '@score من @total الصحيح'"
     },
     {
       "label": "Text for show results",
@@ -99,11 +99,11 @@
     },
     {
       "label": "Case sensitive",
-      "description": "Makes sure the user input has to be exactly the same as the answer."
+      "description": "التأكد من أن معطيات المستخدم يجب أن تكون مطابقة تماماً للإجابة."
     },
     {
       "label": "Incorrect text for assistive technologies",
-      "default": "Incorrect answer. Correct answer was @answer",
+      "default": "جواب غير صحيح. الإجابة الصحيحة كانت @answer",
       "description": "Text that will be announced to assistive technologies. Use @answer as variable."
     },
     {
@@ -118,7 +118,7 @@
     },
     {
       "label": "Randomize cards",
-      "description": "Enable to randomize the order of cards on display."      
+      "description": "Enable to randomize the order of cards on display."
     }
   ]
 }

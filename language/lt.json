@@ -20,7 +20,7 @@
           },
           {
             "label": "Atsakymas",
-            "description": "Optional answer (solution) for the card."
+            "description": "Neprivalomas atsakymas (sprendimas) kortelei."
           },
           {
             "label": "Paveikslėlis",
