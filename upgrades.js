@@ -29,13 +29,16 @@ H5PUpgrades['H5P.Flashcards'] = (function () {
       },
       7: function (parameters, finished, extras) {
 
-        if (params && Array.isArray(parameters.cards)) {
+        if (parameters && Array.isArray(parameters.cards)) {
           for (var i = 0; i < parameters.cards.length; i++) {
             if (typeof parameters.cards[i].answer === 'string') {
               parameters.cards[i].answer = parameters.cards[i].answer
-                .replace(/\|/g, '/')
-                .replace(/\\\|/g, '\\/')
-                .replace(/\//g, '\\/')
+              .replace(/\\\|/g, '__TO_BE_AN_UNESCAPED_PIPE__') // Replace escaped pipe symbol with placeholder
+              .replace(/\|/g, '__TO_BE_AN_UNESCAPED_FORWARD_SLASH__') // Replace pipe symbol with placeholder
+              .replace(/\//g, '__TO_BE_AN_ESCAPED_FORWARD_SLASH__') // Replace slash placeholder
+              .replace(/__TO_BE_AN_UNESCAPED_PIPE__/g, '|') 
+              .replace(/__TO_BE_AN_UNESCAPED_FORWARD_SLASH__/g, '/') 
+              .replace(/__TO_BE_AN_ESCAPED_FORWARD_SLASH__/g, '\\/');
             }
           }
         }
