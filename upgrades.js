@@ -42,6 +42,8 @@ H5PUpgrades['H5P.Flashcards'] = (function () {
             }
           }
         }
+        // Done
+        finished(null, parameters, extras);
       }
     }
   };
