@@ -16,7 +16,7 @@
         "fields": [
           {
             "label": "Klausimas",
-            "description": "Papildomas neprivalomas teksto klausimas kortelei. (Kortelei gali būti naudojamas arba tik paveikslėlis, arba tik tekstas arba abu)"
+            "description": "Neprivalomas tekstinis kortelės klausimas. (Kortelėje gali būti tik vaizdas, tik tekstas arba abu)"
           },
           {
             "label": "Atsakymas",
