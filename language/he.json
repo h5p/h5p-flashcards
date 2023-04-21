@@ -16,18 +16,18 @@
         "fields": [
           {
             "label": "שאלה",
-            "description": "Optional textual question for the card. (The card may use just an image, just a text or both)"
+            "description": "שאלה טקסטואלית אופציונלית לכרטיס. (הכרטיס עשוי להשתמש רק בתמונה, רק בטקסט או בשניהם)"
           },
           {
             "label": "תשובה",
-            "description": "תשובה אפשרית (פתרון) לכרטיס. Use a pipe symbol | to split alternative solutions. Use \\| if a solution should contain a |."
+            "description": "תשובה (פתרון) לכרטיס. השתמש בסמל צינור | לפצל פתרונות חלופיים. השתמש ב-\\| אם פתרון צריך להכיל |."
           },
           {
             "label": "תמונה",
-            "description": "Optional image for the card. (The card may use just an image, just a text or both)"
+            "description": "תמונה אופציונלית לכרטיס. (הכרטיס עשוי להשתמש רק בתמונה, רק בטקסט או בשניהם)"
           },
           {
-            "label": "Alternative text for image"
+            "label": "טקסט חלופי לתמונה"
           },
           {
             "label": "עצה",
@@ -41,65 +41,65 @@
       }
     },
     {
-      "label": "Progress text",
+      "label": "טקסט התקדמות",
       "default": "כרטיס @card מתוך @total",
-      "description": "Progress text, variables available: @card and @total. Example: 'Card @card of @total'"
+      "description": "תוית התקדמות, משתנים זמינים: @card ו-@total. דוגמה: 'כרטיס @card של @total"
     },
     {
-      "label": "Text for the next button",
+      "label": "טקסט לכפתור הבא",
       "default": "הבא"
     },
     {
-      "label": "Text for the previous button",
+      "label": "טקסט לכפתור הקודם",
       "default": "הקודם"
     },
     {
-      "label": "Text for the check answers button",
+      "label": "טקסט לכפתור בדיקת התשובות",
       "default": "בדיקה"
     },
     {
-      "label": "Require user input before the solution can be viewed"
+      "label": "דרושת תגובת משתמש לפני שניתן יהיה לצפות בפתרון"
     },
     {
-      "label": "Text for the answer input field",
+      "label": "טקסט עבור שדה הקלט של התשובה",
       "default": "תשובתך"
     },
     {
-      "label": "Text for correct answer",
+      "label": "טקסט לתשובה הנכונה",
       "default": "נכון"
     },
     {
-      "label": "Text for incorrect answer",
+      "label": "טקסט לתשובה לא נכונה",
       "default": "שגוי"
     },
     {
-      "label": "Show solution text",
+      "label": "הראה טקסט לתשובה",
       "default": "תשובות נכונות"
     },
     {
-      "label": "Text for results title",
+      "label": "טקסט לכותרת התוצאות",
       "default": "תוצאות"
     },
     {
-      "label": "Text for number of correct",
+      "label": "טקסט למספר הנכונות",
       "default": "@score מתוך @total נכונים",
-      "description": "Result text, variables available: @score and @total. Example: '@score of @total correct'"
+      "description": "טקסט תוצאה, משתנים זמינים: @score ו-@total. דוגמה: '@score של @total הנכונות'"
     },
     {
-      "label": "Text for show results",
+      "label": "טקסט לתוצאות המופע",
       "default": "תצוגת תוצאות"
     },
     {
-      "label": "Text for short answer label",
+      "label": "טקסט עבור תווית תשובות קצרות",
       "default": "A:"
     },
     {
-      "label": "Text for \"retry\" button",
+      "label": "טקסט עבור כפתור \"נסה שוב\".",
       "default": "ניסיון חוזר"
     },
     {
-      "label": "Case sensitive",
-      "description": "Makes sure the user input has to be exactly the same as the answer."
+      "label": "התאמה לאותיות גדולות/קנות באנגלית",
+      "description": "מוודא שתשובת המשתמש חייבת להיות זהה בדיוק לתשובה."
     },
     {
       "label": "תוכן לא נכון עבור טכנולוגיות מסייעות",
@@ -107,9 +107,9 @@
       "description": "תוכן יוקרא בקול לטכנולוגיות מסייעות. השתמשו ב- answer@ כמשתנה."
     },
     {
-      "label": "Correct feedback text for assistive technologies",
+      "label": "טקסט משוב נכון עבור טכנולוגיות מסייעות",
       "default": "@answer תשובה נכונה.",
-      "description": "Text that will be announced to assistive technologies when a card is answered correctly. Use @answer as variable."
+      "description": "טקסט שיוכרז לטכנולוגיות מסייעות כאשר כרטיס יענה נכון. השתמש ב-@answer כמשתנה."
     },
     {
       "label": "החלפת כרטיס עבור טכנולוגיות מסייעות",
@@ -118,7 +118,7 @@
     },
     {
       "label": "כרטיסים אקראיים",
-      "description": "Enable to randomize the order of cards on display."
+      "description": "אפשר להפוך את סדר הקלפים המוצגים באופן אקראי."
     }
   ]
 }
