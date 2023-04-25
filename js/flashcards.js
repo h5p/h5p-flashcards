@@ -779,15 +779,15 @@ H5P.Flashcards = (function ($, XapiGenerator) {
   C.$converter = $('<div/>');
 
   /**
-   * Split text by | while respecting \| as escaped |.
+   * Split text by / while respecting \/ as escaped /.
    * @param {string} text Text to split.
-   * @param {string} [delimiter='|'] Delimiter.
+   * @param {string} [delimiter='/'] Delimiter.
    * @param {string} [escaper='\\'] Escape sequence, default: single backslash.
    * @return {string[]} Split text.
    */
   C.splitAlternatives = function (text, delimiter, escaper) {
     text = text || '';
-    delimiter = delimiter || '|';
+    delimiter = delimiter || '/';
     escaper = escaper || '\\';
 
     while (text.indexOf(escaper + delimiter) !== -1) {
