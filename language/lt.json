@@ -16,7 +16,7 @@
         "fields": [
           {
             "label": "Klausimas",
-            "description": "Optional textual question for the card. (The card may use just an image, just a text or both)"
+            "description": "Papildomas neprivalomas teksto klausimas kortelei. (Kortelei gali būti naudojamas arba tik paveikslėlis, arba tik tekstas arba abu)"
           },
           {
             "label": "Atsakymas",
