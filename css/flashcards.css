@@ -276,7 +276,7 @@
 }
 
 .h5p-flashcards .h5p-answer .h5p-button:hover {
-  background: #72c1e6;
+  background: #104a65;
 }
 
 .h5p-flashcards .h5p-answer .h5p-button:focus {
@@ -335,7 +335,7 @@
   right: 1em;
   top: 1em;
   line-height: 1em;
-  color: #db2222;
+  color: #c21e1e;
   outline: none;
 }
 
@@ -607,7 +607,7 @@ button::-moz-focus-inner {
 }
 
 .h5p-flashcards .h5p-results-retry-button:hover {
-  background-color: #414d66;
+  background-color: #3c465d;
 }
 
 .h5p-flashcards .h5p-results-retry-button:before {
@@ -723,7 +723,7 @@ button::-moz-focus-inner {
 }
 
 .h5p-flashcards .h5p-results-list-item.h5p-incorrect .h5p-results-answer {
-  color: #ff546a;
+  color: #ff7083;
 }
 
 .h5p-flashcards .h5p-results-list-item.h5p-incorrect .h5p-results-box {
