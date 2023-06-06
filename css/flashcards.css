@@ -276,7 +276,8 @@
 }
 
 .h5p-flashcards .h5p-answer .h5p-button:hover {
-  background: #104a65;
+  background: #72c1e6;
+  color: #104a65;
 }
 
 .h5p-flashcards .h5p-answer .h5p-button:focus {
