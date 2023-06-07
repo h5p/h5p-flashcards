@@ -275,7 +275,7 @@
   font-size: 1.5em;
 }
 
-.h5p-flashcards .h5p-answer .h5p-button:hover {
+.h5p-flashcards .h5p-answer .h5p-button:hover:not(:active) {
   background: #72c1e6;
   color: #104a65;
 }
