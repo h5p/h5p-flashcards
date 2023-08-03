@@ -20,7 +20,7 @@
           },
           {
             "label": "Atsakymas",
-            "description": "Neprivalomas atsakymas (sprendimas) kortelei."
+            "description": "Atsakymas (sprendimas) kortelei."
           },
           {
             "label": "Paveikslėlis",
@@ -69,12 +69,12 @@
       "default": "Teisingai"
     },
     {
-      "label": "Text for incorrect answer",
+      "label": "Tekstas neteisingam atsakymui",
       "default": "Neteisingai"
     },
     {
       "label": "Rodyti sprendimo tekstą",
-      "default": "Teisingas atsakymas"
+      "default": "Teisingas (-i) atsakymas (-ai)"
     },
     {
       "label": "Text for results title",
