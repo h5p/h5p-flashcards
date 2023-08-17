@@ -1,33 +1,33 @@
 {
   "semantics": [
     {
-      "label": "Task description"
+      "label": "Opis zadania"
     },
     {
       "widgets": [
         {
-          "label": "Default"
+          "label": "Domyślny"
         }
       ],
-      "label": "Cards",
-      "entity": "card",
+      "label": "Karty",
+      "entity": "karta",
       "field": {
-        "label": "Card",
+        "label": "Karta",
         "fields": [
           {
-            "label": "Question",
-            "description": "Optional textual question for the card. (The card may use just an image, just a text or both)"
+            "label": "Pytanie",
+            "description": "Opcjonalne pytanie kontekstowe do karty. (Karta może zawierać sam obraz, sam tekst lub jedno i drugie)"
           },
           {
-            "label": "Answer",
-            "description": "Answer (solution) for the card. Use a pipe symbol | to split alternative solutions. Use \\| if a solution should contain a |."
+            "label": "Odpowiedź",
+            "description": "Odpowiedź (rozwiązanie) dla karty. Użyj symbolu | aby podzielić alternatywne rozwiązania. Użyj \\| jeśli rozwiązanie zawiera |."
           },
           {
-            "label": "Image",
-            "description": "Optional image for the card. (The card may use just an image, just a text or both)"
+            "label": "Obraz",
+            "description": "Opcjonalny obraz dla karty. (Karta może zawierać sam obraz, sam tekst lub jedno i drugie)"
           },
           {
-            "label": "Alternative text for image"
+            "label": "Tekst alternatywny do grafiki"
           },
           {
             "label": "Podpowiedź",
@@ -41,84 +41,84 @@
       }
     },
     {
-      "label": "Progress text",
-      "default": "Card @card of @total",
-      "description": "Progress text, variables available: @card and @total. Example: 'Card @card of @total'"
+      "label": "Tekst postępu",
+      "default": "Karta @card z @total",
+      "description": "Tekst postępu, dostępne zmienne: @card i @total. Przykład: 'Karta @card z @total'"
     },
     {
-      "label": "Text for the next button",
-      "default": "Next"
+      "label": "Tekst przycisku Dalej",
+      "default": "Dalej"
     },
     {
-      "label": "Text for the previous button",
-      "default": "Previous"
+      "label": "Tekst przycisku Wstecz",
+      "default": "Wstecz"
     },
     {
-      "label": "Text for the check answers button",
-      "default": "Check"
+      "label": "Tekst przycisku Sprawdź odpowiedzi",
+      "default": "Sprawdź"
     },
     {
-      "label": "Require user input before the solution can be viewed"
+      "label": "Wymagaj wpisania odpowiedzi przez użytkownika przed wyświetleniem odpowiedzi"
     },
     {
-      "label": "Text for the answer input field",
-      "default": "Your answer"
+      "label": "Tekst pola wpisywania odpowiedzi",
+      "default": "Twoja odpowiedź"
     },
     {
-      "label": "Text for correct answer",
-      "default": "Correct"
+      "label": "Tekst dla prawidłowej odpowiedzi",
+      "default": "Prawidłowa odpowiedź"
     },
     {
-      "label": "Text for incorrect answer",
-      "default": "Incorrect"
+      "label": "Tekst dla nieprawidłowej odpowiedzi",
+      "default": "Błędna odpowiedź"
     },
     {
-      "label": "Show solution text",
-      "default": "Correct answer(s)"
+      "label": "Pokaż tekst rozwiązania",
+      "default": "Prawidłowa odpowiedź/ odpowiedzi"
     },
     {
-      "label": "Text for results title",
-      "default": "Results"
+      "label": "Tekst tytułu wyników",
+      "default": "Wyniki"
     },
     {
-      "label": "Text for number of correct",
-      "default": "@score of @total correct",
-      "description": "Result text, variables available: @score and @total. Example: '@score of @total correct'"
+      "label": "Tekst liczby poprawnych odpowiedzi",
+      "default": "@score a @total prawidłowych",
+      "description": "Wynik, dostępne zmienne: @score i @total. Przykład: '@score z @total correct'"
     },
     {
-      "label": "Text for show results",
-      "default": "Show results"
+      "label": "Tekst do pokazania wyników",
+      "default": "Pokaż wyniki"
     },
     {
-      "label": "Text for short answer label",
+      "label": "Tekst do etykiety krótkiej odpowiedzi",
       "default": "A:"
     },
     {
-      "label": "Text for \"retry\" button",
-      "default": "Retry"
+      "label": "Tekst przycisku \"Jeszcze raz\"",
+      "default": "Jeszcze raz"
     },
     {
-      "label": "Case sensitive",
-      "description": "Makes sure the user input has to be exactly the same as the answer."
+      "label": "Uwzględnia wielkość liter",
+      "description": "Gwarantuje, że dane wprowadzone przez użytkownika są dokładnie takie same jak odpowiedź."
     },
     {
-      "label": "Incorrect text for assistive technologies",
+      "label": "Tekst nieprawidłowy dla technologii wspomagających",
       "default": "Nieprawidłowa odpowiedź. Prawidłowa odpowiedź to @answer",
-      "description": "Text that will be announced to assistive technologies. Use @answer as variable."
+      "description": "Tekst dla technologii wspomagających. Użyj @answer jako zmiennej."
     },
     {
-      "label": "Correct feedback text for assistive technologies",
-      "default": "@answer is correct.",
-      "description": "Text that will be announced to assistive technologies when a card is answered correctly. Use @answer as variable."
+      "label": "Prawidłowa informacja zwrotna dla technologii wspomagających",
+      "default": "@answer jest prawidłowa.",
+      "description": "Tekst dla technologii wspomagających kiedy karta otrzymała poprawną odpowiedź. Użyj @answer jako zmiennej."
     },
     {
-      "label": "Card change for assistive technologies",
+      "label": "Zmiana karty dla technologii wspomagających",
       "default": "Strona @current z @total",
-      "description": "Text that will be announced to assistive technologies when navigating between cards. Use @current and @total as variables."
+      "description": "Tekst dla technologii wspomagających podczas nawigacji między kartami. Użyj @current i @total jako zmiennych."
     },
     {
-      "label": "Randomize cards",
-      "description": "Enable to randomize the order of cards on display."
+      "label": "Karty w przypadkowej kolejności",
+      "description": "Włącz aby wyświetlać karty w przypadkowej kolejności."
     }
   ]
 }
