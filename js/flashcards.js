@@ -190,10 +190,12 @@ H5P.Flashcards = (function ($, XapiGenerator) {
    */
   C.prototype.cardsLoaded = function () {
     var that = this;
+    const descId = ++C.counter;
+
     var $inner = this.$container.html(
-      '<div class="h5p-description" id="flashcards-description" title="' + this.options.description + '">' + this.options.description + '</div>' +
+      '<div class="h5p-description" id="flashcards-description' + '-' + descId + '" title="' + this.options.description + '">' + this.options.description + '</div>' +
       '<div class="h5p-progress"></div>' +
-      '<div class="h5p-inner" role="region" aria-labelledby="flashcards-description" aria-roledescription="carousel"></div>' +
+      '<div class="h5p-inner" role="region" aria-labelledby="flashcards-description' + '-' + descId + '" aria-roledescription="carousel"></div>' +
       '<div class="h5p-navigation">' +
         '<button type="button" class="h5p-button h5p-previous h5p-hidden" tabindex="0" title="' + this.options.previous + '" aria-label="' + this.options.previous + '"></button>' +
         '<button type="button" class="h5p-button h5p-next" tabindex="0" title="' + this.options.next + '" aria-label="' + this.options.next + '"></button>'
