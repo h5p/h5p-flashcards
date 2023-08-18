@@ -191,9 +191,9 @@ H5P.Flashcards = (function ($, XapiGenerator) {
   C.prototype.cardsLoaded = function () {
     var that = this;
     var $inner = this.$container.html(
-      '<div class="h5p-description" title="' + this.options.description + '">' + this.options.description + '</div>' +
+      '<div class="h5p-description" id="flashcards-description" title="' + this.options.description + '">' + this.options.description + '</div>' +
       '<div class="h5p-progress"></div>' +
-      '<div class="h5p-inner" role="list"></div>' +
+      '<div class="h5p-inner" role="region" aria-labelledby="flashcards-description" aria-roledescription="carousel"></div>' +
       '<div class="h5p-navigation">' +
         '<button type="button" class="h5p-button h5p-previous h5p-hidden" tabindex="0" title="' + this.options.previous + '" aria-label="' + this.options.previous + '"></button>' +
         '<button type="button" class="h5p-button h5p-next" tabindex="0" title="' + this.options.next + '" aria-label="' + this.options.next + '"></button>'
@@ -313,7 +313,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
 
     // Generate a new flashcards html and add it to h5p-inner
     var $card = $(
-      '<div role="listitem" class="h5p-card h5p-animate' + (index === 0 ? ' h5p-current' : '') + '" aria-hidden="' + (index === 0 ? 'false' : 'true') + '"> ' +
+      '<div role="group" aria-roledescription="slide" aria-labelledby="h5p-flashcard-card-' + cardId + '" class="h5p-card h5p-animate' + (index === 0 ? ' h5p-current' : '') + '"> ' +
         '<div class="h5p-cardholder">' +
           '<div class="h5p-imageholder">' +
             '<div class="h5p-flashcard-overlay">' +
