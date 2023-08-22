@@ -54,6 +54,19 @@ H5P.Flashcards = (function ($, XapiGenerator) {
   C.prototype = Object.create(H5P.EventDispatcher.prototype);
   C.prototype.constructor = C;
 
+  /**
+   * Process HTML escaped string for use as attribute value,
+   * e.g. for alt text or title attributes.
+   *
+   * @param {string} value
+   * @return {string} WARNING! Do NOT use for innerHTML.
+   */
+  const massageAttributeOutput = value => {
+    const dparser = new DOMParser().parseFromString(value, 'text/html');
+    const div = document.createElement('div');
+    div.innerHTML = dparser.documentElement.textContent;;
+    return div.textContent || div.innerText || '';
+  };
 
   /**
    * Append field to wrapper.
@@ -89,7 +102,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
           src: H5P.getPath(card.image.path, this.id),
         });
         if (card.imageAltText) {
-          $image.attr('alt', card.imageAltText);
+          $image.attr('alt', massageAttributeOutput(card.imageAltText));
         }
 
         if ($image.get().complete) {
