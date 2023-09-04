@@ -104,17 +104,17 @@
     {
       "label": "Teksto pa robes",
       "default": "Kontesta robes. E kontesta korekto tabata @answer",
-      "description": ""
+      "description": "Text that will be announced to assistive technologies. Use @answer as variable."
     },
     {
       "label": "Feedback teksto",
       "default": "@answer ta korekto.",
-      "description": ""
+      "description": "Text that will be announced to assistive technologies when a card is answered correctly. Use @answer as variable."
     },
     {
       "label": "Kambia karchi voor ondersteunende technologieën",
       "default": "Página @current di @total",
-      "description": ""
+      "description": "Text that will be announced to assistive technologies when navigating between cards. Use @current and @total as variables."
     },
     {
       "label": "Karchinan den sekuensia aleatorio",
