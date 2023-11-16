@@ -20,7 +20,7 @@
           },
           {
             "label": "Kontesta",
-            "description": "E kontesta opshonal (solushon) riba e parti patras di e karchi. Usa e símbulo | pa duna solushon alternativo. Usa \\| si un solushon mester tin un |."
+            "description": "E kontesta opshonal (solushon) riba e parti patras di e karchi. Usa e símbulo / pa duna solushon alternativo. Usa \\/ si un solushon mester tin un /."
           },
           {
             "label": "Imágen",

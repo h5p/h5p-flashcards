@@ -20,7 +20,7 @@
           },
           {
             "label": "Antwoord",
-            "description": "Antwoord (oplossing) vir die kaart. Use a pipe symbol | to split alternative solutions. Use \\| if a solution should contain a |."
+            "description": "Antwoord (oplossing) vir die kaart. Use a forward slash / to split alternative solutions. Use \\/ if a solution should contain a /."
           },
           {
             "label": "Prent",

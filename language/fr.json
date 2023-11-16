@@ -20,7 +20,7 @@
           },
           {
             "label": "Réponse",
-            "description": "Réponse (solution) pour la carte. Utiliser un symbole pipe | pour séparer les solutions alternatives. Utilisez \\| si une solution doit contenir un |."
+            "description": "Réponse (solution) pour la carte. Utiliser une barre oblique / pour séparer les solutions alternatives. Utilisez \\/ si une solution doit contenir un /."
           },
           {
             "label": "Image",
