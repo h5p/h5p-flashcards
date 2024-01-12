@@ -20,7 +20,7 @@
           },
           {
             "label": "Resposta",
-            "description": "Resposta (solución) para a tarxeta. Use a pipe symbol | to split alternative solutions. Use \\| if a solution should contain a |."
+            "description": "Resposta (solución) para a tarxeta. Use a forward slash / to split alternative solutions. Use \\/ if a solution should contain a /."
           },
           {
             "label": "Imaxe",

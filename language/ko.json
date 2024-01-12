@@ -20,7 +20,7 @@
           },
           {
             "label": "Answer",
-            "description": "카드에 대한 선택적 해답. Use a pipe symbol | to split alternative solutions. Use \\| if a solution should contain a |."
+            "description": "카드에 대한 선택적 해답. Use a forward slash / to split alternative solutions. Use \\/ if a solution should contain a /."
           },
           {
             "label": "이미지",

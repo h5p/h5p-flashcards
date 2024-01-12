@@ -20,7 +20,7 @@
           },
           {
             "label": "Відповідь",
-            "description": "Відповідь для картки. Use a pipe symbol | to split alternative solutions. Use \\| if a solution should contain a |."
+            "description": "Відповідь для картки. Use a forward slash / to split alternative solutions. Use \\/ if a solution should contain a /."
           },
           {
             "label": "Зображення",

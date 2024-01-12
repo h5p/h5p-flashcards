@@ -15,7 +15,7 @@
           },
           {
             "label": "Atbilde",
-            "description": "Neobligāta kartītes atbilde (risinājums). Use a pipe symbol | to split alternative solutions. Use \\| if a solution should contain a |."
+            "description": "Neobligāta kartītes atbilde (risinājums). Use a forward slash / to split alternative solutions. Use \\/ if a solution should contain a /."
           },
           {
             "label": "Attēls",

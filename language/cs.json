@@ -20,7 +20,7 @@
           },
           {
             "label": "Odpověď",
-            "description": "Odpověď (řešení) pro kartu. Použijte symbol potrubí | k rozdělení alternativních řešení. Použijte \\| pokud by mělo řešení obsahovat |."
+            "description": "Odpověď (řešení) pro kartu. Použijte symbol / k rozdělení alternativních řešení. Použijte \\/ pokud by mělo řešení obsahovat /."
           },
           {
             "label": "Obrázek",
