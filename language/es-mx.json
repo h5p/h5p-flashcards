@@ -20,7 +20,7 @@
           },
           {
             "label": "Respuesta",
-            "description": "Respuesta (solución) para la carta. Use un símbolo de barra vertical | para dividir soluciones alternas. Use \\| si una solución debería de contener una |."
+            "description": "Respuesta (solución) para la carta. Use un símbolo de barra / para dividir soluciones alternas. Use \\/ si una solución debería de contener una /."
           },
           {
             "label": "Imagen",

@@ -20,7 +20,7 @@
           },
           {
             "label": "Resposta",
-            "description": "Resposta (solução) opcional para o cartão. Use a pipe symbol | to split alternative solutions. Use \\| if a solution should contain a |."
+            "description": "Resposta (solução) opcional para o cartão. Use a forward slash / to split alternative solutions. Use \\/ if a solution should contain a /."
           },
           {
             "label": "Imagem",
