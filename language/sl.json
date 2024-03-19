@@ -20,7 +20,7 @@
           },
           {
             "label": "Odgovor",
-            "description": "Odgovor na vprašanje. Use a pipe symbol | to split alternative solutions. Use \\| if a solution should contain a |."
+            "description": "Odgovor na vprašanje. Use a forward slash / to split alternative solutions. Use \\/ if a solution should contain a /."
           },
           {
             "label": "Slika",

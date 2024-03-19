@@ -20,7 +20,7 @@
           },
           {
             "label": "Odpowiedź",
-            "description": "Odpowiedź (rozwiązanie) dla karty. Użyj symbolu | aby podzielić alternatywne rozwiązania. Użyj \\| jeśli rozwiązanie zawiera |."
+            "description": "Odpowiedź (rozwiązanie) dla karty. Użyj symbolu / aby podzielić alternatywne rozwiązania. Użyj \\/ jeśli rozwiązanie zawiera /."
           },
           {
             "label": "Obraz",
