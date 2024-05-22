@@ -7,6 +7,30 @@ H5P.Flashcards = (function ($, XapiGenerator) {
 
   C.counter = 0;
 
+  // $(document).ready(function() {
+  //   // var $component = $('#myComponent');
+  //   var $component = document.getElementById('"flashcards-description + '-' + descId"');
+  //   // Update aria labels or other dynamic content
+  //   $component.attr('aria-label', 'Your component has been loaded'); //elem.setAttribute
+  //   $component.attr('aria-labelledby', elemId);
+  //   $component.attr('aria-labelledby', 'flashcards-description' + '-' + ++C.counter);
+  //   $component.attr('aria-roledescription', 'carousel');
+    
+  //   // aria-labelledby="flashcards-description' + '-' + descId + '" aria-roledescription="carousel"  };
+
+  // // Optional: Force screen reader to read the updated aria-label
+  //   // var $status = $('<div>', {
+  //   //     'aria-live': 'polite',
+  //   //     'role': 'status',
+  //   //     'class': 'sr-only',
+  //   //     text: 'Component initialized'
+  //   // }).appendTo('body');
+
+  //   // Remove the status after a short delay
+  //   setTimeout(function() {
+  //       $status.remove();
+  //   }, 2000);
+  // });
   /**
    * Initialize module.
    *
@@ -208,10 +232,11 @@ H5P.Flashcards = (function ($, XapiGenerator) {
     var $inner = this.$container.html(
       '<div class="h5p-description" id="flashcards-description' + '-' + descId + '" title="' + this.options.description + '">' + this.options.description + '</div>' +
       '<div class="h5p-progress"></div>' +
-      '<div class="h5p-inner" role="region" aria-labelledby="flashcards-description' + '-' + descId + '" aria-roledescription="carousel"></div>' +
+      // '<div class="h5p-inner" role="region" aria-labelledby="flashcards-description' + '-' + descId + '" aria-roledescription="carousel"></div>' +
+      '<div class="h5p-inner" role="region" ' +  '-' + descId + '></div>' +
       '<div class="h5p-navigation">' +
-        '<button type="button" class="h5p-button h5p-previous h5p-hidden" tabindex="0" title="' + this.options.previous + '" aria-label="' + this.options.previous + '"></button>' +
-        '<button type="button" class="h5p-button h5p-next" tabindex="0" title="' + this.options.next + '" aria-label="' + this.options.next + '"></button>'
+      '<button type="button" class="h5p-button h5p-previous h5p-hidden" tabindex="0" title="' + this.options.previous + '" aria-label="' + this.options.previous + '"></button>' +
+      '<button type="button" class="h5p-button h5p-next" tabindex="0" title="' + this.options.next + '" aria-label="' + this.options.next + '"></button>'
     ).children('.h5p-inner');
 
     // Create visual progress and add accessibility attributes
@@ -328,7 +353,8 @@ H5P.Flashcards = (function ($, XapiGenerator) {
 
     // Generate a new flashcards html and add it to h5p-inner
     var $card = $(
-      '<div role="group" aria-roledescription="slide" aria-labelledby="h5p-flashcard-card-' + cardId + '" class="h5p-card h5p-animate' + (index === 0 ? ' h5p-current' : '') + '"> ' +
+      // '<div role="group" aria-roledescription="slide" aria-labelledby="h5p-flashcard-card-' + cardId + '" class="h5p-card h5p-animate' + (index === 0 ? ' h5p-current' : '') + '"> ' +
+      '<div role="group" id="cardgroup"' + '" class="h5p-card h5p-animate' + (index === 0 ? ' h5p-current' : '') + '"> ' +
         '<div class="h5p-cardholder">' +
           '<div class="h5p-imageholder">' +
             '<div class="h5p-flashcard-overlay">' +
@@ -568,6 +594,9 @@ H5P.Flashcards = (function ($, XapiGenerator) {
    *   Class to add to existing current card.
    */
   C.prototype.setCurrent = function ($card) {
+    
+    this.$prev = this.$current;
+    
     // Remove from existing card.
     if (this.$current) {
       this.$current.find('.h5p-textinput').attr('tabindex', '-1');
@@ -575,26 +604,50 @@ H5P.Flashcards = (function ($, XapiGenerator) {
       this.$current.find('.h5p-check-button').attr('tabindex', '-1');
       this.$current.find('.h5p-icon-button').attr('tabindex', '-1');
     }
-
+    
     // Set new card
     this.$current = $card;
+    // $('#h5p-flashcard-card-').focus();
+    // $card.attr('aria-hidden', 'true');
+    
+    // Update card classes
+    // $card.removeClass('h5p-previous h5p-next');
+    // $card.addClass('h5p-current');
 
     /* We can't set focus on anything until the transition is finished.
        If we do, iPad will try to center the focused element while the transition
        is running, and the card will be misplaced */
-    $card.one('transitionend', function () {
-      if ($card.hasClass('h5p-current') && !$card.find('.h5p-textinput')[0].disabled) {
-        $card.find('.h5p-textinput').focus();
-      }
-      setTimeout(function () {
-        this.announceCurrentPage();
-      }.bind(this), 500);
-    }.bind(this));
+       
+        
+        // $card.attr('aria-hidden', 'false');
 
-    // Update card classes
+        // Handle focus shift and screen reader announcement
+        $card.one('transitionend', function () {
+          if ($card.hasClass('h5p-current') && !$card.find('.h5p-textinput')[0].disabled) {
+            // $card.siblings().attr('aria-hidden', 'true')
+            // $card.attr('aria-hidden', 'sfalse');
+            $card.find('.h5p-textinput').focus();
+          }
+          setTimeout(function () {
+            this.announceCurrentPage();
+          }.bind(this), 50); // Adjust the delay as necessary
+          
+        }.bind(this));
+
+        // Update card classes
     $card.removeClass('h5p-previous h5p-next');
     $card.addClass('h5p-current');
     $card.attr('aria-hidden', 'false');
+
+    // Remove from previous card.
+    if (this.$prev) {
+  
+      // this.$prev.attr('aria-hidden', 'true');
+      this.$prev.find('.h5p-textinput').attr('tabindex', '-1');
+      this.$prev.find('.joubel-tip-container').attr('tabindex', '-1');
+      this.$prev.find('.h5p-check-button').attr('tabindex', '-1');
+      this.$prev.find('.h5p-icon-button').attr('tabindex', '-1');
+    }
 
     $card.siblings()
       .removeClass('h5p-current h5p-previous h5p-next left right')
@@ -612,7 +665,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
     $card.find('.h5p-check-button').attr('tabindex', '0');
     $card.find('.h5p-icon-button').attr('tabindex', '0');
     $card.find('.joubel-tip-container').attr('tabindex', '0');
-  };
+};
 
   /**
    * Announces current page to assistive technologies
@@ -638,15 +691,15 @@ H5P.Flashcards = (function ($, XapiGenerator) {
       return;
     }
 
-    that.setCurrent($next);
+    this.setCurrent($next);
     if (!that.$current.next('.h5p-card').length) {
       that.$nextButton.addClass('h5p-hidden');
     }
-    that.$prevButton.removeClass('h5p-hidden');
-    that.setProgress();
+    this.$prevButton.removeClass('h5p-hidden');
+    this.setProgress();
 
-    if ($next.is(':last-child') && that.numAnswered == that.options.cards.length) {
-      that.$container.find('.h5p-show-results').show();
+    if ($next.is(':last-child') && that.numAnswered == this.options.cards.length) {
+      this.$container.find('.h5p-show-results').show();
     }
   };
 
