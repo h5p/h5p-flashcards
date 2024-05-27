@@ -352,7 +352,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
 
     $card.find('.h5p-imageholder').prepend(this.$images[index]);
 
-    $card.prepend($('<div class="h5p-flashcard-overlay" tabindex= "0"></div>').on('click', function () {
+    $card.prepend($('<div class="h5p-flashcard-overlay" tabindex="0"></div>').on('click', function () {
       
       // Set temporary focus
       $card.find('.h5p-flashcard-overlay').focus();
@@ -382,6 +382,9 @@ H5P.Flashcards = (function ($, XapiGenerator) {
       var userAnswer = $input.val().trim();
       var userCorrect = isCorrectAnswer(card, userAnswer, that.options.caseSensitive);
       var done = false;
+
+      // Set temporary focus
+      $card.find('.h5p-flashcard-overlay').focus();
 
       if (userAnswer == '') {
         $input.focus();
