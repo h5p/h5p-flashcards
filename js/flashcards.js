@@ -328,7 +328,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
 
     // Generate a new flashcards html and add it to h5p-inner
     var $card = $(
-      '<div role="group" class="h5p-card h5p-animate' + (index === 0 ? ' h5p-current' : '') + '"> ' +
+      '<div role="group" aria-roledescription="slide" aria-labelledby="h5p-flashcard-card-' + cardId + '" class="h5p-card h5p-animate' + (index === 0 ? ' h5p-current' : '') + '"> ' +
         '<div class="h5p-cardholder">' +
           '<div class="h5p-imageholder">' +
             '<div class="h5p-flashcard-overlay">' +
