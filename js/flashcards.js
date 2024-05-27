@@ -352,7 +352,11 @@ H5P.Flashcards = (function ($, XapiGenerator) {
 
     $card.find('.h5p-imageholder').prepend(this.$images[index]);
 
-    $card.prepend($('<div class="h5p-flashcard-overlay"></div>').on('click', function () {
+    $card.prepend($('<div class="h5p-flashcard-overlay" tabindex= "0"></div>').on('click', function () {
+      
+      // Set temporary focus
+      $card.find('.h5p-flashcard-overlay').focus();
+      
       if ($(this).parent().hasClass('h5p-previous')) {
         that.previous();
       }
@@ -568,8 +572,13 @@ H5P.Flashcards = (function ($, XapiGenerator) {
    *   Class to add to existing current card.
    */
   C.prototype.setCurrent = function ($card) {
+    
+    // Set unreachable for tab button
+    $card.find('.h5p-flashcard-overlay').attr('tabindex', '-1');
+
     // Remove from existing card.
     if (this.$current) {
+      this.$current.attr('aria-hidden', 'true');
       this.$current.find('.h5p-textinput').attr('tabindex', '-1');
       this.$current.find('.joubel-tip-container').attr('tabindex', '-1');
       this.$current.find('.h5p-check-button').attr('tabindex', '-1');
@@ -584,6 +593,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
        is running, and the card will be misplaced */
     $card.one('transitionend', function () {
       if ($card.hasClass('h5p-current') && !$card.find('.h5p-textinput')[0].disabled) {
+        $card.attr('aria-hidden', 'false');
         $card.find('.h5p-textinput').focus();
       }
       setTimeout(function () {
@@ -594,7 +604,6 @@ H5P.Flashcards = (function ($, XapiGenerator) {
     // Update card classes
     $card.removeClass('h5p-previous h5p-next');
     $card.addClass('h5p-current');
-    $card.attr('aria-hidden', 'false');
 
     $card.siblings()
       .removeClass('h5p-current h5p-previous h5p-next left right')
