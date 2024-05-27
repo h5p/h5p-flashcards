@@ -572,10 +572,6 @@ H5P.Flashcards = (function ($, XapiGenerator) {
    *   Class to add to existing current card.
    */
   C.prototype.setCurrent = function ($card) {
-    
-    // Set unreachable for tab button
-    $card.find('.h5p-flashcard-overlay').attr('tabindex', '-1');
-
     // Remove from existing card.
     if (this.$current) {
       this.$current.attr('aria-hidden', 'true');
@@ -587,6 +583,10 @@ H5P.Flashcards = (function ($, XapiGenerator) {
 
     // Set new card
     this.$current = $card;
+
+    // Set unreacable for tab button
+    this.$current.find('.h5p-flashcard-overlay').attr('tabindex', '-1');
+    this.$current.siblings().find('.h5p-flashcard-overlay').attr('tabindex', '-1');
 
     /* We can't set focus on anything until the transition is finished.
        If we do, iPad will try to center the focused element while the transition
