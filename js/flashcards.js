@@ -383,15 +383,16 @@ H5P.Flashcards = (function ($, XapiGenerator) {
       var userCorrect = isCorrectAnswer(card, userAnswer, that.options.caseSensitive);
       var done = false;
 
-      // Set temporary focus
-      $card.find('.h5p-flashcard-overlay').focus();
-
       if (userAnswer == '') {
         $input.focus();
       }
 
       if (!that.options.showSolutionsRequiresInput || userAnswer !== '' || userCorrect) {
         that.numAnswered++;
+        
+        // Set temporary focus
+        $card.find('.h5p-flashcard-overlay').focus();
+        
         $input.add(this).attr('disabled', true);
 
         that.answers[index] = userAnswer;
@@ -577,7 +578,6 @@ H5P.Flashcards = (function ($, XapiGenerator) {
   C.prototype.setCurrent = function ($card) {
     // Remove from existing card.
     if (this.$current) {
-      this.$current.attr('aria-hidden', 'true');
       this.$current.find('.h5p-textinput').attr('tabindex', '-1');
       this.$current.find('.joubel-tip-container').attr('tabindex', '-1');
       this.$current.find('.h5p-check-button').attr('tabindex', '-1');
@@ -586,10 +586,6 @@ H5P.Flashcards = (function ($, XapiGenerator) {
 
     // Set new card
     this.$current = $card;
-
-    // Set unreacable for tab button
-    this.$current.find('.h5p-flashcard-overlay').attr('tabindex', '-1');
-    this.$current.siblings().find('.h5p-flashcard-overlay').attr('tabindex', '-1');
 
     /* We can't set focus on anything until the transition is finished.
        If we do, iPad will try to center the focused element while the transition
@@ -607,6 +603,10 @@ H5P.Flashcards = (function ($, XapiGenerator) {
     $card.removeClass('h5p-previous h5p-next');
     $card.addClass('h5p-current');
     $card.attr('aria-hidden', 'false');
+
+    // Set unreacable for tab button
+    $card.find('.h5p-flashcard-overlay').attr('tabindex', '-1');
+    $card.siblings().find('.h5p-flashcard-overlay').attr('tabindex', '-1');
 
     $card.siblings()
       .removeClass('h5p-current h5p-previous h5p-next left right')
