@@ -331,7 +331,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
       '<div role="group" aria-roledescription="slide" aria-labelledby="h5p-flashcard-card-' + cardId + '" class="h5p-card h5p-animate' + (index === 0 ? ' h5p-current' : '') + '"> ' +
         '<div class="h5p-cardholder">' +
           '<div class="h5p-imageholder">' +
-            '<div class="h5p-flashcard-overlay">' +
+            '<div class="h5p-flashcard-overlay" tabindex="-1">' +
             '</div>' +
           '</div>' +
           '<div class="h5p-foot">' +
@@ -352,7 +352,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
 
     $card.find('.h5p-imageholder').prepend(this.$images[index]);
 
-    $card.prepend($('<div class="h5p-flashcard-overlay" tabindex="0"></div>').on('click', function () {
+    $card.prepend($('<div class="h5p-flashcard-overlay" tabindex="-1"></div>').on('click', function () {
       
       // Set temporary focus
       $card.find('.h5p-flashcard-overlay').focus();
@@ -603,10 +603,6 @@ H5P.Flashcards = (function ($, XapiGenerator) {
     $card.removeClass('h5p-previous h5p-next');
     $card.addClass('h5p-current');
     $card.attr('aria-hidden', 'false');
-
-    // Set unreacable for tab button
-    $card.find('.h5p-flashcard-overlay').attr('tabindex', '-1');
-    $card.siblings().find('.h5p-flashcard-overlay').attr('tabindex', '-1');
 
     $card.siblings()
       .removeClass('h5p-current h5p-previous h5p-next left right')
