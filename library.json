@@ -3,7 +3,7 @@
   "description": "Create cards where the user has to guess the answer.",
   "majorVersion": 1,
   "minorVersion": 7,
-  "patchVersion": 8,
+  "patchVersion": 9,
   "runnable": 1,
   "embedTypes": [
     "iframe"
