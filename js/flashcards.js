@@ -210,8 +210,8 @@ H5P.Flashcards = (function ($, XapiGenerator) {
       '<div class="h5p-progress"></div>' +
       '<div class="h5p-inner" role="region" aria-labelledby="flashcards-description' + '-' + descId + '" aria-roledescription="carousel"></div>' +
       '<div class="h5p-navigation">' +
-        '<button type="button" class="h5p-button h5p-previous h5p-hidden" tabindex="0" title="' + this.options.previous + '" aria-label="' + this.options.previous + '"></button>' +
-        '<button type="button" class="h5p-button h5p-next" tabindex="0" title="' + this.options.next + '" aria-label="' + this.options.next + '"></button>'
+        '<button type="button" class="h5p-button h5p-previous theme-nav-button h5p-hidden" tabindex="0" title="' + this.options.previous + '" aria-label="' + this.options.previous + '">' + this.options.previous + '</button>' +
+        '<button type="button" class="h5p-button h5p-next theme-nav-button" tabindex="0" title="' + this.options.next + '" aria-label="' + this.options.next + '">' + this.options.next + '</button>'
     ).children('.h5p-inner');
 
     // Create visual progress and add accessibility attributes
@@ -340,8 +340,8 @@ H5P.Flashcards = (function ($, XapiGenerator) {
             '</div>' +
             '<div class="h5p-answer">' +
               '<div class="h5p-input">' +
-                '<input type="text" class="h5p-textinput" tabindex="-1" placeholder="' + this.options.defaultAnswerText + '" aria-describedby="h5p-flashcard-card-' + cardId +'" autocomplete="off" spellcheck="false"/>' +
-                '<button type="button" class="h5p-button h5p-check-button" tabindex="-1" title="' + this.options.checkAnswerText + '">' + this.options.checkAnswerText + '</button>' +
+                '<input type="text" class="h5p-textinput theme-input" tabindex="-1" placeholder="' + this.options.defaultAnswerText + '" aria-describedby="h5p-flashcard-card-' + cardId +'" autocomplete="off" spellcheck="false"/>' +
+                '<button type="button" class="h5p-button h5p-check-button theme-primary-cta" tabindex="-1" title="' + this.options.checkAnswerText + '">' + this.options.checkAnswerText + '</button>' +
                 '<button type="button" class="h5p-button h5p-icon-button" tabindex="-1" title="' + this.options.checkAnswerText + '"/>' +
               '</div>' +
             '</div>' +

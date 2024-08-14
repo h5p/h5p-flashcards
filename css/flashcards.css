@@ -1,15 +1,14 @@
 .h5p-flashcards {
   position: relative;
   overflow: hidden;
-  padding: 0.5em 0 0em;
   line-height: 1.25em;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 1em;
+  font-size: 1rem;
   background: rgba(255, 255, 255, 0.9);
 }
 
+
 .h5p-flashcards.h5p-standalone {
-  background-color: #27344e;
+  background-color: var(--background);
 }
 
 .h5p-flashcards .h5p-loading {
@@ -25,20 +24,22 @@
 }
 
 .h5p-flashcards .h5p-description {
-  border-bottom: 1px solid #474e61;
-  padding: 1.5em 0;
-  margin: 0 2em;
+  box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid var(--stroke-1);
+  padding: 1.5em 2em;
+  background-color: var(--ui-base);
   text-align: center;
   font-size: 1.3em;
 }
 
 .h5p-flashcards.h5p-standalone .h5p-description {
-  color: #f9f9f9;
+  color: var(--text-primary);
+  font-weight: 600;
 }
 
 .h5p-flashcards .h5p-inner {
   position: relative;
-  margin: 1em 0;
+  margin: var(--spacing-secondary-large) 0;
   overflow: hidden;
 }
 
@@ -101,10 +102,10 @@
 
 .h5p-flashcards .h5p-card > .h5p-flashcard-overlay {
   z-index: 1;
-  background-color: #27344e;
+  background-color: var(--background);
   cursor: pointer;
   opacity: 0.75;
-  border-radius: 2em;
+  border-radius: inherit;
   -webkit-transition: opacity 0.5s;
   transition: opacity 0.5s;
 }
@@ -114,12 +115,12 @@
 }
 
 .h5p-flashcards .h5p-card.h5p-wrong .h5p-imageholder > .h5p-flashcard-overlay {
-  background-color: #f30e0e;
+  background-color: var(--feedback-incorrect-main);
   opacity: 0.68;
 }
 
 .h5p-flashcards .h5p-card.h5p-correct .h5p-imageholder > .h5p-flashcard-overlay {
-  background-color: #6cda4a;
+  background-color: var(--feedback-correct-main);
   opacity: 0.75;
 }
 
@@ -130,22 +131,25 @@
 }
 
 .h5p-flashcards .h5p-card.h5p-current .h5p-cardholder {
-  background-color: white;
-  border-color: white;
+  background-color: var(--ui-base);
+  border-color: var(--stroke-3);
 }
 
 .h5p-flashcards .h5p-cardholder {
   margin: auto;
-  background-color: transparent;
+  background-color: var(--ui-base);
   border: 0.1em solid transparent;
-  border-radius: 2em;
-  transform: scale(0.95);
+  border-radius: var(--border-radius-large);
+  transform: scale(0.85);
   -webkit-transition: transform 0.5s;
   transition: transform 0.5s;
 }
 
 .h5p-flashcards .h5p-card:hover .h5p-cardholder {
-  transform: scale(1);
+  transform: scale(0.8);
+}
+.h5p-flashcards .h5p-card.h5p-current:hover .h5p-cardholder{
+	transform: scale(1);
 }
 
 .h5p-flashcards .h5p-card:hover .h5p-flashcard-overlay {
@@ -154,7 +158,7 @@
 
 .h5p-flashcards .h5p-current .h5p-cardholder {
   transform: scale(1);
-  box-shadow: 0px 0px 23px 4px rgba(0,0,0,0.31);
+  box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.04);
 }
 
 .h5p-flashcards .h5p-imageholder {
@@ -173,16 +177,15 @@
   justify-content: center;
 
   position: relative;
-  margin: 1em 1em 0 1em;
-  padding: 1em;
-  height: 18em;
-  background-color: #c8e0e3;
-  border-radius: 2em 2em 0 0;
+  margin: 2rem 2rem 0 2rem;
+  padding: 0rem;
+  height: 18rem;
+  background-color: var(--alternative-base);
+  border-radius: var(border-radius-large);
 }
 
 .h5p-flashcards .h5p-card .h5p-clue {
   display: block;
-  padding: 0.5em;
   background: white;
 
   max-height: 100%;
@@ -190,13 +193,6 @@
   flex: 0 0 auto; /* Need  this for IE 11 to make image not stretch */
   object-fit: scale-down; /* Need  this for FF to make image not stretch */
   box-sizing: border-box;
-
-  -webkit-box-shadow: 0em 0em 0.4em rgba(50, 50, 50, 0.5);
-  -moz-box-shadow: 0em 0em 0.4em rgba(50, 50, 50, 0.5);
-  box-shadow: 0em 0em 0.4em rgba(50, 50, 50, 0.5);
-
-  border-radius: 1em;
-  border: 0.1em solid #b6b6b6;
 
   -webkit-transition: -webkit-transform 0.15s;
   -moz-transition: -moz-transform 0.15s;
@@ -227,7 +223,7 @@
   margin: 0 1em 1em 1em;
   padding: 0 1em 1em 1em;
   background-color: white;
-  border-radius: 0 0 2em 2em;
+  border-radius: inherit;
 }
 
 .h5p-flashcards .h5p-answer {
@@ -240,13 +236,9 @@
   position: absolute;
   display: inline-block;
   border: none;
-  border-radius: 0 2em 2em 0;
-  background: #2A64E8;
-  padding: 0.5em 1em;
   box-shadow: none;
   top: 0;
   right: 0;
-  height: 3em;
 }
 
 .h5p-flashcards .h5p-answer .h5p-check-button {
@@ -292,12 +284,7 @@
 .h5p-flashcards .h5p-answer .h5p-textinput {
   width: 100%;
   height: 3em;
-  padding: 0 4em 0 1em;
-  border-radius: 2em;
   box-sizing: border-box;
-  font-family: 'Open Sans', sans-serif;
-  color: #27344e;
-  border: 2px solid #e7e9ec;
 }
 
 .h5p-flashcards .h5p-answer .h5p-textinput::-ms-clear {
@@ -313,12 +300,12 @@
   text-align: center;
   overflow: hidden;
   max-width: 32em;
-  padding: 0.75em;
+  padding: 2rem 1rem;
   margin: auto;
   color: #27344e;
-  font-size: 1.5em;
-  line-height: 1em;
-  font-weight: 300;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  font-weight: 600;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -336,13 +323,13 @@
   right: 1em;
   top: 1em;
   line-height: 1em;
-  color: #c21e1e;
+  color: var(--feedback-incorrect-main);
   outline: none;
 }
 
 .h5p-flashcards .h5p-answer .h5p-wrong .h5p-feedback-label:before {
-  content: "\f00d";
-  font-family: 'H5PFontAwesome4';
+  content: "\e902";
+  font-family: 'h5p-theme';
   padding-right: 2px;
 }
 
@@ -351,15 +338,15 @@
   right: 1em;
   top: 1em;
   line-height: 1em;
-  color: #437C31;
+  color: var(--feedback-correct-main);
   transition: opacity 2s;
   opacity: 1;
   outline: none;
 }
 
 .h5p-flashcards .h5p-answer .h5p-correct .h5p-feedback-label:before {
-  content: "\f00c";
-  font-family: 'H5PFontAwesome4';
+  content: "\e903";
+  font-family: 'h5p-theme';
   padding-right: 2px;
 }
 
@@ -369,27 +356,18 @@
 }
 
 .h5p-flashcards .h5p-textinput {
-  position: relative;
-  height: 1.5em;
-  padding: 0.25em 0.5em;
   margin: 0 auto;
   display: inline-block;
-
   font-size: 1em;
   font-weight: normal;
   line-height: 1.25em;
   word-wrap: break-word;
 
-  border-radius: 1em 0 0 1em;
-  border: 0.0625em solid #c7c7c7;
-  color: rgb(51, 51, 51);
   box-sizing: content-box;
 }
 
 .h5p-flashcards .h5p-textinput:focus {
-  outline: none;
-  box-shadow: 0 0 0.5em 0 #7fb8ff;
-  border-color: #7fb8ff;
+
 }
 
 .h5p-flashcards .h5p-input.h5p-correct .h5p-textinput[disabled],
@@ -398,15 +376,8 @@
 }
 
 .h5p-flashcards .h5p-button {
-  font-size: 1em;
-  display: block;
   margin: auto;
-  padding: 0.3125em 0.6875em;
-  border: 0.1875em solid #fff;
-  border-radius: 1em;
-  margin-bottom: 1em;
   cursor: pointer;
-  color: #fff;
   outline: none;
 }
 
@@ -421,31 +392,34 @@
 }
 
 .h5p-flashcards .h5p-progress {
-  margin: 2em 0;
-  color: #fff;
+  margin: var(--spacing-third-large) 0;
+  color: var(--text-primary);
   text-align: center;
 }
 .h5p-flashcards .h5p-navigation {
-  margin: 0.75em auto;
   overflow: hidden;
   position: absolute;
   height: 5.5em;
-  padding: 1em 0;
   vertical-align: middle;
   clear: both;
   width: 77em;
   max-width: 100%;
   left: 0;
   right: 0;
+  bottom: 0;
+  background-color: var(--ui-base);
+  border-top: 1px solid var(--stroke-1);
+  box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.05);
+  display: flex;
 }
 
 .h5p-flashcards .h5p-navigation .h5p-button {
-  font-family: 'H5PFontIcons';
   color: #a3adc4;
   background: none;
-  border: 1px solid #414d66;
-  font-size: 1.75em;
   top: 0.75em;
+}
+.h5p-flashcards .h5p-navigation .h5p-button:before, .h5p-flashcards .h5p-navigation .h5p-button:after {
+	  font-family: 'h5p-theme';
 }
 
 .h5p-flashcards .h5p-navigation .h5p-button:hover {
@@ -462,18 +436,16 @@
   left: 0.75em;
 }
 
-.h5p-flashcards .h5p-button.h5p-next:before {
-  content: "\e910";
-  display: block;
+.h5p-flashcards .h5p-button.h5p-next:after {
+  content: "\e901";
+  margin-left: 0.5rem;
+  display: inline-block;
 }
 
 .h5p-flashcards .h5p-button.h5p-previous:before {
-  content: "\e910";
-  -webkit-backface-visibility: hidden;
-  -ms-transform: rotate(180deg);
-  -webkit-transform: rotate(180deg);
-  transform: rotate(180deg);
-  display: block;
+  content: "\e900";
+  margin-right: 0.5rem;
+  display: inline-block;
 }
 
 .h5p-flashcards .h5p-hidden {
@@ -500,7 +472,7 @@
   left: 0;
   width: 100%;
   color: white;
-  font-family: "h5pFontAwesome4";
+  font-family: 'h5p-theme' !important;
   font-size: 8em;
 
   -webkit-animation-duration: 1s;
@@ -514,11 +486,11 @@
 }
 
 .h5p-flashcards .h5p-card.h5p-wrong .h5p-solution > .solution-icon:before {
-  content: "\f00d";
+  content: "\e902";
 }
 
 .h5p-flashcards .h5p-card.h5p-correct .h5p-solution > .solution-icon:before {
-  content: "\f00c";
+  content: "\e903";
 }
 
 .h5p-flashcards .h5p-solution > .solution-text {
@@ -536,7 +508,6 @@
   min-width: 70%;
   max-width: calc(100% - 1em);
   color: white;
-  background: #E50B0B;
 }
 
 .h5p-flashcards .h5p-solution.h5p-hidden {
@@ -602,7 +573,7 @@ button::-moz-focus-inner {
   margin: 0 auto;
   width: 9em;
   padding: 0.87em;
-  color: #adb6c7;
+  color: var(--text-primary);
   background: none;
   border: 1px solid #414d66;
 }
@@ -619,13 +590,13 @@ button::-moz-focus-inner {
 
 .h5p-flashcards .h5p-results-score {
   position: absolute;
-  color: #adb6c7;
+  color: var(--text-primary);
   font-size: 1.4em;
   right: 1em;
 }
 
 .h5p-flashcards .h5p-results-score span{
-  color: white;
+  color: var(--text-primary);
   padding: 0 0.2em;
 }
 
@@ -642,7 +613,7 @@ button::-moz-focus-inner {
 .h5p-flashcards .h5p-results-list-item {
   position: relative;
   overflow: hidden;
-  color: white;
+  color: var(--text-primary);
   padding: 0.8em;
   border: 1px solid #414d66;
   border-radius: 1.5em;
@@ -684,7 +655,7 @@ button::-moz-focus-inner {
 }
 
 .h5p-flashcards .h5p-results-answer {
-  color: #7cf0c1;
+  color: var(--feedback-correct-main);
   line-height: 2em;
   margin-right: 4.5em;
   font-size: 0.8em;
@@ -692,16 +663,16 @@ button::-moz-focus-inner {
 }
 
 .h5p-flashcards .h5p-results-answer span {
-  color: #adb6c7;
+  color: var(--text-primary);
 }
 
 
 .h5p-flashcards .h5p-results-answer span.h5p-correct {
-  color: #7cf0c1;
+  color: var(--feedback-correct-main);
 }
 
 .h5p-flashcards .h5p-results-answer span.h5p-correct span {
-  color: #adb6c7;
+  color: var(--text-primary);
 }
 
 .h5p-flashcards .h5p-results-box {
@@ -711,38 +682,40 @@ button::-moz-focus-inner {
   bottom: 0.5em;
   width: 3.5em;
   border-radius: 0 1em 1em 0;
-  background-color: #2db6ac;
+  background-color: var(--feedback-correct-main);
   text-align: center;
 }
 
 .h5p-flashcards .h5p-results-box:after {
-  font-family: 'H5PFontIcons';
-  content: "\e601";
+  font-family: 'h5p-theme';
+  content: "\e903";
   font-size: 3em;
   vertical-align: middle;
   line-height: 1.5em;
 }
 
 .h5p-flashcards .h5p-results-list-item.h5p-incorrect .h5p-results-answer {
-  color: #ff7083;
+  color: var(--feedback-incorrect-main);
 }
 
 .h5p-flashcards .h5p-results-list-item.h5p-incorrect .h5p-results-box {
-  background-color: #d51f38;
+  background-color: var(--feedback-incorrect-main);
 }
 
 .h5p-flashcards .h5p-results-list-item.h5p-incorrect .h5p-results-box:after {
-  content: "\e600";
+  content: "\e902";
 }
 
 .h5p-flashcards .h5p-visual-progress {
-  background-color: #1d273c;
-  border: 1px solid #5f6c87;
+  background-color: var(--contrast-cta-light);
+  /*border: 1px solid var(--contrast-cta-white);*/
   border-radius: 8px;
   padding: 3px;
   width: 18em;
   max-width: 45%;
   margin: 4em auto 3em auto;
+  position: relative;
+  z-index: 1000;
 }
 
 .h5p-flashcards.h5p-mobile .h5p-visual-progress {
@@ -752,7 +725,7 @@ button::-moz-focus-inner {
 }
 
 .h5p-flashcards .h5p-visual-progress div {
-  background-color: #7cf0bd;
+  background-color: var(--contrast-cta-white);
   height: 7px;
   width: 0%;
   border-radius: 5px;
