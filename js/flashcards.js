@@ -222,7 +222,9 @@ H5P.Flashcards = (function ($, XapiGenerator) {
       'aria-valuemin': (100 / this.options.cards.length).toFixed(2)
     }).append($('<div/>', {
       'class': 'h5p-visual-progress-inner'
-    })).appendTo(this.$container);
+    }));
+
+    this.$container.find('.h5p-navigation >:first-child').after(this.$visualProgress);
 
     this.$progress = this.$container.find('.h5p-progress');
 
