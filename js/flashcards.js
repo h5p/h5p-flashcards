@@ -210,8 +210,8 @@ H5P.Flashcards = (function ($, XapiGenerator) {
       '<div class="h5p-progress"></div>' +
       '<div class="h5p-inner" role="region" aria-labelledby="flashcards-description' + '-' + descId + '" aria-roledescription="carousel"></div>' +
       '<div class="h5p-navigation">' +
-        '<button type="button" class="h5p-button h5p-previous theme-nav-button h5p-hidden" tabindex="0" title="' + this.options.previous + '" aria-label="' + this.options.previous + '">' + this.options.previous + '</button>' +
-        '<button type="button" class="h5p-button h5p-next theme-nav-button" tabindex="0" title="' + this.options.next + '" aria-label="' + this.options.next + '">' + this.options.next + '</button>'
+        '<button type="button" class="h5p-button h5p-previous theme-nav-button h5p-hidden" tabindex="0" title="' + this.options.previous + '" aria-label="' + this.options.previous + '"><span class="theme-label">' + this.options.previous + '</span></button>' +
+        '<button type="button" class="h5p-button h5p-next theme-nav-button" tabindex="0" title="' + this.options.next + '" aria-label="' + this.options.next + '"><span class="theme-label">' + this.options.next + '</span></button>'
     ).children('.h5p-inner');
 
     // Create visual progress and add accessibility attributes
@@ -472,15 +472,20 @@ H5P.Flashcards = (function ($, XapiGenerator) {
     this.$resultScreen = $('<div/>', {
       'class': 'h5p-flashcards-results',
     });
+	  
+	const $titleContainer = $('<div/>', {
+      'class': 'h5p-theme-results-banner'
+    }).appendTo(this.$resultScreen);
+
 
     $('<div/>', {
       'class': 'h5p-results-title',
       'text': this.options.results
-    }).appendTo(this.$resultScreen);
+    }).appendTo($titleContainer);
 
     $('<div/>', {
       'class': 'h5p-results-score'
-    }).appendTo(this.$resultScreen);
+    }).appendTo($titleContainer);
 
     $('<ul/>', {
       'class': 'h5p-results-list'

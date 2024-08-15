@@ -6,7 +6,6 @@
   background: rgba(255, 255, 255, 0.9);
 }
 
-
 .h5p-flashcards.h5p-standalone {
   background-color: var(--background);
 }
@@ -222,7 +221,6 @@
 .h5p-flashcards .h5p-foot {
   margin: 0 1em 1em 1em;
   padding: 0 1em 1em 1em;
-  background-color: white;
   border-radius: inherit;
 }
 
@@ -302,7 +300,7 @@
   max-width: 32em;
   padding: 2rem 1rem;
   margin: auto;
-  color: #27344e;
+  color: var(--text-primary);
   font-size: 1.25rem;
   line-height: 1.5rem;
   font-weight: 600;
@@ -392,15 +390,22 @@
 }
 
 .h5p-flashcards .h5p-progress {
-  margin: var(--spacing-third-large) 0;
-  color: var(--text-primary);
-  text-align: center;
+  display: table;
+  margin: var(--spacing-third-large) auto;
+  padding:  var(--spacing-third-large)  var(--spacing-secondary-large);
+  color: var(--main-cta-base);
+  font-weight: bold;
+  background-color: var(--contrast-cta);
+  border-radius: var(--border-radius-large);
 }
 .h5p-flashcards .h5p-navigation {
   display: grid;
   grid-template-columns: 1fr 5fr 1fr;
   align-items: center;
   justify-items: center;
+	
+  container-type: inline-size;
+  container-name: h5p-navigation;
 
   overflow: hidden;
   height: 5.5em;
@@ -410,6 +415,19 @@
   background-color: var(--ui-base);
   border-top: 1px solid var(--stroke-1);
   box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.05);
+}
+@container h5p-navigation (max-width: 700px) {
+  .theme-label {
+    display: none;
+  }
+	.theme-nav-button{
+		  border-radius: 25rem;
+	}
+  .h5p-flashcards .h5p-button.h5p-next:after, .h5p-flashcards .h5p-button.h5p-previous:before{
+	  margin: 0 !important;
+	
+	}
+
 }
 
 .h5p-flashcards .h5p-navigation .h5p-button {
@@ -538,12 +556,13 @@ button::-moz-focus-inner {
   display: none;
   -webkit-flex-direction: column;
           flex-direction: column;
-  margin: 4em;
+  margin: 0;
   position: absolute;
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
+  background-color: var(--ui-base);
 }
 
 .h5p-flashcards .h5p-flashcards-results.show {
@@ -552,10 +571,9 @@ button::-moz-focus-inner {
 }
 
 .h5p-flashcards .h5p-results-title {
-  position: absolute;
-  float: left;
-  font-size: 2em;
-  color: white;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--contrast-cta);
 }
 
 .h5p-flashcards .h5p-results-retry-button {
@@ -573,20 +591,18 @@ button::-moz-focus-inner {
 }
 
 .h5p-flashcards .h5p-results-retry-button:before {
-  font-family: "H5PFontAwesome4";
-  content: "\f01e";
+  font-family: 'h5p-theme' !important;
+  content: "\e906";
   margin-right: 0.5em;
 }
 
 .h5p-flashcards .h5p-results-score {
-  position: absolute;
-  color: var(--text-primary);
-  font-size: 1.4em;
-  right: 1em;
+  color: var(--contrast-cta);
+  font-size: 1.5rem;
 }
 
 .h5p-flashcards .h5p-results-score span{
-  color: var(--text-primary);
+  color: var(--contrast-cta);
   padding: 0 0.2em;
 }
 
@@ -596,36 +612,42 @@ button::-moz-focus-inner {
   list-style-type: none;
   overflow: hidden;
   overflow-y: auto;
-  padding: 0 1em 0 0;
-  margin: 5em 0 2em 0;
+  padding: var(--spacing-primary-large);
+  
 }
 
 .h5p-flashcards .h5p-results-list-item {
-  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
   overflow: hidden;
   color: var(--text-primary);
-  padding: 0.8em;
-  border: 1px solid #414d66;
-  border-radius: 1.5em;
+  padding: var(--spacing-third-large);
+  border-radius: var(--border-radius-medium);
+  margin-bottom: var(--spacing-third-large);
+  background-color: var(--feedback-correct-secondary);
+  border: solid 1px var(--feedback-correct-third);
 }
 
+
 .h5p-flashcards .h5p-results-image-holder {
-  width: 4.5em;
+  /*
+	width: 4.5em;
   height: 3.5em;
   overflow: hidden;
-  border-radius: 1em;
+  border-radius: var(--border-radius-small);
   position: relative;
   float: left;
   margin-right: 2em;
   background-size: contain;
   background-position: center center;
-  background-color: #fff;
+  background-color: var(--ui-base);
   background-repeat: no-repeat;
   background-origin: content-box;
-  padding: 0.25em;
+  padding: 0.25em;*/
+  grid-column: 1;
 }
 .h5p-flashcards .h5p-results-image-holder.no-image {
-  background-color: #c8e0e3;
+  background-color: var(--alternative-base);
   text-align: center;
 }
 .h5p-flashcards .h5p-results-image-holder.no-image:after {
@@ -638,17 +660,24 @@ button::-moz-focus-inner {
 
 .h5p-flashcards .h5p-results-question {
   line-height: 2em;
+  font-size: 1.25rem;
+  font-weight: 600;
   margin-right: 3.5em;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  color: var(--feedback-correct-main);
+}
+.h5p-flashcards .h5p-incorrect .h5p-results-question{
+  color: var(--feedback-incorrect-main);
+  grid-column: 2;
 }
 
 .h5p-flashcards .h5p-results-answer {
   color: var(--feedback-correct-main);
   line-height: 2em;
   margin-right: 4.5em;
-  font-size: 0.8em;
+  font-size: 1rem;
   overflow-wrap: break-word;
 }
 
@@ -666,14 +695,7 @@ button::-moz-focus-inner {
 }
 
 .h5p-flashcards .h5p-results-box {
-  position: absolute;
-  right: 0.5em;
-  top: 0.5em;
-  bottom: 0.5em;
-  width: 3.5em;
-  border-radius: 0 1em 1em 0;
-  background-color: var(--feedback-correct-main);
-  text-align: center;
+  color: var(--feedback-correct-main);
 }
 
 .h5p-flashcards .h5p-results-box:after {
@@ -683,13 +705,18 @@ button::-moz-focus-inner {
   vertical-align: middle;
   line-height: 1.5em;
 }
+.h5p-incorrect{
+  background-color: var(--feedback-incorrect-secondary) !important;
+  border-color: var(--feedback-incorrect-third) !important;
+}
 
 .h5p-flashcards .h5p-results-list-item.h5p-incorrect .h5p-results-answer {
   color: var(--feedback-incorrect-main);
 }
 
 .h5p-flashcards .h5p-results-list-item.h5p-incorrect .h5p-results-box {
-  background-color: var(--feedback-incorrect-main);
+  grid-column: 3;
+  color: var(--feedback-incorrect-main);
 }
 
 .h5p-flashcards .h5p-results-list-item.h5p-incorrect .h5p-results-box:after {
@@ -703,14 +730,12 @@ button::-moz-focus-inner {
   /*border: 1px solid var(--contrast-cta-white);*/
   border-radius: 8px;
   padding: 3px;
-  width: 18em;
-  max-width: 45%;
+  width: 18rem;
 }
 
 .h5p-flashcards.h5p-mobile .h5p-visual-progress {
   max-width: none;
   width: auto;
-  margin: 4em 7em 3em 7em;
 }
 
 .h5p-flashcards .h5p-visual-progress div {
@@ -784,9 +809,9 @@ button::-moz-focus-inner {
 }
 
 .h5p-show-results .h5p-show-results-icon:before {
-  font-family: "h5pFontIcons";
-  content: "\e91b";
-  font-size: 12em;
+  font-family: "h5p-theme";
+  content: "\e904";
+  font-size: 10rem;
   color: #6a7589;
   display: block;
   position: absolute;
