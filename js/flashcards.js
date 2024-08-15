@@ -536,15 +536,19 @@ H5P.Flashcards = (function ($, XapiGenerator) {
         $imageHolder.addClass('no-image');
       }
 
+      const $resultsQuestionContainer = $('<div/>', {
+        'class': 'h5p-results-question-container',
+      }).appendTo($listItem);
+
       $('<div/>', {
         'class': 'h5p-results-question',
         'html': card.text
-      }).appendTo($listItem);
+      }).appendTo($resultsQuestionContainer);
 
       var $resultsAnswer = $('<div/>', {
         'class': 'h5p-results-answer',
         'text': this.answers[i]
-      }).appendTo($listItem);
+      }).appendTo($resultsQuestionContainer);
 
       $resultsAnswer.prepend('<span>' + this.options.answerShortText + ' </span>');
 
