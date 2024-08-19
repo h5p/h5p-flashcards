@@ -33,7 +33,7 @@
 
 .h5p-flashcards .h5p-inner {
   position: relative;
-  margin: var(--spacing-secondary) 0;
+  margin: var(--spacing-m) 0;
   overflow: hidden;
 }
 
@@ -292,7 +292,7 @@
   text-align: center;
   overflow: hidden;
   max-width: 32em;
-  padding: var(--spacing-third, --spacing-secondary);
+  padding: var(--spacing-s, --spacing-m);
   margin: auto;
   color: var(--text-primary);
   font-size: 1.25rem;
@@ -385,8 +385,8 @@
 
 .h5p-flashcards .h5p-progress {
   display: table;
-  margin: var(--spacing-third) auto;
-  padding:  var(--spacing-third)  var(--spacing-secondary);
+  margin: var(--spacing-s) auto;
+  padding:  var(--spacing-s)  var(--spacing-m);
   color: var(--main-cta-base);
   font-weight: bold;
   background-color: var(--contrast-cta);
@@ -573,7 +573,7 @@ button::-moz-focus-inner {
 }
 
 .h5p-flashcards .h5p-results-retry-button{
-	margin-bottom: var(--spacing-secondary);	
+	margin-bottom: var(--spacing-m);	
 }
 
 .h5p-flashcards .h5p-results-retry-button:before {
@@ -599,7 +599,7 @@ button::-moz-focus-inner {
   list-style-type: none;
   overflow: hidden;
   overflow-y: auto;
-  padding: var(--spacing-primary);
+  padding: var(--spacing-l);
   
 }
 
@@ -608,9 +608,9 @@ button::-moz-focus-inner {
   grid-template-columns: 5rem auto 3rem;
   overflow: hidden;
   color: var(--text-primary);
-  padding: var(--spacing-fourth);
+  padding: var(--spacing-xs);
   border-radius: var(--border-radius-medium);
-  margin-bottom: var(--spacing-third);
+  margin-bottom: var(--spacing-s);
   background-color: var(--feedback-correct-secondary);
   border: solid 1px var(--feedback-correct-third);
   align-items: center;
@@ -638,7 +638,7 @@ button::-moz-focus-inner {
 .h5p-flashcards .h5p-results-question-container{
   grid-column: 2;
 	width: -webkit-fill-available;
-	padding: var(--spacing-fourth);
+	padding: var(--spacing-xs);
 }
 .h5p-flashcards .h5p-results-image-holder.no-image {
   background-color: var(--alternative-base);
@@ -838,13 +838,7 @@ button::-moz-focus-inner {
 
 .h5p-show-results button {
   position: relative;
-  color: #7cf0bd;
-  background: none;
   top: 2.5em;
-  font-size: 0.9em;
-  cursor: pointer;
-  border: none;
-  padding: 0;
 }
 
 .h5p-show-results button:hover {

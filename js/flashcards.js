@@ -305,8 +305,8 @@ H5P.Flashcards = (function ($, XapiGenerator) {
 
     var $showResults = $(
       '<div class="h5p-show-results">' +
-        '<span class="h5p-show-results-icon"></span>' +
-        '<button type="button" class="h5p-show-results-label">' + that.options.showResults + '</button>' +
+       // '<span class="h5p-show-results-icon"></span>' +
+        '<button type="button" class="h5p-theme-secondary-cta">' + that.options.showResults + '</button>' +
         '<button type="button" class="h5p-show-results-label-mobile">' + that.options.results + '</button>' +
       '</div>'
     );
