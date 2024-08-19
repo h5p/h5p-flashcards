@@ -1,7 +1,6 @@
 .h5p-flashcards {
   position: relative;
   overflow: hidden;
-  line-height: 1.25em;
   font-size: 1rem;
   background: rgba(255, 255, 255, 0.9);
 }
@@ -109,13 +108,15 @@
 }
 
 .h5p-flashcards .h5p-card.h5p-wrong .h5p-imageholder > .h5p-flashcard-overlay {
-  background-color: var(--feedback-incorrect-third);
-  opacity: 0.8;
+  background-color: var(--feedback-incorrect-main);
+  opacity: 0.9;
+  mix-blend-mode: multiply;
 }
 
 .h5p-flashcards .h5p-card.h5p-correct .h5p-imageholder > .h5p-flashcard-overlay {
   background-color: var(--feedback-correct-main);
-  opacity: 0.75;
+  opacity: 0.9;
+  mix-blend-mode: multiply;
 }
 
 .h5p-flashcards .h5p-card.h5p-correct .h5p-imageholder .h5p-clue,
@@ -308,6 +309,18 @@
 
 .h5p-flashcards .h5p-input {
   text-align: center;
+}
+.h5p-flashcards .h5p-input.h5p-correct .h5p-textinput[disabled]{
+  color: var(--feedback-correct-main) !important;
+  background-color: var(--feedback-correct-secondary) !important;
+  border-color: var(--feedback-correct-third) !important;
+  box-shadow: none;
+}
+.h5p-flashcards .h5p-input.h5p-wrong .h5p-textinput[disabled]{
+  color: var(--feedback-incorrect-main) !important;
+  background-color: var(--feedback-incorrect-secondary) !important;
+  border-color: var(--feedback-incorrect-third) !important;
+  box-shadow: none;
 }
 
 .h5p-flashcards .h5p-answer .h5p-wrong .h5p-feedback-label {
@@ -510,7 +523,7 @@
   width: min-content;
   min-width: 70%;
   max-width: calc(100% - 1em);
-  color: var(--feedback-incorrect-main);
+  color: white;
 }
 
 .h5p-flashcards .h5p-solution.h5p-hidden {
