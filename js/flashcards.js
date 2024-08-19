@@ -473,10 +473,13 @@ H5P.Flashcards = (function ($, XapiGenerator) {
       'class': 'h5p-flashcards-results',
     });
 	  
-	const $titleContainer = $('<div/>', {
+	  const $titleContainer = $('<div/>', {
       'class': 'h5p-theme-results-banner'
     }).appendTo(this.$resultScreen);
 
+    $('<div/>', {
+      'class': 'h5p-theme-pattern'
+    }).appendTo($titleContainer);
 
     $('<div/>', {
       'class': 'h5p-results-title',

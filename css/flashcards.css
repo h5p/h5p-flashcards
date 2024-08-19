@@ -570,6 +570,7 @@ button::-moz-focus-inner {
   font-size: 2rem;
   font-weight: 600;
   color: var(--contrast-cta);
+  z-index: 1;
 }
 
 .h5p-flashcards .h5p-results-retry-button{
@@ -585,6 +586,7 @@ button::-moz-focus-inner {
 .h5p-flashcards .h5p-results-score {
   color: var(--contrast-cta);
   font-size: 1.5rem;
+  z-index: 1;
 }
 
 .h5p-flashcards .h5p-results-score span{
