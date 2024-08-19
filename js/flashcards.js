@@ -206,7 +206,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
     const descId = ++C.counter;
 
     var $inner = this.$container.html(
-      '<div class="h5p-description" id="flashcards-description' + '-' + descId + '" title="' + this.options.description + '">' + this.options.description + '</div>' +
+      '<div class="h5p-description theme-question-description" id="flashcards-description' + '-' + descId + '" title="' + this.options.description + '">' + this.options.description + '</div>' +
       '<div class="h5p-progress"></div>' +
       '<div class="h5p-inner" role="region" aria-labelledby="flashcards-description' + '-' + descId + '" aria-roledescription="carousel"></div>' +
       '<div class="h5p-navigation">' +
@@ -343,7 +343,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
             '<div class="h5p-answer">' +
               '<div class="h5p-input">' +
                 '<input type="text" class="h5p-textinput theme-input" tabindex="-1" placeholder="' + this.options.defaultAnswerText + '" aria-describedby="h5p-flashcard-card-' + cardId +'" autocomplete="off" spellcheck="false"/>' +
-                '<button type="button" class="h5p-button h5p-check-button theme-primary-cta" tabindex="-1" title="' + this.options.checkAnswerText + '">' + this.options.checkAnswerText + '</button>' +
+                '<button type="button" class="h5p-button h5p-check-button theme-primary-cta theme-check" tabindex="-1" title="' + this.options.checkAnswerText + '">' + this.options.checkAnswerText + '</button>' +
                 '<button type="button" class="h5p-button h5p-icon-button" tabindex="-1" title="' + this.options.checkAnswerText + '"/>' +
               '</div>' +
             '</div>' +
@@ -492,7 +492,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
     }).appendTo(this.$resultScreen);
 
     this.$retryButton = $('<button/>', {
-      'class': 'h5p-results-retry-button h5p-invisible h5p-button',
+      'class': 'h5p-results-retry-button h5p-invisible h5p-button theme-secondary-cta',
       'text': this.options.retry
     }).on('click', function () {
       that.resetTask();
