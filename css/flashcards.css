@@ -826,36 +826,10 @@ button::-moz-focus-inner {
 
 .h5p-flashcards .h5p-show-results {
   display: none;
-  z-index: 0;
   position: absolute;
-  vertical-align: middle;
-  width: 26em;
-  max-width: 90%;
   top: 50%;
   text-align: center;
   right: 0;
-  cursor: pointer;
-}
-
-.h5p-show-results .h5p-show-results-icon:before {
-  font-family: "h5p-theme";
-  content: "\e904";
-  font-size: 10rem;
-  color: #6a7589;
-  display: block;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: -0.2em;
-}
-
-.h5p-show-results button {
-  position: relative;
-  top: 2.5em;
-}
-
-.h5p-show-results button:hover {
-  background: none;
 }
 
 .h5p-show-results button:after {
@@ -864,11 +838,6 @@ button::-moz-focus-inner {
   font-size: 1.1em;
   vertical-align: bottom;
   margin-left: 0.5em;
-}
-
-.h5p-show-results button:focus {
-  outline: 1px solid #fff;
-  outline-offset: 4px;
 }
 
 .h5p-flashcards .h5p-show-results-label-mobile {
