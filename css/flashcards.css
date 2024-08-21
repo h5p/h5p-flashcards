@@ -221,48 +221,13 @@
 
 .h5p-flashcards .h5p-answer {
   background: none;
-  position: relative;
   max-width: 32em;
 }
 
 .h5p-flashcards .h5p-answer .h5p-button {
-  position: absolute;
   display: inline-block;
   border: none;
   box-shadow: none;
-  top: 0;
-  right: 0;
-}
-
-.h5p-flashcards .h5p-answer .h5p-check-button {
-  min-width: 6em;
-}
-
-.h5p-flashcards .h5p-answer .h5p-input.h5p-exceeds-width .h5p-check-button {
-  visibility: hidden;
-}
-
-.h5p-flashcards .h5p-answer .h5p-input:not(.h5p-exceeds-width) .h5p-icon-button {
-  visibility: hidden;
-}
-
-.h5p-flashcards .h5p-answer .h5p-input.h5p-exceeds-width .joubel-tip-container {
-  right: 3.2em;
-}
-
-.h5p-flashcards .h5p-answer .h5p-input.has-tip.h5p-exceeds-width .h5p-textinput {
-  padding-right: 5.5em;
-}
-
-.h5p-flashcards .h5p-answer .h5p-button.h5p-icon-button:after {
-  content: "\f058";
-  font-family: 'H5PFontAwesome4';
-  font-size: 1.5em;
-}
-
-.h5p-flashcards .h5p-answer .h5p-button:hover:not(:active) {
-  background: #72c1e6;
-  color: #104a65;
 }
 
 .h5p-flashcards .h5p-answer .h5p-button:focus {
@@ -274,17 +239,8 @@
   display: none;
 }
 
-.h5p-flashcards .h5p-answer .h5p-textinput {
-  width: 100%;
-  box-sizing: border-box;
-}
-
 .h5p-flashcards .h5p-answer .h5p-textinput::-ms-clear {
   display: none;
-}
-
-.h5p-flashcards .h5p-answer .h5p-input {
-  position: relative;
 }
 
 .h5p-flashcards .h5p-imagetext {
@@ -307,7 +263,9 @@
 }
 
 .h5p-flashcards .h5p-input {
-  text-align: center;
+  container-type: inline-size;
+  display: flex;
+  align-items: center;
 }
 .h5p-flashcards .h5p-input.h5p-correct .h5p-textinput[disabled]{
   color: var(--feedback-correct-main) !important;
@@ -366,23 +324,17 @@
   font-weight: normal;
   line-height: 1.25em;
   word-wrap: break-word;
+  border: none;
+  background: none;
+  height: fit-content;
+  width: 100%;
 
   box-sizing: content-box;
-}
-
-.h5p-flashcards .h5p-textinput:focus {
-
 }
 
 .h5p-flashcards .h5p-input.h5p-correct .h5p-textinput[disabled],
 .h5p-flashcards .h5p-input.h5p-wrong .h5p-textinput[disabled] {
   background-color: #f2f2f2;
-}
-
-.h5p-flashcards .h5p-button {
-  margin: auto;
-  cursor: pointer;
-  outline: none;
 }
 
 .h5p-flashcards .h5p-button:focus {

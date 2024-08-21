@@ -340,10 +340,11 @@ H5P.Flashcards = (function ($, XapiGenerator) {
               (card.text !== undefined ? card.text : '') +
             '</div>' +
             '<div class="h5p-answer">' +
-              '<div class="h5p-input">' +
-                '<input type="text" class="h5p-textinput h5p-theme-input" tabindex="-1" placeholder="' + this.options.defaultAnswerText + '" aria-describedby="h5p-flashcard-card-' + cardId +'" autocomplete="off" spellcheck="false"/>' +
-                '<button type="button" class="h5p-button h5p-check-button h5p-theme-primary-cta h5p-theme-check" tabindex="-1" title="' + this.options.checkAnswerText + '">' + this.options.checkAnswerText + '</button>' +
-                '<button type="button" class="h5p-button h5p-icon-button" tabindex="-1" title="' + this.options.checkAnswerText + '"/>' +
+              '<div class="h5p-input h5p-theme-input">' +
+                '<input type="text" class="h5p-textinput" tabindex="-1" placeholder="' + this.options.defaultAnswerText + '" aria-describedby="h5p-flashcard-card-' + cardId +'" autocomplete="off" spellcheck="false"/>' +
+                '<button type="button" class="h5p-button h5p-check-button h5p-theme-primary-cta h5p-theme-check" tabindex="-1" title="' + this.options.checkAnswerText + '">' +
+                  '<span>' + this.options.checkAnswerText + '</span>' +
+                '</button>' +
               '</div>' +
             '</div>' +
           '</div>' +
@@ -448,7 +449,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
       }
     };
 
-    $card.find('.h5p-check-button, .h5p-icon-button').click(handleClick);
+    $card.find('.h5p-check-button').click(handleClick);
 
     $input.keypress(function (event) {
 
@@ -594,7 +595,6 @@ H5P.Flashcards = (function ($, XapiGenerator) {
       this.$current.find('.h5p-textinput').attr('tabindex', '-1');
       this.$current.find('.joubel-tip-container').attr('tabindex', '-1');
       this.$current.find('.h5p-check-button').attr('tabindex', '-1');
-      this.$current.find('.h5p-icon-button').attr('tabindex', '-1');
     }
 
     // Set new card
@@ -631,7 +631,6 @@ H5P.Flashcards = (function ($, XapiGenerator) {
     // Update tab indexes
     $card.find('.h5p-textinput').attr('tabindex', '0');
     $card.find('.h5p-check-button').attr('tabindex', '0');
-    $card.find('.h5p-icon-button').attr('tabindex', '0');
     $card.find('.joubel-tip-container').attr('tabindex', '0');
   };
 
@@ -763,23 +762,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
     //Find container dimensions needed to encapsule image and text.
     self.$inner.children('.h5p-card').each(function () {
       var cardholderHeight = maxHeightImage + $(this).find('.h5p-foot').outerHeight();
-      var $button = $(this).find('.h5p-check-button');
-      var $tipIcon = $(this).find('.joubel-tip-container');
-      var $textInput = $(this).find('.h5p-textinput');
       maxHeight = cardholderHeight > maxHeight ? cardholderHeight : maxHeight;
-
-      // Handle scaling and positioning of answer button, textfield and info icon, depending on width of answer button.
-      if ($button.outerWidth() > $button.parent().width() * 0.4) {
-        $button.parent().addClass('h5p-exceeds-width');
-        $tipIcon.attr("style", "");
-        $textInput.attr("style", "");
-      }
-      else {
-        $button.parent().removeClass('h5p-exceeds-width');
-        $tipIcon.css('right', $button.outerWidth());
-        var emSize = parseInt($textInput.css('font-size'));
-        $textInput.css('padding-right', $button.outerWidth() + ($textInput.parent().hasClass('has-tip') ? emSize * 2.5 : emSize));
-      }
     });
 
     if (this.numAnswered < this.options.cards.length) {
