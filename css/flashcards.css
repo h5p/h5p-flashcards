@@ -24,10 +24,9 @@
 .h5p-flashcards .h5p-description {
   box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.05);
   border-bottom: 1px solid var(--stroke-1);
-  padding: 1.5em 2em;
+  padding: var(--spacing-l) var(--spacing-m);
   background-color: var(--ui-base);
   text-align: center;
-  font-size: 1.3em;
 }
 
 .h5p-flashcards .h5p-inner {
@@ -172,9 +171,9 @@
   justify-content: center;
 
   position: relative;
-  margin: 2rem 2rem 0 2rem;
+  margin: var(--spacing-l) var(--spacing-l) 0 var(--spacing-l);
   padding: 0rem;
-  height: 18rem;
+  height: calc(var(--spacing-xl)*6);
   background-color: var(--alternative-base);
   border-radius: var(--border-radius-large);
 }
@@ -296,7 +295,7 @@
   padding: var(--spacing-s, --spacing-m);
   margin: auto;
   color: var(--text-primary);
-  font-size: 1.25rem;
+  font-size: var(--font-size-xl-large);
   line-height: 1.5rem;
   font-weight: 600;
   -webkit-font-smoothing: antialiased;
@@ -397,13 +396,7 @@
 }
 
 .h5p-flashcards .h5p-progress {
-  display: table;
   margin: var(--spacing-s) auto;
-  padding:  var(--spacing-s)  var(--spacing-m);
-  color: var(--main-cta-base);
-  font-weight: bold;
-  background-color: var(--contrast-cta);
-  border-radius: var(--border-radius-large);
 }
 .h5p-flashcards .h5p-navigation {
   display: grid;
@@ -415,7 +408,7 @@
   container-name: h5p-navigation;
 
   overflow: hidden;
-  height: 5.5em;
+  height: calc(2*var(--spacing-xl));
   clear: both;
   width: 77em;
   max-width: 100%;
@@ -488,7 +481,7 @@
   width: 100%;
   color: white;
   font-family: 'h5p-theme' !important;
-  font-size: 8em;
+  font-size: calc(4*var(--spacing-s));
 
   -webkit-animation-duration: 0.5s;
   animation-duration: 0.5s;
