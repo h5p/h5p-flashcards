@@ -757,10 +757,6 @@ button::-moz-focus-inner {
   }
 }
 
-
-
-
-
 .h5p-rotate-in {
   -webkit-animation-name: rotateIn;
           animation-name: rotateIn;
@@ -787,10 +783,6 @@ button::-moz-focus-inner {
   margin-left: 0.5em;
 }
 
-.h5p-flashcards .h5p-show-results-label-mobile {
-  display: none;
-}
-
 /* Mobile */
 .h5p-flashcards.h5p-mobile .h5p-card {
   width: 100%;
@@ -806,8 +798,6 @@ button::-moz-focus-inner {
 
 .h5p-flashcards.h5p-mobile .h5p-show-results,
 .h5p-flashcards .h5p-show-results.h5p-mobile {
-  top: auto;
-  bottom: 6.5em;
   right: 2.2em;
   width: 12em;
   font-size: 0.45em;
@@ -816,13 +806,6 @@ button::-moz-focus-inner {
 .h5p-flashcards.h5p-mobile .h5p-show-results-label,
 .h5p-flashcards .h5p-show-results.h5p-mobile .h5p-show-results-label {
   display: none;
-}
-
-.h5p-flashcards.h5p-mobile .h5p-show-results-label-mobile,
-.h5p-flashcards .h5p-show-results.h5p-mobile .h5p-show-results-label-mobile {
-  display: inline-block;
-  font-size: 1.5em;
-  top: 2em;
 }
 
 /* Custom scrollbar */
