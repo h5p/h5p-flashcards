@@ -550,11 +550,12 @@ H5P.Flashcards = (function ($, XapiGenerator) {
       }).appendTo($resultsQuestionContainer);
 
       var $resultsAnswer = $('<div/>', {
-        'class': 'h5p-results-answer',
-        'text': this.answers[i]
+        'class': 'h5p-results-answer'
       }).appendTo($resultsQuestionContainer);
-
-      $resultsAnswer.prepend('<span>' + this.options.answerShortText + ' </span>');
+      
+      $resultsAnswer.append('<span>' + this.options.answerShortText + ' </span>');
+      
+      $resultsAnswer.append('<span' + (!userCorrect ? ' class="h5p-incorrect"' : ' class="h5p-correct"') + '>' + this.answers[i] + '</span>');
 
       if (!userCorrect) {
         $resultsAnswer.append('<span> ' + this.options.showSolutionText + ': </span>');
