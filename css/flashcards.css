@@ -269,29 +269,7 @@
   text-transform: uppercase;
 }
 
-.h5p-flashcards .h5p-input {
-  container-type: inline-size;
-  display: flex;
-  align-items: center;
-}
-.h5p-flashcards .h5p-input.h5p-correct .h5p-textinput[disabled]{
-  color: var(--feedback-correct-main) !important;
-  background-color: var(--feedback-correct-secondary) !important;
-  border-color: var(--feedback-correct-third) !important;
-  box-shadow: none;
-}
-
-.h5p-flashcards .h5p-input.h5p-wrong .h5p-textinput[disabled]{
-  color: var(--feedback-incorrect-main) !important;
-  background-color: var(--feedback-incorrect-secondary) !important;
-  border-color: var(--feedback-incorrect-third) !important;
-  box-shadow: none;
-}
-
 .h5p-flashcards .h5p-answer .h5p-wrong .h5p-feedback-label {
-  position: absolute;
-  right: 1em;
-  top: 1em;
   line-height: 1em;
   color: var(--feedback-incorrect-main);
   outline: none;
@@ -305,9 +283,6 @@
 }
 
 .h5p-flashcards .h5p-answer .h5p-correct .h5p-feedback-label {
-  position: absolute;
-  right: 1em;
-  top: 1em;
   line-height: 1em;
   color: var(--feedback-correct-main);
   transition: opacity 2s;
@@ -324,27 +299,6 @@
 /* If tip is present, correct/wrong marker has to be moved to the left */
 .h5p-flashcards .h5p-inner .h5p-answer .h5p-input.has-tip:after {
   right: 4.5em;
-}
-
-.h5p-flashcards .h5p-textinput {
-  margin: 0 auto;
-  display: inline-block;
-  font-size: 1em;
-  font-weight: normal;
-  line-height: 1.25em;
-  word-wrap: break-word;
-  border: none;
-  background: none;
-  height: fit-content;
-  width: 100%;
-
-  box-sizing: content-box;
-}
-
-.h5p-flashcards .h5p-input.h5p-correct .h5p-textinput[disabled],
-.h5p-flashcards .h5p-input.h5p-wrong .h5p-textinput[disabled] {
-  background-color: #f2f2f2;
-  padding: var(--spacing-xs) var(--spacing-xs);
 }
 
 .h5p-flashcards .h5p-button:focus {
