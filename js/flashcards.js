@@ -305,7 +305,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
 
     var $showResults = $(
       '<div class="h5p-show-results">' +
-        '<button type="button" class="h5p-theme-secondary-cta">' + that.options.showResults + '</button>' +
+        '<button type="button" class="h5p-theme-primary-cta h5p-theme-show-results">' + that.options.showResults + '</button>' +
       '</div>'
     );
 
@@ -494,11 +494,13 @@ H5P.Flashcards = (function ($, XapiGenerator) {
     }).appendTo(this.$resultScreen);
 
     this.$retryButton = $('<button/>', {
-      'class': 'h5p-results-retry-button h5p-invisible h5p-button h5p-theme-secondary-cta',
+      'class': 'h5p-results-retry-button h5p-invisible h5p-button h5p-theme-secondary-cta h5p-theme-retry',
       'text': this.options.retry
     }).on('click', function () {
       that.resetTask();
     }).appendTo(this.$resultScreen);
+    
+    
   };
 
   /**
