@@ -548,11 +548,9 @@ button::-moz-focus-inner {
   background-color: var(--ui-base);
   background-repeat: no-repeat;
   background-origin: content-box;
-  grid-column: 1;
   margin-right: var(--spacing-l);
 }
 .h5p-flashcards .h5p-results-question-container{
-  grid-column: 2;
 	width: -webkit-fill-available;
   width: 100%;
 	padding: var(--spacing-xs);
@@ -578,7 +576,6 @@ button::-moz-focus-inner {
   text-overflow: ellipsis;
 }
 .h5p-flashcards .h5p-incorrect .h5p-results-question{
-  grid-column: 2;
   margin-bottom: var(--spacing-xs);
 }
 
@@ -627,7 +624,6 @@ button::-moz-focus-inner {
 }
 
 .h5p-flashcards .h5p-results-list-item.h5p-incorrect .h5p-results-box {
-  grid-column: 3;
   color: var(--feedback-incorrect-main);
 }
 

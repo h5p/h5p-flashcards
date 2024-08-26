@@ -529,16 +529,9 @@ H5P.Flashcards = (function ($, XapiGenerator) {
         'class': 'h5p-results-list-item' + (!userCorrect ? ' h5p-incorrect' : '')
       }).appendTo($resultsContainer);
 
-      var $imageHolder = $('<div/>', {
-        'class': 'h5p-results-image-holder',
+      $('<div/>', {
+        'class': 'h5p-results-box'
       }).appendTo($listItem);
-
-      if (card.image != undefined) {
-        $imageHolder.css('background-image', 'url("' + H5P.getPath(card.image.path, this.id) + '")');
-      }
-      else {
-        $imageHolder.addClass('no-image');
-      }
 
       const $resultsQuestionContainer = $('<div/>', {
         'class': 'h5p-results-question-container',
@@ -562,9 +555,16 @@ H5P.Flashcards = (function ($, XapiGenerator) {
         $resultsAnswer.append('<span class="h5p-correct">' + C.splitAlternatives(card.answer).join(', ') + '</span>');
       }
 
-      $('<div/>', {
-        'class': 'h5p-results-box'
+      var $imageHolder = $('<div/>', {
+        'class': 'h5p-results-image-holder',
       }).appendTo($listItem);
+
+      if (card.image != undefined) {
+        $imageHolder.css('background-image', 'url("' + H5P.getPath(card.image.path, this.id) + '")');
+      }
+      else {
+        $imageHolder.addClass('no-image');
+      }
     }
     if (this.getScore() < this.getMaxScore()) {
       this.$retryButton.removeClass('h5p-invisible');
