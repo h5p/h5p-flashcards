@@ -133,7 +133,7 @@
 
 .h5p-flashcards .h5p-card.h5p-current .h5p-cardholder {
   background-color: var(--ui-base);
-  border-color: var(--background);
+  border-color: var(--stroke-1);
 }
 
 .h5p-flashcards .h5p-cardholder {
@@ -481,6 +481,7 @@ button::-moz-focus-inner {
 .h5p-flashcards .h5p-flashcards-results.show {
   display: -webkit-flex;
   display: flex;
+  background-color: var(--background);
 }
 
 .h5p-flashcards .h5p-results-title {
@@ -511,10 +512,13 @@ button::-moz-focus-inner {
   list-style-type: none;
   overflow: hidden;
   overflow-y: auto;
-  margin: calc(-1 * var(--spacing-l)) var(--spacing-l) var(--spacing-l) var(--spacing-l);
-  box-shadow: 0px 4px 20px 0px rgba(205, 205, 205, 0.50);
+  margin: calc(-1 * var(--spacing-l)) var(--spacing-xl) var(--spacing-xl) var(--spacing-xl);
+  box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.08);
   background-color: var(--ui-base);
   z-index: 1000;
+  border-radius: var(--border-radius-small);
+  padding: var(--spacing-xs) !important;
+  padding-inline-start: 0;
 }
 
 .h5p-flashcards .h5p-results-list-item {
@@ -522,7 +526,6 @@ button::-moz-focus-inner {
   grid-template-columns: 5rem auto 3rem;
   overflow: hidden;
   color: var(--text-primary);
-  padding: var(--spacing-xs);
   border-radius: var(--border-radius-medium);
   align-items: center;
   justify-items: center;
@@ -594,6 +597,8 @@ button::-moz-focus-inner {
 
 .h5p-flashcards .h5p-results-box {
   color: var(--feedback-correct-main);
+  margin: 0 var(--spacing-m);
+  width: calc(2*var(--spacing-xl));
 }
 
 .h5p-flashcards .h5p-results-box:after {
@@ -721,6 +726,8 @@ button::-moz-focus-inner {
   font-size: 1.3em;
   line-height: 1.5em;
 }
+
+
 
 .h5p-flashcards .h5p-show-results {
   display: none;
