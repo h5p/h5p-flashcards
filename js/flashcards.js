@@ -367,7 +367,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
     }));
 
     // Add tip
-    var $tip = H5P.JoubelUI.createTip(card.tip);
+    var $tip = H5P.JoubelUI.createTip(card.tip, {useDesign: true});
     if ($tip && $tip.length) { // Check for a jQuery object
       $tip.attr({
         tabindex: -1,
