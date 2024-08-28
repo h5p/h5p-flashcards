@@ -373,7 +373,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
         tabindex: -1,
         title: this.options.informationText
       });
-      $('.h5p-input', $card).append($tip).addClass('has-tip');
+      $('.h5p-imagetext', $card).append($tip);
     }
 
     var $input = $card.find('.h5p-textinput');

@@ -295,11 +295,6 @@
   padding-right: 5px;
 }
 
-/* If tip is present, correct/wrong marker has to be moved to the left */
-.h5p-flashcards .h5p-inner .h5p-answer .h5p-input.has-tip:after {
-  right: 4.5em;
-}
-
 .h5p-flashcards .h5p-button:focus {
   box-shadow: 0 0 0.5em 0 #7fb8ff;
 }
@@ -450,12 +445,6 @@
 button::-moz-focus-inner {
   padding: 0;
   border: 0;
-}
-
-.h5p-flashcards .joubel-tip-container {
-  position: absolute;
-  margin: 0 0.75em;
-  top: 0.4em;
 }
 
 .h5p-flashcards .h5p-answer .h5p-input.h5p-wrong .joubel-tip-container,
@@ -720,10 +709,8 @@ button::-moz-focus-inner {
 
 .h5p-flashcards .joubel-icon-tip-normal {
   font-size: 1.3em;
-  line-height: 1.5em;
+  line-height: 1.5rem;
 }
-
-
 
 .h5p-flashcards .h5p-show-results {
   display: none;
