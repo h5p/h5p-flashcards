@@ -575,15 +575,10 @@ button::-moz-focus-inner {
   color: var(--text-primary);
 }
 
-.h5p-flashcards .h5p-results-box, .h5p-flashcards .h5p-results-box-small{
+.h5p-flashcards .h5p-results-box-small{
   color: var(--feedback-correct-main);
 }
 
-.h5p-flashcards .h5p-results-box:after {
-  font-family: 'h5p-theme';
-  content: "\e903";
-  font-size: 2rem;
-}
 .h5p-flashcards .h5p-results-box-small:before {
   font-family: 'h5p-theme';
   content: "\e903";
@@ -608,15 +603,12 @@ button::-moz-focus-inner {
   color: var(--feedback-correct-main);
   border-color: var(--feedback-correct-third);
 }
-/* TODO: remove results box completly as we'll show the icon as a part of .h5p-results-answer */
-.h5p-flashcards .h5p-results-list-item .h5p-results-box{
-  display: none;
-}
-.h5p-flashcards .h5p-results-list-item.h5p-incorrect .h5p-results-box, .h5p-flashcards .h5p-results-list-item.h5p-incorrect .h5p-results-box-small {
+
+.h5p-flashcards .h5p-results-list-item.h5p-incorrect .h5p-results-box-small {
   color: var(--feedback-incorrect-main);
 }
 
-.h5p-flashcards .h5p-results-list-item.h5p-incorrect .h5p-results-box:after, .h5p-flashcards .h5p-results-list-item.h5p-incorrect .h5p-results-box-small:before {
+.h5p-flashcards .h5p-results-list-item.h5p-incorrect .h5p-results-box-small:before {
   content: "\e902";
 }
 

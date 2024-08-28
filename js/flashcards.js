@@ -529,10 +529,6 @@ H5P.Flashcards = (function ($, XapiGenerator) {
         'class': 'h5p-results-list-item' + (!userCorrect ? ' h5p-incorrect' : '')
       }).appendTo($resultsContainer);
 
-      $('<div/>', {
-        'class': 'h5p-results-box'
-      }).appendTo($listItem);
-
       const $resultsQuestionContainer = $('<div/>', {
         'class': 'h5p-results-question-container',
       }).appendTo($listItem);
