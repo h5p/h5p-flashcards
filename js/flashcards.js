@@ -748,13 +748,6 @@ H5P.Flashcards = (function ($, XapiGenerator) {
     var maxHeight = 0;
     var maxHeightImage = 0;
 
-    if (this.$inner.width() / parseFloat($("body").css("font-size")) <= 31) {
-      self.$container.addClass('h5p-mobile');
-    }
-    else {
-      self.$container.removeClass('h5p-mobile');
-    }
-
     //Find container dimensions needed to encapsule image and text.
     self.$inner.children('.h5p-card').each(function () {
       var cardholderHeight = maxHeightImage + $(this).find('.h5p-foot').outerHeight();
@@ -771,19 +764,6 @@ H5P.Flashcards = (function ($, XapiGenerator) {
       });
 
       this.$inner.height(innerHeight);
-    }
-
-    var freeSpaceRight = this.$inner.children('.h5p-card').last().css("marginRight");
-
-    if (parseInt(freeSpaceRight) < 160) {
-      this.$container.find('.h5p-show-results')
-        .addClass('h5p-mobile')
-        .css('width', '');
-    }
-    else if (freeSpaceRight != 'auto') {
-      this.$container.find('.h5p-show-results')
-        .removeClass('h5p-mobile')
-        .width(freeSpaceRight);
     }
   };
 

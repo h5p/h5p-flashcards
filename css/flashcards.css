@@ -20,10 +20,7 @@
   font-size: 1.5em;
   margin: 0;
 }
-.h5p-cardholder .h5p-answer .h5p-theme-check{
-  padding: var(--spacing-xs) var(--spacing-xs);
-  min-width: calc(var(--spacing-l)*4);
-}
+
 .h5p-cardholder .h5p-answer .h5p-theme-input{
   padding: calc(var(--spacing-xs)/3) calc(var(--spacing-xs)/3) calc(var(--spacing-xs)/3) var(--spacing-s);
 }
@@ -76,14 +73,6 @@
 
 .h5p-flashcards .h5p-card.h5p-next {
   transform: translateX(100%);
-}
-
-.h5p-flashcards.h5p-mobile .h5p-card.h5p-previous {
-  transform: translateX(-150%);
-}
-
-.h5p-flashcards.h5p-mobile .h5p-card.h5p-next {
-  transform: translateX(150%);
 }
 
 .h5p-flashcards .h5p-inner.h5p-invisible .h5p-card {
@@ -622,10 +611,6 @@ button::-moz-focus-inner {
   width: 18rem;
 }
 
-.h5p-flashcards.h5p-mobile .h5p-visual-progress {
-  max-width: none;
-}
-
 .h5p-flashcards .h5p-visual-progress div {
   background-color: var(--contrast-cta-white);
   height: 7px;
@@ -712,34 +697,6 @@ button::-moz-focus-inner {
   right: 0;
 }
 
-/* Mobile */
-.h5p-flashcards.h5p-mobile .h5p-card {
-  width: 100%;
-}
-
-.h5p-flashcards.h5p-mobile .h5p-flashcards-results {
-  margin: 5em 0.5em;
-}
-
-.h5p-flashcards.h5p-mobile .h5p-results-score {
-  right: 0;
-}
-.h5p-flashcards.h5p-mobile .h5p-cardholder .h5p-answer .h5p-theme-check{
-  min-width: calc(var(--spacing-s)* 4);
-}
-
-.h5p-flashcards.h5p-mobile .h5p-show-results,
-.h5p-flashcards .h5p-show-results.h5p-mobile {
-  right: 2.2em;
-  width: 12em;
-  font-size: 0.45em;
-}
-
-.h5p-flashcards.h5p-mobile .h5p-show-results-label,
-.h5p-flashcards .h5p-show-results.h5p-mobile .h5p-show-results-label {
-  display: none;
-}
-
 /* Custom scrollbar */
 .h5p-flashcards .h5p-results-list::-webkit-scrollbar {
   background-color: #1c273b;
@@ -780,4 +737,18 @@ button::-moz-focus-inner {
   top: 0;
   left: 0;
   overflow: hidden;
+}
+
+@media screen and (max-width: 500px) {
+  .h5p-flashcards .h5p-card {
+    width: 100%;
+  }
+
+  .h5p-flashcards .h5p-card.h5p-previous {
+    transform: translateX(-150%);
+  }
+
+  .h5p-flashcards .h5p-card.h5p-next {
+    transform: translateX(150%);
+  }
 }
