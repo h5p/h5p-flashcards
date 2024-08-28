@@ -210,8 +210,8 @@ H5P.Flashcards = (function ($, XapiGenerator) {
       '<div class="h5p-progress"></div>' +
       '<div class="h5p-inner" role="region" aria-labelledby="flashcards-description' + '-' + descId + '" aria-roledescription="carousel"></div>' +
       '<div class="h5p-navigation">' +
-        '<button type="button" class="h5p-button h5p-previous h5p-theme-nav-button h5p-hidden" tabindex="0" title="' + this.options.previous + '" aria-label="' + this.options.previous + '"><span class="h5p-theme-label">' + this.options.previous + '</span></button>' +
-        '<button type="button" class="h5p-button h5p-next h5p-theme-nav-button" tabindex="0" title="' + this.options.next + '" aria-label="' + this.options.next + '"><span class="h5p-theme-label">' + this.options.next + '</span></button>'
+        '<button type="button" class="h5p-button h5p-theme-previous h5p-theme-nav-button h5p-hidden" tabindex="0" title="' + this.options.previous + '" aria-label="' + this.options.previous + '"><span class="h5p-theme-label">' + this.options.previous + '</span></button>' +
+        '<button type="button" class="h5p-button h5p-theme-next h5p-theme-nav-button" tabindex="0" title="' + this.options.next + '" aria-label="' + this.options.next + '"><span class="h5p-theme-label">' + this.options.next + '</span></button>'
     ).children('.h5p-inner');
 
     // Create visual progress and add accessibility attributes
@@ -253,10 +253,10 @@ H5P.Flashcards = (function ($, XapiGenerator) {
 
     // Active buttons
     var $buttonWrapper = $inner.next();
-    this.$nextButton = $buttonWrapper.children('.h5p-next').click(function () {
+    this.$nextButton = $buttonWrapper.children('.h5p-theme-next').click(function () {
       that.next();
     });
-    this.$prevButton = $buttonWrapper.children('.h5p-previous').click(function () {
+    this.$prevButton = $buttonWrapper.children('.h5p-theme-previous').click(function () {
       that.previous();
     });
 

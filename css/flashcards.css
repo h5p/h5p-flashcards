@@ -299,7 +299,7 @@
 }
 .h5p-flashcards .h5p-navigation {
   display: grid;
-  grid-template-columns: 1fr 5fr 1fr;
+  grid-template-columns: 1fr 2fr 1fr;
   align-items: center;
   justify-items: center;
 	
@@ -315,44 +315,15 @@
   border-top: 1px solid var(--stroke-1);
   box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.05);
 }
-@container h5p-navigation (max-width: 700px) {
-  .h5p-theme-label {
-    display: none;
-  }
-	.h5p-theme-nav-button{
-		  border-radius: 25rem;
-	}
-  .h5p-flashcards .h5p-button.h5p-next:after, .h5p-flashcards .h5p-button.h5p-previous:before{
-	  margin: 0 !important;
-	
-	}
 
+.h5p-flashcards .h5p-navigation .h5p-theme-next {
+  justify-self: flex-end;
+  margin-right: var(--spacing-l);
 }
 
-.h5p-flashcards .h5p-navigation .h5p-button {
-  color: #a3adc4;
-  background: none;
-  top: 0.75em;
-}
-
-.h5p-flashcards .h5p-navigation .h5p-button:before, .h5p-flashcards .h5p-navigation .h5p-button:after {
-	  font-family: 'h5p-theme';
-}
-
-.h5p-flashcards .h5p-navigation .h5p-button:hover {
-  background-color: #3c465d;
-}
-
-.h5p-flashcards .h5p-button.h5p-next:after {
-  content: "\e901";
-  margin-left: 0.5rem;
-  display: inline-block;
-}
-
-.h5p-flashcards .h5p-button.h5p-previous:before {
-  content: "\e900";
-  margin-right: 0.5rem;
-  display: inline-block;
+.h5p-flashcards .h5p-navigation .h5p-theme-previous {
+  justify-self: flex-start;
+  margin-left: var(--spacing-l);
 }
 
 .h5p-flashcards .h5p-hidden {
