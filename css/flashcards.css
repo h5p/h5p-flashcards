@@ -486,7 +486,7 @@ button::-moz-focus-inner {
 
 .h5p-flashcards .h5p-results-list-item {
   display: grid;
-  grid-template-columns: 8fr 1fr;
+  grid-template-columns: 1fr 8fr 1fr;
   overflow: hidden;
   color: var(--text-primary);
   border-radius: var(--border-radius-medium);
@@ -494,7 +494,6 @@ button::-moz-focus-inner {
   justify-items: center;
   border-bottom: solid 1px var(--stroke-1);
 }
-
 
 .h5p-flashcards .h5p-results-image-holder {
   width: 5.5rem;
@@ -504,6 +503,9 @@ button::-moz-focus-inner {
   background-color: var(--ui-base);
   background-repeat: no-repeat;
   background-origin: content-box;
+  border-radius: var(--border-radius-large);
+  border: solid 4px var(--ui-base);
+  margin-right: 1.5rem;
 }
 .h5p-flashcards .h5p-results-question-container{
 	width: -webkit-fill-available;
@@ -531,10 +533,12 @@ button::-moz-focus-inner {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  margin-bottom: var(--spacing-xs);
+  margin-bottom: var(--spacing-s);
 }
-.h5p-flashcards .h5p-incorrect .h5p-results-question{
-
+.h5p-flashcards .correct-answer-label{
+  font-size: 0.85rem;
+  letter-spacing: 1;
+  font-weight: bold;
 }
 
 .h5p-flashcards .h5p-results-answer {
@@ -544,8 +548,6 @@ button::-moz-focus-inner {
   overflow-wrap: break-word;
   color: var(--text-third);
 }
-
-
 
 .h5p-flashcards .h5p-results-answer span.h5p-correct span {
   color: var(--text-primary);
@@ -565,7 +567,9 @@ button::-moz-focus-inner {
 .h5p-results-answer span.h5p-incorrect, .h5p-results-answer span.h5p-correct{
   border-radius: var(--border-radius-small);
   padding: calc(var(--spacing-xs)/2) var(--spacing-xs);
-  border: solid 1px;
+  border: solid 2px;
+  font-weight: 600;
+  font-size: 0.85rem;
 }
 
 .h5p-results-answer span.h5p-incorrect{
@@ -588,14 +592,18 @@ button::-moz-focus-inner {
   content: "\e902";
 }
 
+.h5p-incorrect .h5p-correct{
+  border-style:  dotted !important;
+  margin-left:  1rem;
+}
+
 .h5p-flashcards .h5p-visual-progress {
   grid-column: 2;
-
+  width: -webkit-fill-available;
   background-color: var(--contrast-cta-light);
-  /*border: 1px solid var(--contrast-cta-white);*/
+ /* border: 1px solid var(--contrast-cta-white);*/
   border-radius: 8px;
   padding: 3px;
-  width: 18rem;
 }
 
 .h5p-flashcards .h5p-visual-progress div {

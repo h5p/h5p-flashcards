@@ -534,6 +534,8 @@ H5P.Flashcards = (function ($, XapiGenerator) {
 
     this.$resultScreen.find('.h5p-results-score').html(ofCorrectText);
 
+  
+    
     // Create a list representing the cards and populate them
     for (var i = 0; i < this.options.cards.length; i++) {
       var card = this.options.cards[i];
@@ -546,6 +548,17 @@ H5P.Flashcards = (function ($, XapiGenerator) {
         'class': 'h5p-results-list-item' + (!userCorrect ? ' h5p-incorrect' : '')
       }).appendTo($resultsContainer);
 
+      var $imageHolder = $('<div/>', {
+        'class': 'h5p-results-image-holder',
+      }).appendTo($listItem);
+
+      if (card.image != undefined) {
+        $imageHolder.css('background-image', 'url("' + H5P.getPath(card.image.path, this.id) + '")');
+      }
+      else {
+        $imageHolder.addClass('no-image');
+      }
+      
       const $resultsQuestionContainer = $('<div/>', {
         'class': 'h5p-results-question-container',
       }).appendTo($listItem);
@@ -562,20 +575,17 @@ H5P.Flashcards = (function ($, XapiGenerator) {
       $resultsAnswer.append('<span' + (!userCorrect ? ' class="h5p-incorrect h5p-results-box-small"' : ' class="h5p-correct h5p-results-box-small"') + '>' + this.answers[i] + '</span>');
 
       if (!userCorrect) {
-        $resultsAnswer.append('<span> ' + this.options.showSolutionText + ': </span>');
-        $resultsAnswer.append('<span class="h5p-correct">' + C.splitAlternatives(card.answer).join(', ') + '</span>');
+        //$resultsAnswer.append('<span> ' + this.options.showSolutionText + ': </span>');
+        $resultsAnswer.append('<span class="h5p-correct"><span class="correct-answer-label"> ' + this.options.showSolutionText + ': </span>' + C.splitAlternatives(card.answer).join(', ') + '</span>');
       }
-
-      var $imageHolder = $('<div/>', {
-        'class': 'h5p-results-image-holder',
+      
+      const $resultsPoints = $('<div/>', {
+        'class': 'h5p-results-points',
       }).appendTo($listItem);
+      
+      $resultsPoints.append('0');
 
-      if (card.image != undefined) {
-        $imageHolder.css('background-image', 'url("' + H5P.getPath(card.image.path, this.id) + '")');
-      }
-      else {
-        $imageHolder.addClass('no-image');
-      }
+
     }
     if (this.getScore() < this.getMaxScore()) {
       this.$retryButton.removeClass('h5p-invisible');
