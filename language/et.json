@@ -81,6 +81,14 @@
       "default": "Tulemused"
     },
     {
+      "label": "Header for results table describing the cards",
+      "default": "Cards"
+    },
+    {
+      "label": "Header for results table describing the score",
+      "default": "Score"
+    },
+    {
       "label": "Õigete vastuste arvu tekst",
       "default": "@score / @total õiget vastust",
       "description": "Tulemuste tekst, kasutatavad muutujad: @score ja @total. Näiteks: '@score / @total õiget'"

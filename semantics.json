@@ -165,6 +165,22 @@
     "common": true
   },
   {
+    "label": "Header for results table describing the cards",
+    "name": "cardsHeader",
+    "type": "text",
+    "default": "Cards",
+    "importance": "low",
+    "common": true
+  },
+  {
+    "label": "Header for results table describing the score",
+    "name": "scoreHeader",
+    "type": "text",
+    "default": "Score",
+    "importance": "low",
+    "common": true
+  },
+  {
     "label": "Text for number of correct",
     "name": "ofCorrect",
     "type": "text",

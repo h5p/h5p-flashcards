@@ -81,6 +81,14 @@
       "default": "Rezultatai"
     },
     {
+      "label": "Header for results table describing the cards",
+      "default": "Cards"
+    },
+    {
+      "label": "Header for results table describing the score",
+      "default": "Score"
+    },
+    {
       "label": "Tekstas teisingam numeriui",
       "default": "@score iš @total teisingai",
       "description": "Result text, variables available: @score and @total. Example: '@score of @total correct'"

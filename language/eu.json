@@ -81,6 +81,14 @@
       "default": "Emaitzak"
     },
     {
+      "label": "Header for results table describing the cards",
+      "default": "Cards"
+    },
+    {
+      "label": "Header for results table describing the score",
+      "default": "Score"
+    },
+    {
       "label": "Erantzun zuzenen kopuruaren testua",
       "default": "@score / @total zuzenak",
       "description": "Erantzun zuzenen testua, erabiltzen dituen aldagaiak: @score eta @total. Adibidea: '@score / @total zuzenak'"

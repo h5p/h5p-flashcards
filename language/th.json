@@ -81,6 +81,14 @@
       "default": "ผลลัพธ์"
     },
     {
+      "label": "Header for results table describing the cards",
+      "default": "Cards"
+    },
+    {
+      "label": "Header for results table describing the score",
+      "default": "Score"
+    },
+    {
       "label": "ข้อความสำหรับจำนวนคำตอบที่ถูกต้อง",
       "default": "@score จากทั้งหมด @total คำตอบที่ถูกต้อง",
       "description": "ข้อความผลลัพธ์ ตัวแปรที่สามารถใช้ได้: @score และ @total ตัวอย่าง: '@score จากทั้งหมด @total คำตอบที่ถูกต้อง'"

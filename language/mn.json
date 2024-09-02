@@ -81,6 +81,14 @@
       "default": "Үр дүн"
     },
     {
+      "label": "Header for results table describing the cards",
+      "default": "Cards"
+    },
+    {
+      "label": "Header for results table describing the score",
+      "default": "Score"
+    },
+    {
       "label": "Зөв тоо бичих текст",
       "default": "@total онооноос @score зөв",
       "description": "Үр дүнгийн текст, боломжтой хувьсагч: @score болон @total. Жишээ нь: '@total онооноос @score нь зөв'"
@@ -103,8 +111,8 @@
     },
     {
       "label": "Туслах технологид зориулсан буруу текст",
-      "description": "Туслах технологид зарлах текст. @answer -ыг хувьсагч болгон ашигла.",
-      "default": "Буруу хариулт. Зөв хариулт нь @answer байсан"
+      "default": "Буруу хариулт. Зөв хариулт нь @answer байсан",
+      "description": "Туслах технологид зарлах текст. @answer -ыг хувьсагч болгон ашигла."
     },
     {
       "label": "Туслах технологид зориулсан зөв санал хүсэлтийн текст",

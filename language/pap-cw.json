@@ -81,6 +81,14 @@
       "default": "Resultado"
     },
     {
+      "label": "Header for results table describing the cards",
+      "default": "Cards"
+    },
+    {
+      "label": "Header for results table describing the score",
+      "default": "Score"
+    },
+    {
       "label": "Teksto pa e kantidat ku ta korekto",
       "default": "@score di @total korekto",
       "description": "Teksto di resultado, variabel disponibel: @score ku @total. Ehèmpel: '@score di @total korekto'"

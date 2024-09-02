@@ -81,6 +81,14 @@
       "default": "Резултати"
     },
     {
+      "label": "Header for results table describing the cards",
+      "default": "Cards"
+    },
+    {
+      "label": "Header for results table describing the score",
+      "default": "Score"
+    },
+    {
       "label": "Текст за број тачних одговора",
       "default": "@score од @total тачних",
       "description": "Текст резултата, доступне променљиве: @score и @total. Пример: '@score од @total тачних'"

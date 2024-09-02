@@ -81,6 +81,14 @@
       "default": "Resultat"
     },
     {
+      "label": "Header for results table describing the cards",
+      "default": "Cards"
+    },
+    {
+      "label": "Header for results table describing the score",
+      "default": "Score"
+    },
+    {
       "label": "Text för antal korrekta",
       "default": "@score av @total var rätt",
       "description": "Resultattext, variabler som finns är : @score och @total. Example: '@score av @total var rätt'"

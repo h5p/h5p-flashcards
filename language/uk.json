@@ -81,6 +81,14 @@
       "default": "Результати"
     },
     {
+      "label": "Header for results table describing the cards",
+      "default": "Cards"
+    },
+    {
+      "label": "Header for results table describing the score",
+      "default": "Score"
+    },
+    {
       "label": "Текст для кількості правильних",
       "default": "@score з @total правильних",
       "description": "Результат (текст), доступні змінні: @score і @total. Наприклад: '@score з @total вірно'"

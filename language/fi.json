@@ -81,6 +81,14 @@
       "default": "Tulokset"
     },
     {
+      "label": "Header for results table describing the cards",
+      "default": "Cards"
+    },
+    {
+      "label": "Header for results table describing the score",
+      "default": "Score"
+    },
+    {
       "label": "Teksti oikein saaduille vastauksille",
       "default": "@score / @total oikein",
       "description": "tulosteksti, käytettävissä olevat muuttujat: @score ja @total. Esimerkki: '@score / @total oikein'"

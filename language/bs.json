@@ -81,6 +81,14 @@
       "default": "Rezultati"
     },
     {
+      "label": "Header for results table describing the cards",
+      "default": "Cards"
+    },
+    {
+      "label": "Header for results table describing the score",
+      "default": "Score"
+    },
+    {
       "label": "Text for number of correct",
       "default": "@score od @total tačno",
       "description": "Tekst za rezultat, dostupne varijable: @score i @total. Primjer: '@score od @total tačno'"

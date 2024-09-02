@@ -81,6 +81,14 @@
       "default": "成绩"
     },
     {
+      "label": "Header for results table describing the cards",
+      "default": "Cards"
+    },
+    {
+      "label": "Header for results table describing the score",
+      "default": "Score"
+    },
+    {
       "label": "正确答案数量的文本",
       "default": "@total中的@score 正确",
       "description": "成绩文本, 变量可用: @score 和 @total. 例如: @total中的@score 正确"

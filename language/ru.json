@@ -81,6 +81,14 @@
       "default": "Результат"
     },
     {
+      "label": "Header for results table describing the cards",
+      "default": "Cards"
+    },
+    {
+      "label": "Header for results table describing the score",
+      "default": "Score"
+    },
+    {
       "label": "Текст для количества правильных ответов",
       "default": "Правильно @score из @total",
       "description": "Текст результатов, доступные переменные: @score и @total. Пример: '@score из @total правильно'"

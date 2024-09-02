@@ -81,6 +81,14 @@
       "default": "შედეგი"
     },
     {
+      "label": "Header for results table describing the cards",
+      "default": "Cards"
+    },
+    {
+      "label": "Header for results table describing the score",
+      "default": "Score"
+    },
+    {
       "label": "ტექსტი სწორი პასუხების რაოდენობისთვის",
       "default": "@score ქულა @total-დან",
       "description": "შედეგების ტექსტი, ხელმისაწვდომი ცვლადები: @score და @total. მაგალითი: '@score ქულა @total-დან სწორია'"

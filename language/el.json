@@ -81,6 +81,14 @@
       "default": "Αποτελέσματα"
     },
     {
+      "label": "Header for results table describing the cards",
+      "default": "Cards"
+    },
+    {
+      "label": "Header for results table describing the score",
+      "default": "Score"
+    },
+    {
       "label": "Κείμενο για αριθμό σωστών απαντήσεων",
       "default": "@score σωστά από @total",
       "description": "Κείμενο αποτελεσμάτων, διαθέσιμες μεταβλητές: @score και @total. Παράδειγμα: '@score σωστά από @total'"

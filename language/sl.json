@@ -81,6 +81,14 @@
       "default": "Rezultati"
     },
     {
+      "label": "Header for results table describing the cards",
+      "default": "Cards"
+    },
+    {
+      "label": "Header for results table describing the score",
+      "default": "Score"
+    },
+    {
       "label": "Besedilo za število pravilnih",
       "default": "Pravilnih @score od @total",
       "description": "Spremenljivki sta @score in @total."

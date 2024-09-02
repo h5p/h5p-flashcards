@@ -495,6 +495,10 @@ button::-moz-focus-inner {
   border-bottom: solid 1px var(--stroke-1);
 }
 
+.h5p-flashcards .h5p-results-list-item .h5p-results-list-last-header {
+  grid-column: 3;
+}
+
 .h5p-flashcards .h5p-results-image-holder {
   width: 5.5rem;
   height: 4.5rem;

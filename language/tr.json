@@ -81,6 +81,14 @@
       "default": "Sonuçlar"
     },
     {
+      "label": "Header for results table describing the cards",
+      "default": "Cards"
+    },
+    {
+      "label": "Header for results table describing the score",
+      "default": "Score"
+    },
+    {
       "label": "Doğru cevap sayısı metni",
       "default": "Doğru cevap sayısı: @score / @total",
       "description": "Sonuç metni, mevcut değişkenler: @score ve @total. Örnek: 'Doğru cvevap sayısı: @score / @total.'"

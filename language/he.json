@@ -81,6 +81,14 @@
       "default": "תוצאות"
     },
     {
+      "label": "Header for results table describing the cards",
+      "default": "Cards"
+    },
+    {
+      "label": "Header for results table describing the score",
+      "default": "Score"
+    },
+    {
       "label": "טקסט למספר הנכונות",
       "default": "@score מתוך @total נכונים",
       "description": "טקסט תוצאה, משתנים זמינים: @score ו-@total. דוגמה: '@score של @total הנכונות'"

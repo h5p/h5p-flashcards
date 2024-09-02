@@ -81,6 +81,14 @@
       "default": "Ergebnisse"
     },
     {
+      "label": "Header for results table describing the cards",
+      "default": "Cards"
+    },
+    {
+      "label": "Header for results table describing the score",
+      "default": "Score"
+    },
+    {
       "label": "Text, der angibt, wie viele Karten richtig waren",
       "default": "@score von @total richtig",
       "description": "Verfügbare Platzhalter: @score und @total. Beispiel: '@score von @total richtig'"

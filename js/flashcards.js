@@ -34,6 +34,8 @@ H5P.Flashcards = (function ($, XapiGenerator) {
       caseSensitive: false,
       randomCards: false,
       results: "Results",
+      cardsHeader: "Cards",
+      scoreHeader: "Score",
       ofCorrect: "@score of @total correct",
       showResults: "Show results",
       retry: "Retry",
@@ -506,9 +508,22 @@ H5P.Flashcards = (function ($, XapiGenerator) {
       'class': 'h5p-results-score'
     }).appendTo($titleContainer);
 
-    $('<ul/>', {
+    const $resultsList = $('<ul/>', {
       'class': 'h5p-results-list'
     }).appendTo(this.$resultScreen);
+
+    const $resultsHeaders = $('<div/>', {
+      'class': 'h5p-results-list-item'
+    }).appendTo($resultsList);
+
+    $('<h3/>', {
+      'text': this.options.cardsHeader
+    }).appendTo($resultsHeaders);
+
+    $('<h3/>', {
+      'class': 'h5p-results-list-last-header',
+      'text': this.options.scoreHeader
+    }).appendTo($resultsHeaders);
 
     this.$retryButton = $('<button/>', {
       'class': 'h5p-results-retry-button h5p-invisible h5p-button h5p-theme-secondary-cta h5p-theme-retry',
@@ -571,21 +586,19 @@ H5P.Flashcards = (function ($, XapiGenerator) {
       var $resultsAnswer = $('<div/>', {
         'class': 'h5p-results-answer'
       }).appendTo($resultsQuestionContainer);
-      
+
       $resultsAnswer.append('<span' + (!userCorrect ? ' class="h5p-incorrect h5p-results-box-small"' : ' class="h5p-correct h5p-results-box-small"') + '>' + this.answers[i] + '</span>');
 
       if (!userCorrect) {
         //$resultsAnswer.append('<span> ' + this.options.showSolutionText + ': </span>');
         $resultsAnswer.append('<span class="h5p-correct"><span class="correct-answer-label"> ' + this.options.showSolutionText + ': </span>' + C.splitAlternatives(card.answer).join(', ') + '</span>');
       }
-      
+
       const $resultsPoints = $('<div/>', {
         'class': 'h5p-results-points',
       }).appendTo($listItem);
-      
+
       $resultsPoints.append('0');
-
-
     }
     if (this.getScore() < this.getMaxScore()) {
       this.$retryButton.removeClass('h5p-invisible');

@@ -81,6 +81,14 @@
       "default": "Uitslae"
     },
     {
+      "label": "Header for results table describing the cards",
+      "default": "Cards"
+    },
+    {
+      "label": "Header for results table describing the score",
+      "default": "Score"
+    },
+    {
       "label": "Teks vir aantal regte antwoorde",
       "default": "@score van @total reg",
       "description": "Uitslae teks, veranderlike beskikbaar: @score en @total. Byvoorbeeld: '@score van @total reg'"

@@ -81,6 +81,14 @@
       "default": "Výsledek"
     },
     {
+      "label": "Header for results table describing the cards",
+      "default": "Cards"
+    },
+    {
+      "label": "Header for results table describing the score",
+      "default": "Score"
+    },
+    {
       "label": "Text pro počet správných",
       "default": "@score z @total správně",
       "description": "Výsledný text, dostupné proměnné: @score a @total. Příklad: \"@score z @total správně\""

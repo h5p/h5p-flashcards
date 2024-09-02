@@ -81,6 +81,14 @@
       "default": "Resultaten"
     },
     {
+      "label": "Header for results table describing the cards",
+      "default": "Cards"
+    },
+    {
+      "label": "Header for results table describing the score",
+      "default": "Score"
+    },
+    {
       "label": "Tekst voor aantal juist",
       "default": "@score van @total juist",
       "description": "Resultatentekst, beschikbare variabelen: @score en @total. Voorbeeld: '@score van @total juist'"

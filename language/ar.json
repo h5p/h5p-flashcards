@@ -81,6 +81,14 @@
       "default": "Results"
     },
     {
+      "label": "Header for results table describing the cards",
+      "default": "Cards"
+    },
+    {
+      "label": "Header for results table describing the score",
+      "default": "Score"
+    },
+    {
       "label": "Text for number of correct",
       "default": "@score of @total correct",
       "description": "نص النتيجة والمتغيرات المتاحة: @score و @total. مثال: '@score من @total الصحيح'"

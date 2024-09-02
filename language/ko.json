@@ -81,6 +81,14 @@
       "default": "결과"
     },
     {
+      "label": "Header for results table describing the cards",
+      "default": "Cards"
+    },
+    {
+      "label": "Header for results table describing the score",
+      "default": "Score"
+    },
+    {
       "label": "정답 수 텍스트",
       "default": "총 @total 중 @score 점",
       "description": "결과 텍스트, 이용가능한 변수: 총 @total 중 @score 점. 예: '총 @total 중 @score 점'"

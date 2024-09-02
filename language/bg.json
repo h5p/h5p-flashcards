@@ -81,6 +81,14 @@
       "default": "Резултати"
     },
     {
+      "label": "Header for results table describing the cards",
+      "default": "Cards"
+    },
+    {
+      "label": "Header for results table describing the score",
+      "default": "Score"
+    },
+    {
       "label": "Текст за броя верни отговори",
       "default": "@score от общо @total верни",
       "description": "Текст, показващ резултата, променливите са: @score and @total. Пример: '@score от общо @total верни'"
