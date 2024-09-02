@@ -560,7 +560,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
       var userCorrect = isCorrectAnswer(card, userAnswer, this.options.caseSensitive);
 
       var $listItem = $('<li/>', {
-        'class': 'h5p-results-list-item' + (!userCorrect ? ' h5p-incorrect' : '')
+        'class': 'h5p-results-list-item'
       }).appendTo($resultsContainer);
 
       var $imageHolder = $('<div/>', {
@@ -584,21 +584,34 @@ H5P.Flashcards = (function ($, XapiGenerator) {
       }).appendTo($resultsQuestionContainer);
 
       var $resultsAnswer = $('<div/>', {
-        'class': 'h5p-results-answer'
+        'class': 'h5p-theme-results-answer'
       }).appendTo($resultsQuestionContainer);
 
-      $resultsAnswer.append('<span' + (!userCorrect ? ' class="h5p-incorrect h5p-results-box-small"' : ' class="h5p-correct h5p-results-box-small"') + '>' + this.answers[i] + '</span>');
+      if (userCorrect) {
+        $('<span/>', {
+          'class': 'h5p-theme-results-correct h5p-theme-results-box-small',
+          'text': this.answers[i]
+        }).appendTo($resultsAnswer);
+      }
+      else {
+        $('<span/>', {
+          'class': 'h5p-theme-results-incorrect h5p-theme-results-box-small',
+          'text': this.answers[i]
+        }).appendTo($resultsAnswer);
 
-      if (!userCorrect) {
-        //$resultsAnswer.append('<span> ' + this.options.showSolutionText + ': </span>');
-        $resultsAnswer.append('<span class="h5p-correct"><span class="correct-answer-label"> ' + this.options.showSolutionText + ': </span>' + C.splitAlternatives(card.answer).join(', ') + '</span>');
+        $('<span/>', {
+          'class': 'h5p-theme-results-solution',
+          'html': '<span class="h5p-theme-results-solution-label">' +
+              this.options.showSolutionText +
+            ': </span>' +
+            C.splitAlternatives(card.answer).join(', ')
+        }).appendTo($resultsAnswer);
       }
 
-      const $resultsPoints = $('<div/>', {
+      $('<div/>', {
         'class': 'h5p-results-points',
+        'text': userCorrect ? '1' : '0'
       }).appendTo($listItem);
-
-      $resultsPoints.append('0');
     }
     if (this.getScore() < this.getMaxScore()) {
       this.$retryButton.removeClass('h5p-invisible');
