@@ -508,13 +508,13 @@ H5P.Flashcards = (function ($, XapiGenerator) {
       'class': 'h5p-results-score'
     }).appendTo($titleContainer);
 
-    const $resultsList = $('<ul/>', {
-      'class': 'h5p-results-list'
+    const $resultsListContainer = $('<div/>', {
+      'class': 'h5p-results-list-container'
     }).appendTo(this.$resultScreen);
 
     const $resultsHeaders = $('<div/>', {
       'class': 'h5p-results-list-item'
-    }).appendTo($resultsList);
+    }).appendTo($resultsListContainer);
 
     $('<h3/>', {
       'text': this.options.cardsHeader
@@ -524,6 +524,10 @@ H5P.Flashcards = (function ($, XapiGenerator) {
       'class': 'h5p-results-list-last-header',
       'text': this.options.scoreHeader
     }).appendTo($resultsHeaders);
+
+    $('<ul/>', {
+      'class': 'h5p-results-list'
+    }).appendTo($resultsListContainer);
 
     this.$retryButton = $('<button/>', {
       'class': 'h5p-results-retry-button h5p-invisible h5p-button h5p-theme-secondary-cta h5p-theme-retry',

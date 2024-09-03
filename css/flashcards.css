@@ -479,19 +479,25 @@ button::-moz-focus-inner {
   padding: 0 0.2em;
 }
 
-.h5p-flashcards .h5p-results-list {
-  clear: both;
-  flex: 1;
-  list-style-type: none;
+.h5p-flashcards .h5p-results-list-container {
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
-  overflow-y: auto;
+  clear: both;
+  padding: var(--spacing-xs) var(--spacing-l);
   margin: calc(-1 * var(--spacing-l)) var(--spacing-xl) var(--spacing-xl) var(--spacing-xl);
   box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.08);
   background-color: var(--ui-base);
-  z-index: 1000;
   border-radius: var(--border-radius-small);
-  padding: var(--spacing-xs) var(--spacing-l) !important;
+  z-index: 1000;
+}
+
+.h5p-flashcards .h5p-results-list {
+  list-style-type: none;
+  overflow: hidden;
+  overflow-y: auto;
   padding-inline-start: 0;
+  flex: 1;
 }
 
 .h5p-flashcards .h5p-results-list-item {
