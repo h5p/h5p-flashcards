@@ -307,28 +307,18 @@ H5P.Flashcards = (function ($, XapiGenerator) {
 
     var $showResults = $(
       '<div class="h5p-show-results">' +
-        '<button type="button" class="h5p-theme-primary-cta h5p-theme-show-results">' + that.options.showResults + '</button>' +
-      '</div>'
-    );
-
-    var $mobileShowResults = $(
-      '<div class="h5p-show-results-mobile">' +
         '<button ' +
           'type="button" ' +
           'class="h5p-theme-primary-cta h5p-theme-show-results" ' +
           'aria-label="' + that.options.showResults + '"' +
           'title="' + that.options.showResults + '"' +
-        '></button>' +
+        '>' +
+          '<span>' + that.options.showResults + '</span>' +
+        '</button>' +
       '</div>'
     );
 
     $showResults
-      .on('click', function () {
-        that.enableResultScreen();
-      })
-      .appendTo($inner.parent());
-
-    $mobileShowResults
       .on('click', function () {
         that.enableResultScreen();
       })
@@ -720,9 +710,6 @@ H5P.Flashcards = (function ($, XapiGenerator) {
 
     if ($next.is(':last-child') && that.numAnswered == that.options.cards.length) {
       that.$container.find('.h5p-show-results').show();
-      that.$container
-        .find('.h5p-navigation .h5p-show-results-mobile')
-        .addClass('show');
     }
   };
 
@@ -747,9 +734,6 @@ H5P.Flashcards = (function ($, XapiGenerator) {
     that.$nextButton.removeClass('h5p-hidden');
     that.setProgress();
     that.$container.find('.h5p-show-results').hide();
-    that.$container
-      .find('.h5p-navigation .h5p-show-results-mobile')
-      .removeClass('show');
   };
 
   /**
@@ -764,9 +748,6 @@ H5P.Flashcards = (function ($, XapiGenerator) {
     }
     this.setProgress();
     this.$container.find('.h5p-show-results').show();
-    this.$container
-      .find('.h5p-navigation .h5p-show-results-mobile')
-      .addClass('show');
     this.trigger('resize');
   };
 
