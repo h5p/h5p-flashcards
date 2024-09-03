@@ -1,7 +1,7 @@
 .h5p-flashcards {
   position: relative;
   overflow: hidden;
-  font-size: 1rem;
+  font-size: var(--font-size-s);
   background: rgba(255, 255, 255, 0.9);
 }
 
@@ -12,12 +12,13 @@
 .h5p-flashcards .h5p-loading {
   padding: 1em;
   text-align: center;
-  color: #fff;
+  color: var(--text-primary);
+  background-color: var(--ui-base);
 }
 
 .h5p-flashcards .h5p-title {
   text-align: left;
-  font-size: 1.5em;
+  font-size: var(--font-size-xxl);
   margin: 0;
 }
 
@@ -59,7 +60,7 @@
   position: absolute;
   display: block;
   vertical-align: middle;
-  width: 26em;
+  width: 26rem;
   min-width: 14em;
   max-width: 90%;
   margin: 0 auto;
@@ -208,7 +209,7 @@
 
 .h5p-flashcards .h5p-card div.h5p-clue {
   box-shadow: none;
-  background: none;
+  background: var(--background);
   border: none;
 }
 
@@ -220,9 +221,12 @@
 .h5p-flashcards .h5p-card div.h5p-clue:after {
   content: "\f03e";
   font-family: 'H5PFontAwesome4';
-  font-size: 7em;
+  font-size: 7rem;
   line-height: 100px;
-  color: #a3b7be;
+  color: var(--text-third);
+  background-color: var(--ui-base);
+  padding: var(--spacing-m) var(--spacing-l);
+  border-radius: var(--border-radius-large);
 }
 
 .h5p-flashcards .h5p-foot {
@@ -243,7 +247,7 @@
 }
 
 .h5p-flashcards .h5p-answer .h5p-button:focus {
-  box-shadow: 0 0 0.5em 0 #1d273c;
+  box-shadow: 0 0 0.5em 0 var(--main-cta-base);
 }
 
 .h5p-flashcards .h5p-answer .h5p-wrong .h5p-button,
@@ -263,7 +267,7 @@
   padding: var(--spacing-s, --spacing-m);
   margin: auto;
   color: var(--text-primary);
-  font-size: var(--font-size-xl-large);
+  font-size: var(--font-size-xl);
   line-height: 1.5rem;
   font-weight: 600;
   -webkit-font-smoothing: antialiased;
@@ -301,7 +305,7 @@
 }
 
 .h5p-flashcards .h5p-button:focus {
-  box-shadow: 0 0 0.5em 0 #7fb8ff;
+  box-shadow: 0 0 0.5em 0 var(--main-cta-base);
 }
 
 .h5p-flashcards .h5p-button[disabled],
@@ -325,7 +329,6 @@
   overflow: hidden;
   height: calc(2*var(--spacing-xl));
   clear: both;
-  width: 77em;
   max-width: 100%;
   background-color: var(--ui-base);
   border-top: 1px solid var(--stroke-1);
@@ -390,8 +393,8 @@
 .h5p-flashcards .h5p-solution > .solution-text {
   box-sizing: border-box;
   overflow-wrap: break-word;
-  font-size: 1.25em;
-  line-height: 1.25;
+  font-size: var(--font-size-xl);
+  line-height: var(--font-size-xl);
   padding: 0.25em 1em;
   border-radius: 1em;
   width: min-content;
@@ -402,7 +405,7 @@
 }
 
 div.h5p-solution > span.solution-text > span {
-  font-size: 0.85em;
+  font-size: var(--font-size-s);
   font-style: italic;
   display: block;
   font-weight: normal;
@@ -484,7 +487,6 @@ button::-moz-focus-inner {
   flex-direction: column;
   overflow: hidden;
   clear: both;
-  padding: var(--spacing-xs) var(--spacing-l);
   margin: calc(-1 * var(--spacing-l)) var(--spacing-xl) var(--spacing-xl) var(--spacing-xl);
   box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.08);
   background-color: var(--ui-base);
@@ -497,6 +499,7 @@ button::-moz-focus-inner {
   overflow: hidden;
   overflow-y: auto;
   padding-inline-start: 0;
+  padding: var(--spacing-xs) var(--spacing-l);
   flex: 1;
 }
 
@@ -543,9 +546,10 @@ button::-moz-focus-inner {
 .h5p-flashcards .h5p-results-image-holder.no-image:after {
   font-family: 'H5PFontAwesome4';
   content: "\f03e";
-  font-size: 2em;
+  font-size: 2rem;
   line-height: 1.8em;
-  color: #a3b7be;
+  color: var(--text-third);
+  background-color: var(--ui-base);
 }
 .h5p-flashcards .h5p-results-image-holder img{
   border-radius: var(--border-radius-small);
@@ -643,7 +647,7 @@ button::-moz-focus-inner {
 }
 
 .h5p-flashcards .joubel-icon-tip-normal {
-  font-size: 1.3em;
+  font-size: 1.3rem;
   line-height: 1.5rem;
 }
 
@@ -675,15 +679,15 @@ button::-moz-focus-inner {
 
 /* Custom scrollbar */
 .h5p-flashcards .h5p-results-list::-webkit-scrollbar {
-  background-color: #1c273b;
+  background-color: var(--ui-base);
   width: 0.5em;
   border-radius: 1em;
 }
 
 .h5p-flashcards .h5p-results-list::-webkit-scrollbar-thumb {
-  background-color: #6a7589;
+  background-color: var(--text-primary);
   background-size: 24px 100%;
-  border-radius: 1em;
+  border-radius: 0;
 }
 
 .h5p-flashcards .h5p-results-list::-webkit-scrollbar-button:vertical {
@@ -700,10 +704,6 @@ button::-moz-focus-inner {
 
 .using-mouse .h5p-flashcards .h5p-button.h5p-check-button:focus {
   box-shadow: none;
-}
-
-.using-mouse .h5p-flashcards .h5p-button.h5p-check-button:active {
-  background-color: #20a5ca;
 }
 
 .h5p-flashcards .hidden-but-read {
