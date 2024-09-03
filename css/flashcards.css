@@ -27,6 +27,10 @@
   min-width: calc(var(--spacing-l)*4);
 }
 
+.h5p-theme-primary-cta.h5p-theme-check:hover {
+  text-indent: 20px;
+}
+
 /* If the container is smaller than 280px */
 @container (max-width: 280px) {
   .h5p-flashcards .h5p-theme-check {
@@ -567,6 +571,7 @@ button::-moz-focus-inner {
 .h5p-flashcards .h5p-visual-progress {
   grid-column: 2;
   width: -webkit-fill-available;
+  width: 100%;
   background-color: var(--contrast-cta-light);
  /* border: 1px solid var(--contrast-cta-white);*/
   border-radius: 8px;
