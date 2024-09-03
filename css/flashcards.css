@@ -398,7 +398,17 @@
   min-width: 70%;
   max-width: calc(100% - 1em);
   color: white;
+  margin-bottom: var(--spacing-xs);
 }
+
+div.h5p-solution > span.solution-text > span {
+  font-size: 0.85em;
+  font-style: italic;
+  display: block;
+  font-weight: normal;
+}
+
+
 
 .h5p-flashcards .h5p-solution.h5p-hidden {
   display: block;

@@ -438,9 +438,9 @@ H5P.Flashcards = (function ($, XapiGenerator) {
 
           $('<div class="h5p-solution">' +
             '<span class="solution-icon h5p-rotate-in"></span>' +
-            '<span class="solution-text">' +
+            '<span class="solution-text"><span class="solution-label">' +
               (that.options.cards[index].answer ?
-                that.options.showSolutionText + ': ' + C.splitAlternatives(that.options.cards[index].answer).join(', ') :
+                that.options.showSolutionText + ': </span>' + C.splitAlternatives(that.options.cards[index].answer).join(', ') :
                 '') + '</span>' +
           '</div>').appendTo($card.find('.h5p-imageholder'));
 
