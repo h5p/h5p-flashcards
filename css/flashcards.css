@@ -596,9 +596,9 @@ button::-moz-focus-inner {
   width: -webkit-fill-available;
   width: 100%;
   background-color: var(--contrast-cta-light);
- /* border: 1px solid var(--contrast-cta-white);*/
+  border: 1px solid var(--contrast-cta-white);
   border-radius: 8px;
-  padding: 3px;
+  padding: 5px;
 }
 
 .progress-separator{
@@ -773,6 +773,11 @@ button::-moz-focus-inner {
   
   .h5p-theme-results-banner {
     padding: calc(var(--spacing-xl)/2) calc(var(--spacing-xl)/2) var(--spacing-xl) calc(var(--spacing-xl)/2);
+}
+  
+  
+.h5p-flashcards .h5p-imageholder {
+  height: unset;
 }
   
   
