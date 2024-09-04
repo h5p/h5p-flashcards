@@ -83,7 +83,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
     }
 
     this.$container = $container
-      .addClass('h5p-flashcards')
+      .addClass('h5p-flashcards h5p-theme')
       .html('<div class="h5p-loading">Loading, please wait...</div>');
 
     // Load card images. (we need their size before we can create the task)
@@ -208,8 +208,14 @@ H5P.Flashcards = (function ($, XapiGenerator) {
     const descId = ++C.counter;
 
     var $inner = this.$container.html(
-      '<div class="flashcards-heading"><div class="h5p-description h5p-theme-question-description" id="flashcards-description' + '-' + descId + '" title="' + this.options.description + '">' + this.options.description + '</div></div>' +
-      '<div class="h5p-progress"></div>' +
+      '<div class="h5p-flashcards-heading">' +
+        '<div class="h5p-description h5p-theme-question-description"' +
+          'id="flashcards-description' + '-' + descId + '" title="' + this.options.description + '"' +
+        '>' +
+          this.options.description +
+        '</div>' +
+        '<div class="h5p-progress"></div>' +
+      '</div>' +
       '<div class="h5p-inner" role="region" aria-labelledby="flashcards-description' + '-' + descId + '" aria-roledescription="carousel"></div>' +
       '<div class="h5p-navigation">' +
         '<button type="button" class="h5p-button h5p-theme-previous h5p-theme-nav-button h5p-hidden" tabindex="0" title="' + this.options.previous + '" aria-label="' + this.options.previous + '"><span class="h5p-theme-label">' + this.options.previous + '</span></button>' +
@@ -376,7 +382,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
     }));
 
     // Add tip
-    var $tip = H5P.JoubelUI.createTip(card.tip, {useDesign: true});
+    var $tip = H5P.JoubelUI.createTip(card.tip);
     if ($tip && $tip.length) { // Check for a jQuery object
       $tip.attr({
         tabindex: -1,

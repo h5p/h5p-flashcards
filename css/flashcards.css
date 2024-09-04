@@ -46,12 +46,19 @@
   padding: calc(var(--spacing-xs)/3) calc(var(--spacing-xs)/3) calc(var(--spacing-xs)/3) var(--spacing-s);
 }
 
-.h5p-flashcards .h5p-description {
+.h5p-flashcards .h5p-flashcards-heading {
+  display: flex;
+  align-items: center;
+
   box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.05);
   border-bottom: 1px solid var(--stroke-1);
   padding: var(--spacing-l) var(--spacing-m);
   background-color: var(--ui-base);
   text-align: center;
+}
+
+.h5p-flashcards .h5p-progress {
+  margin-left: auto;
 }
 
 .h5p-flashcards .h5p-inner {
@@ -319,9 +326,6 @@
   box-shadow: none;
 }
 
-.h5p-flashcards .h5p-progress {
-  margin: var(--spacing-s) auto 0 auto;
-}
 .h5p-flashcards .h5p-navigation {
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
