@@ -208,7 +208,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
     const descId = ++C.counter;
 
     var $inner = this.$container.html(
-      '<div class="h5p-description h5p-theme-question-description" id="flashcards-description' + '-' + descId + '" title="' + this.options.description + '">' + this.options.description + '</div>' +
+      '<div class="flashcards-heading"><div class="h5p-description h5p-theme-question-description" id="flashcards-description' + '-' + descId + '" title="' + this.options.description + '">' + this.options.description + '</div></div>' +
       '<div class="h5p-progress"></div>' +
       '<div class="h5p-inner" role="region" aria-labelledby="flashcards-description' + '-' + descId + '" aria-roledescription="carousel"></div>' +
       '<div class="h5p-navigation">' +
@@ -411,7 +411,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
         if (userCorrect) {
           $input.parent()
             .addClass('h5p-correct')
-            .append('<div class="h5p-feedback-label">' + that.options.correctAnswerText + '!</div>');
+            .append('<div class="h5p-feedback-label"></div>');
           $card.addClass('h5p-correct');
 
           $('<div class="h5p-solution">' +
@@ -423,7 +423,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
         else {
           $input.parent()
             .addClass('h5p-wrong')
-            .append('<span class="h5p-feedback-label">' + that.options.incorrectAnswerText + '!</span>');
+            .append('<span class="h5p-feedback-label"></span>');
           $card.addClass('h5p-wrong');
 
           $('<div class="h5p-solution">' +
@@ -503,7 +503,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
     }).appendTo(this.$resultScreen);
 
     const $resultsHeaders = $('<div/>', {
-      'class': 'h5p-results-list-item'
+      'class': 'h5p-results-list-heading'
     }).appendTo($resultsListContainer);
 
     $('<h3/>', {
@@ -617,7 +617,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
    */
   C.prototype.setProgress = function () {
     var index = this.$current.index();
-    this.$progress.text((index + 1) + ' / ' + this.options.cards.length);
+    this.$progress.html('Card ' + (index + 1) + ' <span class="progress-separator">/</span> ' + this.options.cards.length);
     this.$visualProgress
       .attr('aria-valuenow', ((index + 1) / this.options.cards.length * 100).toFixed(2))
       .find('.h5p-visual-progress-inner').width((index + 1) / this.options.cards.length * 100 + '%');
