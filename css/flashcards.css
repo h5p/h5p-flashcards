@@ -59,7 +59,7 @@
   text-align: left;
 }
 
-.h5p-flashcards .h5p-progress {
+.h5p-flashcards .h5p-theme-progress {
   margin-left: auto;
   text-align: center;
   padding: var(--spacing-xs) var(--spacing-s);
@@ -694,7 +694,6 @@ button::-moz-focus-inner {
 .h5p-flashcards .h5p-show-results {
   display: none;
   justify-self: flex-end;
-  
 }
 
 /* Custom scrollbar */
@@ -759,39 +758,17 @@ button::-moz-focus-inner {
 }
 
 @media screen and (max-width: 870px) {
-    
   .h5p-flashcards .h5p-results-list-container{
     margin: calc(-1* var(--spacing-l)) 0 var(--spacing-l) 0;
   }
-  
-  .h5p-flashcards .h5p-show-results span {
-    display: none;
-  }
 
-  .h5p-flashcards .h5p-show-results .h5p-theme-show-results:hover {
-    text-indent: 0;
-    padding: var(--spacing-xs) var(--spacing-l);
-  }
-
-  .h5p-flashcards .h5p-show-results .h5p-theme-show-results:before {
-    position: unset;
-    opacity: 1;
-    transform: translate(var(--spacing-s), 0);
-  }
-  
   .h5p-flashcards .h5p-results-image-holder {
    width: 4.5rem; 
    height: 3rem; 
    margin-right: var(--spacing-xs);
-}
-  
+  }
+
   .h5p-theme-results-banner {
     padding: calc(var(--spacing-xl)/2) calc(var(--spacing-xl)/2) var(--spacing-xl) calc(var(--spacing-xl)/2);
-}
-  
-
-  
-  
-
-  
+  }
 }

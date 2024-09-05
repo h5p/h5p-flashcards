@@ -214,7 +214,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
         '>' +
           this.options.description +
         '</div>' +
-        '<div class="h5p-progress"></div>' +
+        '<div class="h5p-theme-progress"></div>' +
       '</div>' +
       '<div class="h5p-inner" role="region" aria-labelledby="flashcards-description' + '-' + descId + '" aria-roledescription="carousel"></div>' +
       '<div class="h5p-navigation">' +
@@ -234,7 +234,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
 
     this.$container.find('.h5p-navigation >:first-child').after(this.$visualProgress);
 
-    this.$progress = this.$container.find('.h5p-progress');
+    this.$progress = this.$container.find('.h5p-theme-progress');
 
     // Add cards
     for (var i = 0; i < this.options.cards.length; i++) {
@@ -609,7 +609,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
       }
 
       $('<div/>', {
-        'class': 'h5p-results-points',
+        'class': 'h5p-theme-results-points',
         'text': userCorrect ? '1' : '0'
       }).appendTo($listItem);
     }
