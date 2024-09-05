@@ -293,9 +293,10 @@
 }
 
 .h5p-flashcards .h5p-answer .h5p-feedback-label {
-  display: inline-flex;
   padding: var(--spacing-xs) var(--spacing-xs);
   outline: none;
+  font-size: var(--font-size-xl);
+  line-height: normal;
 
   transition: opacity 2s;
   opacity: 1;
