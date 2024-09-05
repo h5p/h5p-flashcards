@@ -750,7 +750,7 @@ button::-moz-focus-inner {
   }
   
   .h5p-flashcards .h5p-imageholder{
-    height: unset;
+    height: 14rem;
   }
 
 }
