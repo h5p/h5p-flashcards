@@ -337,7 +337,8 @@
 
 .h5p-flashcards .h5p-navigation {
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
+  grid-gap: var(--spacing-l);
+  grid-template-columns: min-content 1fr min-content;
   align-items: center;
   justify-items: center;
 
@@ -355,13 +356,25 @@
 
 .h5p-flashcards .h5p-navigation .h5p-theme-next {
   justify-self: flex-end;
+  grid-column: 3;
+  min-width: max-content;
 }
 
 .h5p-flashcards .h5p-navigation .h5p-theme-previous {
   justify-self: flex-start;
+  min-width: max-content;
 }
-.h5p-navigation .h5p-theme-primary-cta{
+.h5p-flashcards .h5p-navigation:has(.h5p-show-results.h5p-hidden) .h5p-theme-next.h5p-hidden {
+  display: block;
+  visibility: hidden;
+}
+.h5p-flashcards .h5p-navigation .h5p-theme-previous.h5p-hidden {
+  display: block;
+  visibility: hidden;
+}
+.h5p-navigation .h5p-theme-primary-cta {
   font-size: var(--font-size-m);
+  min-width: max-content;
 }
 
 
@@ -693,8 +706,8 @@ button::-moz-focus-inner {
 }
 
 .h5p-flashcards .h5p-show-results {
-  display: none;
   justify-self: flex-end;
+  grid-column: 3;
 }
 
 /* Custom scrollbar */

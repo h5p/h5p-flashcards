@@ -312,7 +312,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
     var that = this;
 
     var $showResults = $(
-      '<div class="h5p-show-results">' +
+      '<div class="h5p-show-results h5p-hidden">' +
         '<button ' +
           'type="button" ' +
           'class="h5p-theme-primary-cta h5p-theme-show-results" ' +
@@ -715,7 +715,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
     that.setProgress();
 
     if ($next.is(':last-child') && that.numAnswered == that.options.cards.length) {
-      that.$container.find('.h5p-show-results').show();
+      that.$container.find('.h5p-show-results').removeClass('h5p-hidden');
     }
   };
 
@@ -739,7 +739,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
     }
     that.$nextButton.removeClass('h5p-hidden');
     that.setProgress();
-    that.$container.find('.h5p-show-results').hide();
+    that.$container.find('.h5p-show-results').addClass('h5p-hidden');
   };
 
   /**
@@ -753,7 +753,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
       this.$prevButton.removeClass('h5p-hidden');
     }
     this.setProgress();
-    this.$container.find('.h5p-show-results').show();
+    this.$container.find('.h5p-show-results').removeClass('h5p-hidden');
     this.trigger('resize');
   };
 
