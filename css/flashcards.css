@@ -635,43 +635,7 @@ button::-moz-focus-inner {
   border-radius: 5px;
   transition: width 1s;
 }
-/*
-@-webkit-keyframes rotateIn {
-  from {
-    -webkit-transform-origin: center;
-            transform-origin: center;
-    -webkit-transform: rotate3d(0, 0, 1, -200deg);
-            transform: rotate3d(0, 0, 1, -200deg);
-    opacity: 0;
-  }
 
-  to {
-    -webkit-transform-origin: center;
-            transform-origin: center;
-    -webkit-transform: none;
-            transform: none;
-    opacity: 1;
-  }
-}
-
-@keyframes rotateIn {
-  from {
-    -webkit-transform-origin: center;
-            transform-origin: center;
-    -webkit-transform: rotate3d(0, 0, 1, -200deg);
-            transform: rotate3d(0, 0, 1, -200deg);
-    opacity: 0;
-  }
-
-  to {
-    -webkit-transform-origin: center;
-            transform-origin: center;
-    -webkit-transform: none;
-            transform: none;
-    opacity: 1;
-  }
-}
-*/
 @-webkit-keyframes rotateIn {
   from {
     transform: scale(0.2);
@@ -784,5 +748,25 @@ button::-moz-focus-inner {
 
   .h5p-theme-results-banner {
     padding: calc(var(--spacing-xl)/2) calc(var(--spacing-xl)/2) var(--spacing-xl) calc(var(--spacing-xl)/2);
+  }
+}
+
+/* Stop animations if user has reduced motion on */
+@media (prefers-reduced-motion) {
+  .h5p-flashcards .h5p-card,
+  .h5p-flashcards .h5p-card > .h5p-flashcard-overlay,
+  .h5p-flashcards .h5p-cardholder,
+  .h5p-flashcards .h5p-card .h5p-clue,
+  .h5p-flashcards .h5p-answer .h5p-feedback-label,
+  .h5p-flashcards .h5p-solution > .solution-icon,
+  .h5p-flashcards .h5p-visual-progress div {
+    -webkit-transition: none;
+    -moz-transition: none;
+    transition: none;
+  }
+
+  .h5p-rotate-in {
+    -webkit-animation-name: none;
+    animation-name: none;
   }
 }
