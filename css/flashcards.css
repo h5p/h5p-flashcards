@@ -63,6 +63,7 @@
   margin-left: auto;
   text-align: center;
   padding: var(--spacing-xs) var(--spacing-s);
+  font-size: var(--font-size-l);
 }
 
 .h5p-flashcards .h5p-inner {
@@ -136,13 +137,13 @@
 
 .h5p-flashcards .h5p-card.h5p-wrong .h5p-imageholder > .h5p-flashcard-overlay {
   background-color: var(--feedback-incorrect-main);
-  opacity: 0.9;
+  opacity: 0.6;
   mix-blend-mode: multiply;
 }
 
 .h5p-flashcards .h5p-card.h5p-correct .h5p-imageholder > .h5p-flashcard-overlay {
   background-color: var(--feedback-correct-main);
-  opacity: 0.9;
+  opacity: 0.6;
   mix-blend-mode: multiply;
 }
 
@@ -421,21 +422,31 @@
   content: "\e903";
 }
 
-.h5p-flashcards .h5p-solution > .solution-text {
+.h5p-flashcards .h5p-solution .solution-text {
   box-sizing: border-box;
   overflow-wrap: break-word;
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-l);
   line-height: var(--font-size-xl);
-  padding: 0.25em 1em;
-  border-radius: 1em;
+  padding: var(--spacing-xs);
+  border-radius: var(--border-radius-medium);
   width: min-content;
-  min-width: 70%;
+  min-width: calc(100% - var(--spacing-xs) - var(--spacing-xs));
   max-width: calc(100% - 1em);
   color: white;
   margin-bottom: var(--spacing-xs);
+  background-color: var(--feedback-incorrect-main);
 }
 
-div.h5p-solution > span.solution-text > span {
+.h5p-flashcards .limited-answer{
+    -webkit-box-orient: vertical;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+}
+
+
+
+.h5p-flashcards .solution-label {
   font-size: var(--font-size-s);
   font-style: italic;
   display: block;
@@ -556,7 +567,6 @@ button::-moz-focus-inner {
   grid-template-columns: 1fr 8fr 1fr;
   overflow: hidden;
   color: var(--text-primary);
-  align-items: center;
   justify-items: center;
   border-bottom: solid 1px var(--stroke-1);
   line-height: 1.5rem;
@@ -583,6 +593,7 @@ button::-moz-focus-inner {
   border-radius: var(--border-radius-large);
   border: solid 4px var(--ui-base);
   margin-right: var(--spacing-m);
+  padding-top: var(--spacing-xs);
 }
 .h5p-flashcards .h5p-results-question-container{
 	width: -webkit-fill-available;
@@ -607,7 +618,6 @@ button::-moz-focus-inner {
 .h5p-flashcards .h5p-results-question {
   font-size: var(--font-size-l);
   font-weight: 600;
-  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   margin-bottom: var(--spacing-xs);
@@ -625,7 +635,6 @@ button::-moz-focus-inner {
 
 .progress-separator{
   color: var(--text-third);
-  font-size: 0.85rem;
 }
 
 .h5p-flashcards .h5p-visual-progress div {
