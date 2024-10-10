@@ -432,17 +432,33 @@ H5P.Flashcards = (function ($, XapiGenerator) {
             .append('<span class="h5p-feedback-label"></span>');
           $card.addClass('h5p-wrong');
 
-          $('<div class="h5p-solution">' +
+          const answer = that.options.cards[index].answer;
+          let correctText;
+          let shortened;
+          if (answer) {
+            correctText = C.splitAlternatives(that.options.cards[index].answer).join(', ')
+            shortened = C.shortFormat(correctText);
+          }
+          
+          const solution = $('<div class="h5p-solution">' +
             '<span class="solution-icon h5p-rotate-in"></span>' +
             '<span class="solution-text"><span class="solution-label">' +
-              (that.options.cards[index].answer ?
-                that.options.showSolutionText + ': </span><span class="limited-answer">' + C.splitAlternatives(that.options.cards[index].answer).join(', ') :
+              (answer ?
+                that.options.showSolutionText + ': </span><span">' +
+                  shortened :
                 '') + '</span></span>' +
           '</div>').appendTo($card.find('.h5p-imageholder'));
 
+          if (answer && shortened !== correctText) {
+            H5P.Tooltip(solution.find('.solution-text')[0].lastChild, {
+              text: correctText,
+              position: 'bottom',
+            });
+          }
+
           const ariaText = that.options.cardAnnouncement.replace(
             '@answer',
-            that.options.cards[index].answer
+            answer
           );
           that.$ariaAnnouncer.html(ariaText);
         }
@@ -819,6 +835,22 @@ H5P.Flashcards = (function ($, XapiGenerator) {
       this.$inner.height(innerHeight);
     }
   };
+
+  /**
+   * Makes a string into a shorter version, and adds ellipsis
+   * 
+   * @param {string} text Text to shorten
+   * @param {int} characters Optional amount of wanted characters
+   *                         (including the ellipsis)
+   */
+  C.shortFormat = (text, characters = 100) => {
+    let shortFormat = text;
+    if (shortFormat.length > characters) {
+      shortFormat = shortFormat.slice(0, characters - 3) + '...';
+    }
+
+    return shortFormat;
+  }
 
   /**
    * Helps convert html to text

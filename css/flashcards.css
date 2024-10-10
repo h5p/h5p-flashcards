@@ -437,14 +437,11 @@
   background-color: var(--feedback-incorrect-main);
 }
 
-.h5p-flashcards .limited-answer{
-    -webkit-box-orient: vertical;
-  display: -webkit-box;
-  -webkit-line-clamp: 4;
-  overflow: hidden;
+.h5p-flashcards .h5p-solution .h5p-tooltip {
+  height: fit-content;
+  width: calc(var(--spacing-l)*11 - var(--spacing-xs)*4);
+  white-space: initial;
 }
-
-
 
 .h5p-flashcards .solution-label {
   font-size: var(--font-size-s);
@@ -452,8 +449,6 @@
   display: block;
   font-weight: normal;
 }
-
-
 
 .h5p-flashcards .h5p-solution.h5p-hidden {
   display: block;
