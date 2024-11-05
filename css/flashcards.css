@@ -555,6 +555,7 @@ button::-moz-focus-inner {
 
 .h5p-flashcards .h5p-results-list-heading h3{
   font-size: var(--font-size-xl);
+  margin: 1rem 0;
 
 }
 .h5p-flashcards .h5p-results-list-item, .h5p-flashcards .h5p-results-list-heading {
