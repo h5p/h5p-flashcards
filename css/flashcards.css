@@ -481,7 +481,7 @@ button::-moz-focus-inner {
 .h5p-flashcards .h5p-flashcards-results {
   display: none;
   -webkit-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   margin: 0;
   position: absolute;
   left: 0;
