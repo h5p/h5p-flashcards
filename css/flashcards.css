@@ -180,6 +180,12 @@
   border-radius: 2em 2em 0 0;
 }
 
+.h5p-flashcards .h5p-imageholder.h5p-image-only {
+  margin-bottom: 1em;
+  border-bottom-left-radius: 2em;
+  border-bottom-right-radius: 2em;
+}
+
 .h5p-flashcards .h5p-card .h5p-clue {
   display: block;
   padding: 0.5em;
@@ -228,6 +234,10 @@
   padding: 0 1em 1em 1em;
   background-color: white;
   border-radius: 0 0 2em 2em;
+}
+
+.h5p-flashcards .h5p-foot.h5p-no-answer {
+  margin-bottom: 0;
 }
 
 .h5p-flashcards .h5p-answer {

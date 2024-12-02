@@ -195,7 +195,11 @@ H5P.Flashcards = (function ($, XapiGenerator) {
    * @return {number}
    */
   C.prototype.getMaxScore = function () {
-    return this.options.cards.length;
+    return this.options.cards
+      .filter( function (card) {
+        return typeof card.answer !== 'undefined';
+      })
+      .length;
   };
 
   /**
@@ -350,6 +354,18 @@ H5P.Flashcards = (function ($, XapiGenerator) {
       '</div>')
       .appendTo($inner);
 
+    // Cards may not require an answer and thus no extra fields
+    if (!card.answer) {
+      $card.find('.h5p-answer').addClass('h5p-hidden');
+      $card.find('.h5p-foot').addClass('h5p-no-answer');
+
+      if (!card.text) {
+        $card.find('.h5p-imageholder').addClass('h5p-image-only');
+        $card.find('.h5p-foot').addClass('h5p-hidden');
+        $card.find('.h5p-flashcard-overlay').addClass('h5p-hidden');
+      }
+    }
+
     $card.find('.h5p-imageholder').prepend(this.$images[index]);
 
     $card.prepend($('<div class="h5p-flashcard-overlay" tabindex="-1"></div>').on('click', function () {
@@ -431,7 +447,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
           that.$ariaAnnouncer.html(ariaText);
         }
 
-        done = (that.numAnswered >= that.options.cards.length);
+        done = (that.numAnswered >= that.getMaxScore());
 
         if (!done) {
           that.nextTimer = setTimeout(that.next.bind(that), 3500);
@@ -536,19 +552,20 @@ H5P.Flashcards = (function ($, XapiGenerator) {
 
       var $resultsAnswer = $('<div/>', {
         'class': 'h5p-results-answer',
-        'text': this.answers[i]
+        'text': (card.answer) ? this.answers[i] : ''
       }).appendTo($listItem);
 
-      $resultsAnswer.prepend('<span>' + this.options.answerShortText + ' </span>');
-
-      if (!userCorrect) {
+      if (card.answer && !userCorrect) {
+        $resultsAnswer.prepend('<span>' + this.options.answerShortText + ' </span>');
         $resultsAnswer.append('<span> ' + this.options.showSolutionText + ': </span>');
         $resultsAnswer.append('<span class="h5p-correct">' + C.splitAlternatives(card.answer).join(', ') + '</span>');
       }
 
-      $('<div/>', {
-        'class': 'h5p-results-box'
-      }).appendTo($listItem);
+      if (card.answer) {
+        $('<div/>', {
+          'class': 'h5p-results-box'
+        }).appendTo($listItem);
+      }
     }
     if (this.getScore() < this.getMaxScore()) {
       this.$retryButton.removeClass('h5p-invisible');
@@ -653,7 +670,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
     that.$prevButton.removeClass('h5p-hidden');
     that.setProgress();
 
-    if ($next.is(':last-child') && that.numAnswered == that.options.cards.length) {
+    if ($next.is(':last-child') && that.numAnswered == that.getMaxScore()) {
       that.$container.find('.h5p-show-results').show();
     }
   };
