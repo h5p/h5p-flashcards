@@ -497,83 +497,8 @@ button::-moz-focus-inner {
   background-color: var(--h5p-theme-ui-base);
 }
 
-.h5p-flashcards .h5p-results-title {
-  font-size: var(--h5p-theme-font-size-xxl);
-  font-weight: 600;
-  color: var(--h5p-theme-contrast-cta);
-  z-index: 1;
-}
-
-.h5p-flashcards .h5p-results-retry-button{
+.h5p-flashcards .h5p-results-retry-button {
   margin: 0 auto var(--h5p-theme-spacing-m) auto;
-}
-
-.h5p-flashcards .h5p-results-score {
-  color: var(--h5p-theme-contrast-cta);
-  font-size: var(--h5p-theme-font-size-xl);
-  font-weight: 600;
-  z-index: 1;
-}
-
-.h5p-flashcards .h5p-results-score span{
-  color: var(--h5p-theme-contrast-cta);
-  padding: 0 0.2em;
-}
-
-.h5p-flashcards .h5p-results-list-container {
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  clear: both;
-  margin: calc(-1 * var(--h5p-theme-spacing-l)) var(--h5p-theme-spacing-xl) var(--h5p-theme-spacing-l) var(--h5p-theme-spacing-xl);
-  box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.08);
-  background-color: var(--h5p-theme-ui-base);
-  border-radius: var(--h5p-theme-border-radius-small);
-  z-index: 1000;
-}
-
-.h5p-flashcards .h5p-results-list {
-  list-style-type: none;
-  overflow: hidden;
-  overflow-y: auto;
-  padding-inline-start: 0;
-  padding: var(--h5p-theme-spacing-xs) var(--h5p-theme-spacing-m);
-  flex: 1;
-}
-
-.h5p-flashcards .h5p-results-list li:nth-child(odd) {
-  /*TODO*/
-   
-}
-
-
-.h5p-flashcards .h5p-results-list-heading {
-  box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.08);   
-  border-bottom: none !important;
-  padding: 0 var(--h5p-theme-spacing-m);
-}
-
-.h5p-flashcards .h5p-results-list-heading h3{
-  font-size: var(--h5p-theme-font-size-xl);
-  margin: 1rem 0;
-
-}
-.h5p-flashcards .h5p-results-list-item, .h5p-flashcards .h5p-results-list-heading {
-  display: grid;
-  grid-template-columns: 1fr 8fr 1fr;
-  overflow: hidden;
-  color: var(--h5p-theme-text-primary);
-  justify-items: center;
-  border-bottom: solid 1px var(--h5p-theme-stroke-1);
-  line-height: 1.5rem;
-}
-
-.h5p-flashcards .h5p-results-list-heading .h5p-results-list-last-header {
-  grid-column: 3;
-}
-
-.h5p-flashcards .h5p-results-list-item:last-child{
-  border-bottom: none;
 }
 
 .h5p-flashcards .h5p-results-image-holder {
@@ -591,11 +516,7 @@ button::-moz-focus-inner {
   margin-right: var(--h5p-theme-spacing-m);
   padding-top: var(--h5p-theme-spacing-xs);
 }
-.h5p-flashcards .h5p-results-question-container{
-	width: -webkit-fill-available;
-  width: 100%;
-	padding: var(--h5p-theme-spacing-xs) var(--h5p-theme-spacing-m);
-}
+
 .h5p-flashcards .h5p-results-image-holder.no-image {
   background-color: var(--h5p-theme-alternative-base);
   text-align: center;
@@ -607,16 +528,8 @@ button::-moz-focus-inner {
   line-height: 2.2;
   color: var(--h5p-theme-text-third);
 }
-.h5p-flashcards .h5p-results-image-holder img{
+.h5p-flashcards .h5p-results-image-holder img {
   border-radius: var(--h5p-theme-border-radius-small);
-}
-
-.h5p-flashcards .h5p-results-question {
-  font-size: var(--h5p-theme-font-size-l);
-  font-weight: 600;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  margin-bottom: var(--h5p-theme-spacing-xs);
 }
 
 .h5p-flashcards .h5p-visual-progress {
@@ -629,7 +542,7 @@ button::-moz-focus-inner {
   padding: 5px;
 }
 
-.progress-separator{
+.progress-separator {
   color: var(--h5p-theme-text-third);
 }
 
@@ -677,31 +590,6 @@ button::-moz-focus-inner {
 .h5p-flashcards .h5p-show-results {
   justify-self: flex-end;
   grid-column: 3;
-}
-
-/* Custom scrollbar */
-.h5p-flashcards .h5p-results-list::-webkit-scrollbar {
-  background-color: var(--h5p-theme-ui-base);
-  width: 0.5em;
-  border-radius: 1em;
-}
-
-.h5p-flashcards .h5p-results-list::-webkit-scrollbar-thumb {
-  background-color: var(--h5p-theme-text-primary);
-  background-size: 24px 100%;
-  border-radius: 0;
-}
-
-.h5p-flashcards .h5p-results-list::-webkit-scrollbar-button:vertical {
-  background-size: 20px 20px;
-  background-position-x: -4px;
-  background-position-y: -3px;
-  background-repeat: no-repeat;
-}
-
-.h5p-flashcards .h5p-results-list::-webkit-scrollbar-button:vertical:decrement,
-.h5p-flashcards .h5p-results-list::-webkit-scrollbar-button:vertical:increment {
-  display: none;
 }
 
 .using-mouse .h5p-flashcards .h5p-button.h5p-check-button:focus {

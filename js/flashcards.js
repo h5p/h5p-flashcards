@@ -512,20 +512,20 @@ H5P.Flashcards = (function ($, XapiGenerator) {
     }).appendTo($titleContainer);
 
     $('<div/>', {
-      'class': 'h5p-results-title',
+      'class': 'h5p-theme-results-title',
       'text': this.options.results
     }).appendTo($titleContainer);
 
     $('<div/>', {
-      'class': 'h5p-results-score'
+      'class': 'h5p-theme-results-score'
     }).appendTo($titleContainer);
 
     const $resultsListContainer = $('<div/>', {
-      'class': 'h5p-results-list-container'
+      'class': 'h5p-theme-results-list-container'
     }).appendTo(this.$resultScreen);
 
     const $resultsHeaders = $('<div/>', {
-      'class': 'h5p-results-list-heading'
+      'class': 'h5p-theme-results-list-heading'
     }).appendTo($resultsListContainer);
 
     $('<h3/>', {
@@ -533,12 +533,12 @@ H5P.Flashcards = (function ($, XapiGenerator) {
     }).appendTo($resultsHeaders);
 
     $('<h3/>', {
-      'class': 'h5p-results-list-last-header',
+      'class': 'h5p-theme-results-list-last-header',
       'text': this.options.scoreHeader
     }).appendTo($resultsHeaders);
 
     $('<ul/>', {
-      'class': 'h5p-results-list'
+      'class': 'h5p-theme-results-list'
     }).appendTo($resultsListContainer);
 
     this.$retryButton = $('<button/>', {
@@ -563,20 +563,20 @@ H5P.Flashcards = (function ($, XapiGenerator) {
       .replace(/@score/g, '<span>' + this.getScore() + '</span>')
       .replace(/@total/g, '<span>' + this.getMaxScore() + '</span>');
 
-    this.$resultScreen.find('.h5p-results-score').html(ofCorrectText);
+    this.$resultScreen.find('.h5p-theme-results-score').html(ofCorrectText);
 
   
     
     // Create a list representing the cards and populate them
     for (var i = 0; i < this.options.cards.length; i++) {
       var card = this.options.cards[i];
-      var $resultsContainer = this.$resultScreen.find('.h5p-results-list');
+      var $resultsContainer = this.$resultScreen.find('.h5p-theme-results-list');
 
       var userAnswer = this.answers[i];
       var userCorrect = isCorrectAnswer(card, userAnswer, this.options.caseSensitive);
 
       var $listItem = $('<li/>', {
-        'class': 'h5p-results-list-item'
+        'class': 'h5p-theme-results-list-item'
       }).appendTo($resultsContainer);
 
       var $imageHolder = $('<div/>', {
@@ -591,11 +591,11 @@ H5P.Flashcards = (function ($, XapiGenerator) {
       }
       
       const $resultsQuestionContainer = $('<div/>', {
-        'class': 'h5p-results-question-container',
+        'class': 'h5p-theme-results-question-container',
       }).appendTo($listItem);
 
       $('<div/>', {
-        'class': 'h5p-results-question',
+        'class': 'h5p-theme-results-question',
         'html': card.text
       }).appendTo($resultsQuestionContainer);
 
