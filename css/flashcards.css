@@ -160,9 +160,6 @@
 
 .h5p-flashcards .h5p-cardholder {
   margin: var(--h5p-theme-spacing-m) auto;
-  background-color: var(--h5p-theme-ui-base);
-  border: 0.1em solid transparent;
-  border-radius: var(--h5p-theme-border-radius-large);
   transform: scale(0.85);
   -webkit-transition: transform 0.5s;
   transition: transform 0.5s;
