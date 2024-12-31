@@ -634,10 +634,6 @@ button::-moz-focus-inner {
    height: 3rem; 
    margin-right: var(--h5p-theme-spacing-xs);
   }
-
-  .h5p-theme-results-banner {
-    padding: calc(var(--h5p-theme-spacing-xl)/2) calc(var(--h5p-theme-spacing-xl)/2) var(--h5p-theme-spacing-xl) calc(var(--h5p-theme-spacing-xl)/2);
-  }
 }
 
 /* Stop animations if user has reduced motion on */
