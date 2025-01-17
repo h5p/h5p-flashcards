@@ -279,7 +279,7 @@
   text-align: center;
   overflow: hidden;
   max-width: 32em;
-  padding: var(--h5p-theme-spacing-s, --spacing-m);
+  padding: var(--h5p-theme-spacing-s) var(--h5p-theme-spacing-m);
   margin: auto;
   color: var(--h5p-theme-text-primary);
   font-size: var(--h5p-theme-font-size-xl);
