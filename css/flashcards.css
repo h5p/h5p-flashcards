@@ -44,7 +44,7 @@
   }
 }
 
-.h5p-cardholder .h5p-answer .h5p-theme-input{
+.h5p-cardholder .h5p-answer .h5p-theme-input {
   padding: calc(var(--h5p-theme-spacing-xs)/3) calc(var(--h5p-theme-spacing-xs)/3) calc(var(--h5p-theme-spacing-xs)/3) var(--h5p-theme-spacing-s);
 }
 
@@ -497,37 +497,6 @@ button::-moz-focus-inner {
   margin: 0 auto var(--h5p-theme-spacing-m) auto;
 }
 
-.h5p-flashcards .h5p-results-image-holder {
-   width: 5.5rem; 
-   height: 4.5rem; 
-   /*  height: calc(var(--h5p-theme-spacing-l)* 2);
-  width: calc(var(--h5p-theme-spacing-xl)* 2);*/
-  background-size: contain;
-  background-position: center center;
-  background-color: var(--h5p-theme-ui-base);
-  background-repeat: no-repeat;
-  background-origin: content-box;
-  border-radius: var(--h5p-theme-border-radius-large);
-  border: solid 4px var(--h5p-theme-ui-base);
-  margin-right: var(--h5p-theme-spacing-m);
-  padding-top: var(--h5p-theme-spacing-xs);
-}
-
-.h5p-flashcards .h5p-results-image-holder.no-image {
-  background-color: var(--h5p-theme-alternative-base);
-  text-align: center;
-}
-.h5p-flashcards .h5p-results-image-holder.no-image:after {
-  font-family: 'H5PFontAwesome4';
-  content: "\f03e";
-  font-size: 2rem;
-  line-height: 2.2;
-  color: var(--h5p-theme-text-third);
-}
-.h5p-flashcards .h5p-results-image-holder img {
-  border-radius: var(--h5p-theme-border-radius-small);
-}
-
 .h5p-flashcards .h5p-visual-progress {
   grid-column: 2;
   width: -webkit-fill-available;
@@ -613,23 +582,22 @@ button::-moz-focus-inner {
   .h5p-flashcards .h5p-card.h5p-next {
     transform: translateX(150%);
   }
-  
+
   .h5p-flashcards .h5p-card div.h5p-clue:after{
     font-size: 3rem;
   }
-  
+
   .h5p-flashcards .h5p-imageholder{
     height: 14rem;
   }
-
 }
 
 @media screen and (max-width: 870px) {
-  .h5p-flashcards .h5p-results-list-container{
+  .h5p-flashcards .h5p-results-list-container {
     margin: calc(-1* var(--h5p-theme-spacing-l)) 0 var(--h5p-theme-spacing-l) 0;
   }
 
-  .h5p-flashcards .h5p-results-image-holder {
+  .h5p-flashcards .h5p-theme-results-image {
    width: 4.5rem; 
    height: 3rem; 
    margin-right: var(--h5p-theme-spacing-xs);
