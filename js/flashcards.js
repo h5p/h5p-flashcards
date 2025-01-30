@@ -277,7 +277,6 @@ H5P.Flashcards = (function ($, XapiGenerator) {
     $inner.initialImageContainerWidth = $inner.find('.h5p-imageholder').outerWidth();
 
     this.addShowResults($inner);
-    this.createResultScreen();
 
     this.$inner = $inner;
     this.setProgress();
@@ -326,7 +325,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
 
     $showResults
       .on('click', function () {
-        that.enableResultScreen();
+        that.createResultScreen();
       })
       .appendTo($inner.parent().find('.h5p-navigation'));
   };
@@ -496,50 +495,37 @@ H5P.Flashcards = (function ($, XapiGenerator) {
    * Create result screen
    */
   C.prototype.createResultScreen = function () {
-    var that = this;
-
-    // Create the containers needed for the result screen
     this.$resultScreen = $('<div/>', {
       'class': 'h5p-flashcards-results',
     });
-	  
-	  const $titleContainer = $('<div/>', {
-      'class': 'h5p-theme-results-banner'
-    }).appendTo(this.$resultScreen);
 
-    $('<div/>', {
-      'class': 'h5p-theme-pattern'
-    }).appendTo($titleContainer);
+    H5P.Components.ResultScreen(this.$resultScreen[0], {
+      header: this.options.results,
+      scoreHeader: this.options.ofCorrect
+        .replace(/@score/g, '<span>' + this.getScore() + '</span>')
+        .replace(/@total/g, '<span>' + this.getMaxScore() + '</span>'),
+      listHeaders: [this.options.cardsHeader, this.options.scoreHeader],
+      questions: this.options.cards.map((card, i) => {
+        const isCorrect = isCorrectAnswer(card, this.answers[i], this.options.caseSensitive);
+        const question = {
+          title: card.text,
+          points: isCorrect ? '1' : '0',
+          isCorrect: isCorrect,
+          userAnswer: this.answers[i],
+          correctAnswer: C.splitAlternatives(card.answer).join(', '),
+          correctAnswerPrepend: this.options.showSolutionText + ': ',
+        };
 
-    $('<div/>', {
-      'class': 'h5p-theme-results-title',
-      'text': this.options.results
-    }).appendTo($titleContainer);
+        if (card.image != undefined) {
+          question.imgUrl = H5P.getPath(card.image.path, this.id);
+        }
+        else {
+          question.useDefaultImg = true;
+        }
 
-    $('<div/>', {
-      'class': 'h5p-theme-results-score'
-    }).appendTo($titleContainer);
-
-    const $resultsListContainer = $('<div/>', {
-      'class': 'h5p-theme-results-list-container'
-    }).appendTo(this.$resultScreen);
-
-    const $resultsHeaders = $('<div/>', {
-      'class': 'h5p-theme-results-list-heading'
-    }).appendTo($resultsListContainer);
-
-    $('<h3/>', {
-      'text': this.options.cardsHeader
-    }).appendTo($resultsHeaders);
-
-    $('<h3/>', {
-      'class': 'h5p-theme-results-list-last-header',
-      'text': this.options.scoreHeader
-    }).appendTo($resultsHeaders);
-
-    $('<ul/>', {
-      'class': 'h5p-theme-results-list'
-    }).appendTo($resultsListContainer);
+        return question;
+      }),
+    });
 
     this.$retryButton = $('<button/>', {
       'class': 'h5p-results-retry-button h5p-invisible h5p-button h5p-theme-secondary-cta h5p-theme-retry',
@@ -547,91 +533,14 @@ H5P.Flashcards = (function ($, XapiGenerator) {
     }).on('click', function () {
       that.resetTask();
     }).appendTo(this.$resultScreen);
-    
-    
-  };
 
-  /**
-   * Enable result screen
-   */
-  C.prototype.enableResultScreen = function () {
-    this.$inner.addClass('h5p-invisible');
-    this.$inner.siblings().addClass('h5p-invisible');
-    this.$resultScreen.appendTo(this.$container).addClass('show');
-
-    var ofCorrectText = this.options.ofCorrect
-      .replace(/@score/g, '<span>' + this.getScore() + '</span>')
-      .replace(/@total/g, '<span>' + this.getMaxScore() + '</span>');
-
-    this.$resultScreen.find('.h5p-theme-results-score').html(ofCorrectText);
-
-  
-    
-    // Create a list representing the cards and populate them
-    for (var i = 0; i < this.options.cards.length; i++) {
-      var card = this.options.cards[i];
-      var $resultsContainer = this.$resultScreen.find('.h5p-theme-results-list');
-
-      var userAnswer = this.answers[i];
-      var userCorrect = isCorrectAnswer(card, userAnswer, this.options.caseSensitive);
-
-      var $listItem = $('<li/>', {
-        'class': 'h5p-theme-results-list-item'
-      }).appendTo($resultsContainer);
-
-      var $imageHolder = $('<div/>', {
-        'class': 'h5p-results-image-holder',
-      }).appendTo($listItem);
-
-      if (card.image != undefined) {
-        $imageHolder.css('background-image', 'url("' + H5P.getPath(card.image.path, this.id) + '")');
-      }
-      else {
-        $imageHolder.addClass('no-image');
-      }
-      
-      const $resultsQuestionContainer = $('<div/>', {
-        'class': 'h5p-theme-results-question-container',
-      }).appendTo($listItem);
-
-      $('<div/>', {
-        'class': 'h5p-theme-results-question',
-        'html': card.text
-      }).appendTo($resultsQuestionContainer);
-
-      var $resultsAnswer = $('<div/>', {
-        'class': 'h5p-theme-results-answer'
-      }).appendTo($resultsQuestionContainer);
-
-      if (userCorrect) {
-        $('<span/>', {
-          'class': 'h5p-theme-results-correct h5p-theme-results-box-small',
-          'text': this.answers[i]
-        }).appendTo($resultsAnswer);
-      }
-      else {
-        $('<span/>', {
-          'class': 'h5p-theme-results-incorrect h5p-theme-results-box-small',
-          'text': this.answers[i]
-        }).appendTo($resultsAnswer);
-
-        $('<span/>', {
-          'class': 'h5p-theme-results-solution',
-          'html': '<span class="h5p-theme-results-solution-label">' +
-              this.options.showSolutionText +
-            ': </span>' +
-            C.splitAlternatives(card.answer).join(', ')
-        }).appendTo($resultsAnswer);
-      }
-
-      $('<div/>', {
-        'class': 'h5p-theme-results-points',
-        'text': userCorrect ? '1' : '0'
-      }).appendTo($listItem);
-    }
     if (this.getScore() < this.getMaxScore()) {
       this.$retryButton.removeClass('h5p-invisible');
     }
+
+    this.$inner.addClass('h5p-invisible');
+    this.$inner.siblings().addClass('h5p-invisible');
+    this.$resultScreen.appendTo(this.$container).addClass('show');
   };
 
   /**
