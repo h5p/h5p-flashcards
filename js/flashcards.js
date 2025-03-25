@@ -217,10 +217,17 @@ H5P.Flashcards = (function ($, XapiGenerator) {
         '<div class="h5p-theme-progress"></div>' +
       '</div>' +
       '<div class="h5p-inner" role="region" aria-labelledby="flashcards-description' + '-' + descId + '" aria-roledescription="carousel"></div>' +
-      '<div class="h5p-navigation">' +
-        '<button type="button" class="h5p-button h5p-theme-previous h5p-theme-nav-button h5p-hidden" tabindex="0" title="' + this.options.previous + '" aria-label="' + this.options.previous + '"><span class="h5p-theme-label">' + this.options.previous + '</span></button>' +
-        '<button type="button" class="h5p-button h5p-theme-next h5p-theme-nav-button" tabindex="0" title="' + this.options.next + '" aria-label="' + this.options.next + '"><span class="h5p-theme-label">' + this.options.next + '</span></button>'
+      '<div class="h5p-navigation"></div>'
     ).children('.h5p-inner');
+
+    const $navigation = this.$container.find('.h5p-navigation');
+
+    H5P.Components.Button($navigation[0], {
+      label: this.options.previous,
+      styleType: 'nav',
+      icon: 'previous',
+      classes: 'h5p-hidden',
+    });
 
     // Create visual progress and add accessibility attributes
     this.$visualProgress = $('<div/>', {
@@ -230,9 +237,13 @@ H5P.Flashcards = (function ($, XapiGenerator) {
       'aria-valuemin': (100 / this.options.cards.length).toFixed(2)
     }).append($('<div/>', {
       'class': 'h5p-visual-progress-inner'
-    }));
+    })).appendTo($navigation);
 
-    this.$container.find('.h5p-navigation >:first-child').after(this.$visualProgress);
+    H5P.Components.Button($navigation[0], {
+      label: this.options.next,
+      styleType: 'nav',
+      icon: 'next',
+    });
 
     this.$progress = this.$container.find('.h5p-theme-progress');
 
@@ -310,18 +321,12 @@ H5P.Flashcards = (function ($, XapiGenerator) {
   C.prototype.addShowResults = function ($inner) {
     var that = this;
 
-    var $showResults = $(
-      '<div class="h5p-show-results h5p-hidden">' +
-        '<button ' +
-          'type="button" ' +
-          'class="h5p-theme-primary-cta h5p-theme-show-results" ' +
-          'aria-label="' + that.options.showResults + '"' +
-          'title="' + that.options.showResults + '"' +
-        '>' +
-          '<span>' + that.options.showResults + '</span>' +
-        '</button>' +
-      '</div>'
-    );
+    var $showResults = $('<div class="h5p-show-results h5p-hidden"></div>');
+
+    H5P.Components.Button($showResults[0], {
+      label: that.options.showResults,
+      icon: 'show-results',
+    });
 
     $showResults
       .on('click', function () {
@@ -355,15 +360,17 @@ H5P.Flashcards = (function ($, XapiGenerator) {
             '<div class="h5p-answer">' +
               '<div class="h5p-input h5p-theme-input">' +
                 '<input type="text" class="h5p-textinput" tabindex="-1" placeholder="' + this.options.defaultAnswerText + '" aria-describedby="h5p-flashcard-card-' + cardId +'" autocomplete="off" spellcheck="false"/>' +
-                '<button type="button" class="h5p-button h5p-check-button h5p-theme-primary-cta h5p-theme-check" tabindex="-1" title="' + this.options.checkAnswerText + '">' +
-                  '<span>' + this.options.checkAnswerText + '</span>' +
-                '</button>' +
               '</div>' +
             '</div>' +
           '</div>' +
         '</div>' +
       '</div>')
       .appendTo($inner);
+
+    H5P.Components.Button($card.find('.h5p-theme-input')[0], {
+      label: this.options.checkAnswerText,
+      icon: 'check',
+    }).tabIndex = '-1';
 
     $card.find('.h5p-imageholder').prepend(this.$images[index]);
 
@@ -478,7 +485,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
       }
     };
 
-    $card.find('.h5p-check-button').click(handleClick);
+    $card.find('.h5p-theme-check').click(handleClick);
 
     $input.keypress(function (event) {
 
@@ -495,6 +502,8 @@ H5P.Flashcards = (function ($, XapiGenerator) {
    * Create result screen
    */
   C.prototype.createResultScreen = function () {
+    var that = this;
+
     this.$resultScreen = $('<div/>', {
       'class': 'h5p-flashcards-results',
     });
@@ -527,15 +536,16 @@ H5P.Flashcards = (function ($, XapiGenerator) {
       }),
     });
 
-    this.$retryButton = $('<button/>', {
-      'class': 'h5p-results-retry-button h5p-invisible h5p-button h5p-theme-secondary-cta h5p-theme-retry',
-      'text': this.options.retry
-    }).on('click', function () {
-      that.resetTask();
-    }).appendTo(this.$resultScreen);
+    this.retryButton = H5P.Components.Button(this.$resultScreen[0], {
+      label: this.options.retry,
+      styleType: 'secondary',
+      icon: 'retry',
+      classes: 'h5p-invisible',
+      onClick: () => { that.resetTask() },
+    });
 
     if (this.getScore() < this.getMaxScore()) {
-      this.$retryButton.removeClass('h5p-invisible');
+      this.retryButton.classList.remove('h5p-invisible');
     }
 
     this.$inner.addClass('h5p-invisible');
@@ -568,7 +578,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
     if (this.$current) {
       this.$current.find('.h5p-textinput').attr('tabindex', '-1');
       this.$current.find('.joubel-tip-container').attr('tabindex', '-1');
-      this.$current.find('.h5p-check-button').attr('tabindex', '-1');
+      this.$current.find('.h5p-theme-check').attr('tabindex', '-1');
     }
 
     // Set new card
@@ -604,7 +614,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
 
     // Update tab indexes
     $card.find('.h5p-textinput').attr('tabindex', '0');
-    $card.find('.h5p-check-button').attr('tabindex', '0');
+    $card.find('.h5p-theme-check').attr('tabindex', '0');
     $card.find('.joubel-tip-container').attr('tabindex', '0');
   };
 
