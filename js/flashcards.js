@@ -224,7 +224,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
 
     H5P.Components.Button($navigation[0], {
       label: this.options.previous,
-      type: 'nav',
+      styleType: 'nav',
       icon: 'previous',
       classes: 'h5p-hidden',
     });
@@ -241,7 +241,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
 
     H5P.Components.Button($navigation[0], {
       label: this.options.next,
-      type: 'nav',
+      styleType: 'nav',
       icon: 'next',
     });
 
@@ -538,7 +538,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
 
     this.retryButton = H5P.Components.Button(this.$resultScreen[0], {
       label: this.options.retry,
-      type: 'secondary',
+      styleType: 'secondary',
       icon: 'retry',
       classes: 'h5p-invisible',
       onClick: () => { that.resetTask() },
