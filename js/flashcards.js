@@ -508,33 +508,35 @@ H5P.Flashcards = (function ($, XapiGenerator) {
       'class': 'h5p-flashcards-results',
     });
 
-    H5P.Components.ResultScreen(this.$resultScreen[0], {
+    this.$resultScreen[0].appendChild(H5P.Components.ResultScreen({
       header: this.options.results,
       scoreHeader: this.options.ofCorrect
         .replace(/@score/g, '<span>' + this.getScore() + '</span>')
         .replace(/@total/g, '<span>' + this.getMaxScore() + '</span>'),
-      listHeaders: [this.options.cardsHeader, this.options.scoreHeader],
-      questions: this.options.cards.map((card, i) => {
-        const isCorrect = isCorrectAnswer(card, this.answers[i], this.options.caseSensitive);
-        const question = {
-          title: card.text,
-          points: isCorrect ? '1' : '0',
-          isCorrect: isCorrect,
-          userAnswer: this.answers[i],
-          correctAnswer: C.splitAlternatives(card.answer).join(', '),
-          correctAnswerPrepend: this.options.showSolutionText + ': ',
-        };
+      questionGroups: [{
+        listHeaders: [this.options.cardsHeader, this.options.scoreHeader],
+        questions: this.options.cards.map((card, i) => {
+          const isCorrect = isCorrectAnswer(card, this.answers[i], this.options.caseSensitive);
+          const question = {
+            title: card.text,
+            points: isCorrect ? '1' : '0',
+            isCorrect: isCorrect,
+            userAnswer: this.answers[i],
+            correctAnswer: C.splitAlternatives(card.answer).join(', '),
+            correctAnswerPrepend: this.options.showSolutionText + ': ',
+          };
 
-        if (card.image != undefined) {
-          question.imgUrl = H5P.getPath(card.image.path, this.id);
-        }
-        else {
-          question.useDefaultImg = true;
-        }
+          if (card.image != undefined) {
+            question.imgUrl = H5P.getPath(card.image.path, this.id);
+          }
+          else {
+            question.useDefaultImg = true;
+          }
 
-        return question;
-      }),
-    });
+          return question;
+        }),
+      }],
+    }));
 
     this.retryButton = H5P.Components.Button(this.$resultScreen[0], {
       label: this.options.retry,
