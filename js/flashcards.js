@@ -222,12 +222,12 @@ H5P.Flashcards = (function ($, XapiGenerator) {
 
     const $navigation = this.$container.find('.h5p-navigation');
 
-    H5P.Components.Button($navigation[0], {
+    $navigation[0].appendChild(H5P.Components.Button({
       label: this.options.previous,
       styleType: 'nav',
       icon: 'previous',
       classes: 'h5p-hidden',
-    });
+    }));
 
     // Create visual progress and add accessibility attributes
     this.$visualProgress = $('<div/>', {
@@ -239,11 +239,11 @@ H5P.Flashcards = (function ($, XapiGenerator) {
       'class': 'h5p-visual-progress-inner'
     })).appendTo($navigation);
 
-    H5P.Components.Button($navigation[0], {
+    $navigation[0].appendChild(H5P.Components.Button({
       label: this.options.next,
       styleType: 'nav',
       icon: 'next',
-    });
+    }));
 
     this.$progress = this.$container.find('.h5p-theme-progress');
 
@@ -323,10 +323,10 @@ H5P.Flashcards = (function ($, XapiGenerator) {
 
     var $showResults = $('<div class="h5p-show-results h5p-hidden"></div>');
 
-    H5P.Components.Button($showResults[0], {
+    $showResults[0].appendChild(H5P.Components.Button({
       label: that.options.showResults,
       icon: 'show-results',
-    });
+    }));
 
     $showResults
       .on('click', function () {
@@ -367,10 +367,14 @@ H5P.Flashcards = (function ($, XapiGenerator) {
       '</div>')
       .appendTo($inner);
 
-    H5P.Components.Button($card.find('.h5p-theme-input')[0], {
-      label: this.options.checkAnswerText,
-      icon: 'check',
-    }).tabIndex = '-1';
+    const checkButton = H5P.Components.Button({
+    label: this.options.checkAnswerText,
+    icon: 'check',
+    });
+
+    checkButton.tabIndex = '-1'
+
+    $card.find('.h5p-theme-input')[0].appendChild(checkButton);
 
     $card.find('.h5p-imageholder').prepend(this.$images[index]);
 
@@ -538,13 +542,15 @@ H5P.Flashcards = (function ($, XapiGenerator) {
       }],
     }));
 
-    this.retryButton = H5P.Components.Button(this.$resultScreen[0], {
+    this.retryButton = H5P.Components.Button({
       label: this.options.retry,
       styleType: 'secondary',
       icon: 'retry',
       classes: 'h5p-invisible',
       onClick: () => { that.resetTask() },
     });
+
+    this.$resultScreen[0].appendChild(this.retryButton);
 
     if (this.getScore() < this.getMaxScore()) {
       this.retryButton.classList.remove('h5p-invisible');
