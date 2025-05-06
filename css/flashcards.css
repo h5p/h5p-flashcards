@@ -73,6 +73,18 @@
   overflow: hidden;
 }
 
+.h5p-content:has(.h5p-theme) .h5p-flashcards .h5p-inner{
+  min-width: unset;
+}
+
+.h5p-flashcards .h5p-input.h5p-theme-input .h5p-theme-primary-cta.h5p-theme-check{
+  line-height: 1.5;
+}
+
+.h5p-flashcards .h5p-input.h5p-theme-input .h5p-textinput{
+  padding-left: 3px;
+}
+
 .h5p-flashcards .h5p-card {
   position: absolute;
   display: block;
