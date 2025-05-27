@@ -23,28 +23,6 @@
   margin: 0;
 }
 
-.h5p-flashcards .h5p-theme-check {
-  padding: var(--h5p-theme-spacing-xs) var(--h5p-theme-spacing-xs);
-  min-width: calc(var(--h5p-theme-spacing-l)*4);
-  border: none;
-}
-
-.h5p-flashcards .h5p-theme-check:hover {
-  text-indent: 1em;
-}
-
-/* If the container is smaller than 200px */
-@container (max-width: 200px) {
-  .h5p-flashcards .h5p-theme-check {
-    min-width: calc(var(--h5p-theme-spacing-s)* 4);
-  }
-
-  .h5p-flashcards .h5p-theme-check:hover {
-    padding: var(--h5p-theme-spacing-xs) var(--h5p-theme-spacing-xs);
-    text-indent: 0;
-  }
-}
-
 .h5p-cardholder .h5p-answer .h5p-theme-input {
   padding: calc(var(--h5p-theme-spacing-xs)/3) calc(var(--h5p-theme-spacing-xs)/3) calc(var(--h5p-theme-spacing-xs)/3) var(--h5p-theme-spacing-s);
 }
@@ -77,12 +55,9 @@
   min-width: unset;
 }
 
-.h5p-flashcards .h5p-input.h5p-theme-input .h5p-theme-primary-cta.h5p-theme-check{
-  line-height: 1.5;
-}
-
-.h5p-flashcards .h5p-input.h5p-theme-input .h5p-textinput{
+.h5p-flashcards .h5p-input.h5p-theme-input .h5p-textinput {
   padding-left: 3px;
+  line-height: 1.5rem;
 }
 
 .h5p-flashcards .h5p-card {
@@ -367,7 +342,6 @@
   font-size: var(--h5p-theme-font-size-m);
   min-width: max-content;
 }
-
 
 .h5p-flashcards .h5p-hidden {
   display: none;
