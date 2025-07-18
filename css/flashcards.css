@@ -70,7 +70,7 @@
   margin: 0 auto;
   left: 0;
   right: 0;
-  transition: transform 0.6s;
+  transition: transform 0.6s, opacity 0.6s;
   transform: translateX(0);
   z-index: 1;
 }
@@ -94,6 +94,10 @@
 
 .h5p-flashcards .h5p-card.h5p-next {
   transform: translateX(100%);
+}
+
+.h5p-flashcards .h5p-card:not(.h5p-current):not(.h5p-previous):not(.h5p-next) {
+  opacity: 0; /* Only three cards are supposed to be visible at once */
 }
 
 .h5p-flashcards .h5p-inner.h5p-invisible .h5p-card {
@@ -562,8 +566,8 @@ button::-moz-focus-inner {
   }
 
   .h5p-flashcards .h5p-theme-results-image {
-   width: 4.5rem; 
-   height: 3rem; 
+   width: 4.5rem;
+   height: 3rem;
    margin-right: var(--h5p-theme-spacing-xs);
   }
 }
