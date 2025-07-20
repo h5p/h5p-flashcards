@@ -216,37 +216,28 @@ H5P.Flashcards = (function ($, XapiGenerator) {
         '</div>' +
         '<div class="h5p-theme-progress"></div>' +
       '</div>' +
-      '<div class="h5p-inner" role="region" aria-labelledby="flashcards-description' + '-' + descId + '" aria-roledescription="carousel"></div>' +
-      '<div class="h5p-navigation"></div>'
+      '<div class="h5p-inner" role="region" aria-labelledby="flashcards-description' + '-' + descId + '" aria-roledescription="carousel"></div>'
     ).children('.h5p-inner');
 
-    const $navigation = this.$container.find('.h5p-navigation');
+    this.nav = H5P.Components.Navigation({
+      progressType: 'bar',
+      handlePrevious: this.previous.bind(this),
+      handleNext: this.next.bind(this),
+      handleLast: this.createResultScreen.bind(this),
+      index: 0,
+      navigationLength: this.options.cards.length,
+      texts: {
+        previousButton: this.options.previous,
+        nextButton: this.options.next,
+        lastButton: this.options.showResults,
+      },
+    });
 
-    $navigation[0].appendChild(H5P.Components.Button({
-      label: this.options.previous,
-      styleType: 'nav',
-      icon: 'previous',
-      classes: 'h5p-hidden',
-    }));
-
-    // Create visual progress and add accessibility attributes
-    this.$visualProgress = $('<div/>', {
-      'class': 'h5p-visual-progress',
-      'role': 'progressbar',
-      'aria-valuemax': '100',
-      'aria-valuemin': (100 / this.options.cards.length).toFixed(2)
-    }).append($('<div/>', {
-      'class': 'h5p-visual-progress-inner'
-    })).appendTo($navigation);
-
-    $navigation[0].appendChild(H5P.Components.Button({
-      label: this.options.next,
-      styleType: 'nav',
-      icon: 'next',
-    }));
+    this.nextButton = this.nav.querySelector('.h5p-theme-next');
+    this.resultsButton = this.nav.querySelector('.h5p-theme-submit');
 
     this.$progress = this.$container.find('.h5p-theme-progress');
-
+    this.$container[0].append(this.nav);
     // Add cards
     for (var i = 0; i < this.options.cards.length; i++) {
       this.addCard(i, $inner);
@@ -270,15 +261,6 @@ H5P.Flashcards = (function ($, XapiGenerator) {
       }
     }
 
-    // Active buttons
-    var $buttonWrapper = $inner.next();
-    this.$nextButton = $buttonWrapper.children('.h5p-theme-next').click(function () {
-      that.next();
-    });
-    this.$prevButton = $buttonWrapper.children('.h5p-theme-previous').click(function () {
-      that.previous();
-    });
-
     if (this.options.cards.length < 2) {
       this.$nextButton.hide();
     }
@@ -286,8 +268,6 @@ H5P.Flashcards = (function ($, XapiGenerator) {
     this.$current.next().addClass('h5p-next');
 
     $inner.initialImageContainerWidth = $inner.find('.h5p-imageholder').outerWidth();
-
-    this.addShowResults($inner);
 
     this.$inner = $inner;
     this.setProgress();
@@ -379,14 +359,15 @@ H5P.Flashcards = (function ($, XapiGenerator) {
     $card.find('.h5p-imageholder').prepend(this.$images[index]);
 
     $card.prepend($('<div class="h5p-flashcard-overlay" tabindex="-1"></div>').on('click', function () {
-      
       // Set temporary focus
       $card.find('.h5p-flashcard-overlay').focus();
       
       if ($(this).parent().hasClass('h5p-previous')) {
+        that.nav.previous();
         that.previous();
       }
       else {
+        that.nav.next();
         that.next();
       }
     }));
@@ -476,7 +457,10 @@ H5P.Flashcards = (function ($, XapiGenerator) {
         done = (that.numAnswered >= that.options.cards.length);
 
         if (!done) {
-          that.nextTimer = setTimeout(that.next.bind(that), 3500);
+          that.nextTimer = setTimeout(() => {
+            that.nav.next();
+            that.next();
+          }, 3500);
         }
         else {
           that.last();
@@ -567,9 +551,6 @@ H5P.Flashcards = (function ($, XapiGenerator) {
   C.prototype.setProgress = function () {
     var index = this.$current.index();
     this.$progress.html('Card ' + (index + 1) + ' <span class="progress-separator">/</span> ' + this.options.cards.length);
-    this.$visualProgress
-      .attr('aria-valuenow', ((index + 1) / this.options.cards.length * 100).toFixed(2))
-      .find('.h5p-visual-progress-inner').width((index + 1) / this.options.cards.length * 100 + '%');
   };
 
   /**
@@ -651,14 +632,10 @@ H5P.Flashcards = (function ($, XapiGenerator) {
     }
 
     that.setCurrent($next);
-    if (!that.$current.next('.h5p-card').length) {
-      that.$nextButton.addClass('h5p-hidden');
-    }
-    that.$prevButton.removeClass('h5p-hidden');
     that.setProgress();
 
     if ($next.is(':last-child') && that.numAnswered == that.options.cards.length) {
-      that.$container.find('.h5p-show-results').removeClass('h5p-hidden');
+      that.nav.setCanShowLast(true);
     }
   };
 
@@ -677,12 +654,8 @@ H5P.Flashcards = (function ($, XapiGenerator) {
     }
 
     that.setCurrent($prev);
-    if (!that.$current.prev().length) {
-      that.$prevButton.addClass('h5p-hidden');
-    }
-    that.$nextButton.removeClass('h5p-hidden');
     that.setProgress();
-    that.$container.find('.h5p-show-results').addClass('h5p-hidden');
+    that.nav.setCanShowLast(false);
   };
 
   /**
@@ -691,12 +664,8 @@ H5P.Flashcards = (function ($, XapiGenerator) {
   C.prototype.last = function () {
     var $last = this.$inner.children().last();
     this.setCurrent($last);
-    this.$nextButton.addClass('h5p-hidden');
-    if (this.options.cards.length > 1) {
-      this.$prevButton.removeClass('h5p-hidden');
-    }
     this.setProgress();
-    this.$container.find('.h5p-show-results').removeClass('h5p-hidden');
+    this.nav.setCanShowLast(true);
     this.trigger('resize');
   };
 
