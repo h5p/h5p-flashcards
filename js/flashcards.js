@@ -573,6 +573,15 @@ H5P.Flashcards = (function ($, XapiGenerator) {
     // Set new card
     this.$current = $card;
 
+    // Keep navigation component in sync with the current card index
+    if (this.nav && typeof this.nav.setCurrentIndex === 'function') {
+      try {
+        this.nav.setCurrentIndex(this.$current.index());
+      } catch (e) {
+        // Defensive: do not break if nav has changed API in other contexts
+      }
+    }
+
     /* We can't set focus on anything until the transition is finished.
        If we do, iPad will try to center the focused element while the transition
        is running, and the card will be misplaced */
@@ -620,14 +629,14 @@ H5P.Flashcards = (function ($, XapiGenerator) {
   /**
    * Display next card.
    */
-  C.prototype.next = function () {
+  C.prototype.next = function (event) {
     var that = this;
     var $next = this.$current.next();
 
     clearTimeout(this.prevTimer);
     clearTimeout(this.nextTimer);
 
-    if (!$next.length) {
+  if (!$next.length) {
       return;
     }
 
@@ -637,12 +646,20 @@ H5P.Flashcards = (function ($, XapiGenerator) {
     if ($next.is(':last-child') && that.numAnswered == that.options.cards.length) {
       that.nav.setCanShowLast(true);
     }
+
+    // If invoked from the navigation click handler (nav passes the click event
+    // to our handler), return false so the navigation component won't also
+    // call its internal next(), which would advance the navigation index a
+    // second time and cause an overshoot.
+    if (event) {
+      return false;
+    }
   };
 
   /**
    * Display previous card.
    */
-  C.prototype.previous = function () {
+  C.prototype.previous = function (event) {
     var that = this;
     var $prev = this.$current.prev();
 
@@ -656,6 +673,13 @@ H5P.Flashcards = (function ($, XapiGenerator) {
     that.setCurrent($prev);
     that.setProgress();
     that.nav.setCanShowLast(false);
+
+    // Prevent navigation component from also running its internal previous()
+    // (which would decrement the nav index a second time) when this was
+    // triggered from the nav click handler.
+    if (event) {
+      return false;
+    }
   };
 
   /**
