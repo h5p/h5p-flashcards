@@ -464,7 +464,7 @@ button::-moz-focus-inner {
   line-height: 1.5rem;
 }
 
-.h5p-flashcards .h5p-show-results {
+.h5p-flashcards .h5p-theme-show-results {
   justify-self: flex-end;
   grid-column: 3;
 }

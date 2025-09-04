@@ -234,7 +234,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
     });
 
     this.nextButton = this.nav.querySelector('.h5p-theme-next');
-    this.resultsButton = this.nav.querySelector('.h5p-theme-submit');
+    this.resultsButton = this.nav.querySelector('.h5p-theme-show-results');
 
     this.$progress = this.$container.find('.h5p-theme-progress');
     this.$container[0].append(this.nav);
