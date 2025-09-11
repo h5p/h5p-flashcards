@@ -1,39 +1,39 @@
 {
   "semantics": [
     {
-      "label": "Task description"
+      "label": "Descrierea sarcinii"
     },
     {
       "widgets": [
         {
-          "label": "Default"
+          "label": "Implicit"
         }
       ],
-      "label": "Cards",
-      "entity": "card",
+      "label": "Cartonașe",
+      "entity": "cartonaș",
       "field": {
-        "label": "Card",
+        "label": "Cartonaș",
         "fields": [
           {
-            "label": "Question",
-            "description": "Optional textual question for the card. (The card may use just an image, just a text or both)"
+            "label": "Întrebare",
+            "description": "Întrebare textuală opțională pentru cartonaș. (Cartonașul poate folosi doar o imagine, doar un text sau ambele)"
           },
           {
-            "label": "Answer",
-            "description": "Answer (solution) for the card. Use a forward slash / to split alternative solutions. Use \\/ if a solution should contain a /."
+            "label": "Răspuns",
+            "description": "Răspuns (soluție) pentru cartonaș. Folosiți o bară oblică / pentru a separa soluțiile alternative. Folosiți \\/ dacă o soluție trebuie să conțină un /."
           },
           {
-            "label": "Image",
-            "description": "Optional image for the card. (The card may use just an image, just a text or both)"
+            "label": "Imagine",
+            "description": "Imagine opțională pentru cartonaș. (Cartonașul poate folosi doar o imagine, doar un text sau ambele)"
           },
           {
-            "label": "Alternative text for image"
+            "label": "Text alternativ pentru imagine"
           },
           {
-            "label": "Tip",
+            "label": "Indiciu",
             "fields": [
               {
-                "label": "Tip text"
+                "label": "Text indiciu"
               }
             ]
           }
@@ -41,84 +41,84 @@
       }
     },
     {
-      "label": "Progress text",
-      "default": "Card @card of @total",
-      "description": "Progress text, variables available: @card and @total. Example: 'Card @card of @total'"
+      "label": "Text progres",
+      "default": "Cartonașul @card din @total",
+      "description": "Text pentru progres, variabile disponibile: @card și @total. Exemplu: 'Cartonașul @card din @total'"
     },
     {
-      "label": "Text for the next button",
-      "default": "Next"
+      "label": "Text pentru butonul următor",
+      "default": "Următorul"
     },
     {
-      "label": "Text for the previous button",
-      "default": "Previous"
+      "label": "Text pentru butonul anterior",
+      "default": "Anteriorul"
     },
     {
-      "label": "Text for the check answers button",
-      "default": "Check"
+      "label": "Text pentru butonul de verificare a răspunsurilor",
+      "default": "Verifică"
     },
     {
-      "label": "Require user input before the solution can be viewed"
+      "label": "Solicită introducerea de date de către utilizator înainte ca soluția să poată fi vizualizată"
     },
     {
-      "label": "Text for the answer input field",
-      "default": "Your answer"
+      "label": "Text pentru câmpul de introducere a răspunsului",
+      "default": "Răspunsul tău"
     },
     {
-      "label": "Text for correct answer",
-      "default": "Correct"
+      "label": "Text pentru răspuns corect",
+      "default": "Corect"
     },
     {
-      "label": "Text for incorrect answer",
-      "default": "Incorrect"
+      "label": "Text pentru răspuns incorect",
+      "default": "Incorect"
     },
     {
-      "label": "Show solution text",
-      "default": "Correct answer(s)"
+      "label": "Text pentru afișarea soluției",
+      "default": "Răspuns(uri) corect(e)"
     },
     {
-      "label": "Text for results title",
-      "default": "Results"
+      "label": "Text pentru titlul rezultatelor",
+      "default": "Rezultate"
     },
     {
-      "label": "Text for number of correct",
-      "default": "@score of @total correct",
-      "description": "Result text, variables available: @score and @total. Example: '@score of @total correct'"
+      "label": "Text pentru numărul de răspunsuri corecte",
+      "default": "@score din @total corecte",
+      "description": "Text rezultat, variabile disponibile: @score și @total. Exemplu: '@score din @total corecte'"
     },
     {
-      "label": "Text for show results",
-      "default": "Show results"
+      "label": "Text pentru afișarea rezultatelor",
+      "default": "Afișează rezultatele"
     },
     {
-      "label": "Text for short answer label",
-      "default": "A:"
+      "label": "Text pentru eticheta răspunsului scurt",
+      "default": "R:"
     },
     {
-      "label": "Text for \"retry\" button",
-      "default": "Retry"
+      "label": "Text pentru butonul \"reîncearcă\"",
+      "default": "Reîncearcă"
     },
     {
-      "label": "Case sensitive",
-      "description": "Makes sure the user input has to be exactly the same as the answer."
+      "label": "Sensibil la majuscule",
+      "description": "Asigură că răspunsul utilizatorului trebuie să fie exact la fel cu răspunsul corect."
     },
     {
-      "label": "Incorrect text for assistive technologies",
-      "default": "Incorrect answer. Correct answer was @answer",
-      "description": "Text that will be announced to assistive technologies. Use @answer as variable."
+      "label": "Text incorect pentru tehnologiile asistive",
+      "default": "Răspuns incorect. Răspunsul corect era @answer",
+      "description": "Text care va fi anunțat tehnologiilor asistive. Folosiți @answer ca variabilă."
     },
     {
-      "label": "Correct feedback text for assistive technologies",
-      "default": "@answer is correct.",
-      "description": "Text that will be announced to assistive technologies when a card is answered correctly. Use @answer as variable."
+      "label": "Text de feedback corect pentru tehnologiile asistive",
+      "default": "@answer este corect.",
+      "description": "Text care va fi anunțat tehnologiilor asistive atunci când se răspunde corect la un cartonaș. Folosiți @answer ca variabilă."
     },
     {
-      "label": "Card change for assistive technologies",
-      "default": "Page @current of @total",
-      "description": "Text that will be announced to assistive technologies when navigating between cards. Use @current and @total as variables."
+      "label": "Schimbare cartonaș pentru tehnologiile asistive",
+      "default": "Pagina @current of @total",
+      "description": "Text care va fi anunțat tehnologiilor asistive la navigarea între cartonașe. Folosiți @current și @total ca variabile."
     },
     {
-      "label": "Randomize cards",
-      "description": "Enable to randomize the order of cards on display."
+      "label": "Amestecă cartonașele",
+      "description": "Activați pentru a amesteca ordinea de afișare a cartonașelor."
     }
   ]
 }

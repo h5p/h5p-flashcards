@@ -36,7 +36,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
       results: "Results",
       ofCorrect: "@score of @total correct",
       showResults: "Show results",
-      retry : "Retry",
+      retry: "Retry",
       cardAnnouncement: 'Incorrect answer. Correct answer was @answer',
       pageAnnouncement: 'Page @current of @total',
       correctAnswerAnnouncement: '@answer is correct!'
@@ -331,7 +331,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
       '<div role="group" aria-roledescription="slide" aria-labelledby="h5p-flashcard-card-' + cardId + '" class="h5p-card h5p-animate' + (index === 0 ? ' h5p-current' : '') + '"> ' +
         '<div class="h5p-cardholder">' +
           '<div class="h5p-imageholder">' +
-            '<div class="h5p-flashcard-overlay">' +
+            '<div class="h5p-flashcard-overlay" tabindex="-1">' +
             '</div>' +
           '</div>' +
           '<div class="h5p-foot">' +
@@ -352,7 +352,11 @@ H5P.Flashcards = (function ($, XapiGenerator) {
 
     $card.find('.h5p-imageholder').prepend(this.$images[index]);
 
-    $card.prepend($('<div class="h5p-flashcard-overlay"></div>').on('click', function () {
+    $card.prepend($('<div class="h5p-flashcard-overlay" tabindex="-1"></div>').on('click', function () {
+      
+      // Set temporary focus
+      $card.find('.h5p-flashcard-overlay').focus();
+      
       if ($(this).parent().hasClass('h5p-previous')) {
         that.previous();
       }
@@ -385,6 +389,10 @@ H5P.Flashcards = (function ($, XapiGenerator) {
 
       if (!that.options.showSolutionsRequiresInput || userAnswer !== '' || userCorrect) {
         that.numAnswered++;
+        
+        // Set temporary focus
+        $card.find('.h5p-flashcard-overlay').focus();
+        
         $input.add(this).attr('disabled', true);
 
         that.answers[index] = userAnswer;
@@ -584,7 +592,9 @@ H5P.Flashcards = (function ($, XapiGenerator) {
        is running, and the card will be misplaced */
     $card.one('transitionend', function () {
       if ($card.hasClass('h5p-current') && !$card.find('.h5p-textinput')[0].disabled) {
+        $card.attr('aria-hidden', 'false');
         $card.find('.h5p-textinput').focus();
+        $card.siblings().attr('aria-hidden', 'true');
       }
       setTimeout(function () {
         this.announceCurrentPage();
@@ -594,11 +604,9 @@ H5P.Flashcards = (function ($, XapiGenerator) {
     // Update card classes
     $card.removeClass('h5p-previous h5p-next');
     $card.addClass('h5p-current');
-    $card.attr('aria-hidden', 'false');
 
     $card.siblings()
       .removeClass('h5p-current h5p-previous h5p-next left right')
-      .attr('aria-hidden', 'true')
       .find('.h5p-rotate-in').removeClass('h5p-rotate-in');
 
     $card.prev().addClass('h5p-previous');
