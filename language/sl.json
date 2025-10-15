@@ -20,7 +20,7 @@
           },
           {
             "label": "Odgovor",
-            "description": "Odgovor na vprašanje. Use a forward slash / to split alternative solutions. Use \\/ if a solution should contain a /."
+            "description": "Odgovor na vprašanje. S poševnico / se ločijo alternativni odgovori. Če mora odgovor vsebovati poševnico, se lahko uporabi \\/."
           },
           {
             "label": "Slika",
@@ -117,8 +117,8 @@
       "description": "@current in @total sta spremenljivki."
     },
     {
-      "label": "Randomize cards",
-      "description": "Enable to randomize the order of cards on display."
+      "label": "Naključen prikaz kartic",
+      "description": "Kartice prikaže v naključnem vrstnem redu."
     }
   ]
 }
