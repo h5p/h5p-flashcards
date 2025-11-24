@@ -500,6 +500,10 @@ button::-moz-focus-inner {
   }
 }
 
+.h5p-flashcards-results .h5p-theme-results-list-container {
+  max-height: initial;
+}
+
 @media screen and (max-width: 870px) {
   .h5p-flashcards .h5p-results-list-container {
     margin: calc(-1* var(--h5p-theme-spacing-l)) 0 var(--h5p-theme-spacing-l) 0;
