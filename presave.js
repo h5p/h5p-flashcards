@@ -8,17 +8,17 @@ var H5PPresave = H5PPresave || {};
  * @constructor
  */
 H5PPresave['H5P.Flashcards'] = function (content, finished) {
-  var presave = H5PEditor.Presave;
+  const presave = H5PEditor.Presave;
 
   if (isContentInvalid()) {
     throw new presave.exceptions.InvalidContentSemanticsException('Invalid Flashcard Error');
   }
 
-  var score = content.cards.length;
+  const score = content.cards.length;
 
   presave.validateScore(score);
 
-  finished({maxScore: score});
+  finished({ maxScore: score });
 
   /**
    * Check if required parameters is present

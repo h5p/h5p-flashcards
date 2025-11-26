@@ -30,7 +30,7 @@ H5P.Flashcards.xapiGenerator = (function ($) {
     xAPIEvent.setScoredResult(
       instance.getScore(),
       instance.getMaxScore(),
-      instance
+      instance,
     );
 
     xAPIEvent.data.statement.result.response = instance.answers.join('[,]');
@@ -40,27 +40,21 @@ H5P.Flashcards.xapiGenerator = (function ($) {
   const getxAPIDefinition = function (instance) {
     const definition = {};
     definition.description = {
-      'en-US': '<p>' + instance.options.description + '</p>'
+      'en-US': `<p>${instance.options.description}</p>`,
     };
     definition.type = 'http://adlnet.gov/expapi/activities/cmi.interaction';
     definition.interactionType = 'fill-in';
 
-    const solutionsAll = instance.options.cards.map(function (card) {
-      return H5P.Flashcards.splitAlternatives(card.answer);
-    });
+    const solutionsAll = instance.options.cards.map((card) => H5P.Flashcards.splitAlternatives(card.answer));
 
     // Fallback CRP, could cause computational hazard if computed fully
-    const crpAnswers = solutionsAll.map(function (solutions) {
-      return solutions[0];
-    }).join('[,]');
+    const crpAnswers = solutionsAll.map((solutions) => solutions[0]).join('[,]');
 
     definition.correctResponsesPattern = [
-      '{case_matters=' + instance.options.caseSensitive + '}' + crpAnswers
+      `{case_matters=${instance.options.caseSensitive}}${crpAnswers}`,
     ];
 
-    const cardDescriptions = instance.options.cards.map(function (card) {
-      return '<p>' + card.text + ' ' + placeHolder + '</p>';
-    }).join('');
+    const cardDescriptions = instance.options.cards.map((card) => `<p>${card.text} ${placeHolder}</p>`).join('');
 
     definition.description['en-US'] += cardDescriptions;
 
@@ -77,6 +71,6 @@ H5P.Flashcards.xapiGenerator = (function ($) {
   };
 
   return {
-    getXapiEvent: getXapiEvent,
+    getXapiEvent,
   };
-})(H5P.jQuery);
+}(H5P.jQuery));
