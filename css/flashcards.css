@@ -501,7 +501,7 @@ button::-moz-focus-inner {
 }
 
 .h5p-flashcards-results .h5p-theme-results-list-container {
-  max-height: initial;
+  max-height: calc(var(--h5p-theme-spacing-xl)*22);
 }
 
 @media screen and (max-width: 870px) {
