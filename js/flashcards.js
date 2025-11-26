@@ -236,7 +236,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
     this.$progress = this.$container.find('.h5p-theme-progress');
     this.$container[0].append(this.nav);
     // Add cards
-    for (var i = 0; i < this.options.cards.length; i++) {
+    for (let i = 0; i < this.options.cards.length; i++) {
       this.addCard(i, $inner);
     }
 
@@ -245,7 +245,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
 
     // Find highest image and set task height.
     let height = 0;
-    for (i = 0; i < this.$images.length; i++) {
+    for (let i = 0; i < this.$images.length; i++) {
       const $image = this.$images[i];
 
       if ($image === undefined) {
@@ -388,7 +388,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
       const userCorrect = isCorrectAnswer(card, userAnswer, that.options.caseSensitive);
       let done = false;
 
-      if (userAnswer == '') {
+      if (userAnswer === '') {
         $input.focus();
       }
 
@@ -511,7 +511,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
             correctAnswerPrepend: `${this.options.showSolutionText}: `,
           };
 
-          if (card.image != undefined) {
+          if (card.image !== undefined) {
             question.imgUrl = H5P.getPath(card.image.path, this.id);
           }
           else {
@@ -643,7 +643,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
     that.setCurrent($next);
     that.setProgress();
 
-    if ($next.is(':last-child') && that.numAnswered == that.options.cards.length) {
+    if ($next.is(':last-child') && that.numAnswered === that.options.cards.length) {
       that.nav.setCanShowLast(true);
     }
 
