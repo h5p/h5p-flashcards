@@ -393,9 +393,16 @@ button::-moz-focus-inner {
   display: flex;
   background-color: var(--h5p-theme-ui-base);
 }
-
+.h5p-flashcards .h5p-flashcards-results.show .h5p-theme-result-screen {
+  height: 90%;
+  
+}
+.h5p-flashcards .h5p-flashcards-results.show .h5p-theme-results-list-container {
+  max-height: 85%;
+  
+}
 .h5p-flashcards .h5p-theme-retry {
-  margin: 0 auto var(--h5p-theme-spacing-m) auto;
+  margin: var(--h5p-theme-spacing-s) auto var(--h5p-theme-spacing-m);
 }
 
 .progress-separator {
