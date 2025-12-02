@@ -201,13 +201,12 @@ H5P.Flashcards = (function ($, XapiGenerator) {
    * Called when all cards has been loaded.
    */
   C.prototype.cardsLoaded = function () {
-    const that = this;
     const descId = ++C.counter;
 
     const $inner = this.$container.html(
-      '<div class="h5p-flashcards-heading">'
-        + '<div class="h5p-description h5p-theme-question-description"'
-          + 'id="flashcards-description' + `-${descId}" title="${this.options.description}"`
+      `<div class="h5p-flashcards-heading">
+        <div class="h5p-description h5p-theme-question-description"
+          id="flashcards-description-${descId}" title="${this.options.description}"`
         + `>${
           this.options.description
         }</div>`
@@ -383,7 +382,6 @@ H5P.Flashcards = (function ($, XapiGenerator) {
     const $input = $card.find('.h5p-textinput');
 
     const handleClick = function () {
-      const card = that.options.cards[index];
       const userAnswer = $input.val().trim();
       const userCorrect = isCorrectAnswer(card, userAnswer, that.options.caseSensitive);
       let done = false;
@@ -796,7 +794,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
 
     return text
       .split(delimiter)
-      .map((element) => element = element.replace(/\u001a/g, delimiter).trim());
+      .map((element) => element.replace(/\u001a/g, delimiter).trim());
   };
 
   /**
