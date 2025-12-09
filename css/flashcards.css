@@ -206,17 +206,6 @@
   filter: none;
 }
 
-.h5p-flashcards .h5p-card div.h5p-clue:after {
-  content: "\f03e";
-  font-family: 'H5PFontAwesome4';
-  font-size: 7rem;
-  line-height: 100px;
-  color: var(--h5p-theme-text-third);
-  background-color: var(--h5p-theme-ui-base);
-  padding: var(--h5p-theme-spacing-m) var(--h5p-theme-spacing-l);
-  border-radius: var(--h5p-theme-border-radius-large);
-}
-
 .h5p-flashcards .h5p-foot {
   margin: 0 1em 1em 1em;
   padding: 0 1em 1em 1em;
