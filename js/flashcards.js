@@ -116,7 +116,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
         this.$images[i] = $image;
       }
       else {
-        this.$images[i] = $(H5P.Components.PlaceholderImg());
+        this.$images[i] = $(H5P.Components.PlaceholderImg('h5pImageDefault'));
         load();
       }
     }
