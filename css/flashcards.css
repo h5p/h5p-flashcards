@@ -323,10 +323,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.h5p-flashcards .h5p-imagetext:first-letter {
-  text-transform: uppercase;
-}
-
 .h5p-flashcards .h5p-input {
   text-align: center;
 }
