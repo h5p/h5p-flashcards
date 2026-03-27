@@ -258,7 +258,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
     }
 
     if (this.options.cards.length < 2) {
-      this.$nextButton.hide();
+      this.$nextButton?.hide();
     }
 
     this.$current.next().addClass('h5p-next');
