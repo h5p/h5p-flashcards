@@ -586,7 +586,6 @@ H5P.Flashcards = (function ($, XapiGenerator) {
     $card.one('transitionend', () => {
       if ($card.hasClass('h5p-current') && !$card.find('.h5p-textinput')[0].disabled) {
         $card.attr('aria-hidden', 'false');
-        $card.find('.h5p-textinput').focus();
         $card.siblings().attr('aria-hidden', 'true');
       }
       setTimeout(() => {
