@@ -81,12 +81,12 @@
       "default": "Resultat"
     },
     {
-      "label": "Header for results table describing the cards",
-      "default": "Cards"
+      "label": "Tittel på resultattavle for korta",
+      "default": "Kort"
     },
     {
-      "label": "Header for results table describing the score",
-      "default": "Score"
+      "label": "Tittel på oversikt over poeng",
+      "default": "Poeng"
     },
     {
       "label": "Tekst for antall korrekt",
