@@ -81,12 +81,12 @@
       "default": "Resultat"
     },
     {
-      "label": "Header for results table describing the cards",
-      "default": "Cards"
+      "label": "Tittel på resultattavle for korta",
+      "default": "Kort"
     },
     {
-      "label": "Header for results table describing the score",
-      "default": "Score"
+      "label": "Tittel på oversikt over poeng",
+      "default": "Poeng"
     },
     {
       "label": "Tekst for antall korrekt",
@@ -102,31 +102,31 @@
       "default": "S:"
     },
     {
-      "label": "Text for \"retry\" button",
+      "label": "Text for \"prøv igjen\" knapp",
       "default": "Prøv igjen"
     },
     {
-      "label": "Case sensitive",
-      "description": "Makes sure the user input has to be exactly the same as the answer."
+      "label": "Skill mellom store og små bokstaver",
+      "description": "Sørger for at brukerens inndata må være nøyaktig lik svaret."
     },
     {
-      "label": "Incorrect text for assistive technologies",
-      "default": "Incorrect answer. Correct answer was @answer",
-      "description": "Text that will be announced to assistive technologies. Use @answer as variable."
+      "label": "Feil tekst for hjelpeteknologier",
+      "default": "Feil svar. Riktig svar var @answer",
+      "description": "Tekst som vil bli lest opp av hjelpeteknologier. Bruk @answer som variabel."
     },
     {
-      "label": "Correct feedback text for assistive technologies",
-      "default": "@answer is correct.",
-      "description": "Text that will be announced to assistive technologies when a card is answered correctly. Use @answer as variable."
+      "label": "Tekst for korrekt tilbakemelding for hjelpeteknologier",
+      "default": "@answer er riktig.",
+      "description": "Tekst som vil bli lest opp av hjelpeteknologier når et kort besvares riktig. Bruk @answer som variabel."
     },
     {
-      "label": "Card change for assistive technologies",
-      "default": "Page @current of @total",
-      "description": "Text that will be announced to assistive technologies when navigating between cards. Use @current and @total as variables."
+      "label": "Kortbytte for hjelpeteknologier",
+      "default": "Side @current av @total",
+      "description": "Tekst som vil bli lest opp av hjelpeteknologier ved navigering mellom kort. Bruk @current og @total som variabler."
     },
     {
-      "label": "Randomize cards",
-      "description": "Enable to randomize the order of cards on display."
+      "label": "Bland kortene",
+      "description": "Aktiver for å tilfeldiggjøre rekkefølgen på kortene som vises."
     }
   ]
 }
