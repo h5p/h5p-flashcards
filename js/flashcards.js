@@ -504,13 +504,19 @@ H5P.Flashcards = (function ($, XapiGenerator) {
             title: card.text,
             points: isCorrect ? '1' : '0',
             isCorrect,
+            isCorrectionText: isCorrect
+              ? `${this.options.correctAnswerText}. `
+              : `${this.options.incorrectAnswerText}. `,
             userAnswer: this.answers[i],
+            userAnswerPrepend: `${this.options.defaultAnswerText}: `,
             correctAnswer: C.splitAlternatives(card.answer).join(', '),
             correctAnswerPrepend: `${this.options.showSolutionText}: `,
+            scorePrepend: `${this.options.scoreHeader}: `,
           };
 
           if (card.image !== undefined) {
             question.imgUrl = H5P.getPath(card.image.path, this.id);
+            question.imgAlt = card.imageAltText;
           }
           else {
             question.useDefaultImg = true;
@@ -540,6 +546,10 @@ H5P.Flashcards = (function ($, XapiGenerator) {
     this.$inner.addClass('h5p-invisible');
     this.$inner.siblings().addClass('h5p-invisible');
     this.$resultScreen.appendTo(this.$container).addClass('show');
+    this.$resultScreen
+      .find('.h5p-theme-results-title')
+      .attr('tabindex', '-1')
+      .focus();
   };
 
   /**
