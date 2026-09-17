@@ -546,6 +546,10 @@ H5P.Flashcards = (function ($, XapiGenerator) {
     this.$inner.addClass('h5p-invisible');
     this.$inner.siblings().addClass('h5p-invisible');
     this.$resultScreen.appendTo(this.$container).addClass('show');
+    this.$resultScreen
+      .find('.h5p-theme-results-title')
+      .attr('tabindex', '-1')
+      .focus();
   };
 
   /**
