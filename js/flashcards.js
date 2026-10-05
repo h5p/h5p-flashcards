@@ -504,7 +504,7 @@ H5P.Flashcards = (function ($, XapiGenerator) {
             title: card.text,
             points: isCorrect ? '1' : '0',
             isCorrect,
-            isCorrectionText: isCorrect
+            answerStatusText: isCorrect
               ? `${this.options.correctAnswerText}. `
               : `${this.options.incorrectAnswerText}. `,
             userAnswer: this.answers[i],
