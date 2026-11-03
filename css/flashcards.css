@@ -238,10 +238,6 @@
   font-weight: 600;
 }
 
-.h5p-flashcards .h5p-imagetext:first-letter {
-  text-transform: uppercase;
-}
-
 .h5p-flashcards .h5p-answer .h5p-feedback-label {
   padding: var(--h5p-theme-spacing-xs) var(--h5p-theme-spacing-xs);
   outline: none;
